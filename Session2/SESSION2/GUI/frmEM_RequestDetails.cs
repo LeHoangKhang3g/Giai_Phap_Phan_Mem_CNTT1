@@ -10,12 +10,12 @@ using System.Windows.Forms;
 
 namespace GUI
 {
-    public partial class frmEMManagement : Form
+    public partial class frmEM_RequestDetails : Form
     {
-        public frmEMManagement()
+        public frmEM_RequestDetails()
         {
             InitializeComponent();
-            dgvListOfRequestingEM.AutoGenerateColumns = false;
+            dgvParts.AutoGenerateColumns = false;
         }
     }
 }
