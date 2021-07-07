@@ -37,12 +37,12 @@ namespace GUI
             this.lblAssetName = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.txtOtherConsiderations = new System.Windows.Forms.TextBox();
+            this.txtDescriptionOfEmergency = new System.Windows.Forms.TextBox();
+            this.cbbPriority = new System.Windows.Forms.ComboBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.cbbPriority = new System.Windows.Forms.ComboBox();
-            this.txtDescriptionOfEmergency = new System.Windows.Forms.TextBox();
-            this.txtOtherConsiderations = new System.Windows.Forms.TextBox();
             this.btnSendRequest = new System.Windows.Forms.Button();
             this.btnCencel = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
@@ -138,6 +138,28 @@ namespace GUI
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Request Report";
             // 
+            // txtOtherConsiderations
+            // 
+            this.txtOtherConsiderations.Location = new System.Drawing.Point(97, 191);
+            this.txtOtherConsiderations.Name = "txtOtherConsiderations";
+            this.txtOtherConsiderations.Size = new System.Drawing.Size(764, 26);
+            this.txtOtherConsiderations.TabIndex = 11;
+            // 
+            // txtDescriptionOfEmergency
+            // 
+            this.txtDescriptionOfEmergency.Location = new System.Drawing.Point(97, 119);
+            this.txtDescriptionOfEmergency.Name = "txtDescriptionOfEmergency";
+            this.txtDescriptionOfEmergency.Size = new System.Drawing.Size(764, 26);
+            this.txtDescriptionOfEmergency.TabIndex = 10;
+            // 
+            // cbbPriority
+            // 
+            this.cbbPriority.FormattingEnabled = true;
+            this.cbbPriority.Location = new System.Drawing.Point(97, 32);
+            this.cbbPriority.Name = "cbbPriority";
+            this.cbbPriority.Size = new System.Drawing.Size(287, 28);
+            this.cbbPriority.TabIndex = 9;
+            // 
             // label6
             // 
             this.label6.AutoSize = true;
@@ -164,28 +186,6 @@ namespace GUI
             this.label2.Size = new System.Drawing.Size(67, 20);
             this.label2.TabIndex = 6;
             this.label2.Text = "Priority:";
-            // 
-            // cbbPriority
-            // 
-            this.cbbPriority.FormattingEnabled = true;
-            this.cbbPriority.Location = new System.Drawing.Point(97, 32);
-            this.cbbPriority.Name = "cbbPriority";
-            this.cbbPriority.Size = new System.Drawing.Size(287, 28);
-            this.cbbPriority.TabIndex = 9;
-            // 
-            // txtDescriptionOfEmergency
-            // 
-            this.txtDescriptionOfEmergency.Location = new System.Drawing.Point(97, 119);
-            this.txtDescriptionOfEmergency.Name = "txtDescriptionOfEmergency";
-            this.txtDescriptionOfEmergency.Size = new System.Drawing.Size(764, 26);
-            this.txtDescriptionOfEmergency.TabIndex = 10;
-            // 
-            // txtOtherConsiderations
-            // 
-            this.txtOtherConsiderations.Location = new System.Drawing.Point(97, 191);
-            this.txtOtherConsiderations.Name = "txtOtherConsiderations";
-            this.txtOtherConsiderations.Size = new System.Drawing.Size(764, 26);
-            this.txtOtherConsiderations.TabIndex = 11;
             // 
             // btnSendRequest
             // 
@@ -218,6 +218,7 @@ namespace GUI
             this.Controls.Add(this.groupBox1);
             this.Name = "frmEM_Request";
             this.Text = "Emergency Maintenance Request";
+            this.Load += new System.EventHandler(this.frmEM_Request_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);

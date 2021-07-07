@@ -72,29 +72,35 @@ namespace GUI
             this.btnManageRequest.TabIndex = 2;
             this.btnManageRequest.Text = "Manage Request";
             this.btnManageRequest.UseVisualStyleBackColor = true;
+            this.btnManageRequest.Click += new System.EventHandler(this.btnManageRequest_Click);
             // 
             // colAssetSN
             // 
+            this.colAssetSN.DataPropertyName = "AssetSN";
             this.colAssetSN.HeaderText = "Asset SN";
             this.colAssetSN.Name = "colAssetSN";
             // 
             // colAssetName
             // 
+            this.colAssetName.DataPropertyName = "AssetName";
             this.colAssetName.HeaderText = "Asset Name";
             this.colAssetName.Name = "colAssetName";
             // 
             // colRequestDate
             // 
+            this.colRequestDate.DataPropertyName = "WarrantyDate";
             this.colRequestDate.HeaderText = "Request Date";
             this.colRequestDate.Name = "colRequestDate";
             // 
             // colEmployeeFullName
             // 
+            this.colEmployeeFullName.DataPropertyName = "FirstName";
             this.colEmployeeFullName.HeaderText = "Employee Full Name";
             this.colEmployeeFullName.Name = "colEmployeeFullName";
             // 
             // colDepartment
             // 
+            this.colDepartment.DataPropertyName = "Name";
             this.colDepartment.HeaderText = "Department";
             this.colDepartment.Name = "colDepartment";
             // 
@@ -108,6 +114,7 @@ namespace GUI
             this.Controls.Add(this.label1);
             this.Name = "frmEMManagement";
             this.Text = "Emergency Maintenance Management";
+            this.Load += new System.EventHandler(this.frmEMManagement_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvListOfRequestingEM)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -118,11 +125,11 @@ namespace GUI
 
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridView dgvListOfRequestingEM;
+        private System.Windows.Forms.Button btnManageRequest;
         private System.Windows.Forms.DataGridViewTextBoxColumn colAssetSN;
         private System.Windows.Forms.DataGridViewTextBoxColumn colAssetName;
         private System.Windows.Forms.DataGridViewTextBoxColumn colRequestDate;
         private System.Windows.Forms.DataGridViewTextBoxColumn colEmployeeFullName;
         private System.Windows.Forms.DataGridViewTextBoxColumn colDepartment;
-        private System.Windows.Forms.Button btnManageRequest;
     }
 }

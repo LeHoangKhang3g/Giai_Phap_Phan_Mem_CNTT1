@@ -7,7 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using BUS;
+using DTO;
 namespace GUI
 {
     public partial class frmEM_Request : Form
@@ -15,6 +16,14 @@ namespace GUI
         public frmEM_Request()
         {
             InitializeComponent();
+        }
+
+        private void frmEM_Request_Load(object sender, EventArgs e)
+        {
+            frmEMManagement frmManagement= new frmEMManagement();
+            lblAssetSN.Text = frmManagement.getAssetSN();
+            lblAssetName.Text = frmManagement.getAssetName();
+            lblDepartment.Text = frmManagement.getDepartment();
         }
     }
 }
