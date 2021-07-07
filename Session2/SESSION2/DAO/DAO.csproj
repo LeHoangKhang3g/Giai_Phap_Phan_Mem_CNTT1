@@ -104,6 +104,9 @@
     </Compile>
     <Compile Include="PriorityDAO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SELECT_EM_Result.cs">
+      <DependentUpon>ModelSession2.tt</DependentUpon>
+    </Compile>
     <Compile Include="sysdiagram.cs">
       <DependentUpon>ModelSession2.tt</DependentUpon>
     </Compile>

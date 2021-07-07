@@ -12,6 +12,8 @@ namespace DAO
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
+    using System.Data.Entity.Core.Objects;
+    using System.Linq;
     
     public partial class Session2Entities : DbContext
     {
@@ -36,5 +38,10 @@ namespace DAO
         public virtual DbSet<Part> Parts { get; set; }
         public virtual DbSet<Priority> Priorities { get; set; }
         public virtual DbSet<sysdiagram> sysdiagrams { get; set; }
+    
+        public virtual ObjectResult<SELECT_EM_Result> SELECT_EM()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<SELECT_EM_Result>("SELECT_EM");
+        }
     }
 }
