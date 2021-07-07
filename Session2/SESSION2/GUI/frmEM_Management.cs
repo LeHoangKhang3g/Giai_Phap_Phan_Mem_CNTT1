@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace GUI
 {
-    public partial class frmLogIn : Form
+    public partial class frmEMManagement : Form
     {
-        public frmLogIn()
+        public frmEMManagement()
         {
             InitializeComponent();
         }

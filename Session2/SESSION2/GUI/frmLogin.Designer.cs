@@ -1,6 +1,6 @@
 ﻿namespace GUI
 {
-    partial class frmLogIn
+    partial class frmLogin
     {
         /// <summary>
         /// Required designer variable.
@@ -28,13 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmLogIn));
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.grbLogIn = new System.Windows.Forms.GroupBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.txtUsername = new System.Windows.Forms.TextBox();
             this.txtPass = new System.Windows.Forms.TextBox();
+            this.txtUsername = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.btnOk = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -43,7 +42,8 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.ErrorImage = null;
+            this.pictureBox1.Image = global::GUI.Properties.Resources.Logo;
             this.pictureBox1.Location = new System.Drawing.Point(12, 12);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(238, 236);
@@ -65,14 +65,19 @@
             this.grbLogIn.TabStop = false;
             this.grbLogIn.Text = "Sign in to EM managment";
             // 
-            // label1
+            // txtPass
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(30, 61);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(86, 20);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Username";
+            this.txtPass.Location = new System.Drawing.Point(136, 109);
+            this.txtPass.Name = "txtPass";
+            this.txtPass.Size = new System.Drawing.Size(236, 26);
+            this.txtPass.TabIndex = 3;
+            // 
+            // txtUsername
+            // 
+            this.txtUsername.Location = new System.Drawing.Point(136, 55);
+            this.txtUsername.Name = "txtUsername";
+            this.txtUsername.Size = new System.Drawing.Size(236, 26);
+            this.txtUsername.TabIndex = 2;
             // 
             // label2
             // 
@@ -83,19 +88,14 @@
             this.label2.TabIndex = 1;
             this.label2.Text = "Password";
             // 
-            // txtUsername
+            // label1
             // 
-            this.txtUsername.Location = new System.Drawing.Point(136, 55);
-            this.txtUsername.Name = "txtUsername";
-            this.txtUsername.Size = new System.Drawing.Size(186, 26);
-            this.txtUsername.TabIndex = 2;
-            // 
-            // txtPass
-            // 
-            this.txtPass.Location = new System.Drawing.Point(136, 109);
-            this.txtPass.Name = "txtPass";
-            this.txtPass.Size = new System.Drawing.Size(186, 26);
-            this.txtPass.TabIndex = 3;
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(30, 61);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(86, 20);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Username";
             // 
             // btnOk
             // 
@@ -117,7 +117,7 @@
             this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = true;
             // 
-            // frmLogIn
+            // frmLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -126,7 +126,7 @@
             this.Controls.Add(this.btnOk);
             this.Controls.Add(this.grbLogIn);
             this.Controls.Add(this.pictureBox1);
-            this.Name = "frmLogIn";
+            this.Name = "frmLogin";
             this.Text = "Login";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.grbLogIn.ResumeLayout(false);
