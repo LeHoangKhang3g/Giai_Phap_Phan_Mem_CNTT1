@@ -39,7 +39,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
+    <Compile Include="AssetDTO.cs" />
+    <Compile Include="AssetGroupDTO.cs" />
+    <Compile Include="ChangedPartDTO.cs" />
+    <Compile Include="DepartmentDTO.cs" />
+    <Compile Include="DepartmentLocationDTO.cs" />
+    <Compile Include="EmergencyMaintenanceDTO.cs" />
+    <Compile Include="EmployeeDTO.cs" />
+    <Compile Include="LocationDTO.cs" />
+    <Compile Include="PartDTO.cs" />
+    <Compile Include="PriorityDTO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
