@@ -20,7 +20,7 @@ namespace GUI
 
         private void frmEM_Request_Load(object sender, EventArgs e)
         {
-            frmEMManagement frmManagement= new frmEMManagement();
+            frmEM_Management_Admin frmManagement= new frmEM_Management_Admin();
             lblAssetSN.Text = frmManagement.getAssetSN();
             lblAssetName.Text = frmManagement.getAssetName();
             lblDepartment.Text = frmManagement.getDepartment();

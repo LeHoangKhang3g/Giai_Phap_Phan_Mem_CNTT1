@@ -1,7 +1,7 @@
 ﻿
 namespace GUI
 {
-    partial class frmEMManagement
+    partial class frmEM_Management
     {
         /// <summary>
         /// Required designer variable.
@@ -30,92 +30,80 @@ namespace GUI
         private void InitializeComponent()
         {
             this.label1 = new System.Windows.Forms.Label();
-            this.dgvListOfRequestingEM = new System.Windows.Forms.DataGridView();
-            this.btnManageRequest = new System.Windows.Forms.Button();
+            this.dgvAvailableAsset = new System.Windows.Forms.DataGridView();
             this.colAssetSN = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colAssetName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colRequestDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colEmployeeFullName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colDepartment = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvListOfRequestingEM)).BeginInit();
+            this.colLastClosedEM = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colNumberOfEM = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnSendEmergencyMaintenanceRequest = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvAvailableAsset)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(30, 22);
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(12, 20);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(148, 13);
+            this.label1.Size = new System.Drawing.Size(129, 20);
             this.label1.TabIndex = 0;
-            this.label1.Text = "List of Assets Requesting EM:";
+            this.label1.Text = "Available Asset:";
             // 
-            // dgvListOfRequestingEM
+            // dgvAvailableAsset
             // 
-            this.dgvListOfRequestingEM.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvListOfRequestingEM.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvListOfRequestingEM.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dgvAvailableAsset.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvAvailableAsset.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvAvailableAsset.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.colAssetSN,
             this.colAssetName,
-            this.colRequestDate,
-            this.colEmployeeFullName,
-            this.colDepartment});
-            this.dgvListOfRequestingEM.Location = new System.Drawing.Point(33, 49);
-            this.dgvListOfRequestingEM.Name = "dgvListOfRequestingEM";
-            this.dgvListOfRequestingEM.Size = new System.Drawing.Size(821, 319);
-            this.dgvListOfRequestingEM.TabIndex = 1;
-            // 
-            // btnManageRequest
-            // 
-            this.btnManageRequest.Location = new System.Drawing.Point(42, 397);
-            this.btnManageRequest.Name = "btnManageRequest";
-            this.btnManageRequest.Size = new System.Drawing.Size(136, 23);
-            this.btnManageRequest.TabIndex = 2;
-            this.btnManageRequest.Text = "Manage Request";
-            this.btnManageRequest.UseVisualStyleBackColor = true;
-            this.btnManageRequest.Click += new System.EventHandler(this.btnManageRequest_Click);
+            this.colLastClosedEM,
+            this.colNumberOfEM});
+            this.dgvAvailableAsset.Location = new System.Drawing.Point(16, 43);
+            this.dgvAvailableAsset.Name = "dgvAvailableAsset";
+            this.dgvAvailableAsset.Size = new System.Drawing.Size(900, 326);
+            this.dgvAvailableAsset.TabIndex = 1;
             // 
             // colAssetSN
             // 
-            this.colAssetSN.DataPropertyName = "AssetSN";
             this.colAssetSN.HeaderText = "Asset SN";
             this.colAssetSN.Name = "colAssetSN";
             // 
             // colAssetName
             // 
-            this.colAssetName.DataPropertyName = "AssetName";
             this.colAssetName.HeaderText = "Asset Name";
             this.colAssetName.Name = "colAssetName";
             // 
-            // colRequestDate
+            // colLastClosedEM
             // 
-            this.colRequestDate.DataPropertyName = "WarrantyDate";
-            this.colRequestDate.HeaderText = "Request Date";
-            this.colRequestDate.Name = "colRequestDate";
+            this.colLastClosedEM.HeaderText = "LastClosedEM";
+            this.colLastClosedEM.Name = "colLastClosedEM";
             // 
-            // colEmployeeFullName
+            // colNumberOfEM
             // 
-            this.colEmployeeFullName.DataPropertyName = "FullName";
-            this.colEmployeeFullName.HeaderText = "Employee Full Name";
-            this.colEmployeeFullName.Name = "colEmployeeFullName";
+            this.colNumberOfEM.HeaderText = "NumberOfEM";
+            this.colNumberOfEM.Name = "colNumberOfEM";
             // 
-            // colDepartment
+            // btnSendEmergencyMaintenanceRequest
             // 
-            this.colDepartment.DataPropertyName = "Name";
-            this.colDepartment.HeaderText = "Department";
-            this.colDepartment.Name = "colDepartment";
+            this.btnSendEmergencyMaintenanceRequest.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSendEmergencyMaintenanceRequest.Location = new System.Drawing.Point(16, 393);
+            this.btnSendEmergencyMaintenanceRequest.Name = "btnSendEmergencyMaintenanceRequest";
+            this.btnSendEmergencyMaintenanceRequest.Size = new System.Drawing.Size(343, 32);
+            this.btnSendEmergencyMaintenanceRequest.TabIndex = 2;
+            this.btnSendEmergencyMaintenanceRequest.Text = "Send Emegency Maintenance Request";
+            this.btnSendEmergencyMaintenanceRequest.UseVisualStyleBackColor = true;
             // 
-            // frmEMManagement
+            // frmEM_Management
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(885, 443);
-            this.Controls.Add(this.btnManageRequest);
-            this.Controls.Add(this.dgvListOfRequestingEM);
+            this.ClientSize = new System.Drawing.Size(938, 450);
+            this.Controls.Add(this.btnSendEmergencyMaintenanceRequest);
+            this.Controls.Add(this.dgvAvailableAsset);
             this.Controls.Add(this.label1);
-            this.Name = "frmEMManagement";
+            this.Name = "frmEM_Management";
             this.Text = "Emergency Maintenance Management";
-            this.Load += new System.EventHandler(this.frmEMManagement_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvListOfRequestingEM)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvAvailableAsset)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -124,12 +112,11 @@ namespace GUI
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.DataGridView dgvListOfRequestingEM;
-        private System.Windows.Forms.Button btnManageRequest;
+        private System.Windows.Forms.DataGridView dgvAvailableAsset;
         private System.Windows.Forms.DataGridViewTextBoxColumn colAssetSN;
         private System.Windows.Forms.DataGridViewTextBoxColumn colAssetName;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colRequestDate;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colEmployeeFullName;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colDepartment;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colLastClosedEM;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colNumberOfEM;
+        private System.Windows.Forms.Button btnSendEmergencyMaintenanceRequest;
     }
 }

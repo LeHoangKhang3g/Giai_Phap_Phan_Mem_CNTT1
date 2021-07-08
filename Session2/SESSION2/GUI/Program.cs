@@ -16,7 +16,7 @@ namespace GUI
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmEMManagement());
+            Application.Run(new frmEM_Management_Admin());
         }
     }
 }
