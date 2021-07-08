@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DAO
 {
-    public class EmargencyMaintenanceDAO
+    public class EmergencyMaintenanceDAO
     {
     }
 }
