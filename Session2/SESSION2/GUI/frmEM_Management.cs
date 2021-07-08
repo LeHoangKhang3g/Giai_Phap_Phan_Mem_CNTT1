@@ -17,6 +17,7 @@ namespace GUI
         private static string _assetSN;
         private static string _assetName;
         private static string _department;
+
         public frmEMManagement()
         {
             InitializeComponent();

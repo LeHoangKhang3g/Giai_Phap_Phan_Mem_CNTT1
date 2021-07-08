@@ -16,6 +16,7 @@ namespace GUI
         {
             InitializeComponent();
             dgvParts.AutoGenerateColumns = false;
+            
         }
     }
 }

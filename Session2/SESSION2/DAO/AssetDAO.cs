@@ -11,6 +11,8 @@ namespace DAO
     {
 
         private Session2Entities _ss2 = new Session2Entities();
+
+        //Lấy danh sách 
         public List<AssetDTO> LayDS_EM()
         {
             return _ss2.Assets.Select(u => new AssetDTO
@@ -26,6 +28,7 @@ namespace DAO
             }).ToList();
         }
 
+        //Lấy danh sách EM cho frmEm_Management
         public List<EM> GetListEM()
         {
             return _ss2.SELECT_EM().Select(u => new EM { AssetSN = u.ASSETSN, AssetName = u.ASSETNAME, WarrantyDate = u.WarrantyDate, FirstName = u.FirstName, LastName = u.LastName, Name = u.Name }).ToList();

@@ -94,7 +94,7 @@ namespace GUI
             // 
             // colEmployeeFullName
             // 
-            this.colEmployeeFullName.DataPropertyName = "FirstName";
+            this.colEmployeeFullName.DataPropertyName = "FullName";
             this.colEmployeeFullName.HeaderText = "Employee Full Name";
             this.colEmployeeFullName.Name = "colEmployeeFullName";
             // 
