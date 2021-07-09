@@ -40,7 +40,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AssetBUS.cs" />
+    <Compile Include="EmergencyMaintenanceBUS.cs" />
     <Compile Include="EmployeeBUS.cs" />
+    <Compile Include="PriorityBUS.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

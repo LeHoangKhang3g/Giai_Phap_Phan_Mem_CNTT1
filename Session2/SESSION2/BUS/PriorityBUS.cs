@@ -4,16 +4,17 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using DTO;
+using DAO;
 
-namespace DAO
+namespace BUS
 {
-    public class PriorityDAO
+    public class PriorityBUS
     {
-        private Session2Entities _ss2 = new Session2Entities();
+        private PriorityDAO _priorityDAO = new PriorityDAO();
 
         public List<PriorityDTO> GetPriorities()
         {
-            return _ss2.Priorities.Select(u => new PriorityDTO { ID = u.ID, Name = u.Name }).ToList();
+            return _priorityDAO.GetPriorities();
         }
     }
 }

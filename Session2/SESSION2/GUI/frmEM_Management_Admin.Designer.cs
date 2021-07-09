@@ -64,6 +64,7 @@ namespace GUI
             this.colDepartment});
             this.dgvListOfRequestingEM.Location = new System.Drawing.Point(16, 40);
             this.dgvListOfRequestingEM.Name = "dgvListOfRequestingEM";
+            this.dgvListOfRequestingEM.ReadOnly = true;
             this.dgvListOfRequestingEM.Size = new System.Drawing.Size(821, 319);
             this.dgvListOfRequestingEM.TabIndex = 1;
             // 
@@ -72,30 +73,35 @@ namespace GUI
             this.colAssetSN.DataPropertyName = "AssetSN";
             this.colAssetSN.HeaderText = "Asset SN";
             this.colAssetSN.Name = "colAssetSN";
+            this.colAssetSN.ReadOnly = true;
             // 
             // colAssetName
             // 
             this.colAssetName.DataPropertyName = "AssetName";
             this.colAssetName.HeaderText = "Asset Name";
             this.colAssetName.Name = "colAssetName";
+            this.colAssetName.ReadOnly = true;
             // 
             // colRequestDate
             // 
             this.colRequestDate.DataPropertyName = "WarrantyDate";
             this.colRequestDate.HeaderText = "Request Date";
             this.colRequestDate.Name = "colRequestDate";
+            this.colRequestDate.ReadOnly = true;
             // 
             // colEmployeeFullName
             // 
             this.colEmployeeFullName.DataPropertyName = "FullName";
             this.colEmployeeFullName.HeaderText = "Employee Full Name";
             this.colEmployeeFullName.Name = "colEmployeeFullName";
+            this.colEmployeeFullName.ReadOnly = true;
             // 
             // colDepartment
             // 
             this.colDepartment.DataPropertyName = "Name";
             this.colDepartment.HeaderText = "Department";
             this.colDepartment.Name = "colDepartment";
+            this.colDepartment.ReadOnly = true;
             // 
             // btnManageRequest
             // 

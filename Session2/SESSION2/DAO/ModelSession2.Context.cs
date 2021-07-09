@@ -44,14 +44,6 @@ namespace DAO
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<SELECT_EM_Result>("SELECT_EM");
         }
     
-        public virtual ObjectResult<AssetOfEmloyee_Result> AssetOfEmloyee(Nullable<long> id)
-        {
-            var idParameter = id.HasValue ?
-                new ObjectParameter("id", id) :
-                new ObjectParameter("id", typeof(long));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<AssetOfEmloyee_Result>("AssetOfEmloyee", idParameter);
-        }
     
         public virtual int SEND_REPORT(Nullable<long> assetID, Nullable<long> priorityID, string decriptionEmergency, string otherConsideration, Nullable<System.DateTime> emReportDate, Nullable<System.DateTime> emStarDate, string emTechnicianNote)
         {
@@ -85,15 +77,7 @@ namespace DAO
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("SEND_REPORT", assetIDParameter, priorityIDParameter, decriptionEmergencyParameter, otherConsiderationParameter, emReportDateParameter, emStarDateParameter, emTechnicianNoteParameter);
         }
-    
-        public virtual ObjectResult<AssetOfEmloyees_Result> AssetOfEmloyees(Nullable<long> id)
-        {
-            var idParameter = id.HasValue ?
-                new ObjectParameter("id", id) :
-                new ObjectParameter("id", typeof(long));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<AssetOfEmloyees_Result>("AssetOfEmloyees", idParameter);
-        }
+
     
         public virtual ObjectResult<Asset_Emloyees_Result> Asset_Emloyees(Nullable<long> id)
         {

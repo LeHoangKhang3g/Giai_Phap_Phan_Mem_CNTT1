@@ -31,14 +31,15 @@ namespace GUI
         {
             this.label1 = new System.Windows.Forms.Label();
             this.dgvAvailableAsset = new System.Windows.Forms.DataGridView();
-            this.btnSendEmergencyMaintenanceRequest = new System.Windows.Forms.Button();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.btnExit = new System.Windows.Forms.Button();
             this.colAssetSN = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colAssetName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colLastClosedEM = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colNumberOfEM = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.departmen = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colAssetID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnSendEmergencyMaintenanceRequest = new System.Windows.Forms.Button();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.btnExit = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAvailableAsset)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -62,11 +63,57 @@ namespace GUI
             this.colAssetName,
             this.colLastClosedEM,
             this.colNumberOfEM,
-            this.departmen});
+            this.departmen,
+            this.colAssetID});
             this.dgvAvailableAsset.Location = new System.Drawing.Point(21, 39);
             this.dgvAvailableAsset.Name = "dgvAvailableAsset";
+            this.dgvAvailableAsset.ReadOnly = true;
             this.dgvAvailableAsset.Size = new System.Drawing.Size(900, 326);
             this.dgvAvailableAsset.TabIndex = 1;
+            // 
+            // colAssetSN
+            // 
+            this.colAssetSN.DataPropertyName = "AssetSN";
+            this.colAssetSN.HeaderText = "Asset SN";
+            this.colAssetSN.Name = "colAssetSN";
+            this.colAssetSN.ReadOnly = true;
+            // 
+            // colAssetName
+            // 
+            this.colAssetName.DataPropertyName = "AssetName";
+            this.colAssetName.HeaderText = "Asset Name";
+            this.colAssetName.Name = "colAssetName";
+            this.colAssetName.ReadOnly = true;
+            // 
+            // colLastClosedEM
+            // 
+            this.colLastClosedEM.DataPropertyName = "LastClosedEM";
+            this.colLastClosedEM.HeaderText = "LastClosedEM";
+            this.colLastClosedEM.Name = "colLastClosedEM";
+            this.colLastClosedEM.ReadOnly = true;
+            // 
+            // colNumberOfEM
+            // 
+            this.colNumberOfEM.DataPropertyName = "NumberOfEMs";
+            this.colNumberOfEM.HeaderText = "NumberOfEM";
+            this.colNumberOfEM.Name = "colNumberOfEM";
+            this.colNumberOfEM.ReadOnly = true;
+            // 
+            // departmen
+            // 
+            this.departmen.DataPropertyName = "Department";
+            this.departmen.HeaderText = "Departmen";
+            this.departmen.Name = "departmen";
+            this.departmen.ReadOnly = true;
+            this.departmen.Visible = false;
+            // 
+            // colAssetID
+            // 
+            this.colAssetID.DataPropertyName = "ID";
+            this.colAssetID.HeaderText = "AssetID";
+            this.colAssetID.Name = "colAssetID";
+            this.colAssetID.ReadOnly = true;
+            this.colAssetID.Visible = false;
             // 
             // btnSendEmergencyMaintenanceRequest
             // 
@@ -106,37 +153,6 @@ namespace GUI
             this.btnExit.UseVisualStyleBackColor = false;
             this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
-            // colAssetSN
-            // 
-            this.colAssetSN.DataPropertyName = "AssetSN";
-            this.colAssetSN.HeaderText = "Asset SN";
-            this.colAssetSN.Name = "colAssetSN";
-            // 
-            // colAssetName
-            // 
-            this.colAssetName.DataPropertyName = "AssetName";
-            this.colAssetName.HeaderText = "Asset Name";
-            this.colAssetName.Name = "colAssetName";
-            // 
-            // colLastClosedEM
-            // 
-            this.colLastClosedEM.DataPropertyName = "LastClosedEM";
-            this.colLastClosedEM.HeaderText = "LastClosedEM";
-            this.colLastClosedEM.Name = "colLastClosedEM";
-            // 
-            // colNumberOfEM
-            // 
-            this.colNumberOfEM.DataPropertyName = "NumberOfEMs";
-            this.colNumberOfEM.HeaderText = "NumberOfEM";
-            this.colNumberOfEM.Name = "colNumberOfEM";
-            // 
-            // departmen
-            // 
-            this.departmen.DataPropertyName = "Department";
-            this.departmen.HeaderText = "Departmen";
-            this.departmen.Name = "departmen";
-            this.departmen.Visible = false;
-            // 
             // frmEM_Management
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -168,5 +184,6 @@ namespace GUI
         private System.Windows.Forms.DataGridViewTextBoxColumn colLastClosedEM;
         private System.Windows.Forms.DataGridViewTextBoxColumn colNumberOfEM;
         private System.Windows.Forms.DataGridViewTextBoxColumn departmen;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colAssetID;
     }
 }

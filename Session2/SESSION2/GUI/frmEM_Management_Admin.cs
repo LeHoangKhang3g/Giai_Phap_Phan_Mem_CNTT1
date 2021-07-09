@@ -39,7 +39,8 @@ namespace GUI
                     _assetName = row.Cells[1].Value.ToString();
                     _department = row.Cells[4].Value.ToString();
                     frmEM_RequestDetails frmRequest = new frmEM_RequestDetails();
-                    frmRequest.Show();
+                    frmRequest.ShowDialog();
+                    dgvListOfRequestingEM.DataSource = _assBUS.GetListEM();
                 }
         }
 

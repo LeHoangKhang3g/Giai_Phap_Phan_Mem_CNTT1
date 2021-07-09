@@ -17,11 +17,13 @@ namespace GUI
         public static string _assetSN;
         public static string _assetName;
         public static string _department;
+        public static long _assetID;
 
         public frmEM_Management()
         {
             InitializeComponent();
             dgvAvailableAsset.AutoGenerateColumns = false;
+
         }
 
         private void btnExit_Click(object sender, EventArgs e)
@@ -39,8 +41,10 @@ namespace GUI
                     _assetSN = row.Cells[0].Value.ToString();
                     _assetName = row.Cells[1].Value.ToString();
                     _department = row.Cells[4].Value.ToString();
+                    _assetID = Convert.ToInt64(row.Cells[5].Value.ToString());
                     frmEM_Request frmRequest = new frmEM_Request();
                     frmRequest.ShowDialog();
+                    dgvAvailableAsset.DataSource = _AssetBus.GetlistAssets(frmLogin.employeeDTO_HienHanh.ID);
                 }
             }
             catch(Exception x)
