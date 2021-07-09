@@ -31,13 +31,21 @@ namespace GUI
 
         private void btnSendEmergencyMaintenanceRequest_Click(object sender, EventArgs e)
         {
-            if (dgvAvailableAsset.Rows.Count > 0)
+            try
             {
-                DataGridViewRow row = dgvAvailableAsset.Rows[dgvAvailableAsset.CurrentCell.RowIndex];
-                _assetSN = row.Cells[0].Value.ToString();
-                _assetName = row.Cells[1].Value.ToString();
-                frmEM_Request frmRequest = new frmEM_Request();
-                frmRequest.Show();
+                if (dgvAvailableAsset.Rows.Count > 0)
+                {
+                    DataGridViewRow row = dgvAvailableAsset.Rows[dgvAvailableAsset.CurrentCell.RowIndex];
+                    _assetSN = row.Cells[0].Value.ToString();
+                    _assetName = row.Cells[1].Value.ToString();
+                    _department = row.Cells[4].Value.ToString();
+                    frmEM_Request frmRequest = new frmEM_Request();
+                    frmRequest.Show();
+                }
+            }
+            catch(Exception x)
+            {
+                return;
             }
         }
 

@@ -13,6 +13,6 @@ namespace DTO
         public string AssetName { get; set; }
         public Nullable<System.DateTime> LastClosedEM { get; set; }
         public int NumberOfEMs { get; set; }
-        public string NameDepartment { get; set; }
+        public string Department { get; set; }
     }
 }

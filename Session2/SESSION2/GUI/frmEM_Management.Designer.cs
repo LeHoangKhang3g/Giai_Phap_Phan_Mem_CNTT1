@@ -38,6 +38,7 @@ namespace GUI
             this.colAssetName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colLastClosedEM = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colNumberOfEM = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Department = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAvailableAsset)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -60,7 +61,8 @@ namespace GUI
             this.colAssetSN,
             this.colAssetName,
             this.colLastClosedEM,
-            this.colNumberOfEM});
+            this.colNumberOfEM,
+            this.Department});
             this.dgvAvailableAsset.Location = new System.Drawing.Point(21, 39);
             this.dgvAvailableAsset.Name = "dgvAvailableAsset";
             this.dgvAvailableAsset.Size = new System.Drawing.Size(900, 326);
@@ -128,6 +130,12 @@ namespace GUI
             this.colNumberOfEM.HeaderText = "NumberOfEM";
             this.colNumberOfEM.Name = "colNumberOfEM";
             // 
+            // Department
+            // 
+            this.Department.DataPropertyName = "Department";
+            this.Department.HeaderText = "Department";
+            this.Department.Name = "Department";
+            // 
             // frmEM_Management
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -158,5 +166,6 @@ namespace GUI
         private System.Windows.Forms.DataGridViewTextBoxColumn colAssetName;
         private System.Windows.Forms.DataGridViewTextBoxColumn colLastClosedEM;
         private System.Windows.Forms.DataGridViewTextBoxColumn colNumberOfEM;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Department;
     }
 }

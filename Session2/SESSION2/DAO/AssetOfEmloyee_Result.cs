@@ -18,5 +18,6 @@ namespace DAO
         public string AssetName { get; set; }
         public Nullable<System.DateTime> Last_Closed_EM { get; set; }
         public Nullable<int> Number_of_EMs { get; set; }
+        public string Department { get; set; }
     }
 }

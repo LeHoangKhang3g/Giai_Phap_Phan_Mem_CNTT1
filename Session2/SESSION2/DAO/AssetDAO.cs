@@ -37,7 +37,7 @@ namespace DAO
         //Lấy danh sách cho nhân viên
         public List<AssetEmloyee> GetlistAssets(long id)
         {
-            return _ss2.AssetOfEmloyee(id).Select(u => new AssetEmloyee { ID = u.ID, AssetName = u.AssetName, AssetSN = u.AssetSN, LastClosedEM = u.Last_Closed_EM.Value, NumberOfEMs = u.Number_of_EMs.Value }).ToList();
+            return _ss2.AssetOfEmloyee(id).Select(u => new AssetEmloyee {Department= u.Department, ID= u.ID, AssetName= u.AssetName, AssetSN= u.AssetSN, LastClosedEM= u.Last_Closed_EM, NumberOfEMs=u.Number_of_EMs.Value}).ToList();
         }
     }
 }
