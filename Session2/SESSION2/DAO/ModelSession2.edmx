@@ -221,6 +221,15 @@
           <Parameter Name="id" Type="bigint" Mode="In" />
         </Function>
         <Function Name="SELECT_EM" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="SEND_REPORT" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="assetID" Type="bigint" Mode="In" />
+          <Parameter Name="priorityID" Type="bigint" Mode="In" />
+          <Parameter Name="decriptionEmergency" Type="nvarchar" Mode="In" />
+          <Parameter Name="otherConsideration" Type="nvarchar" Mode="In" />
+          <Parameter Name="emReportDate" Type="date" Mode="In" />
+          <Parameter Name="emStarDate" Type="date" Mode="In" />
+          <Parameter Name="emTechnicianNote" Type="nvarchar" Mode="In" />
+        </Function>
         <EntityContainer Name="Session2ModelStoreContainer">
           <EntitySet Name="AssetGroups" EntityType="Self.AssetGroups" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Assets" EntityType="Self.Assets" Schema="dbo" store:Type="Tables" />
@@ -554,7 +563,16 @@
           </AssociationSet>
           <FunctionImport Name="SELECT_EM" ReturnType="Collection(Session2Model.SELECT_EM_Result)" />
           <FunctionImport Name="AssetOfEmloyee" ReturnType="Collection(Session2Model.AssetOfEmloyee_Result)">
-            <Parameter Name="id" Mode="In" Type="Int64" />
+          <Parameter Name="id" Mode="In" Type="Int64" />
+          </FunctionImport>
+          <FunctionImport Name="SEND_REPORT">
+            <Parameter Name="assetID" Mode="In" Type="Int64" />
+            <Parameter Name="priorityID" Mode="In" Type="Int64" />
+            <Parameter Name="decriptionEmergency" Mode="In" Type="String" />
+            <Parameter Name="otherConsideration" Mode="In" Type="String" />
+            <Parameter Name="emReportDate" Mode="In" Type="DateTime" />
+            <Parameter Name="emStarDate" Mode="In" Type="DateTime" />
+            <Parameter Name="emTechnicianNote" Mode="In" Type="String" />
           </FunctionImport>
         </EntityContainer>
         <ComplexType Name="SELECT_EM_Result">
@@ -718,6 +736,7 @@
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="SEND_REPORT" FunctionName="Session2Model.Store.SEND_REPORT" />
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>

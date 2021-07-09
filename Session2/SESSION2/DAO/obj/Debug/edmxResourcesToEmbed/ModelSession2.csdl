@@ -282,6 +282,15 @@
     <FunctionImport Name="AssetOfEmloyee" ReturnType="Collection(Session2Model.AssetOfEmloyee_Result)">
       <Parameter Name="id" Mode="In" Type="Int64" />
     </FunctionImport>
+    <FunctionImport Name="SEND_REPORT">
+      <Parameter Name="assetID" Mode="In" Type="Int64" />
+      <Parameter Name="priorityID" Mode="In" Type="Int64" />
+      <Parameter Name="decriptionEmergency" Mode="In" Type="String" />
+      <Parameter Name="otherConsideration" Mode="In" Type="String" />
+      <Parameter Name="emReportDate" Mode="In" Type="DateTime" />
+      <Parameter Name="emStarDate" Mode="In" Type="DateTime" />
+      <Parameter Name="emTechnicianNote" Mode="In" Type="String" />
+    </FunctionImport>
   </EntityContainer>
   <ComplexType Name="SELECT_EM_Result">
     <Property Type="Int64" Name="ID" Nullable="false" />

@@ -216,6 +216,15 @@
     <Parameter Name="id" Type="bigint" Mode="In" />
   </Function>
   <Function Name="SELECT_EM" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="SEND_REPORT" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="assetID" Type="bigint" Mode="In" />
+    <Parameter Name="priorityID" Type="bigint" Mode="In" />
+    <Parameter Name="decriptionEmergency" Type="nvarchar" Mode="In" />
+    <Parameter Name="otherConsideration" Type="nvarchar" Mode="In" />
+    <Parameter Name="emReportDate" Type="date" Mode="In" />
+    <Parameter Name="emStarDate" Type="date" Mode="In" />
+    <Parameter Name="emTechnicianNote" Type="nvarchar" Mode="In" />
+  </Function>
   <EntityContainer Name="Session2ModelStoreContainer">
     <EntitySet Name="AssetGroups" EntityType="Self.AssetGroups" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Assets" EntityType="Self.Assets" Schema="dbo" store:Type="Tables" />

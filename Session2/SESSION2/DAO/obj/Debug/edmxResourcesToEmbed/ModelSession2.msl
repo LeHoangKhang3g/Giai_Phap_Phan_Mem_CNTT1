@@ -140,5 +140,6 @@
         </ComplexTypeMapping>
       </ResultMapping>
     </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SEND_REPORT" FunctionName="Session2Model.Store.SEND_REPORT" />
   </EntityContainerMapping>
 </Mapping>

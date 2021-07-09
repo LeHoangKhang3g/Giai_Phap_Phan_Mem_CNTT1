@@ -52,5 +52,38 @@ namespace DAO
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<AssetOfEmloyee_Result>("AssetOfEmloyee", idParameter);
         }
+    
+        public virtual int SEND_REPORT(Nullable<long> assetID, Nullable<long> priorityID, string decriptionEmergency, string otherConsideration, Nullable<System.DateTime> emReportDate, Nullable<System.DateTime> emStarDate, string emTechnicianNote)
+        {
+            var assetIDParameter = assetID.HasValue ?
+                new ObjectParameter("assetID", assetID) :
+                new ObjectParameter("assetID", typeof(long));
+    
+            var priorityIDParameter = priorityID.HasValue ?
+                new ObjectParameter("priorityID", priorityID) :
+                new ObjectParameter("priorityID", typeof(long));
+    
+            var decriptionEmergencyParameter = decriptionEmergency != null ?
+                new ObjectParameter("decriptionEmergency", decriptionEmergency) :
+                new ObjectParameter("decriptionEmergency", typeof(string));
+    
+            var otherConsiderationParameter = otherConsideration != null ?
+                new ObjectParameter("otherConsideration", otherConsideration) :
+                new ObjectParameter("otherConsideration", typeof(string));
+    
+            var emReportDateParameter = emReportDate.HasValue ?
+                new ObjectParameter("emReportDate", emReportDate) :
+                new ObjectParameter("emReportDate", typeof(System.DateTime));
+    
+            var emStarDateParameter = emStarDate.HasValue ?
+                new ObjectParameter("emStarDate", emStarDate) :
+                new ObjectParameter("emStarDate", typeof(System.DateTime));
+    
+            var emTechnicianNoteParameter = emTechnicianNote != null ?
+                new ObjectParameter("emTechnicianNote", emTechnicianNote) :
+                new ObjectParameter("emTechnicianNote", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("SEND_REPORT", assetIDParameter, priorityIDParameter, decriptionEmergencyParameter, otherConsiderationParameter, emReportDateParameter, emStarDateParameter, emTechnicianNoteParameter);
+        }
     }
 }
