@@ -7,11 +7,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using BUS;
+using DTO;
 namespace GUI
 {
     public partial class frmEM_Management : Form
     {
+        private AssetBUS _AssetBus = new AssetBUS();
         public static string _assetSN;
         public static string _assetName;
         public static string _department;
@@ -19,6 +21,7 @@ namespace GUI
         public frmEM_Management()
         {
             InitializeComponent();
+            dgvAvailableAsset.AutoGenerateColumns = false;
         }
 
         private void btnExit_Click(object sender, EventArgs e)
@@ -36,6 +39,12 @@ namespace GUI
                 frmEM_Request frmRequest = new frmEM_Request();
                 frmRequest.Show();
             }
+        }
+
+        private void frmEM_Management_Load(object sender, EventArgs e)
+        {
+            MessageBox.Show(frmLogin.employeeDTO_HienHanh.ID.ToString());
+            dgvAvailableAsset.DataSource= _AssetBus.GetlistAssets(frmLogin.employeeDTO_HienHanh.ID);
         }
     }
 }

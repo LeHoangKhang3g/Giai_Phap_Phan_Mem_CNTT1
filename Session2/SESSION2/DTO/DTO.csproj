@@ -40,6 +40,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AssetDTO.cs" />
+    <Compile Include="AssetEmloyee.cs" />
     <Compile Include="AssetGroupDTO.cs" />
     <Compile Include="ChangedPartDTO.cs" />
     <Compile Include="DepartmentDTO.cs" />

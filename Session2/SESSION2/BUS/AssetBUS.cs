@@ -19,5 +19,10 @@ namespace BUS
         {
             return _assetDAO.GetListEM();
         }
+        //Lấy danh sách cho nhân viên
+        public List<AssetEmloyee> GetlistAssets(long id)
+        {
+            return _assetDAO.GetlistAssets(id);
+        }
     }
 }

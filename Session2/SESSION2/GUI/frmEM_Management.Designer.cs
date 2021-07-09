@@ -31,13 +31,13 @@ namespace GUI
         {
             this.label1 = new System.Windows.Forms.Label();
             this.dgvAvailableAsset = new System.Windows.Forms.DataGridView();
+            this.btnSendEmergencyMaintenanceRequest = new System.Windows.Forms.Button();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.btnExit = new System.Windows.Forms.Button();
             this.colAssetSN = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colAssetName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colLastClosedEM = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colNumberOfEM = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.btnSendEmergencyMaintenanceRequest = new System.Windows.Forms.Button();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.btnExit = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAvailableAsset)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -65,26 +65,6 @@ namespace GUI
             this.dgvAvailableAsset.Name = "dgvAvailableAsset";
             this.dgvAvailableAsset.Size = new System.Drawing.Size(900, 326);
             this.dgvAvailableAsset.TabIndex = 1;
-            // 
-            // colAssetSN
-            // 
-            this.colAssetSN.HeaderText = "Asset SN";
-            this.colAssetSN.Name = "colAssetSN";
-            // 
-            // colAssetName
-            // 
-            this.colAssetName.HeaderText = "Asset Name";
-            this.colAssetName.Name = "colAssetName";
-            // 
-            // colLastClosedEM
-            // 
-            this.colLastClosedEM.HeaderText = "LastClosedEM";
-            this.colLastClosedEM.Name = "colLastClosedEM";
-            // 
-            // colNumberOfEM
-            // 
-            this.colNumberOfEM.HeaderText = "NumberOfEM";
-            this.colNumberOfEM.Name = "colNumberOfEM";
             // 
             // btnSendEmergencyMaintenanceRequest
             // 
@@ -124,6 +104,30 @@ namespace GUI
             this.btnExit.UseVisualStyleBackColor = false;
             this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
+            // colAssetSN
+            // 
+            this.colAssetSN.DataPropertyName = "AssetSN";
+            this.colAssetSN.HeaderText = "Asset SN";
+            this.colAssetSN.Name = "colAssetSN";
+            // 
+            // colAssetName
+            // 
+            this.colAssetName.DataPropertyName = "AssetName";
+            this.colAssetName.HeaderText = "Asset Name";
+            this.colAssetName.Name = "colAssetName";
+            // 
+            // colLastClosedEM
+            // 
+            this.colLastClosedEM.DataPropertyName = "LastClosedEM";
+            this.colLastClosedEM.HeaderText = "LastClosedEM";
+            this.colLastClosedEM.Name = "colLastClosedEM";
+            // 
+            // colNumberOfEM
+            // 
+            this.colNumberOfEM.DataPropertyName = "NumberOfEMs";
+            this.colNumberOfEM.HeaderText = "NumberOfEM";
+            this.colNumberOfEM.Name = "colNumberOfEM";
+            // 
             // frmEM_Management
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -135,6 +139,7 @@ namespace GUI
             this.Name = "frmEM_Management";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Emergency Maintenance Management";
+            this.Load += new System.EventHandler(this.frmEM_Management_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvAvailableAsset)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
@@ -146,12 +151,12 @@ namespace GUI
 
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridView dgvAvailableAsset;
+        private System.Windows.Forms.Button btnSendEmergencyMaintenanceRequest;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Button btnExit;
         private System.Windows.Forms.DataGridViewTextBoxColumn colAssetSN;
         private System.Windows.Forms.DataGridViewTextBoxColumn colAssetName;
         private System.Windows.Forms.DataGridViewTextBoxColumn colLastClosedEM;
         private System.Windows.Forms.DataGridViewTextBoxColumn colNumberOfEM;
-        private System.Windows.Forms.Button btnSendEmergencyMaintenanceRequest;
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Button btnExit;
     }
 }
