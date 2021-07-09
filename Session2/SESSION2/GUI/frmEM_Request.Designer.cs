@@ -44,9 +44,11 @@ namespace GUI
             this.label4 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.btnSendRequest = new System.Windows.Forms.Button();
-            this.btnCencel = new System.Windows.Forms.Button();
+            this.btnCancel = new System.Windows.Forms.Button();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -58,9 +60,9 @@ namespace GUI
             this.groupBox1.Controls.Add(this.lblAssetName);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(12, 12);
+            this.groupBox1.Location = new System.Drawing.Point(14, 26);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(884, 100);
+            this.groupBox1.Size = new System.Drawing.Size(894, 100);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Selected Asset";
@@ -131,9 +133,9 @@ namespace GUI
             this.groupBox2.Controls.Add(this.label4);
             this.groupBox2.Controls.Add(this.label2);
             this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox2.Location = new System.Drawing.Point(12, 118);
+            this.groupBox2.Location = new System.Drawing.Point(14, 132);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(884, 244);
+            this.groupBox2.Size = new System.Drawing.Size(894, 244);
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Request Report";
@@ -189,40 +191,58 @@ namespace GUI
             // 
             // btnSendRequest
             // 
-            this.btnSendRequest.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSendRequest.Location = new System.Drawing.Point(312, 379);
+            this.btnSendRequest.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(92)))), ((int)(((byte)(185)))));
+            this.btnSendRequest.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSendRequest.ForeColor = System.Drawing.Color.White;
+            this.btnSendRequest.Location = new System.Drawing.Point(314, 393);
             this.btnSendRequest.Name = "btnSendRequest";
             this.btnSendRequest.Size = new System.Drawing.Size(137, 34);
             this.btnSendRequest.TabIndex = 2;
             this.btnSendRequest.Text = "Send Request";
-            this.btnSendRequest.UseVisualStyleBackColor = true;
+            this.btnSendRequest.UseVisualStyleBackColor = false;
+            this.btnSendRequest.Click += new System.EventHandler(this.btnSendRequest_Click);
             // 
-            // btnCencel
+            // btnCancel
             // 
-            this.btnCencel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCencel.Location = new System.Drawing.Point(471, 379);
-            this.btnCencel.Name = "btnCencel";
-            this.btnCencel.Size = new System.Drawing.Size(137, 34);
-            this.btnCencel.TabIndex = 3;
-            this.btnCencel.Text = "Cancel";
-            this.btnCencel.UseVisualStyleBackColor = true;
+            this.btnCancel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(35)))), ((int)(((byte)(26)))));
+            this.btnCancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancel.Location = new System.Drawing.Point(473, 393);
+            this.btnCancel.Name = "btnCancel";
+            this.btnCancel.Size = new System.Drawing.Size(137, 34);
+            this.btnCancel.TabIndex = 3;
+            this.btnCancel.Text = "Cancel";
+            this.btnCancel.UseVisualStyleBackColor = false;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.SystemColors.Control;
+            this.panel1.Controls.Add(this.groupBox1);
+            this.panel1.Controls.Add(this.btnCancel);
+            this.panel1.Controls.Add(this.groupBox2);
+            this.panel1.Controls.Add(this.btnSendRequest);
+            this.panel1.Location = new System.Drawing.Point(12, 12);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(952, 442);
+            this.panel1.TabIndex = 4;
             // 
             // frmEM_Request
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(908, 425);
-            this.Controls.Add(this.btnCencel);
-            this.Controls.Add(this.btnSendRequest);
-            this.Controls.Add(this.groupBox2);
-            this.Controls.Add(this.groupBox1);
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(128)))), ((int)(((byte)(116)))));
+            this.ClientSize = new System.Drawing.Size(976, 465);
+            this.Controls.Add(this.panel1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmEM_Request";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Emergency Maintenance Request";
             this.Load += new System.EventHandler(this.frmEM_Request_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
+            this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -244,6 +264,7 @@ namespace GUI
         private System.Windows.Forms.TextBox txtDescriptionOfEmergency;
         private System.Windows.Forms.ComboBox cbbPriority;
         private System.Windows.Forms.Button btnSendRequest;
-        private System.Windows.Forms.Button btnCencel;
+        private System.Windows.Forms.Button btnCancel;
+        private System.Windows.Forms.Panel panel1;
     }
 }

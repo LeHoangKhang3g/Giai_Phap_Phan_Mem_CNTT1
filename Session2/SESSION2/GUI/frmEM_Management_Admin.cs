@@ -14,9 +14,9 @@ namespace GUI
     public partial class frmEM_Management_Admin : Form
     {
         private AssetBUS _assBUS = new AssetBUS();
-        private static string _assetSN;
-        private static string _assetName;
-        private static string _department;
+        public static string _assetSN;
+        public static string _assetName;
+        public static string _department;
 
         public frmEM_Management_Admin()
         {
@@ -38,23 +38,14 @@ namespace GUI
                     _assetSN = row.Cells[0].Value.ToString();
                     _assetName = row.Cells[1].Value.ToString();
                     _department = row.Cells[4].Value.ToString();
-                    frmEM_Request frmRequest = new frmEM_Request();
+                    frmEM_RequestDetails frmRequest = new frmEM_RequestDetails();
                     frmRequest.Show();
                 }
         }
-        public string getAssetSN()
-        {
-            return _assetSN;
-        }
-        //
-        public string getAssetName()
-        {
-            return _assetName;
-        }
 
-        public string getDepartment()
+        private void btnExit_Click(object sender, EventArgs e)
         {
-            return _department;
+            this.Close();
         }
     }
 }

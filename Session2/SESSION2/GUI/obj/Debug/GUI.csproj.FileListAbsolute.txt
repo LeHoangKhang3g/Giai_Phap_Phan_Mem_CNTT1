@@ -49,3 +49,5 @@ E:\GITHUB\Giai_Phap_Phan_Mem_CNTT1\Session2\SESSION2\GUI\obj\Debug\GUI.Propertie
 E:\GITHUB\Giai_Phap_Phan_Mem_CNTT1\Session2\SESSION2\GUI\obj\Debug\GUI.csproj.GenerateResource.Cache
 E:\GITHUB\Giai_Phap_Phan_Mem_CNTT1\Session2\SESSION2\GUI\obj\Debug\GUI.exe
 E:\GITHUB\Giai_Phap_Phan_Mem_CNTT1\Session2\SESSION2\GUI\obj\Debug\GUI.pdb
+D:\GITHUB\Giai_Phap_Phan_Mem_CNTT1\Session2\SESSION2\GUI\bin\Debug\EntityFramework.xml
+D:\GITHUB\Giai_Phap_Phan_Mem_CNTT1\Session2\SESSION2\GUI\bin\Debug\EntityFramework.SqlServer.xml

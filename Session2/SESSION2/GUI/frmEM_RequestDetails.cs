@@ -28,5 +28,12 @@ namespace GUI
         {
 
         }
+
+        private void frmEM_RequestDetails_Load(object sender, EventArgs e)
+        {
+            lblAssetSN.Text = frmEM_Management_Admin._assetSN;
+            lblAssetName.Text = frmEM_Management_Admin._assetName;
+            lblDepartment.Text = frmEM_Management_Admin._department;
+        }
     }
 }

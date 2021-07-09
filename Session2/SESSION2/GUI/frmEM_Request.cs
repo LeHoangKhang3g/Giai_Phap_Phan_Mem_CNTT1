@@ -20,10 +20,24 @@ namespace GUI
 
         private void frmEM_Request_Load(object sender, EventArgs e)
         {
-            frmEM_Management_Admin frmManagement= new frmEM_Management_Admin();
-            lblAssetSN.Text = frmManagement.getAssetSN();
-            lblAssetName.Text = frmManagement.getAssetName();
-            lblDepartment.Text = frmManagement.getDepartment();
+            lblAssetSN.Text = frmEM_Management._assetSN;
+            lblAssetName.Text = frmEM_Management._assetName;
+            lblDepartment.Text = frmEM_Management._department;
+        }
+
+        private void btnExit_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void btnSendRequest_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
