@@ -38,7 +38,7 @@ namespace GUI
             this.colAssetName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colLastClosedEM = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colNumberOfEM = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Department = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.departmen = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAvailableAsset)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -62,7 +62,7 @@ namespace GUI
             this.colAssetName,
             this.colLastClosedEM,
             this.colNumberOfEM,
-            this.Department});
+            this.departmen});
             this.dgvAvailableAsset.Location = new System.Drawing.Point(21, 39);
             this.dgvAvailableAsset.Name = "dgvAvailableAsset";
             this.dgvAvailableAsset.Size = new System.Drawing.Size(900, 326);
@@ -130,11 +130,12 @@ namespace GUI
             this.colNumberOfEM.HeaderText = "NumberOfEM";
             this.colNumberOfEM.Name = "colNumberOfEM";
             // 
-            // Department
+            // departmen
             // 
-            this.Department.DataPropertyName = "Department";
-            this.Department.HeaderText = "Department";
-            this.Department.Name = "Department";
+            this.departmen.DataPropertyName = "Department";
+            this.departmen.HeaderText = "Departmen";
+            this.departmen.Name = "departmen";
+            this.departmen.Visible = false;
             // 
             // frmEM_Management
             // 
@@ -166,6 +167,6 @@ namespace GUI
         private System.Windows.Forms.DataGridViewTextBoxColumn colAssetName;
         private System.Windows.Forms.DataGridViewTextBoxColumn colLastClosedEM;
         private System.Windows.Forms.DataGridViewTextBoxColumn colNumberOfEM;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Department;
+        private System.Windows.Forms.DataGridViewTextBoxColumn departmen;
     }
 }

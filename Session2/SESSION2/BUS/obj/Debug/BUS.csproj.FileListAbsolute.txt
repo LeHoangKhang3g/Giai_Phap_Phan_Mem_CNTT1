@@ -12,6 +12,8 @@ D:\GITHUB\Giai_Phap_Phan_Mem_CNTT1\Session2\SESSION2\BUS\obj\Debug\BUS.csproj.Co
 D:\GITHUB\Giai_Phap_Phan_Mem_CNTT1\Session2\SESSION2\BUS\obj\Debug\BUS.csproj.CopyComplete
 D:\GITHUB\Giai_Phap_Phan_Mem_CNTT1\Session2\SESSION2\BUS\obj\Debug\BUS.dll
 D:\GITHUB\Giai_Phap_Phan_Mem_CNTT1\Session2\SESSION2\BUS\obj\Debug\BUS.pdb
+E:\GITHUB\Giai_Phap_Phan_Mem_CNTT1\Session2\SESSION2\BUS\bin\Debug\EntityFramework.xml
+E:\GITHUB\Giai_Phap_Phan_Mem_CNTT1\Session2\SESSION2\BUS\obj\Debug\BUS.csprojResolveAssemblyReference.cache
 E:\GITHUB\Giai_Phap_Phan_Mem_CNTT1\Session2\SESSION2\BUS\bin\Debug\BUS.dll
 E:\GITHUB\Giai_Phap_Phan_Mem_CNTT1\Session2\SESSION2\BUS\bin\Debug\BUS.pdb
 E:\GITHUB\Giai_Phap_Phan_Mem_CNTT1\Session2\SESSION2\BUS\bin\Debug\DAO.dll
@@ -19,7 +21,5 @@ E:\GITHUB\Giai_Phap_Phan_Mem_CNTT1\Session2\SESSION2\BUS\bin\Debug\DTO.dll
 E:\GITHUB\Giai_Phap_Phan_Mem_CNTT1\Session2\SESSION2\BUS\bin\Debug\EntityFramework.dll
 E:\GITHUB\Giai_Phap_Phan_Mem_CNTT1\Session2\SESSION2\BUS\bin\Debug\DAO.pdb
 E:\GITHUB\Giai_Phap_Phan_Mem_CNTT1\Session2\SESSION2\BUS\bin\Debug\DTO.pdb
-E:\GITHUB\Giai_Phap_Phan_Mem_CNTT1\Session2\SESSION2\BUS\bin\Debug\EntityFramework.xml
-E:\GITHUB\Giai_Phap_Phan_Mem_CNTT1\Session2\SESSION2\BUS\obj\Debug\BUS.csprojResolveAssemblyReference.cache
 E:\GITHUB\Giai_Phap_Phan_Mem_CNTT1\Session2\SESSION2\BUS\obj\Debug\BUS.dll
 E:\GITHUB\Giai_Phap_Phan_Mem_CNTT1\Session2\SESSION2\BUS\obj\Debug\BUS.pdb

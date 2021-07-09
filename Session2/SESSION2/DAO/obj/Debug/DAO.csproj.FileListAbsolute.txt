@@ -12,6 +12,7 @@ D:\GITHUB\Giai_Phap_Phan_Mem_CNTT1\Session2\SESSION2\DAO\obj\Debug\DAO.csproj.Co
 D:\GITHUB\Giai_Phap_Phan_Mem_CNTT1\Session2\SESSION2\DAO\obj\Debug\DAO.csproj.CopyComplete
 D:\GITHUB\Giai_Phap_Phan_Mem_CNTT1\Session2\SESSION2\DAO\obj\Debug\DAO.dll
 D:\GITHUB\Giai_Phap_Phan_Mem_CNTT1\Session2\SESSION2\DAO\obj\Debug\DAO.pdb
+E:\GITHUB\Giai_Phap_Phan_Mem_CNTT1\Session2\SESSION2\DAO\obj\Debug\DAO.csprojResolveAssemblyReference.cache
 E:\GITHUB\Giai_Phap_Phan_Mem_CNTT1\Session2\SESSION2\DAO\bin\Debug\DAO.dll.config
 E:\GITHUB\Giai_Phap_Phan_Mem_CNTT1\Session2\SESSION2\DAO\bin\Debug\DAO.dll
 E:\GITHUB\Giai_Phap_Phan_Mem_CNTT1\Session2\SESSION2\DAO\bin\Debug\DAO.pdb
@@ -21,6 +22,5 @@ E:\GITHUB\Giai_Phap_Phan_Mem_CNTT1\Session2\SESSION2\DAO\bin\Debug\EntityFramewo
 E:\GITHUB\Giai_Phap_Phan_Mem_CNTT1\Session2\SESSION2\DAO\bin\Debug\DTO.pdb
 E:\GITHUB\Giai_Phap_Phan_Mem_CNTT1\Session2\SESSION2\DAO\bin\Debug\EntityFramework.xml
 E:\GITHUB\Giai_Phap_Phan_Mem_CNTT1\Session2\SESSION2\DAO\bin\Debug\EntityFramework.SqlServer.xml
-E:\GITHUB\Giai_Phap_Phan_Mem_CNTT1\Session2\SESSION2\DAO\obj\Debug\DAO.csprojResolveAssemblyReference.cache
 E:\GITHUB\Giai_Phap_Phan_Mem_CNTT1\Session2\SESSION2\DAO\obj\Debug\DAO.dll
 E:\GITHUB\Giai_Phap_Phan_Mem_CNTT1\Session2\SESSION2\DAO\obj\Debug\DAO.pdb

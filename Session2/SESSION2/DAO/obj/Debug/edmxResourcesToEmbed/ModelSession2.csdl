@@ -291,6 +291,12 @@
       <Parameter Name="emStarDate" Mode="In" Type="DateTime" />
       <Parameter Name="emTechnicianNote" Mode="In" Type="String" />
     </FunctionImport>
+    <FunctionImport Name="AssetOfEmloyees" ReturnType="Collection(Session2Model.AssetOfEmloyees_Result)">
+      <Parameter Name="id" Mode="In" Type="Int64" />
+    </FunctionImport>
+    <FunctionImport Name="Asset_Emloyees" ReturnType="Collection(Session2Model.Asset_Emloyees_Result)">
+      <Parameter Name="id" Mode="In" Type="Int64" />
+    </FunctionImport>
   </EntityContainer>
   <ComplexType Name="SELECT_EM_Result">
     <Property Type="Int64" Name="ID" Nullable="false" />
@@ -307,5 +313,21 @@
     <Property Type="String" Name="AssetName" Nullable="false" MaxLength="150" />
     <Property Type="DateTime" Name="Last_Closed_EM" Nullable="true" />
     <Property Type="Int32" Name="Number_of_EMs" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="AssetOfEmloyees_Result">
+    <Property Type="Int64" Name="ID" Nullable="false" />
+    <Property Type="String" Name="AssetSN" Nullable="false" MaxLength="20" />
+    <Property Type="String" Name="AssetName" Nullable="false" MaxLength="150" />
+    <Property Type="DateTime" Name="Last_Closed_EM" Nullable="true" />
+    <Property Type="Int32" Name="Number_of_EMs" Nullable="true" />
+    <Property Type="Int32" Name="Department" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="Asset_Emloyees_Result">
+    <Property Type="Int64" Name="ID" Nullable="false" />
+    <Property Type="String" Name="AssetSN" Nullable="false" MaxLength="20" />
+    <Property Type="String" Name="AssetName" Nullable="false" MaxLength="150" />
+    <Property Type="DateTime" Name="Last_Closed_EM" Nullable="true" />
+    <Property Type="Int32" Name="Number_of_EMs" Nullable="true" />
+    <Property Type="String" Name="Department" Nullable="true" MaxLength="100" />
   </ComplexType>
 </Schema>

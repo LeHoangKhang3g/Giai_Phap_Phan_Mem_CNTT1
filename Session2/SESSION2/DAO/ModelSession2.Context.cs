@@ -85,5 +85,23 @@ namespace DAO
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("SEND_REPORT", assetIDParameter, priorityIDParameter, decriptionEmergencyParameter, otherConsiderationParameter, emReportDateParameter, emStarDateParameter, emTechnicianNoteParameter);
         }
+    
+        public virtual ObjectResult<AssetOfEmloyees_Result> AssetOfEmloyees(Nullable<long> id)
+        {
+            var idParameter = id.HasValue ?
+                new ObjectParameter("id", id) :
+                new ObjectParameter("id", typeof(long));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<AssetOfEmloyees_Result>("AssetOfEmloyees", idParameter);
+        }
+    
+        public virtual ObjectResult<Asset_Emloyees_Result> Asset_Emloyees(Nullable<long> id)
+        {
+            var idParameter = id.HasValue ?
+                new ObjectParameter("id", id) :
+                new ObjectParameter("id", typeof(long));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Asset_Emloyees_Result>("Asset_Emloyees", idParameter);
+        }
     }
 }

@@ -11,12 +11,13 @@ namespace DAO
 {
     using System;
     
-    public partial class AssetOfEmloyee_Result
+    public partial class AssetOfEmloyees_Result
     {
         public long ID { get; set; }
         public string AssetSN { get; set; }
         public string AssetName { get; set; }
         public Nullable<System.DateTime> Last_Closed_EM { get; set; }
         public Nullable<int> Number_of_EMs { get; set; }
+        public Nullable<int> Department { get; set; }
     }
 }

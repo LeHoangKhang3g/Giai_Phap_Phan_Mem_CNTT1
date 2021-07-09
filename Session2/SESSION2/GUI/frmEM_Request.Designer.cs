@@ -90,7 +90,7 @@ namespace GUI
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(239, 47);
+            this.label5.Location = new System.Drawing.Point(241, 22);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(106, 20);
             this.label5.TabIndex = 4;
@@ -109,7 +109,7 @@ namespace GUI
             // 
             this.lblAssetName.AutoSize = true;
             this.lblAssetName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAssetName.Location = new System.Drawing.Point(351, 47);
+            this.lblAssetName.Location = new System.Drawing.Point(353, 22);
             this.lblAssetName.Name = "lblAssetName";
             this.lblAssetName.Size = new System.Drawing.Size(184, 20);
             this.lblAssetName.TabIndex = 1;

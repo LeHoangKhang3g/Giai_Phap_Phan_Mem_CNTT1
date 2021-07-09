@@ -217,7 +217,10 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Function Name="AssetOfEmloyee" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+        <Function Name="Asset_Emloyees" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="id" Type="bigint" Mode="In" />
+        </Function>
+        <Function Name="AssetOfEmloyees" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="id" Type="bigint" Mode="In" />
         </Function>
         <Function Name="SELECT_EM" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
@@ -574,6 +577,12 @@
             <Parameter Name="emStarDate" Mode="In" Type="DateTime" />
             <Parameter Name="emTechnicianNote" Mode="In" Type="String" />
           </FunctionImport>
+          <FunctionImport Name="AssetOfEmloyees" ReturnType="Collection(Session2Model.AssetOfEmloyees_Result)">
+          <Parameter Name="id" Mode="In" Type="Int64" />
+          </FunctionImport>
+          <FunctionImport Name="Asset_Emloyees" ReturnType="Collection(Session2Model.Asset_Emloyees_Result)">
+            <Parameter Name="id" Mode="In" Type="Int64" />
+          </FunctionImport>
         </EntityContainer>
         <ComplexType Name="SELECT_EM_Result">
           <Property Type="Int64" Name="ID" Nullable="false" />
@@ -590,6 +599,22 @@
           <Property Type="String" Name="AssetName" Nullable="false" MaxLength="150" />
           <Property Type="DateTime" Name="Last_Closed_EM" Nullable="true" />
           <Property Type="Int32" Name="Number_of_EMs" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="AssetOfEmloyees_Result">
+          <Property Type="Int64" Name="ID" Nullable="false" />
+          <Property Type="String" Name="AssetSN" Nullable="false" MaxLength="20" />
+          <Property Type="String" Name="AssetName" Nullable="false" MaxLength="150" />
+          <Property Type="DateTime" Name="Last_Closed_EM" Nullable="true" />
+          <Property Type="Int32" Name="Number_of_EMs" Nullable="true" />
+          <Property Type="Int32" Name="Department" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="Asset_Emloyees_Result">
+          <Property Type="Int64" Name="ID" Nullable="false" />
+          <Property Type="String" Name="AssetSN" Nullable="false" MaxLength="20" />
+          <Property Type="String" Name="AssetName" Nullable="false" MaxLength="150" />
+          <Property Type="DateTime" Name="Last_Closed_EM" Nullable="true" />
+          <Property Type="Int32" Name="Number_of_EMs" Nullable="true" />
+          <Property Type="String" Name="Department" Nullable="true" MaxLength="100" />
         </ComplexType>
       </Schema>
     </edmx:ConceptualModels>
@@ -725,18 +750,31 @@
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>
-          <FunctionImportMapping FunctionImportName="AssetOfEmloyee" FunctionName="Session2Model.Store.AssetOfEmloyee">
+          <FunctionImportMapping FunctionImportName="SEND_REPORT" FunctionName="Session2Model.Store.SEND_REPORT" />
+          <FunctionImportMapping FunctionImportName="AssetOfEmloyees" FunctionName="Session2Model.Store.AssetOfEmloyees">
             <ResultMapping>
-              <ComplexTypeMapping TypeName="Session2Model.AssetOfEmloyee_Result">
+              <ComplexTypeMapping TypeName="Session2Model.AssetOfEmloyees_Result">
                 <ScalarProperty Name="ID" ColumnName="ID" />
                 <ScalarProperty Name="AssetSN" ColumnName="AssetSN" />
                 <ScalarProperty Name="AssetName" ColumnName="AssetName" />
                 <ScalarProperty Name="Last_Closed_EM" ColumnName="Last Closed EM" />
                 <ScalarProperty Name="Number_of_EMs" ColumnName="Number of EMs" />
+                <ScalarProperty Name="Department" ColumnName="Department" />
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>
-          <FunctionImportMapping FunctionImportName="SEND_REPORT" FunctionName="Session2Model.Store.SEND_REPORT" />
+          <FunctionImportMapping FunctionImportName="Asset_Emloyees" FunctionName="Session2Model.Store.Asset_Emloyees">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="Session2Model.Asset_Emloyees_Result">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="AssetSN" ColumnName="AssetSN" />
+                <ScalarProperty Name="AssetName" ColumnName="AssetName" />
+                <ScalarProperty Name="Last_Closed_EM" ColumnName="Last Closed EM" />
+                <ScalarProperty Name="Number_of_EMs" ColumnName="Number of EMs" />
+                <ScalarProperty Name="Department" ColumnName="Department" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>

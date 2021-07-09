@@ -212,7 +212,10 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Function Name="AssetOfEmloyee" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+  <Function Name="Asset_Emloyees" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="id" Type="bigint" Mode="In" />
+  </Function>
+  <Function Name="AssetOfEmloyees" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="id" Type="bigint" Mode="In" />
   </Function>
   <Function Name="SELECT_EM" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />

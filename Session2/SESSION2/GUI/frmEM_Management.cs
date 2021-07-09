@@ -40,7 +40,7 @@ namespace GUI
                     _assetName = row.Cells[1].Value.ToString();
                     _department = row.Cells[4].Value.ToString();
                     frmEM_Request frmRequest = new frmEM_Request();
-                    frmRequest.Show();
+                    frmRequest.ShowDialog();
                 }
             }
             catch(Exception x)
@@ -51,7 +51,6 @@ namespace GUI
 
         private void frmEM_Management_Load(object sender, EventArgs e)
         {
-            MessageBox.Show(frmLogin.employeeDTO_HienHanh.ID.ToString());
             dgvAvailableAsset.DataSource= _AssetBus.GetlistAssets(frmLogin.employeeDTO_HienHanh.ID);
         }
     }
