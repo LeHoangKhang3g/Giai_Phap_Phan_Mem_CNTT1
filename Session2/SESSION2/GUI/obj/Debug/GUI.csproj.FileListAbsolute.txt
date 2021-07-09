@@ -31,12 +31,9 @@ D:\GITHUB\Giai_Phap_Phan_Mem_CNTT1\Session2\SESSION2\GUI\bin\Debug\DTO.dll
 D:\GITHUB\Giai_Phap_Phan_Mem_CNTT1\Session2\SESSION2\GUI\bin\Debug\DAO.dll
 D:\GITHUB\Giai_Phap_Phan_Mem_CNTT1\Session2\SESSION2\GUI\bin\Debug\BUS.pdb
 D:\GITHUB\Giai_Phap_Phan_Mem_CNTT1\Session2\SESSION2\GUI\bin\Debug\DTO.pdb
-D:\GITHUB\Giai_Phap_Phan_Mem_CNTT1\Session2\SESSION2\GUI\bin\Debug\EntityFramework.xml
-D:\GITHUB\Giai_Phap_Phan_Mem_CNTT1\Session2\SESSION2\GUI\bin\Debug\EntityFramework.SqlServer.xml
 D:\GITHUB\Giai_Phap_Phan_Mem_CNTT1\Session2\SESSION2\GUI\bin\Debug\DAO.pdb
 D:\GITHUB\Giai_Phap_Phan_Mem_CNTT1\Session2\SESSION2\GUI\bin\Debug\DAO.dll.config
 D:\GITHUB\Giai_Phap_Phan_Mem_CNTT1\Session2\SESSION2\GUI\obj\Debug\GUI.csproj.AssemblyReference.cache
-D:\GITHUB\Giai_Phap_Phan_Mem_CNTT1\Session2\SESSION2\GUI\obj\Debug\GUI.frmEMManagement.resources
 D:\GITHUB\Giai_Phap_Phan_Mem_CNTT1\Session2\SESSION2\GUI\obj\Debug\GUI.frmEM_Request.resources
 D:\GITHUB\Giai_Phap_Phan_Mem_CNTT1\Session2\SESSION2\GUI\obj\Debug\GUI.frmEM_RequestDetails.resources
 D:\GITHUB\Giai_Phap_Phan_Mem_CNTT1\Session2\SESSION2\GUI\obj\Debug\GUI.frmLogin.resources
@@ -49,3 +46,5 @@ D:\GITHUB\Giai_Phap_Phan_Mem_CNTT1\Session2\SESSION2\GUI\obj\Debug\GUI.pdb
 E:\GITHUB\Giai_Phap_Phan_Mem_CNTT1_\Session2\SESSION2\GUI\bin\Debug\GUI.exe.config
 E:\GITHUB\Giai_Phap_Phan_Mem_CNTT1_\Session2\SESSION2\GUI\obj\Debug\GUI.exe
 E:\GITHUB\Giai_Phap_Phan_Mem_CNTT1_\Session2\SESSION2\GUI\obj\Debug\GUI.pdb
+D:\GITHUB\Giai_Phap_Phan_Mem_CNTT1\Session2\SESSION2\GUI\obj\Debug\GUI.frmEM_Management.resources
+D:\GITHUB\Giai_Phap_Phan_Mem_CNTT1\Session2\SESSION2\GUI\obj\Debug\GUI.frmEM_Management_Admin.resources
