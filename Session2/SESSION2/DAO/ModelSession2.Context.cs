@@ -43,5 +43,14 @@ namespace DAO
         {
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<SELECT_EM_Result>("SELECT_EM");
         }
+    
+        public virtual ObjectResult<AssetOfEmloyee_Result> AssetOfEmloyee(Nullable<long> id)
+        {
+            var idParameter = id.HasValue ?
+                new ObjectParameter("id", id) :
+                new ObjectParameter("id", typeof(long));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<AssetOfEmloyee_Result>("AssetOfEmloyee", idParameter);
+        }
     }
 }

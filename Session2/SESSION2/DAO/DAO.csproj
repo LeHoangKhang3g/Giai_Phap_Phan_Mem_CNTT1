@@ -55,6 +55,9 @@
       <DependentUpon>ModelSession2.tt</DependentUpon>
     </Compile>
     <Compile Include="AssetGroupDAO.cs" />
+    <Compile Include="AssetOfEmloyee_Result.cs">
+      <DependentUpon>ModelSession2.tt</DependentUpon>
+    </Compile>
     <Compile Include="ChangedPart.cs">
       <DependentUpon>ModelSession2.tt</DependentUpon>
     </Compile>

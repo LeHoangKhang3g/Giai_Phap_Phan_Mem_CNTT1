@@ -279,6 +279,9 @@
       <End Role="EmergencyMaintenances" EntitySet="EmergencyMaintenances" />
     </AssociationSet>
     <FunctionImport Name="SELECT_EM" ReturnType="Collection(Session2Model.SELECT_EM_Result)" />
+    <FunctionImport Name="AssetOfEmloyee" ReturnType="Collection(Session2Model.AssetOfEmloyee_Result)">
+      <Parameter Name="id" Mode="In" Type="Int64" />
+    </FunctionImport>
   </EntityContainer>
   <ComplexType Name="SELECT_EM_Result">
     <Property Type="Int64" Name="ID" Nullable="false" />
@@ -288,5 +291,12 @@
     <Property Type="String" Name="FirstName" Nullable="false" MaxLength="50" />
     <Property Type="String" Name="LastName" Nullable="false" MaxLength="50" />
     <Property Type="String" Name="Name" Nullable="false" MaxLength="100" />
+  </ComplexType>
+  <ComplexType Name="AssetOfEmloyee_Result">
+    <Property Type="Int64" Name="ID" Nullable="false" />
+    <Property Type="String" Name="AssetSN" Nullable="false" MaxLength="20" />
+    <Property Type="String" Name="AssetName" Nullable="false" MaxLength="150" />
+    <Property Type="DateTime" Name="Last_Closed_EM" Nullable="true" />
+    <Property Type="Int32" Name="Number_of_EMs" Nullable="true" />
   </ComplexType>
 </Schema>

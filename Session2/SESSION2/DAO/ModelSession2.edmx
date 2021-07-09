@@ -217,6 +217,9 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Function Name="AssetOfEmloyee" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="id" Type="bigint" Mode="In" />
+        </Function>
         <Function Name="SELECT_EM" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
         <EntityContainer Name="Session2ModelStoreContainer">
           <EntitySet Name="AssetGroups" EntityType="Self.AssetGroups" Schema="dbo" store:Type="Tables" />
@@ -550,6 +553,9 @@
             <End Role="EmergencyMaintenances" EntitySet="EmergencyMaintenances" />
           </AssociationSet>
           <FunctionImport Name="SELECT_EM" ReturnType="Collection(Session2Model.SELECT_EM_Result)" />
+          <FunctionImport Name="AssetOfEmloyee" ReturnType="Collection(Session2Model.AssetOfEmloyee_Result)">
+            <Parameter Name="id" Mode="In" Type="Int64" />
+          </FunctionImport>
         </EntityContainer>
         <ComplexType Name="SELECT_EM_Result">
           <Property Type="Int64" Name="ID" Nullable="false" />
@@ -559,6 +565,13 @@
           <Property Type="String" Name="FirstName" Nullable="false" MaxLength="50" />
           <Property Type="String" Name="LastName" Nullable="false" MaxLength="50" />
           <Property Type="String" Name="Name" Nullable="false" MaxLength="100" />
+        </ComplexType>
+        <ComplexType Name="AssetOfEmloyee_Result">
+          <Property Type="Int64" Name="ID" Nullable="false" />
+          <Property Type="String" Name="AssetSN" Nullable="false" MaxLength="20" />
+          <Property Type="String" Name="AssetName" Nullable="false" MaxLength="150" />
+          <Property Type="DateTime" Name="Last_Closed_EM" Nullable="true" />
+          <Property Type="Int32" Name="Number_of_EMs" Nullable="true" />
         </ComplexType>
       </Schema>
     </edmx:ConceptualModels>
@@ -691,6 +704,17 @@
                 <ScalarProperty Name="FirstName" ColumnName="FirstName" />
                 <ScalarProperty Name="LastName" ColumnName="LastName" />
                 <ScalarProperty Name="Name" ColumnName="Name" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="AssetOfEmloyee" FunctionName="Session2Model.Store.AssetOfEmloyee">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="Session2Model.AssetOfEmloyee_Result">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="AssetSN" ColumnName="AssetSN" />
+                <ScalarProperty Name="AssetName" ColumnName="AssetName" />
+                <ScalarProperty Name="Last_Closed_EM" ColumnName="Last Closed EM" />
+                <ScalarProperty Name="Number_of_EMs" ColumnName="Number of EMs" />
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>
