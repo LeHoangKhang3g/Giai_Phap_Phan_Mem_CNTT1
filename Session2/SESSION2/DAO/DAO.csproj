@@ -55,6 +55,12 @@
       <DependentUpon>ModelSession2.tt</DependentUpon>
     </Compile>
     <Compile Include="AssetGroupDAO.cs" />
+    <Compile Include="AssetOfEmloyees_Result.cs">
+      <DependentUpon>ModelSession2.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AssetOfEmloyee_Result.cs">
+      <DependentUpon>ModelSession2.tt</DependentUpon>
+    </Compile>
     <Compile Include="Asset_Emloyees_Result.cs">
       <DependentUpon>ModelSession2.tt</DependentUpon>
     </Compile>
@@ -79,6 +85,9 @@
       <DependentUpon>ModelSession2.tt</DependentUpon>
     </Compile>
     <Compile Include="EmployeeDAO.cs" />
+    <Compile Include="GetAllChangedPart_Result.cs">
+      <DependentUpon>ModelSession2.tt</DependentUpon>
+    </Compile>
     <Compile Include="Location.cs">
       <DependentUpon>ModelSession2.tt</DependentUpon>
     </Compile>
@@ -107,6 +116,9 @@
     </Compile>
     <Compile Include="PriorityDAO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SELECT_ALL_EM_Result.cs">
+      <DependentUpon>ModelSession2.tt</DependentUpon>
+    </Compile>
     <Compile Include="SELECT_EM_Result.cs">
       <DependentUpon>ModelSession2.tt</DependentUpon>
     </Compile>

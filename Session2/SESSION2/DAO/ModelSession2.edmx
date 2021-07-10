@@ -223,6 +223,21 @@
         <Function Name="AssetOfEmloyees" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="id" Type="bigint" Mode="In" />
         </Function>
+        <Function Name="CLEAR_CHANGEDPART" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="emegencyMaintenanceID" Type="bigint" Mode="In" />
+        </Function>
+        <Function Name="DeletePart" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="id" Type="bigint" Mode="In" />
+        </Function>
+        <Function Name="GetAllChangedPart" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="id" Type="bigint" Mode="In" />
+        </Function>
+        <Function Name="INSERT_CHANGEDPART" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="emegencyMaintenanceID" Type="bigint" Mode="In" />
+          <Parameter Name="partID" Type="bigint" Mode="In" />
+          <Parameter Name="amount" Type="decimal" Mode="In" />
+        </Function>
+        <Function Name="SELECT_ALL_EM" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
         <Function Name="SELECT_EM" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
         <Function Name="SEND_REPORT" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="assetID" Type="bigint" Mode="In" />
@@ -231,6 +246,12 @@
           <Parameter Name="otherConsideration" Type="nvarchar" Mode="In" />
           <Parameter Name="emReportDate" Type="date" Mode="In" />
           <Parameter Name="emStarDate" Type="date" Mode="In" />
+          <Parameter Name="emTechnicianNote" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="UPDATE_REPORT" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="ID" Type="bigint" Mode="In" />
+          <Parameter Name="emStarDate" Type="date" Mode="In" />
+          <Parameter Name="emEndDate" Type="date" Mode="In" />
           <Parameter Name="emTechnicianNote" Type="nvarchar" Mode="In" />
         </Function>
         <EntityContainer Name="Session2ModelStoreContainer">
@@ -581,7 +602,28 @@
           <Parameter Name="id" Mode="In" Type="Int64" />
           </FunctionImport>
           <FunctionImport Name="Asset_Emloyees" ReturnType="Collection(Session2Model.Asset_Emloyees_Result)">
-            <Parameter Name="id" Mode="In" Type="Int64" />
+          <Parameter Name="id" Mode="In" Type="Int64" />
+          </FunctionImport>
+          <FunctionImport Name="SELECT_ALL_EM" ReturnType="Collection(Session2Model.SELECT_ALL_EM_Result)" />
+          <FunctionImport Name="CLEAR_CHANGEDPART">
+          <Parameter Name="emegencyMaintenanceID" Mode="In" Type="Int64" />
+          </FunctionImport>
+          <FunctionImport Name="INSERT_CHANGEDPART">
+            <Parameter Name="emegencyMaintenanceID" Mode="In" Type="Int64" />
+            <Parameter Name="partID" Mode="In" Type="Int64" />
+            <Parameter Name="amount" Mode="In" Type="Decimal" />
+          </FunctionImport>
+          <FunctionImport Name="UPDATE_REPORT">
+            <Parameter Name="ID" Mode="In" Type="Int64" />
+            <Parameter Name="emStarDate" Mode="In" Type="DateTime" />
+            <Parameter Name="emEndDate" Mode="In" Type="DateTime" />
+            <Parameter Name="emTechnicianNote" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="GetAllChangedPart" ReturnType="Collection(Session2Model.GetAllChangedPart_Result)">
+          <Parameter Name="id" Mode="In" Type="Int64" />
+          </FunctionImport>
+          <FunctionImport Name="DeletePart">
+          <Parameter Name="id" Mode="In" Type="Int64" />
           </FunctionImport>
         </EntityContainer>
         <ComplexType Name="SELECT_EM_Result">
@@ -615,6 +657,19 @@
           <Property Type="DateTime" Name="Last_Closed_EM" Nullable="true" />
           <Property Type="Int32" Name="Number_of_EMs" Nullable="true" />
           <Property Type="String" Name="Department" Nullable="true" MaxLength="100" />
+        </ComplexType>
+        <ComplexType Name="SELECT_ALL_EM_Result">
+          <Property Type="Int64" Name="ID" Nullable="false" />
+          <Property Type="String" Name="AssetSN" Nullable="false" MaxLength="20" />
+          <Property Type="String" Name="AssetName" Nullable="false" MaxLength="150" />
+          <Property Type="DateTime" Name="EMReportDate" Nullable="false" />
+          <Property Type="String" Name="Employee_Full_Name" Nullable="true" MaxLength="101" />
+          <Property Type="String" Name="Department" Nullable="true" MaxLength="100" />
+        </ComplexType>
+        <ComplexType Name="GetAllChangedPart_Result">
+          <Property Type="Int64" Name="ID" Nullable="false" />
+          <Property Type="String" Name="Name" Nullable="false" MaxLength="50" />
+          <Property Type="Decimal" Name="Amount" Nullable="false" Precision="18" Scale="2" />
         </ComplexType>
       </Schema>
     </edmx:ConceptualModels>
@@ -775,6 +830,31 @@
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="SELECT_ALL_EM" FunctionName="Session2Model.Store.SELECT_ALL_EM">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="Session2Model.SELECT_ALL_EM_Result">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="AssetSN" ColumnName="AssetSN" />
+                <ScalarProperty Name="AssetName" ColumnName="AssetName" />
+                <ScalarProperty Name="EMReportDate" ColumnName="EMReportDate" />
+                <ScalarProperty Name="Employee_Full_Name" ColumnName="Employee Full Name" />
+                <ScalarProperty Name="Department" ColumnName="Department" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="CLEAR_CHANGEDPART" FunctionName="Session2Model.Store.CLEAR_CHANGEDPART" />
+          <FunctionImportMapping FunctionImportName="INSERT_CHANGEDPART" FunctionName="Session2Model.Store.INSERT_CHANGEDPART" />
+          <FunctionImportMapping FunctionImportName="UPDATE_REPORT" FunctionName="Session2Model.Store.UPDATE_REPORT" />
+          <FunctionImportMapping FunctionImportName="GetAllChangedPart" FunctionName="Session2Model.Store.GetAllChangedPart">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="Session2Model.GetAllChangedPart_Result">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Amount" ColumnName="Amount" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="DeletePart" FunctionName="Session2Model.Store.DeletePart" />
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>

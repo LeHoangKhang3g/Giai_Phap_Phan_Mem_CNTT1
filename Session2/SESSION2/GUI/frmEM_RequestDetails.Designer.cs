@@ -45,9 +45,6 @@ namespace GUI
             this.label2 = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.dgvParts = new System.Windows.Forms.DataGridView();
-            this.colPartName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colAmount = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colAction = new System.Windows.Forms.DataGridViewButtonColumn();
             this.button1 = new System.Windows.Forms.Button();
             this.txtAmount = new System.Windows.Forms.TextBox();
             this.cbbPartName = new System.Windows.Forms.ComboBox();
@@ -56,6 +53,10 @@ namespace GUI
             this.btnCancel = new System.Windows.Forms.Button();
             this.btnSubmit = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.colPartName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colAmount = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Action = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -224,26 +225,13 @@ namespace GUI
             this.dgvParts.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.colPartName,
             this.colAmount,
-            this.colAction});
+            this.Action,
+            this.ID});
             this.dgvParts.Location = new System.Drawing.Point(15, 74);
             this.dgvParts.Name = "dgvParts";
             this.dgvParts.Size = new System.Drawing.Size(919, 115);
             this.dgvParts.TabIndex = 16;
-            // 
-            // colPartName
-            // 
-            this.colPartName.HeaderText = "Part name";
-            this.colPartName.Name = "colPartName";
-            // 
-            // colAmount
-            // 
-            this.colAmount.HeaderText = "Amount";
-            this.colAmount.Name = "colAmount";
-            // 
-            // colAction
-            // 
-            this.colAction.HeaderText = "Action";
-            this.colAction.Name = "colAction";
+            this.dgvParts.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvParts_CellContentClick);
             // 
             // button1
             // 
@@ -253,6 +241,7 @@ namespace GUI
             this.button1.TabIndex = 15;
             this.button1.Text = "+ Add to list";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // txtAmount
             // 
@@ -260,9 +249,11 @@ namespace GUI
             this.txtAmount.Name = "txtAmount";
             this.txtAmount.Size = new System.Drawing.Size(225, 26);
             this.txtAmount.TabIndex = 14;
+            this.txtAmount.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtAmount_KeyPress);
             // 
             // cbbPartName
             // 
+            this.cbbPartName.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbbPartName.FormattingEnabled = true;
             this.cbbPartName.Location = new System.Drawing.Point(111, 26);
             this.cbbPartName.Name = "cbbPartName";
@@ -325,6 +316,32 @@ namespace GUI
             this.panel1.Size = new System.Drawing.Size(1012, 591);
             this.panel1.TabIndex = 18;
             // 
+            // colPartName
+            // 
+            this.colPartName.DataPropertyName = "Name";
+            this.colPartName.HeaderText = "Part name";
+            this.colPartName.Name = "colPartName";
+            // 
+            // colAmount
+            // 
+            this.colAmount.DataPropertyName = "Amount";
+            this.colAmount.HeaderText = "Amount";
+            this.colAmount.Name = "colAmount";
+            // 
+            // Action
+            // 
+            this.Action.HeaderText = "Action";
+            this.Action.Name = "Action";
+            this.Action.Text = "Delete";
+            this.Action.UseColumnTextForButtonValue = true;
+            // 
+            // ID
+            // 
+            this.ID.DataPropertyName = "ID";
+            this.ID.HeaderText = "ID";
+            this.ID.Name = "ID";
+            this.ID.Visible = false;
+            // 
             // frmEM_RequestDetails
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -374,9 +391,10 @@ namespace GUI
         private System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.Button btnSubmit;
         private System.Windows.Forms.DataGridView dgvParts;
+        private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.DataGridViewTextBoxColumn colPartName;
         private System.Windows.Forms.DataGridViewTextBoxColumn colAmount;
-        private System.Windows.Forms.DataGridViewButtonColumn colAction;
-        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.DataGridViewButtonColumn Action;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ID;
     }
 }

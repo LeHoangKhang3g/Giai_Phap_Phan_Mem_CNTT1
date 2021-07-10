@@ -31,14 +31,15 @@ namespace GUI
         {
             this.label1 = new System.Windows.Forms.Label();
             this.dgvListOfRequestingEM = new System.Windows.Forms.DataGridView();
+            this.btnManageRequest = new System.Windows.Forms.Button();
+            this.btnExit = new System.Windows.Forms.Button();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.colAssetSN = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colAssetName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colRequestDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colEmployeeFullName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colDepartment = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.btnManageRequest = new System.Windows.Forms.Button();
-            this.btnExit = new System.Windows.Forms.Button();
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvListOfRequestingEM)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -61,47 +62,13 @@ namespace GUI
             this.colAssetName,
             this.colRequestDate,
             this.colEmployeeFullName,
-            this.colDepartment});
+            this.colDepartment,
+            this.ID});
             this.dgvListOfRequestingEM.Location = new System.Drawing.Point(16, 40);
             this.dgvListOfRequestingEM.Name = "dgvListOfRequestingEM";
             this.dgvListOfRequestingEM.ReadOnly = true;
             this.dgvListOfRequestingEM.Size = new System.Drawing.Size(821, 319);
             this.dgvListOfRequestingEM.TabIndex = 1;
-            // 
-            // colAssetSN
-            // 
-            this.colAssetSN.DataPropertyName = "AssetSN";
-            this.colAssetSN.HeaderText = "Asset SN";
-            this.colAssetSN.Name = "colAssetSN";
-            this.colAssetSN.ReadOnly = true;
-            // 
-            // colAssetName
-            // 
-            this.colAssetName.DataPropertyName = "AssetName";
-            this.colAssetName.HeaderText = "Asset Name";
-            this.colAssetName.Name = "colAssetName";
-            this.colAssetName.ReadOnly = true;
-            // 
-            // colRequestDate
-            // 
-            this.colRequestDate.DataPropertyName = "WarrantyDate";
-            this.colRequestDate.HeaderText = "Request Date";
-            this.colRequestDate.Name = "colRequestDate";
-            this.colRequestDate.ReadOnly = true;
-            // 
-            // colEmployeeFullName
-            // 
-            this.colEmployeeFullName.DataPropertyName = "FullName";
-            this.colEmployeeFullName.HeaderText = "Employee Full Name";
-            this.colEmployeeFullName.Name = "colEmployeeFullName";
-            this.colEmployeeFullName.ReadOnly = true;
-            // 
-            // colDepartment
-            // 
-            this.colDepartment.DataPropertyName = "Name";
-            this.colDepartment.HeaderText = "Department";
-            this.colDepartment.Name = "colDepartment";
-            this.colDepartment.ReadOnly = true;
             // 
             // btnManageRequest
             // 
@@ -139,6 +106,49 @@ namespace GUI
             this.panel1.Size = new System.Drawing.Size(871, 423);
             this.panel1.TabIndex = 4;
             // 
+            // colAssetSN
+            // 
+            this.colAssetSN.DataPropertyName = "AssetSN";
+            this.colAssetSN.HeaderText = "Asset SN";
+            this.colAssetSN.Name = "colAssetSN";
+            this.colAssetSN.ReadOnly = true;
+            // 
+            // colAssetName
+            // 
+            this.colAssetName.DataPropertyName = "AssetName";
+            this.colAssetName.HeaderText = "Asset Name";
+            this.colAssetName.Name = "colAssetName";
+            this.colAssetName.ReadOnly = true;
+            // 
+            // colRequestDate
+            // 
+            this.colRequestDate.DataPropertyName = "ReportDate";
+            this.colRequestDate.HeaderText = "Request Date";
+            this.colRequestDate.Name = "colRequestDate";
+            this.colRequestDate.ReadOnly = true;
+            // 
+            // colEmployeeFullName
+            // 
+            this.colEmployeeFullName.DataPropertyName = "FullName";
+            this.colEmployeeFullName.HeaderText = "Employee Full Name";
+            this.colEmployeeFullName.Name = "colEmployeeFullName";
+            this.colEmployeeFullName.ReadOnly = true;
+            // 
+            // colDepartment
+            // 
+            this.colDepartment.DataPropertyName = "Department";
+            this.colDepartment.HeaderText = "Department";
+            this.colDepartment.Name = "colDepartment";
+            this.colDepartment.ReadOnly = true;
+            // 
+            // ID
+            // 
+            this.ID.DataPropertyName = "ID";
+            this.ID.HeaderText = "ID";
+            this.ID.Name = "ID";
+            this.ID.ReadOnly = true;
+            this.ID.Visible = false;
+            // 
             // frmEM_Management_Admin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -163,12 +173,13 @@ namespace GUI
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridView dgvListOfRequestingEM;
         private System.Windows.Forms.Button btnManageRequest;
+        private System.Windows.Forms.Button btnExit;
+        private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.DataGridViewTextBoxColumn colAssetSN;
         private System.Windows.Forms.DataGridViewTextBoxColumn colAssetName;
         private System.Windows.Forms.DataGridViewTextBoxColumn colRequestDate;
         private System.Windows.Forms.DataGridViewTextBoxColumn colEmployeeFullName;
         private System.Windows.Forms.DataGridViewTextBoxColumn colDepartment;
-        private System.Windows.Forms.Button btnExit;
-        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ID;
     }
 }

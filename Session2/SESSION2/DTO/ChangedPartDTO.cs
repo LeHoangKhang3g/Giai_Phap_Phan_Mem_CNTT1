@@ -9,8 +9,7 @@ namespace DTO
     public class ChangedPartDTO
     {
         public long ID { get; set; }
-        public long EmergencyMaintenanceID { get; set; }
-        public long PartID { get; set; }
+        public string Name { get; set; }
         public decimal Amount { get; set; }
     }
 }

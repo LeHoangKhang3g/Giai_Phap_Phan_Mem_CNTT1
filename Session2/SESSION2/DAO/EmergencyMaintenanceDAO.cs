@@ -24,5 +24,11 @@ namespace DAO
                 return false;
             }
         }
+
+        public bool UpdateEM(long id, DateTime startDate, DateTime endDate, string text)
+        {
+            int kq = _ss2.UPDATE_REPORT(id, startDate, endDate, text);
+            return kq > 0;
+        }
     }
 }

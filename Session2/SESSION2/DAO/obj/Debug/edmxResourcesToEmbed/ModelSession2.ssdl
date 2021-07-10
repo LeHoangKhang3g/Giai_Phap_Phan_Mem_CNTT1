@@ -218,6 +218,21 @@
   <Function Name="AssetOfEmloyees" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="id" Type="bigint" Mode="In" />
   </Function>
+  <Function Name="CLEAR_CHANGEDPART" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="emegencyMaintenanceID" Type="bigint" Mode="In" />
+  </Function>
+  <Function Name="DeletePart" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="id" Type="bigint" Mode="In" />
+  </Function>
+  <Function Name="GetAllChangedPart" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="id" Type="bigint" Mode="In" />
+  </Function>
+  <Function Name="INSERT_CHANGEDPART" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="emegencyMaintenanceID" Type="bigint" Mode="In" />
+    <Parameter Name="partID" Type="bigint" Mode="In" />
+    <Parameter Name="amount" Type="decimal" Mode="In" />
+  </Function>
+  <Function Name="SELECT_ALL_EM" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
   <Function Name="SELECT_EM" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
   <Function Name="SEND_REPORT" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="assetID" Type="bigint" Mode="In" />
@@ -226,6 +241,12 @@
     <Parameter Name="otherConsideration" Type="nvarchar" Mode="In" />
     <Parameter Name="emReportDate" Type="date" Mode="In" />
     <Parameter Name="emStarDate" Type="date" Mode="In" />
+    <Parameter Name="emTechnicianNote" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="UPDATE_REPORT" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ID" Type="bigint" Mode="In" />
+    <Parameter Name="emStarDate" Type="date" Mode="In" />
+    <Parameter Name="emEndDate" Type="date" Mode="In" />
     <Parameter Name="emTechnicianNote" Type="nvarchar" Mode="In" />
   </Function>
   <EntityContainer Name="Session2ModelStoreContainer">

@@ -297,6 +297,27 @@
     <FunctionImport Name="Asset_Emloyees" ReturnType="Collection(Session2Model.Asset_Emloyees_Result)">
       <Parameter Name="id" Mode="In" Type="Int64" />
     </FunctionImport>
+    <FunctionImport Name="SELECT_ALL_EM" ReturnType="Collection(Session2Model.SELECT_ALL_EM_Result)" />
+    <FunctionImport Name="CLEAR_CHANGEDPART">
+      <Parameter Name="emegencyMaintenanceID" Mode="In" Type="Int64" />
+    </FunctionImport>
+    <FunctionImport Name="INSERT_CHANGEDPART">
+      <Parameter Name="emegencyMaintenanceID" Mode="In" Type="Int64" />
+      <Parameter Name="partID" Mode="In" Type="Int64" />
+      <Parameter Name="amount" Mode="In" Type="Decimal" />
+    </FunctionImport>
+    <FunctionImport Name="UPDATE_REPORT">
+      <Parameter Name="ID" Mode="In" Type="Int64" />
+      <Parameter Name="emStarDate" Mode="In" Type="DateTime" />
+      <Parameter Name="emEndDate" Mode="In" Type="DateTime" />
+      <Parameter Name="emTechnicianNote" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="GetAllChangedPart" ReturnType="Collection(Session2Model.GetAllChangedPart_Result)">
+      <Parameter Name="id" Mode="In" Type="Int64" />
+    </FunctionImport>
+    <FunctionImport Name="DeletePart">
+      <Parameter Name="id" Mode="In" Type="Int64" />
+    </FunctionImport>
   </EntityContainer>
   <ComplexType Name="SELECT_EM_Result">
     <Property Type="Int64" Name="ID" Nullable="false" />
@@ -329,5 +350,18 @@
     <Property Type="DateTime" Name="Last_Closed_EM" Nullable="true" />
     <Property Type="Int32" Name="Number_of_EMs" Nullable="true" />
     <Property Type="String" Name="Department" Nullable="true" MaxLength="100" />
+  </ComplexType>
+  <ComplexType Name="SELECT_ALL_EM_Result">
+    <Property Type="Int64" Name="ID" Nullable="false" />
+    <Property Type="String" Name="AssetSN" Nullable="false" MaxLength="20" />
+    <Property Type="String" Name="AssetName" Nullable="false" MaxLength="150" />
+    <Property Type="DateTime" Name="EMReportDate" Nullable="false" />
+    <Property Type="String" Name="Employee_Full_Name" Nullable="true" MaxLength="101" />
+    <Property Type="String" Name="Department" Nullable="true" MaxLength="100" />
+  </ComplexType>
+  <ComplexType Name="GetAllChangedPart_Result">
+    <Property Type="Int64" Name="ID" Nullable="false" />
+    <Property Type="String" Name="Name" Nullable="false" MaxLength="50" />
+    <Property Type="Decimal" Name="Amount" Nullable="false" Precision="18" Scale="2" />
   </ComplexType>
 </Schema>

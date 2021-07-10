@@ -8,18 +8,11 @@ namespace DTO
 {
     public class EM
     {
-        private string fullName;
         public long ID { get; set; }
         public string AssetSN { get; set; }
         public string AssetName { get; set; }
-        public Nullable<System.DateTime> WarrantyDate { get; set; }
-        public string FullName
-        {
-            get { if (String.IsNullOrEmpty(fullName) == true) fullName = FirstName + " " + LastName; return fullName; }
-            set { fullName = value; }
-        }
-        public string FirstName { get; set; }
-        public string LastName { get; set; }
-        public string Name { get; set; }
+        public Nullable<System.DateTime> ReportDate { get; set; }
+        public string FullName { get; set; }
+        public string Department { get; set; }
     }
 }

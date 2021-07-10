@@ -44,6 +44,14 @@ namespace DAO
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<SELECT_EM_Result>("SELECT_EM");
         }
     
+        public virtual ObjectResult<AssetOfEmloyee_Result> AssetOfEmloyee(Nullable<long> id)
+        {
+            var idParameter = id.HasValue ?
+                new ObjectParameter("id", id) :
+                new ObjectParameter("id", typeof(long));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<AssetOfEmloyee_Result>("AssetOfEmloyee", idParameter);
+        }
     
         public virtual int SEND_REPORT(Nullable<long> assetID, Nullable<long> priorityID, string decriptionEmergency, string otherConsideration, Nullable<System.DateTime> emReportDate, Nullable<System.DateTime> emStarDate, string emTechnicianNote)
         {
@@ -77,7 +85,15 @@ namespace DAO
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("SEND_REPORT", assetIDParameter, priorityIDParameter, decriptionEmergencyParameter, otherConsiderationParameter, emReportDateParameter, emStarDateParameter, emTechnicianNoteParameter);
         }
-
+    
+        public virtual ObjectResult<AssetOfEmloyees_Result> AssetOfEmloyees(Nullable<long> id)
+        {
+            var idParameter = id.HasValue ?
+                new ObjectParameter("id", id) :
+                new ObjectParameter("id", typeof(long));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<AssetOfEmloyees_Result>("AssetOfEmloyees", idParameter);
+        }
     
         public virtual ObjectResult<Asset_Emloyees_Result> Asset_Emloyees(Nullable<long> id)
         {
@@ -86,6 +102,76 @@ namespace DAO
                 new ObjectParameter("id", typeof(long));
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Asset_Emloyees_Result>("Asset_Emloyees", idParameter);
+        }
+    
+        public virtual ObjectResult<SELECT_ALL_EM_Result> SELECT_ALL_EM()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<SELECT_ALL_EM_Result>("SELECT_ALL_EM");
+        }
+    
+        public virtual int CLEAR_CHANGEDPART(Nullable<long> emegencyMaintenanceID)
+        {
+            var emegencyMaintenanceIDParameter = emegencyMaintenanceID.HasValue ?
+                new ObjectParameter("emegencyMaintenanceID", emegencyMaintenanceID) :
+                new ObjectParameter("emegencyMaintenanceID", typeof(long));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("CLEAR_CHANGEDPART", emegencyMaintenanceIDParameter);
+        }
+    
+        public virtual int INSERT_CHANGEDPART(Nullable<long> emegencyMaintenanceID, Nullable<long> partID, Nullable<decimal> amount)
+        {
+            var emegencyMaintenanceIDParameter = emegencyMaintenanceID.HasValue ?
+                new ObjectParameter("emegencyMaintenanceID", emegencyMaintenanceID) :
+                new ObjectParameter("emegencyMaintenanceID", typeof(long));
+    
+            var partIDParameter = partID.HasValue ?
+                new ObjectParameter("partID", partID) :
+                new ObjectParameter("partID", typeof(long));
+    
+            var amountParameter = amount.HasValue ?
+                new ObjectParameter("amount", amount) :
+                new ObjectParameter("amount", typeof(decimal));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("INSERT_CHANGEDPART", emegencyMaintenanceIDParameter, partIDParameter, amountParameter);
+        }
+    
+        public virtual int UPDATE_REPORT(Nullable<long> iD, Nullable<System.DateTime> emStarDate, Nullable<System.DateTime> emEndDate, string emTechnicianNote)
+        {
+            var iDParameter = iD.HasValue ?
+                new ObjectParameter("ID", iD) :
+                new ObjectParameter("ID", typeof(long));
+    
+            var emStarDateParameter = emStarDate.HasValue ?
+                new ObjectParameter("emStarDate", emStarDate) :
+                new ObjectParameter("emStarDate", typeof(System.DateTime));
+    
+            var emEndDateParameter = emEndDate.HasValue ?
+                new ObjectParameter("emEndDate", emEndDate) :
+                new ObjectParameter("emEndDate", typeof(System.DateTime));
+    
+            var emTechnicianNoteParameter = emTechnicianNote != null ?
+                new ObjectParameter("emTechnicianNote", emTechnicianNote) :
+                new ObjectParameter("emTechnicianNote", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("UPDATE_REPORT", iDParameter, emStarDateParameter, emEndDateParameter, emTechnicianNoteParameter);
+        }
+    
+        public virtual ObjectResult<GetAllChangedPart_Result> GetAllChangedPart(Nullable<long> id)
+        {
+            var idParameter = id.HasValue ?
+                new ObjectParameter("id", id) :
+                new ObjectParameter("id", typeof(long));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<GetAllChangedPart_Result>("GetAllChangedPart", idParameter);
+        }
+    
+        public virtual int DeletePart(Nullable<long> id)
+        {
+            var idParameter = id.HasValue ?
+                new ObjectParameter("id", id) :
+                new ObjectParameter("id", typeof(long));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("DeletePart", idParameter);
         }
     }
 }

@@ -31,7 +31,7 @@ namespace DAO
         //Lấy danh sách EM cho frmEm_Management
         public List<EM> GetListEM()
         {
-            return _ss2.SELECT_EM().Select(u => new EM { AssetSN = u.ASSETSN, AssetName = u.ASSETNAME, WarrantyDate = u.WarrantyDate, FirstName = u.FirstName, LastName = u.LastName, Name = u.Name }).ToList();
+            return _ss2.SELECT_ALL_EM().Select(u => new EM {ID= u.ID, AssetName= u.AssetName, AssetSN= u.AssetSN, Department= u.Department, FullName= u.Employee_Full_Name, ReportDate= u.EMReportDate}).ToList();
         }
 
         //Lấy danh sách cho nhân viên

@@ -17,6 +17,7 @@ namespace GUI
         public static string _assetSN;
         public static string _assetName;
         public static string _department;
+        public static long _id;
 
         public frmEM_Management_Admin()
         {
@@ -38,6 +39,7 @@ namespace GUI
                     _assetSN = row.Cells[0].Value.ToString();
                     _assetName = row.Cells[1].Value.ToString();
                     _department = row.Cells[4].Value.ToString();
+                    _id = Int64.Parse(row.Cells[5].Value.ToString());
                     frmEM_RequestDetails frmRequest = new frmEM_RequestDetails();
                     frmRequest.ShowDialog();
                     dgvListOfRequestingEM.DataSource = _assBUS.GetListEM();

@@ -154,5 +154,30 @@
         </ComplexTypeMapping>
       </ResultMapping>
     </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SELECT_ALL_EM" FunctionName="Session2Model.Store.SELECT_ALL_EM">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Session2Model.SELECT_ALL_EM_Result">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="AssetSN" ColumnName="AssetSN" />
+          <ScalarProperty Name="AssetName" ColumnName="AssetName" />
+          <ScalarProperty Name="EMReportDate" ColumnName="EMReportDate" />
+          <ScalarProperty Name="Employee_Full_Name" ColumnName="Employee Full Name" />
+          <ScalarProperty Name="Department" ColumnName="Department" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="CLEAR_CHANGEDPART" FunctionName="Session2Model.Store.CLEAR_CHANGEDPART" />
+    <FunctionImportMapping FunctionImportName="INSERT_CHANGEDPART" FunctionName="Session2Model.Store.INSERT_CHANGEDPART" />
+    <FunctionImportMapping FunctionImportName="UPDATE_REPORT" FunctionName="Session2Model.Store.UPDATE_REPORT" />
+    <FunctionImportMapping FunctionImportName="GetAllChangedPart" FunctionName="Session2Model.Store.GetAllChangedPart">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Session2Model.GetAllChangedPart_Result">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Amount" ColumnName="Amount" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="DeletePart" FunctionName="Session2Model.Store.DeletePart" />
   </EntityContainerMapping>
 </Mapping>

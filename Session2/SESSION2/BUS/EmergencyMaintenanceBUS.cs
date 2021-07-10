@@ -16,5 +16,10 @@ namespace BUS
         {
             return _emergencyMaintenance.AddEM_Request(assetID, priorityID, decriptionEmergency, otherConsiderations);
         }
+
+        public bool UpdateEM(long id, DateTime startDate, DateTime endDate, string text)
+        {
+            return _emergencyMaintenance.UpdateEM(id, startDate, endDate, text);
+        }
     }
 }
