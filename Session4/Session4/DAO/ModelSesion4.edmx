@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="Session4Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="Session4Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="OrderItems">
           <Key>
             <PropertyRef Name="ID" />
@@ -139,6 +139,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Function Name="All_Activities" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
         <EntityContainer Name="Session4ModelStoreContainer">
           <EntitySet Name="OrderItems" EntityType="Self.OrderItems" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Orders" EntityType="Self.Orders" Schema="dbo" store:Type="Tables" />
@@ -172,8 +173,7 @@
             <End Role="OrderItems" EntitySet="OrderItems" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="Session4Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -355,7 +355,37 @@
             <End Role="TransactionTypes" EntitySet="TransactionTypes" />
             <End Role="Orders" EntitySet="Orders" />
           </AssociationSet>
+          <FunctionImport Name="AllActivities" ReturnType="Collection(Session4Model.AllActivities_Result)" />
+          <FunctionImport Name="SelectAllActivities" ReturnType="Collection(Session4Model.SelectAllActivities_Result)" />
+          <FunctionImport Name="All_Activities" ReturnType="Collection(Session4Model.All_Activities_Result)" />
         </EntityContainer>
+        <ComplexType Name="AllActivities_Result">
+          <Property Type="Int64" Name="ID" Nullable="false" />
+          <Property Type="String" Name="Part_Name" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="Transaction_Type" Nullable="false" MaxLength="50" />
+          <Property Type="DateTime" Name="Transaction_Date" Nullable="false" />
+          <Property Type="Decimal" Name="Amount" Nullable="false" Precision="18" Scale="2" />
+          <Property Type="Int64" Name="SourceWarehouseID" Nullable="true" />
+          <Property Type="Int64" Name="DestinationWarehouseID" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="SelectAllActivities_Result">
+          <Property Type="Int64" Name="ID" Nullable="false" />
+          <Property Type="String" Name="Part_Name" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="Transaction_Type" Nullable="false" MaxLength="50" />
+          <Property Type="DateTime" Name="Transaction_Date" Nullable="false" />
+          <Property Type="Decimal" Name="Amount" Nullable="false" Precision="18" Scale="2" />
+          <Property Type="String" Name="Source_Warehouse" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="Source_Warehouse1" Nullable="true" MaxLength="50" />
+        </ComplexType>
+        <ComplexType Name="All_Activities_Result">
+          <Property Type="Int64" Name="ID" Nullable="false" />
+          <Property Type="String" Name="Part_Name" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="Transaction_Type" Nullable="false" MaxLength="50" />
+          <Property Type="DateTime" Name="Transaction_Date" Nullable="false" />
+          <Property Type="Decimal" Name="Amount" Nullable="false" Precision="18" Scale="2" />
+          <Property Type="String" Name="Source_Warehouse" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="Destination_Warehouse" Nullable="true" MaxLength="50" />
+        </ComplexType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -431,7 +461,20 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-        </EntityContainerMapping>
+          <FunctionImportMapping FunctionImportName="All_Activities" FunctionName="Session4Model.Store.All_Activities">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="Session4Model.All_Activities_Result">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Part_Name" ColumnName="Part Name" />
+                <ScalarProperty Name="Transaction_Type" ColumnName="Transaction Type" />
+                <ScalarProperty Name="Transaction_Date" ColumnName="Transaction Date" />
+                <ScalarProperty Name="Amount" ColumnName="Amount" />
+                <ScalarProperty Name="Source_Warehouse" ColumnName="Source Warehouse" />
+                <ScalarProperty Name="Destination_Warehouse" ColumnName="Destination Warehouse" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>
   </edmx:Runtime>

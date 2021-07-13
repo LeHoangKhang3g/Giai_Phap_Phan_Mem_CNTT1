@@ -12,6 +12,8 @@ namespace DAO
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
+    using System.Data.Entity.Core.Objects;
+    using System.Linq;
     
     public partial class Session4Entities : DbContext
     {
@@ -32,5 +34,20 @@ namespace DAO
         public virtual DbSet<sysdiagram> sysdiagrams { get; set; }
         public virtual DbSet<TransactionType> TransactionTypes { get; set; }
         public virtual DbSet<Warehouse> Warehouses { get; set; }
+    
+        public virtual ObjectResult<AllActivities_Result> AllActivities()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<AllActivities_Result>("AllActivities");
+        }
+    
+        public virtual ObjectResult<SelectAllActivities_Result> SelectAllActivities()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<SelectAllActivities_Result>("SelectAllActivities");
+        }
+    
+        public virtual ObjectResult<All_Activities_Result> All_Activities()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<All_Activities_Result>("All_Activities");
+        }
     }
 }

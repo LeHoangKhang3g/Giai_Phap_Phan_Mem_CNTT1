@@ -70,5 +70,18 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="All_Activities" FunctionName="Session4Model.Store.All_Activities">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Session4Model.All_Activities_Result">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Part_Name" ColumnName="Part Name" />
+          <ScalarProperty Name="Transaction_Type" ColumnName="Transaction Type" />
+          <ScalarProperty Name="Transaction_Date" ColumnName="Transaction Date" />
+          <ScalarProperty Name="Amount" ColumnName="Amount" />
+          <ScalarProperty Name="Source_Warehouse" ColumnName="Source Warehouse" />
+          <ScalarProperty Name="Destination_Warehouse" ColumnName="Destination Warehouse" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
   </EntityContainerMapping>
 </Mapping>

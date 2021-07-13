@@ -67,17 +67,19 @@ namespace GUI
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.label1);
-            this.panel1.Location = new System.Drawing.Point(13, 12);
+            this.panel1.Location = new System.Drawing.Point(12, 10);
+            this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1175, 602);
+            this.panel1.Size = new System.Drawing.Size(1044, 482);
             this.panel1.TabIndex = 1;
             // 
             // btnSubmit
             // 
             this.btnSubmit.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSubmit.Location = new System.Drawing.Point(409, 544);
+            this.btnSubmit.Location = new System.Drawing.Point(362, 418);
+            this.btnSubmit.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnSubmit.Name = "btnSubmit";
-            this.btnSubmit.Size = new System.Drawing.Size(175, 28);
+            this.btnSubmit.Size = new System.Drawing.Size(156, 45);
             this.btnSubmit.TabIndex = 15;
             this.btnSubmit.Text = "Submit";
             this.btnSubmit.UseVisualStyleBackColor = true;
@@ -85,9 +87,10 @@ namespace GUI
             // btnCancel
             // 
             this.btnCancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCancel.Location = new System.Drawing.Point(612, 544);
+            this.btnCancel.Location = new System.Drawing.Point(546, 418);
+            this.btnCancel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(175, 28);
+            this.btnCancel.Size = new System.Drawing.Size(156, 45);
             this.btnCancel.TabIndex = 16;
             this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = true;
@@ -102,9 +105,11 @@ namespace GUI
             this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.cboPartName);
             this.groupBox1.Controls.Add(this.label4);
-            this.groupBox1.Location = new System.Drawing.Point(27, 164);
+            this.groupBox1.Location = new System.Drawing.Point(24, 131);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(1119, 354);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.groupBox1.Size = new System.Drawing.Size(995, 283);
             this.groupBox1.TabIndex = 6;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Parts List";
@@ -118,10 +123,11 @@ namespace GUI
             this.colBatchNumber,
             this.colAmount,
             this.colAction});
-            this.dgvPartsList.Location = new System.Drawing.Point(25, 73);
+            this.dgvPartsList.Location = new System.Drawing.Point(22, 58);
+            this.dgvPartsList.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dgvPartsList.Name = "dgvPartsList";
             this.dgvPartsList.ReadOnly = true;
-            this.dgvPartsList.Size = new System.Drawing.Size(1079, 248);
+            this.dgvPartsList.Size = new System.Drawing.Size(959, 198);
             this.dgvPartsList.TabIndex = 14;
             // 
             // colPartName
@@ -150,122 +156,129 @@ namespace GUI
             // 
             // btnAddToList
             // 
-            this.btnAddToList.Location = new System.Drawing.Point(913, 35);
+            this.btnAddToList.Location = new System.Drawing.Point(812, 28);
+            this.btnAddToList.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnAddToList.Name = "btnAddToList";
-            this.btnAddToList.Size = new System.Drawing.Size(175, 28);
+            this.btnAddToList.Size = new System.Drawing.Size(156, 22);
             this.btnAddToList.TabIndex = 13;
             this.btnAddToList.Text = "+  Add to list";
             this.btnAddToList.UseVisualStyleBackColor = true;
             // 
             // txtAmount
             // 
-            this.txtAmount.Location = new System.Drawing.Point(718, 36);
+            this.txtAmount.Location = new System.Drawing.Point(638, 29);
+            this.txtAmount.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtAmount.Name = "txtAmount";
-            this.txtAmount.Size = new System.Drawing.Size(159, 26);
+            this.txtAmount.Size = new System.Drawing.Size(142, 23);
             this.txtAmount.TabIndex = 12;
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(641, 39);
+            this.label6.Location = new System.Drawing.Point(570, 31);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(71, 20);
+            this.label6.Size = new System.Drawing.Size(60, 17);
             this.label6.TabIndex = 11;
             this.label6.Text = "Amount:";
             // 
             // cboBatchNumber
             // 
             this.cboBatchNumber.FormattingEnabled = true;
-            this.cboBatchNumber.Location = new System.Drawing.Point(446, 36);
+            this.cboBatchNumber.Location = new System.Drawing.Point(396, 29);
+            this.cboBatchNumber.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cboBatchNumber.Name = "cboBatchNumber";
-            this.cboBatchNumber.Size = new System.Drawing.Size(167, 28);
+            this.cboBatchNumber.Size = new System.Drawing.Size(149, 24);
             this.cboBatchNumber.TabIndex = 10;
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(306, 39);
+            this.label5.Location = new System.Drawing.Point(272, 31);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(122, 20);
+            this.label5.Size = new System.Drawing.Size(102, 17);
             this.label5.TabIndex = 9;
             this.label5.Text = "Batch Number:";
             // 
             // cboPartName
             // 
             this.cboPartName.FormattingEnabled = true;
-            this.cboPartName.Location = new System.Drawing.Point(121, 36);
+            this.cboPartName.Location = new System.Drawing.Point(108, 29);
+            this.cboPartName.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cboPartName.Name = "cboPartName";
-            this.cboPartName.Size = new System.Drawing.Size(167, 28);
+            this.cboPartName.Size = new System.Drawing.Size(149, 24);
             this.cboPartName.TabIndex = 8;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(21, 39);
+            this.label4.Location = new System.Drawing.Point(19, 31);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(94, 20);
+            this.label4.Size = new System.Drawing.Size(79, 17);
             this.label4.TabIndex = 7;
             this.label4.Text = "Part Name:";
             // 
             // dtpDate
             // 
-            this.dtpDate.Location = new System.Drawing.Point(91, 113);
+            this.dtpDate.Location = new System.Drawing.Point(81, 90);
+            this.dtpDate.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dtpDate.Name = "dtpDate";
-            this.dtpDate.Size = new System.Drawing.Size(329, 26);
+            this.dtpDate.Size = new System.Drawing.Size(293, 23);
             this.dtpDate.TabIndex = 5;
             // 
             // cboWarehouse
             // 
             this.cboWarehouse.FormattingEnabled = true;
-            this.cboWarehouse.Location = new System.Drawing.Point(511, 65);
+            this.cboWarehouse.Location = new System.Drawing.Point(454, 52);
+            this.cboWarehouse.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cboWarehouse.Name = "cboWarehouse";
-            this.cboWarehouse.Size = new System.Drawing.Size(393, 28);
+            this.cboWarehouse.Size = new System.Drawing.Size(350, 24);
             this.cboWarehouse.TabIndex = 4;
             // 
             // cboSupplier
             // 
             this.cboSupplier.FormattingEnabled = true;
-            this.cboSupplier.Location = new System.Drawing.Point(27, 65);
+            this.cboSupplier.Location = new System.Drawing.Point(24, 52);
+            this.cboSupplier.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cboSupplier.Name = "cboSupplier";
-            this.cboSupplier.Size = new System.Drawing.Size(393, 28);
+            this.cboSupplier.Size = new System.Drawing.Size(350, 24);
             this.cboSupplier.TabIndex = 3;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(23, 118);
+            this.label3.Location = new System.Drawing.Point(20, 94);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(50, 20);
+            this.label3.Size = new System.Drawing.Size(42, 17);
             this.label3.TabIndex = 2;
             this.label3.Text = "Date:";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(507, 33);
+            this.label2.Location = new System.Drawing.Point(451, 26);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(99, 20);
+            this.label2.Size = new System.Drawing.Size(85, 17);
             this.label2.TabIndex = 1;
             this.label2.Text = "Warehouse:";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(23, 33);
+            this.label1.Location = new System.Drawing.Point(20, 26);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(75, 20);
+            this.label1.Size = new System.Drawing.Size(64, 17);
             this.label1.TabIndex = 0;
             this.label1.Text = "Supplier:";
             // 
             // frmPurchaseOrderManagement
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1200, 628);
+            this.ClientSize = new System.Drawing.Size(1067, 502);
             this.Controls.Add(this.panel1);
-            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "frmPurchaseOrderManagement";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Purchase Order Management";

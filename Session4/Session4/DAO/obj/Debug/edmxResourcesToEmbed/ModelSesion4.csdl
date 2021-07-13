@@ -178,5 +178,35 @@
       <End Role="TransactionTypes" EntitySet="TransactionTypes" />
       <End Role="Orders" EntitySet="Orders" />
     </AssociationSet>
+    <FunctionImport Name="AllActivities" ReturnType="Collection(Session4Model.AllActivities_Result)" />
+    <FunctionImport Name="SelectAllActivities" ReturnType="Collection(Session4Model.SelectAllActivities_Result)" />
+    <FunctionImport Name="All_Activities" ReturnType="Collection(Session4Model.All_Activities_Result)" />
   </EntityContainer>
+  <ComplexType Name="AllActivities_Result">
+    <Property Type="Int64" Name="ID" Nullable="false" />
+    <Property Type="String" Name="Part_Name" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="Transaction_Type" Nullable="false" MaxLength="50" />
+    <Property Type="DateTime" Name="Transaction_Date" Nullable="false" />
+    <Property Type="Decimal" Name="Amount" Nullable="false" Precision="18" Scale="2" />
+    <Property Type="Int64" Name="SourceWarehouseID" Nullable="true" />
+    <Property Type="Int64" Name="DestinationWarehouseID" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="SelectAllActivities_Result">
+    <Property Type="Int64" Name="ID" Nullable="false" />
+    <Property Type="String" Name="Part_Name" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="Transaction_Type" Nullable="false" MaxLength="50" />
+    <Property Type="DateTime" Name="Transaction_Date" Nullable="false" />
+    <Property Type="Decimal" Name="Amount" Nullable="false" Precision="18" Scale="2" />
+    <Property Type="String" Name="Source_Warehouse" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Source_Warehouse1" Nullable="true" MaxLength="50" />
+  </ComplexType>
+  <ComplexType Name="All_Activities_Result">
+    <Property Type="Int64" Name="ID" Nullable="false" />
+    <Property Type="String" Name="Part_Name" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="Transaction_Type" Nullable="false" MaxLength="50" />
+    <Property Type="DateTime" Name="Transaction_Date" Nullable="false" />
+    <Property Type="Decimal" Name="Amount" Nullable="false" Precision="18" Scale="2" />
+    <Property Type="String" Name="Source_Warehouse" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Destination_Warehouse" Nullable="true" MaxLength="50" />
+  </ComplexType>
 </Schema>
