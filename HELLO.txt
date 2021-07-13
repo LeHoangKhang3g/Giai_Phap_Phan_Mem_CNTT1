@@ -1,4 +1,4 @@
-ALTER PROC UPDATE_REPORT(@ID bigint,@emStarDate date,@emEndDate date,@emTechnicianNote nvarchar(200)) 
+CREATE PROC UPDATE_REPORT(@ID bigint,@emStarDate date,@emEndDate date,@emTechnicianNote nvarchar(200)) 
 AS
 BEGIN
     UPDATE EmergencyMaintenances

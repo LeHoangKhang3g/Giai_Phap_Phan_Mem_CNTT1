@@ -19,18 +19,17 @@ namespace GUI
             InitializeComponent();
         }
 
-<<<<<<< HEAD
         private void frmInventoryManagement_Load(object sender, EventArgs e)
         {
             dgvPurchaseOrderManagement.AutoGenerateColumns = false;
             dgvPurchaseOrderManagement.DataSource = _part.GetAllActivities();
         }
 
-=======
+
         private void purchaseOrderManagementToolStripMenuItem_Click(object sender, EventArgs e)
         {
             
         }
->>>>>>> db78376bce4b0b1990e67b4bfbebdeb80419bb62
+
     }
 }
