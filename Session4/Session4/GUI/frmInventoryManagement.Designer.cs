@@ -65,6 +65,7 @@ namespace GUI
             this.purchaseOrderManagementToolStripMenuItem.Name = "purchaseOrderManagementToolStripMenuItem";
             this.purchaseOrderManagementToolStripMenuItem.Size = new System.Drawing.Size(247, 27);
             this.purchaseOrderManagementToolStripMenuItem.Text = "Purchase Order Management";
+            this.purchaseOrderManagementToolStripMenuItem.Click += new System.EventHandler(this.purchaseOrderManagementToolStripMenuItem_Click);
             // 
             // warehouseManagementToolStripMenuItem
             // 
@@ -156,9 +157,11 @@ namespace GUI
             this.Controls.Add(this.dgvPurchaseOrderManagement);
             this.Controls.Add(this.menuStrip1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MainMenuStrip = this.menuStrip1;
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "frmInventoryManagement";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Inventory Management";
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();

@@ -64,6 +64,12 @@
     <Compile Include="frmInventoryReport.Designer.cs">
       <DependentUpon>frmInventoryReport.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmPurchaseOrderManagement.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPurchaseOrderManagement.Designer.cs">
+      <DependentUpon>frmPurchaseOrderManagement.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmWarehouseManagement.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -77,6 +83,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmInventoryReport.resx">
       <DependentUpon>frmInventoryReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmPurchaseOrderManagement.resx">
+      <DependentUpon>frmPurchaseOrderManagement.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmWarehouseManagement.resx">
       <DependentUpon>frmWarehouseManagement.cs</DependentUpon>

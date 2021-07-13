@@ -10,16 +10,11 @@ using System.Windows.Forms;
 
 namespace GUI
 {
-    public partial class frmInventoryManagement : Form
+    public partial class frmPurchaseOrderManagement : Form
     {
-        public frmInventoryManagement()
+        public frmPurchaseOrderManagement()
         {
             InitializeComponent();
-        }
-
-        private void purchaseOrderManagementToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            
         }
     }
 }
