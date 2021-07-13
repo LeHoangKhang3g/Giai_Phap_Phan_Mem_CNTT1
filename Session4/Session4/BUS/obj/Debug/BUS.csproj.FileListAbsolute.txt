@@ -1,0 +1,5 @@
+E:\GITHUB\Giai_Phap_Phan_Mem_CNTT1\Session4\Session4\BUS\bin\Debug\BUS.dll
+E:\GITHUB\Giai_Phap_Phan_Mem_CNTT1\Session4\Session4\BUS\bin\Debug\BUS.pdb
+E:\GITHUB\Giai_Phap_Phan_Mem_CNTT1\Session4\Session4\BUS\obj\Debug\BUS.csprojResolveAssemblyReference.cache
+E:\GITHUB\Giai_Phap_Phan_Mem_CNTT1\Session4\Session4\BUS\obj\Debug\BUS.dll
+E:\GITHUB\Giai_Phap_Phan_Mem_CNTT1\Session4\Session4\BUS\obj\Debug\BUS.pdb
