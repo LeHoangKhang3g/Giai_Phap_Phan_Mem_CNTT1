@@ -19,3 +19,4 @@ E:\GITHUB\Giai_Phap_Phan_Mem_CNTT1\Session4\Session4\GUI\obj\Debug\GUI.Propertie
 E:\GITHUB\Giai_Phap_Phan_Mem_CNTT1\Session4\Session4\GUI\obj\Debug\GUI.csproj.GenerateResource.Cache
 E:\GITHUB\Giai_Phap_Phan_Mem_CNTT1\Session4\Session4\GUI\obj\Debug\GUI.exe
 E:\GITHUB\Giai_Phap_Phan_Mem_CNTT1\Session4\Session4\GUI\obj\Debug\GUI.pdb
+E:\GITHUB\Giai_Phap_Phan_Mem_CNTT1\Session4\Session4\GUI\obj\Debug\GUI.frmPurchaseOrderManagement.resources

@@ -8,3 +8,4 @@ E:\GITHUB\Giai_Phap_Phan_Mem_CNTT1\Session2\SESSION2\DTO\bin\Debug\DTO.dll
 E:\GITHUB\Giai_Phap_Phan_Mem_CNTT1\Session2\SESSION2\DTO\bin\Debug\DTO.pdb
 E:\GITHUB\Giai_Phap_Phan_Mem_CNTT1\Session2\SESSION2\DTO\obj\Debug\DTO.dll
 E:\GITHUB\Giai_Phap_Phan_Mem_CNTT1\Session2\SESSION2\DTO\obj\Debug\DTO.pdb
+E:\GITHUB\Giai_Phap_Phan_Mem_CNTT1\Session2\SESSION2\DTO\obj\Debug\DTO.csprojResolveAssemblyReference.cache
