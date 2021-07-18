@@ -83,5 +83,8 @@
         </ComplexTypeMapping>
       </ResultMapping>
     </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="CURRENT_STOCK" FunctionName="Session4Model.Store.CURRENT_STOCK" />
+    <FunctionImportMapping FunctionImportName="OUT_OF_STOCK" FunctionName="Session4Model.Store.OUT_OF_STOCK" />
+    <FunctionImportMapping FunctionImportName="RECEIVED_STOCK" FunctionName="Session4Model.Store.RECEIVED_STOCK" />
   </EntityContainerMapping>
 </Mapping>

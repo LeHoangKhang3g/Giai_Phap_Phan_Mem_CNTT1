@@ -86,6 +86,7 @@
     <Compile Include="Supplier.cs">
       <DependentUpon>ModelSesion4.tt</DependentUpon>
     </Compile>
+    <Compile Include="SuppliersDAO.cs" />
     <Compile Include="sysdiagram.cs">
       <DependentUpon>ModelSesion4.tt</DependentUpon>
     </Compile>
@@ -95,6 +96,7 @@
     <Compile Include="Warehouse.cs">
       <DependentUpon>ModelSesion4.tt</DependentUpon>
     </Compile>
+    <Compile Include="WarehouseDAO.cs" />
   </ItemGroup>
   <ItemGroup>
     <EntityDeploy Include="ModelSesion4.edmx">

@@ -102,6 +102,7 @@ namespace GUI
             this.dgvPurchaseOrderManagement.ReadOnly = true;
             this.dgvPurchaseOrderManagement.Size = new System.Drawing.Size(984, 530);
             this.dgvPurchaseOrderManagement.TabIndex = 1;
+            this.dgvPurchaseOrderManagement.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dgvPurchaseOrderManagement_CellFormatting);
             // 
             // ID
             // 
@@ -114,6 +115,7 @@ namespace GUI
             // colPartName
             // 
             this.colPartName.DataPropertyName = "Part_Name";
+            this.colPartName.FillWeight = 129.9346F;
             this.colPartName.HeaderText = "Part Name";
             this.colPartName.Name = "colPartName";
             this.colPartName.ReadOnly = true;
@@ -121,6 +123,7 @@ namespace GUI
             // colTransactionType
             // 
             this.colTransactionType.DataPropertyName = "Transaction_Type";
+            this.colTransactionType.FillWeight = 129.9346F;
             this.colTransactionType.HeaderText = "Transaction Type";
             this.colTransactionType.Name = "colTransactionType";
             this.colTransactionType.ReadOnly = true;
@@ -128,6 +131,7 @@ namespace GUI
             // colDate
             // 
             this.colDate.DataPropertyName = "Transaction_Date";
+            this.colDate.FillWeight = 101.5228F;
             this.colDate.HeaderText = "Date";
             this.colDate.Name = "colDate";
             this.colDate.ReadOnly = true;
@@ -135,6 +139,7 @@ namespace GUI
             // colAmount
             // 
             this.colAmount.DataPropertyName = "Amount";
+            this.colAmount.FillWeight = 63.07704F;
             this.colAmount.HeaderText = "Amount";
             this.colAmount.Name = "colAmount";
             this.colAmount.ReadOnly = true;
@@ -142,6 +147,7 @@ namespace GUI
             // colSource
             // 
             this.colSource.DataPropertyName = "Source_Warehouse";
+            this.colSource.FillWeight = 129.9346F;
             this.colSource.HeaderText = "Source";
             this.colSource.Name = "colSource";
             this.colSource.ReadOnly = true;
@@ -149,12 +155,14 @@ namespace GUI
             // colDestination
             // 
             this.colDestination.DataPropertyName = "Destination_Warehouse";
+            this.colDestination.FillWeight = 129.9346F;
             this.colDestination.HeaderText = "Destination";
             this.colDestination.Name = "colDestination";
             this.colDestination.ReadOnly = true;
             // 
             // colEdit
             // 
+            this.colEdit.FillWeight = 45.44515F;
             this.colEdit.HeaderText = "Edit";
             this.colEdit.Name = "colEdit";
             this.colEdit.ReadOnly = true;
@@ -163,6 +171,7 @@ namespace GUI
             // 
             // colRemove
             // 
+            this.colRemove.FillWeight = 70.21638F;
             this.colRemove.HeaderText = "Remove";
             this.colRemove.Name = "colRemove";
             this.colRemove.ReadOnly = true;
@@ -178,6 +187,7 @@ namespace GUI
             this.Controls.Add(this.menuStrip1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.IsMdiContainer = true;
             this.MainMenuStrip = this.menuStrip1;
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "frmInventoryManagement";

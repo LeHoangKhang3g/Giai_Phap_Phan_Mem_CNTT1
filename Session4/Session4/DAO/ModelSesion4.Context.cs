@@ -49,5 +49,56 @@ namespace DAO
         {
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<All_Activities_Result>("All_Activities");
         }
+    
+        public virtual ObjectResult<Nullable<decimal>> CURRENT_STOCK(Nullable<long> wareHouseID, Nullable<long> partID, string batchNumber)
+        {
+            var wareHouseIDParameter = wareHouseID.HasValue ?
+                new ObjectParameter("wareHouseID", wareHouseID) :
+                new ObjectParameter("wareHouseID", typeof(long));
+    
+            var partIDParameter = partID.HasValue ?
+                new ObjectParameter("partID", partID) :
+                new ObjectParameter("partID", typeof(long));
+    
+            var batchNumberParameter = batchNumber != null ?
+                new ObjectParameter("batchNumber", batchNumber) :
+                new ObjectParameter("batchNumber", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Nullable<decimal>>("CURRENT_STOCK", wareHouseIDParameter, partIDParameter, batchNumberParameter);
+        }
+    
+        public virtual ObjectResult<Nullable<decimal>> OUT_OF_STOCK(Nullable<long> wareHouseID, Nullable<long> partID, string batchNumber)
+        {
+            var wareHouseIDParameter = wareHouseID.HasValue ?
+                new ObjectParameter("wareHouseID", wareHouseID) :
+                new ObjectParameter("wareHouseID", typeof(long));
+    
+            var partIDParameter = partID.HasValue ?
+                new ObjectParameter("partID", partID) :
+                new ObjectParameter("partID", typeof(long));
+    
+            var batchNumberParameter = batchNumber != null ?
+                new ObjectParameter("batchNumber", batchNumber) :
+                new ObjectParameter("batchNumber", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Nullable<decimal>>("OUT_OF_STOCK", wareHouseIDParameter, partIDParameter, batchNumberParameter);
+        }
+    
+        public virtual ObjectResult<Nullable<decimal>> RECEIVED_STOCK(Nullable<long> wareHouseID, Nullable<long> partID, string batchNumber)
+        {
+            var wareHouseIDParameter = wareHouseID.HasValue ?
+                new ObjectParameter("wareHouseID", wareHouseID) :
+                new ObjectParameter("wareHouseID", typeof(long));
+    
+            var partIDParameter = partID.HasValue ?
+                new ObjectParameter("partID", partID) :
+                new ObjectParameter("partID", typeof(long));
+    
+            var batchNumberParameter = batchNumber != null ?
+                new ObjectParameter("batchNumber", batchNumber) :
+                new ObjectParameter("batchNumber", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Nullable<decimal>>("RECEIVED_STOCK", wareHouseIDParameter, partIDParameter, batchNumberParameter);
+        }
     }
 }

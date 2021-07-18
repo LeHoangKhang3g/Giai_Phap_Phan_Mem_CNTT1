@@ -25,11 +25,22 @@ namespace GUI
             dgvPurchaseOrderManagement.DataSource = _part.GetAllActivities();
         }
 
+        private void dgvPurchaseOrderManagement_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            foreach (DataGridViewRow row in dgvPurchaseOrderManagement.Rows)
+            {
+                if(row.Cells[5].Value == null)
+                {
+                    row.DefaultCellStyle.BackColor = Color.Green;
+                }
+            }
+        }
 
         private void purchaseOrderManagementToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            
+            frmPurchaseOrderManagement fPurchaseOrder = new frmPurchaseOrderManagement();
+            fPurchaseOrder.ShowDialog();
         }
 
-    }
+    }   
 }

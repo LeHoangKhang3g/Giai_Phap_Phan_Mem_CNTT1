@@ -15,5 +15,10 @@ namespace BUS
         {
             return _part.GetAllActivities();
         }
+
+        public List<PartDTO> GetAllPart()
+        {
+            return _part.GetAllPart();
+        }
     }
 }

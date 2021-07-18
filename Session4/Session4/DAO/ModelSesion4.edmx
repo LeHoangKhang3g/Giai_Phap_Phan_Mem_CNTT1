@@ -140,6 +140,21 @@
           </ReferentialConstraint>
         </Association>
         <Function Name="All_Activities" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="CURRENT_STOCK" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="wareHouseID" Type="bigint" Mode="In" />
+          <Parameter Name="partID" Type="bigint" Mode="In" />
+          <Parameter Name="batchNumber" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="OUT_OF_STOCK" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="wareHouseID" Type="bigint" Mode="In" />
+          <Parameter Name="partID" Type="bigint" Mode="In" />
+          <Parameter Name="batchNumber" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="RECEIVED_STOCK" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="wareHouseID" Type="bigint" Mode="In" />
+          <Parameter Name="partID" Type="bigint" Mode="In" />
+          <Parameter Name="batchNumber" Type="nvarchar" Mode="In" />
+        </Function>
         <EntityContainer Name="Session4ModelStoreContainer">
           <EntitySet Name="OrderItems" EntityType="Self.OrderItems" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Orders" EntityType="Self.Orders" Schema="dbo" store:Type="Tables" />
@@ -358,6 +373,21 @@
           <FunctionImport Name="AllActivities" ReturnType="Collection(Session4Model.AllActivities_Result)" />
           <FunctionImport Name="SelectAllActivities" ReturnType="Collection(Session4Model.SelectAllActivities_Result)" />
           <FunctionImport Name="All_Activities" ReturnType="Collection(Session4Model.All_Activities_Result)" />
+          <FunctionImport Name="CURRENT_STOCK" ReturnType="Collection(Decimal)">
+            <Parameter Name="wareHouseID" Mode="In" Type="Int64" />
+            <Parameter Name="partID" Mode="In" Type="Int64" />
+            <Parameter Name="batchNumber" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="OUT_OF_STOCK" ReturnType="Collection(Decimal)">
+            <Parameter Name="wareHouseID" Mode="In" Type="Int64" />
+            <Parameter Name="partID" Mode="In" Type="Int64" />
+            <Parameter Name="batchNumber" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="RECEIVED_STOCK" ReturnType="Collection(Decimal)">
+            <Parameter Name="wareHouseID" Mode="In" Type="Int64" />
+            <Parameter Name="partID" Mode="In" Type="Int64" />
+            <Parameter Name="batchNumber" Mode="In" Type="String" />
+          </FunctionImport>
         </EntityContainer>
         <ComplexType Name="AllActivities_Result">
           <Property Type="Int64" Name="ID" Nullable="false" />
@@ -474,6 +504,9 @@
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="CURRENT_STOCK" FunctionName="Session4Model.Store.CURRENT_STOCK" />
+          <FunctionImportMapping FunctionImportName="OUT_OF_STOCK" FunctionName="Session4Model.Store.OUT_OF_STOCK" />
+          <FunctionImportMapping FunctionImportName="RECEIVED_STOCK" FunctionName="Session4Model.Store.RECEIVED_STOCK" />
           </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>
