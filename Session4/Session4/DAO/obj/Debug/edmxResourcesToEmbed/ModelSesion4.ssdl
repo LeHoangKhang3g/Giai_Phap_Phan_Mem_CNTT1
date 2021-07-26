@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Schema Namespace="Session4Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+<Schema Namespace="Session4Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
   <EntityType Name="OrderItems">
     <Key>
       <PropertyRef Name="ID" />
@@ -140,15 +140,27 @@
     <Parameter Name="partID" Type="bigint" Mode="In" />
     <Parameter Name="batchNumber" Type="nvarchar" Mode="In" />
   </Function>
+  <Function Name="CURRENT_STOCK_2" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="wareHouseID" Type="bigint" Mode="In" />
+    <Parameter Name="partID" Type="bigint" Mode="In" />
+  </Function>
   <Function Name="OUT_OF_STOCK" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="wareHouseID" Type="bigint" Mode="In" />
     <Parameter Name="partID" Type="bigint" Mode="In" />
     <Parameter Name="batchNumber" Type="nvarchar" Mode="In" />
   </Function>
+  <Function Name="OUT_OF_STOCK_2" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="wareHouseID" Type="bigint" Mode="In" />
+    <Parameter Name="partID" Type="bigint" Mode="In" />
+  </Function>
   <Function Name="RECEIVED_STOCK" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="wareHouseID" Type="bigint" Mode="In" />
     <Parameter Name="partID" Type="bigint" Mode="In" />
     <Parameter Name="batchNumber" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="RECEIVED_STOCK_2" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="wareHouseID" Type="bigint" Mode="In" />
+    <Parameter Name="partID" Type="bigint" Mode="In" />
   </Function>
   <EntityContainer Name="Session4ModelStoreContainer">
     <EntitySet Name="OrderItems" EntityType="Self.OrderItems" Schema="dbo" store:Type="Tables" />

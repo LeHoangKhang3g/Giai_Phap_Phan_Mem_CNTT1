@@ -100,5 +100,44 @@ namespace DAO
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Nullable<decimal>>("RECEIVED_STOCK", wareHouseIDParameter, partIDParameter, batchNumberParameter);
         }
+    
+        public virtual ObjectResult<Nullable<decimal>> CURRENT_STOCK_2(Nullable<long> wareHouseID, Nullable<long> partID)
+        {
+            var wareHouseIDParameter = wareHouseID.HasValue ?
+                new ObjectParameter("wareHouseID", wareHouseID) :
+                new ObjectParameter("wareHouseID", typeof(long));
+    
+            var partIDParameter = partID.HasValue ?
+                new ObjectParameter("partID", partID) :
+                new ObjectParameter("partID", typeof(long));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Nullable<decimal>>("CURRENT_STOCK_2", wareHouseIDParameter, partIDParameter);
+        }
+    
+        public virtual ObjectResult<Nullable<decimal>> OUT_OF_STOCK_2(Nullable<long> wareHouseID, Nullable<long> partID)
+        {
+            var wareHouseIDParameter = wareHouseID.HasValue ?
+                new ObjectParameter("wareHouseID", wareHouseID) :
+                new ObjectParameter("wareHouseID", typeof(long));
+    
+            var partIDParameter = partID.HasValue ?
+                new ObjectParameter("partID", partID) :
+                new ObjectParameter("partID", typeof(long));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Nullable<decimal>>("OUT_OF_STOCK_2", wareHouseIDParameter, partIDParameter);
+        }
+    
+        public virtual ObjectResult<Nullable<decimal>> RECEIVED_STOCK_2(Nullable<long> wareHouseID, Nullable<long> partID)
+        {
+            var wareHouseIDParameter = wareHouseID.HasValue ?
+                new ObjectParameter("wareHouseID", wareHouseID) :
+                new ObjectParameter("wareHouseID", typeof(long));
+    
+            var partIDParameter = partID.HasValue ?
+                new ObjectParameter("partID", partID) :
+                new ObjectParameter("partID", typeof(long));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Nullable<decimal>>("RECEIVED_STOCK_2", wareHouseIDParameter, partIDParameter);
+        }
     }
 }

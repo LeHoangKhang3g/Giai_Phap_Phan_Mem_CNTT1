@@ -39,8 +39,25 @@ namespace GUI
         private void purchaseOrderManagementToolStripMenuItem_Click(object sender, EventArgs e)
         {
             frmPurchaseOrderManagement fPurchaseOrder = new frmPurchaseOrderManagement();
+            this.Hide();
             fPurchaseOrder.ShowDialog();
+            this.Show();
         }
 
+        private void warehouseManagementToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmWarehouseManagement fWarehouseManagement = new frmWarehouseManagement();
+            this.Hide();
+            fWarehouseManagement.ShowDialog();
+            this.Show();
+        }
+
+        private void inventoryReportToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmInventoryReport fInventoryReport = new frmInventoryReport();
+            this.Hide();
+            fInventoryReport.ShowDialog();
+            this.Show();
+        }
     }   
 }

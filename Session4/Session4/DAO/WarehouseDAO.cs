@@ -14,5 +14,6 @@ namespace DAO
         {
             return _ss4.Warehouses.Select(u => new WarehouseDTO { ID = u.ID, Name = u.Name }).ToList();
         }
+        
     }
 }

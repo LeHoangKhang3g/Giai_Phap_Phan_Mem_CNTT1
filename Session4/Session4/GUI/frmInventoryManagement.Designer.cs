@@ -74,6 +74,7 @@ namespace GUI
             this.warehouseManagementToolStripMenuItem.Name = "warehouseManagementToolStripMenuItem";
             this.warehouseManagementToolStripMenuItem.Size = new System.Drawing.Size(214, 27);
             this.warehouseManagementToolStripMenuItem.Text = "Warehouse Management";
+            this.warehouseManagementToolStripMenuItem.Click += new System.EventHandler(this.warehouseManagementToolStripMenuItem_Click);
             // 
             // inventoryReportToolStripMenuItem
             // 
@@ -81,6 +82,7 @@ namespace GUI
             this.inventoryReportToolStripMenuItem.Name = "inventoryReportToolStripMenuItem";
             this.inventoryReportToolStripMenuItem.Size = new System.Drawing.Size(150, 27);
             this.inventoryReportToolStripMenuItem.Text = "Inventory Report";
+            this.inventoryReportToolStripMenuItem.Click += new System.EventHandler(this.inventoryReportToolStripMenuItem_Click);
             // 
             // dgvPurchaseOrderManagement
             // 

@@ -42,6 +42,7 @@
     <Compile Include="AllActivitiesDTO.cs" />
     <Compile Include="PartDTO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ReportDTO.cs" />
     <Compile Include="SuppliersDTO.cs" />
     <Compile Include="WarehouseDTO.cs" />
   </ItemGroup>

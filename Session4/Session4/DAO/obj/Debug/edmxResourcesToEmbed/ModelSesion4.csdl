@@ -196,6 +196,18 @@
       <Parameter Name="partID" Mode="In" Type="Int64" />
       <Parameter Name="batchNumber" Mode="In" Type="String" />
     </FunctionImport>
+    <FunctionImport Name="CURRENT_STOCK_2" ReturnType="Collection(Decimal)">
+      <Parameter Name="wareHouseID" Mode="In" Type="Int64" />
+      <Parameter Name="partID" Mode="In" Type="Int64" />
+    </FunctionImport>
+    <FunctionImport Name="OUT_OF_STOCK_2" ReturnType="Collection(Decimal)">
+      <Parameter Name="wareHouseID" Mode="In" Type="Int64" />
+      <Parameter Name="partID" Mode="In" Type="Int64" />
+    </FunctionImport>
+    <FunctionImport Name="RECEIVED_STOCK_2" ReturnType="Collection(Decimal)">
+      <Parameter Name="wareHouseID" Mode="In" Type="Int64" />
+      <Parameter Name="partID" Mode="In" Type="Int64" />
+    </FunctionImport>
   </EntityContainer>
   <ComplexType Name="AllActivities_Result">
     <Property Type="Int64" Name="ID" Nullable="false" />
