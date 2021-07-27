@@ -33,15 +33,16 @@ namespace GUI
             this.btnSubmit = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.txtBatchNumber = new System.Windows.Forms.TextBox();
+            this.nrAmount = new System.Windows.Forms.NumericUpDown();
             this.dgvPartsList = new System.Windows.Forms.DataGridView();
             this.colPartName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colBatchNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colAmount = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colAction = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnAddToList = new System.Windows.Forms.Button();
-            this.txtAmount = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.cboBatchNumber = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
             this.cboPartName = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
@@ -53,6 +54,7 @@ namespace GUI
             this.label1 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nrAmount)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPartsList)).BeginInit();
             this.SuspendLayout();
             // 
@@ -75,6 +77,7 @@ namespace GUI
             // 
             // btnSubmit
             // 
+            this.btnSubmit.BackColor = System.Drawing.Color.Aqua;
             this.btnSubmit.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSubmit.Location = new System.Drawing.Point(318, 392);
             this.btnSubmit.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -82,10 +85,12 @@ namespace GUI
             this.btnSubmit.Size = new System.Drawing.Size(136, 37);
             this.btnSubmit.TabIndex = 15;
             this.btnSubmit.Text = "Submit";
-            this.btnSubmit.UseVisualStyleBackColor = true;
+            this.btnSubmit.UseVisualStyleBackColor = false;
+            this.btnSubmit.Click += new System.EventHandler(this.btnSubmit_Click);
             // 
             // btnCancel
             // 
+            this.btnCancel.BackColor = System.Drawing.Color.Red;
             this.btnCancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancel.Location = new System.Drawing.Point(476, 392);
             this.btnCancel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -93,15 +98,16 @@ namespace GUI
             this.btnCancel.Size = new System.Drawing.Size(136, 37);
             this.btnCancel.TabIndex = 16;
             this.btnCancel.Text = "Cancel";
-            this.btnCancel.UseVisualStyleBackColor = true;
+            this.btnCancel.UseVisualStyleBackColor = false;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.txtBatchNumber);
+            this.groupBox1.Controls.Add(this.nrAmount);
             this.groupBox1.Controls.Add(this.dgvPartsList);
             this.groupBox1.Controls.Add(this.btnAddToList);
-            this.groupBox1.Controls.Add(this.txtAmount);
             this.groupBox1.Controls.Add(this.label6);
-            this.groupBox1.Controls.Add(this.cboBatchNumber);
             this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.cboPartName);
             this.groupBox1.Controls.Add(this.label4);
@@ -114,6 +120,35 @@ namespace GUI
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Parts List";
             // 
+            // txtBatchNumber
+            // 
+            this.txtBatchNumber.Location = new System.Drawing.Point(333, 29);
+            this.txtBatchNumber.Name = "txtBatchNumber";
+            this.txtBatchNumber.Size = new System.Drawing.Size(160, 21);
+            this.txtBatchNumber.TabIndex = 16;
+            // 
+            // nrAmount
+            // 
+            this.nrAmount.Location = new System.Drawing.Point(561, 29);
+            this.nrAmount.Maximum = new decimal(new int[] {
+            1000,
+            0,
+            0,
+            0});
+            this.nrAmount.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.nrAmount.Name = "nrAmount";
+            this.nrAmount.Size = new System.Drawing.Size(120, 21);
+            this.nrAmount.TabIndex = 15;
+            this.nrAmount.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            // 
             // dgvPartsList
             // 
             this.dgvPartsList.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
@@ -122,28 +157,33 @@ namespace GUI
             this.colPartName,
             this.colBatchNumber,
             this.colAmount,
-            this.colAction});
+            this.colAction,
+            this.ID});
             this.dgvPartsList.Location = new System.Drawing.Point(19, 54);
             this.dgvPartsList.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dgvPartsList.Name = "dgvPartsList";
             this.dgvPartsList.ReadOnly = true;
             this.dgvPartsList.Size = new System.Drawing.Size(839, 186);
             this.dgvPartsList.TabIndex = 14;
+            this.dgvPartsList.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPartsList_CellContentClick);
             // 
             // colPartName
             // 
+            this.colPartName.DataPropertyName = "Name";
             this.colPartName.HeaderText = "Part Name";
             this.colPartName.Name = "colPartName";
             this.colPartName.ReadOnly = true;
             // 
             // colBatchNumber
             // 
+            this.colBatchNumber.DataPropertyName = "BatchNumber";
             this.colBatchNumber.HeaderText = "Batch Number";
             this.colBatchNumber.Name = "colBatchNumber";
             this.colBatchNumber.ReadOnly = true;
             // 
             // colAmount
             // 
+            this.colAmount.DataPropertyName = "Amount";
             this.colAmount.HeaderText = "Amount";
             this.colAmount.Name = "colAmount";
             this.colAmount.ReadOnly = true;
@@ -153,6 +193,16 @@ namespace GUI
             this.colAction.HeaderText = "Action";
             this.colAction.Name = "colAction";
             this.colAction.ReadOnly = true;
+            this.colAction.Text = "Remove";
+            this.colAction.UseColumnTextForButtonValue = true;
+            // 
+            // ID
+            // 
+            this.ID.DataPropertyName = "ID";
+            this.ID.HeaderText = "ID";
+            this.ID.Name = "ID";
+            this.ID.ReadOnly = true;
+            this.ID.Visible = false;
             // 
             // btnAddToList
             // 
@@ -163,14 +213,7 @@ namespace GUI
             this.btnAddToList.TabIndex = 13;
             this.btnAddToList.Text = "+  Add to list";
             this.btnAddToList.UseVisualStyleBackColor = true;
-            // 
-            // txtAmount
-            // 
-            this.txtAmount.Location = new System.Drawing.Point(558, 27);
-            this.txtAmount.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.txtAmount.Name = "txtAmount";
-            this.txtAmount.Size = new System.Drawing.Size(125, 21);
-            this.txtAmount.TabIndex = 12;
+            this.btnAddToList.Click += new System.EventHandler(this.btnAddToList_Click);
             // 
             // label6
             // 
@@ -180,15 +223,6 @@ namespace GUI
             this.label6.Size = new System.Drawing.Size(56, 16);
             this.label6.TabIndex = 11;
             this.label6.Text = "Amount:";
-            // 
-            // cboBatchNumber
-            // 
-            this.cboBatchNumber.FormattingEnabled = true;
-            this.cboBatchNumber.Location = new System.Drawing.Point(346, 27);
-            this.cboBatchNumber.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.cboBatchNumber.Name = "cboBatchNumber";
-            this.cboBatchNumber.Size = new System.Drawing.Size(131, 23);
-            this.cboBatchNumber.TabIndex = 10;
             // 
             // label5
             // 
@@ -207,6 +241,7 @@ namespace GUI
             this.cboPartName.Name = "cboPartName";
             this.cboPartName.Size = new System.Drawing.Size(131, 23);
             this.cboPartName.TabIndex = 8;
+            this.cboPartName.SelectedIndexChanged += new System.EventHandler(this.cboPartName_SelectedIndexChanged);
             // 
             // label4
             // 
@@ -227,21 +262,25 @@ namespace GUI
             // 
             // cboDestinationWarehouse
             // 
+            this.cboDestinationWarehouse.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboDestinationWarehouse.FormattingEnabled = true;
             this.cboDestinationWarehouse.Location = new System.Drawing.Point(397, 49);
             this.cboDestinationWarehouse.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cboDestinationWarehouse.Name = "cboDestinationWarehouse";
             this.cboDestinationWarehouse.Size = new System.Drawing.Size(307, 23);
             this.cboDestinationWarehouse.TabIndex = 4;
+            this.cboDestinationWarehouse.SelectedIndexChanged += new System.EventHandler(this.cboDestinationWarehouse_SelectedIndexChanged);
             // 
             // cboSourceWarehouse
             // 
+            this.cboSourceWarehouse.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboSourceWarehouse.FormattingEnabled = true;
             this.cboSourceWarehouse.Location = new System.Drawing.Point(21, 49);
             this.cboSourceWarehouse.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cboSourceWarehouse.Name = "cboSourceWarehouse";
             this.cboSourceWarehouse.Size = new System.Drawing.Size(307, 23);
             this.cboSourceWarehouse.TabIndex = 3;
+            this.cboSourceWarehouse.SelectedIndexChanged += new System.EventHandler(this.cboSourceWarehouse_SelectedIndexChanged);
             // 
             // label3
             // 
@@ -278,14 +317,16 @@ namespace GUI
             this.Controls.Add(this.panel1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frmWarehouseManagement";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Warehouse Management";
+            this.Load += new System.EventHandler(this.frmWarehouseManagement_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nrAmount)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPartsList)).EndInit();
             this.ResumeLayout(false);
 
@@ -301,19 +342,20 @@ namespace GUI
         private System.Windows.Forms.ComboBox cboSourceWarehouse;
         private System.Windows.Forms.DateTimePicker dtpDate;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.ComboBox cboBatchNumber;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.ComboBox cboPartName;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox txtAmount;
         private System.Windows.Forms.Button btnAddToList;
         private System.Windows.Forms.DataGridView dgvPartsList;
         private System.Windows.Forms.Button btnSubmit;
         private System.Windows.Forms.Button btnCancel;
+        private System.Windows.Forms.NumericUpDown nrAmount;
+        private System.Windows.Forms.TextBox txtBatchNumber;
         private System.Windows.Forms.DataGridViewTextBoxColumn colPartName;
         private System.Windows.Forms.DataGridViewTextBoxColumn colBatchNumber;
         private System.Windows.Forms.DataGridViewTextBoxColumn colAmount;
         private System.Windows.Forms.DataGridViewButtonColumn colAction;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ID;
     }
 }

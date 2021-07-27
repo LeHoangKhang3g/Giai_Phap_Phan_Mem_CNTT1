@@ -43,6 +43,7 @@ namespace GUI
             this.colDestination = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colEdit = new System.Windows.Forms.DataGridViewButtonColumn();
             this.colRemove = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.OrderID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPurchaseOrderManagement)).BeginInit();
             this.SuspendLayout();
@@ -97,7 +98,8 @@ namespace GUI
             this.colSource,
             this.colDestination,
             this.colEdit,
-            this.colRemove});
+            this.colRemove,
+            this.OrderID});
             this.dgvPurchaseOrderManagement.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvPurchaseOrderManagement.Location = new System.Drawing.Point(0, 31);
             this.dgvPurchaseOrderManagement.Name = "dgvPurchaseOrderManagement";
@@ -180,6 +182,14 @@ namespace GUI
             this.colRemove.Text = "Remove";
             this.colRemove.UseColumnTextForButtonValue = true;
             // 
+            // OrderID
+            // 
+            this.OrderID.DataPropertyName = "OrderID";
+            this.OrderID.HeaderText = "OrderID";
+            this.OrderID.Name = "OrderID";
+            this.OrderID.ReadOnly = true;
+            this.OrderID.Visible = false;
+            // 
             // frmInventoryManagement
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -220,6 +230,7 @@ namespace GUI
         private System.Windows.Forms.DataGridViewTextBoxColumn colDestination;
         private System.Windows.Forms.DataGridViewButtonColumn colEdit;
         private System.Windows.Forms.DataGridViewButtonColumn colRemove;
+        private System.Windows.Forms.DataGridViewTextBoxColumn OrderID;
     }
 }
 

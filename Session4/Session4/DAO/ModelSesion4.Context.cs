@@ -139,5 +139,109 @@ namespace DAO
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Nullable<decimal>>("RECEIVED_STOCK_2", wareHouseIDParameter, partIDParameter);
         }
+    
+        public virtual int AddOrder(Nullable<long> transaction, Nullable<long> supplier, Nullable<long> destination, Nullable<System.DateTime> date)
+        {
+            var transactionParameter = transaction.HasValue ?
+                new ObjectParameter("transaction", transaction) :
+                new ObjectParameter("transaction", typeof(long));
+    
+            var supplierParameter = supplier.HasValue ?
+                new ObjectParameter("supplier", supplier) :
+                new ObjectParameter("supplier", typeof(long));
+    
+            var destinationParameter = destination.HasValue ?
+                new ObjectParameter("destination", destination) :
+                new ObjectParameter("destination", typeof(long));
+    
+            var dateParameter = date.HasValue ?
+                new ObjectParameter("date", date) :
+                new ObjectParameter("date", typeof(System.DateTime));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("AddOrder", transactionParameter, supplierParameter, destinationParameter, dateParameter);
+        }
+    
+        public virtual int AddOrderItem(Nullable<long> order, Nullable<long> part, string batchNumber, Nullable<decimal> amout)
+        {
+            var orderParameter = order.HasValue ?
+                new ObjectParameter("order", order) :
+                new ObjectParameter("order", typeof(long));
+    
+            var partParameter = part.HasValue ?
+                new ObjectParameter("part", part) :
+                new ObjectParameter("part", typeof(long));
+    
+            var batchNumberParameter = batchNumber != null ?
+                new ObjectParameter("batchNumber", batchNumber) :
+                new ObjectParameter("batchNumber", typeof(string));
+    
+            var amoutParameter = amout.HasValue ?
+                new ObjectParameter("amout", amout) :
+                new ObjectParameter("amout", typeof(decimal));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("AddOrderItem", orderParameter, partParameter, batchNumberParameter, amoutParameter);
+        }
+    
+        public virtual ObjectResult<All_Activities2_Result> All_Activities2()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<All_Activities2_Result>("All_Activities2");
+        }
+    
+        public virtual int DeleteOrderItem(Nullable<long> id)
+        {
+            var idParameter = id.HasValue ?
+                new ObjectParameter("id", id) :
+                new ObjectParameter("id", typeof(long));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("DeleteOrderItem", idParameter);
+        }
+    
+        public virtual int AddOrder2(Nullable<long> transaction, Nullable<long> source, Nullable<long> destination, Nullable<System.DateTime> date)
+        {
+            var transactionParameter = transaction.HasValue ?
+                new ObjectParameter("transaction", transaction) :
+                new ObjectParameter("transaction", typeof(long));
+    
+            var sourceParameter = source.HasValue ?
+                new ObjectParameter("source", source) :
+                new ObjectParameter("source", typeof(long));
+    
+            var destinationParameter = destination.HasValue ?
+                new ObjectParameter("destination", destination) :
+                new ObjectParameter("destination", typeof(long));
+    
+            var dateParameter = date.HasValue ?
+                new ObjectParameter("date", date) :
+                new ObjectParameter("date", typeof(System.DateTime));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("AddOrder2", transactionParameter, sourceParameter, destinationParameter, dateParameter);
+        }
+    
+        public virtual ObjectResult<ItemsOrder_Result> ItemsOrder(Nullable<long> orderID)
+        {
+            var orderIDParameter = orderID.HasValue ?
+                new ObjectParameter("orderID", orderID) :
+                new ObjectParameter("orderID", typeof(long));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<ItemsOrder_Result>("ItemsOrder", orderIDParameter);
+        }
+    
+        public virtual ObjectResult<Items_Order_Result> Items_Order(Nullable<long> orderID)
+        {
+            var orderIDParameter = orderID.HasValue ?
+                new ObjectParameter("orderID", orderID) :
+                new ObjectParameter("orderID", typeof(long));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Items_Order_Result>("Items_Order", orderIDParameter);
+        }
+    
+        public virtual int DeleteOrder(Nullable<long> id)
+        {
+            var idParameter = id.HasValue ?
+                new ObjectParameter("id", id) :
+                new ObjectParameter("id", typeof(long));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("DeleteOrder", idParameter);
+        }
     }
 }

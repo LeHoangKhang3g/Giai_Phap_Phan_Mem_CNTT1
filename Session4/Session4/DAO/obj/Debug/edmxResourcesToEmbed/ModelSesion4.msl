@@ -89,5 +89,43 @@
     <FunctionImportMapping FunctionImportName="CURRENT_STOCK_2" FunctionName="Session4Model.Store.CURRENT_STOCK_2" />
     <FunctionImportMapping FunctionImportName="OUT_OF_STOCK_2" FunctionName="Session4Model.Store.OUT_OF_STOCK_2" />
     <FunctionImportMapping FunctionImportName="RECEIVED_STOCK_2" FunctionName="Session4Model.Store.RECEIVED_STOCK_2" />
+    <FunctionImportMapping FunctionImportName="AddOrder" FunctionName="Session4Model.Store.AddOrder" />
+    <FunctionImportMapping FunctionImportName="AddOrderItem" FunctionName="Session4Model.Store.AddOrderItem" />
+    <FunctionImportMapping FunctionImportName="All_Activities2" FunctionName="Session4Model.Store.All_Activities2">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Session4Model.All_Activities2_Result">
+          <ScalarProperty Name="OrderID" ColumnName="OrderID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Part_Name" ColumnName="Part Name" />
+          <ScalarProperty Name="Transaction_Type" ColumnName="Transaction Type" />
+          <ScalarProperty Name="Transaction_Date" ColumnName="Transaction Date" />
+          <ScalarProperty Name="Amount" ColumnName="Amount" />
+          <ScalarProperty Name="Source_Warehouse" ColumnName="Source Warehouse" />
+          <ScalarProperty Name="Destination_Warehouse" ColumnName="Destination Warehouse" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="DeleteOrderItem" FunctionName="Session4Model.Store.DeleteOrderItem" />
+    <FunctionImportMapping FunctionImportName="AddOrder2" FunctionName="Session4Model.Store.AddOrder2" />
+    <FunctionImportMapping FunctionImportName="ItemsOrder" FunctionName="Session4Model.Store.ItemsOrder">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Session4Model.ItemsOrder_Result">
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="BatchNumber" ColumnName="BatchNumber" />
+          <ScalarProperty Name="Amount" ColumnName="Amount" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="Items_Order" FunctionName="Session4Model.Store.Items_Order">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Session4Model.Items_Order_Result">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="BatchNumber" ColumnName="BatchNumber" />
+          <ScalarProperty Name="Amount" ColumnName="Amount" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="DeleteOrder" FunctionName="Session4Model.Store.DeleteOrder" />
   </EntityContainerMapping>
 </Mapping>

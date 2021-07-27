@@ -12,12 +12,19 @@ namespace DAO
         
         public List<AllActivitiesDTO> GetAllActivities()
         {
-            return _ss4.All_Activities().Select(u => new AllActivitiesDTO { ID = u.ID, Amount = u.Amount, Transaction_Type = u.Transaction_Type, Transaction_Date = u.Transaction_Date, Destination_Warehouse = u.Destination_Warehouse, Source_Warehouse = u.Source_Warehouse, Part_Name = u.Part_Name }).ToList();
+            return _ss4.All_Activities2().Select(u => new AllActivitiesDTO { OrderID= u.OrderID ,ID = u.ID, Amount = u.Amount, Transaction_Type = u.Transaction_Type, Transaction_Date = u.Transaction_Date, Destination_Warehouse = u.Destination_Warehouse, Source_Warehouse = u.Source_Warehouse, Part_Name = u.Part_Name }).ToList();
         }
 
         public List<PartDTO> GetAllPart()
         {
             return _ss4.Parts.Select(u => new PartDTO {ID= u.ID, BatchNumberHasRequired= u.BatchNumberHasRequired, EffectiveLife= u.EffectiveLife, Name= u.Name}).ToList();
+        }
+
+        public bool CheckPart(long id)
+        {
+            Part part = _ss4.Parts.SingleOrDefault(u=> u.ID == id);
+
+            return part.BatchNumberHasRequired.Value;
         }
     }
 }

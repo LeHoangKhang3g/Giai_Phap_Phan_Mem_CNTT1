@@ -51,9 +51,20 @@
     <Compile Include="AllActivities_Result.cs">
       <DependentUpon>ModelSesion4.tt</DependentUpon>
     </Compile>
+    <Compile Include="All_Activities2_Result.cs">
+      <DependentUpon>ModelSesion4.tt</DependentUpon>
+    </Compile>
     <Compile Include="All_Activities_Result.cs">
       <DependentUpon>ModelSesion4.tt</DependentUpon>
     </Compile>
+    <Compile Include="ItemsOrder_Result.cs">
+      <DependentUpon>ModelSesion4.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Items_Order_Result.cs">
+      <DependentUpon>ModelSesion4.tt</DependentUpon>
+    </Compile>
+    <Compile Include="OrderDAO.cs" />
+    <Compile Include="OrderItemDAO.cs" />
     <Compile Include="PartsDAO.cs" />
     <Compile Include="ModelSesion4.Context.cs">
       <AutoGen>True</AutoGen>

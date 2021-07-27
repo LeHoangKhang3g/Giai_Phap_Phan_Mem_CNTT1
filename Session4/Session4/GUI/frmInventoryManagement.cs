@@ -14,6 +14,7 @@ namespace GUI
     public partial class frmInventoryManagement : Form
     {
         private PartsBUS _part = new PartsBUS();
+        public long orderID;
         public frmInventoryManagement()
         {
             InitializeComponent();
@@ -46,6 +47,7 @@ namespace GUI
 
         private void warehouseManagementToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            orderID = 0;
             frmWarehouseManagement fWarehouseManagement = new frmWarehouseManagement();
             this.Hide();
             fWarehouseManagement.ShowDialog();

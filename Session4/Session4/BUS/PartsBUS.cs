@@ -10,7 +10,6 @@ namespace BUS
     public class PartsBUS
     {
         PartsDAO _part = new PartsDAO();
-
         public List<AllActivitiesDTO> GetAllActivities()
         {
             return _part.GetAllActivities();
@@ -19,6 +18,11 @@ namespace BUS
         public List<PartDTO> GetAllPart()
         {
             return _part.GetAllPart();
+        }
+
+        public bool CheckPart(long id)
+        {
+            return _part.CheckPart(id);
         }
     }
 }

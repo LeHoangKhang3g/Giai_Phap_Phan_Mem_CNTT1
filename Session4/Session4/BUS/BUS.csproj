@@ -39,6 +39,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="OrderBUS.cs" />
+    <Compile Include="OrderItemBUS.cs" />
     <Compile Include="PartsBUS.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ReportBUS.cs" />
