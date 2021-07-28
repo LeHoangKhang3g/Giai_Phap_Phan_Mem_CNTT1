@@ -78,6 +78,7 @@ namespace GUI
             this.Controls.Add(this.btnUpdate);
             this.Controls.Add(this.label1);
             this.Name = "frmEditAmount";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmEditAmount";
             this.Load += new System.EventHandler(this.frmEditAmount_Load);
             ((System.ComponentModel.ISupportInitialize)(this.nbrAmount)).EndInit();

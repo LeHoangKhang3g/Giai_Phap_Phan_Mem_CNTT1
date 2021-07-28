@@ -69,20 +69,20 @@ namespace GUI
 
         private void dgvPartsManagement_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            long id = Convert.ToInt64(dgvPartsManagement.Rows[e.RowIndex].Cells[0].Value.ToString());
-            String partName= dgvPartsManagement.Rows[e.RowIndex].Cells[1].Value.ToString();
-            decimal amount = Convert.ToDecimal(dgvPartsManagement.Rows[e.RowIndex].Cells[4].Value.ToString());
-            String source;
-            if (dgvPartsManagement.Rows[e.RowIndex].Cells[5].Value==null)
-                source = null;
-            else
-                source = dgvPartsManagement.Rows[e.RowIndex].Cells[5].Value.ToString();
-            String destination = dgvPartsManagement.Rows[e.RowIndex].Cells[6].Value.ToString();
-            decimal currentStockSource = source==null?0:_orderItem.GetCurrentStock(source, partName);
-            decimal currentStockDestination = _orderItem.GetCurrentStock(destination, partName);
-
             if (dgvPartsManagement.Columns[e.ColumnIndex].Name == "colEdit")
             {
+                long id = Convert.ToInt64(dgvPartsManagement.Rows[e.RowIndex].Cells[0].Value.ToString());
+                String partName = dgvPartsManagement.Rows[e.RowIndex].Cells[1].Value.ToString();
+                decimal amount = Convert.ToDecimal(dgvPartsManagement.Rows[e.RowIndex].Cells[4].Value.ToString());
+                String source;
+                if (dgvPartsManagement.Rows[e.RowIndex].Cells[5].Value == null)
+                    source = null;
+                else
+                    source = dgvPartsManagement.Rows[e.RowIndex].Cells[5].Value.ToString();
+                String destination = dgvPartsManagement.Rows[e.RowIndex].Cells[6].Value.ToString();
+                decimal currentStockSource = source == null ? 0 : _orderItem.GetCurrentStock(source, partName);
+                decimal currentStockDestination = _orderItem.GetCurrentStock(destination, partName);
+
                 amountBeforeEdit = amount;
                 amountAfterEdit = -1;
                 frmEditAmount fEditAmount = new frmEditAmount();
@@ -140,6 +140,17 @@ namespace GUI
             }
             if (dgvPartsManagement.Columns[e.ColumnIndex].Name == "colRemove")
             {
+                long id = Convert.ToInt64(dgvPartsManagement.Rows[e.RowIndex].Cells[0].Value.ToString());
+                String partName = dgvPartsManagement.Rows[e.RowIndex].Cells[1].Value.ToString();
+                decimal amount = Convert.ToDecimal(dgvPartsManagement.Rows[e.RowIndex].Cells[4].Value.ToString());
+                String source;
+                if (dgvPartsManagement.Rows[e.RowIndex].Cells[5].Value == null)
+                    source = null;
+                else
+                    source = dgvPartsManagement.Rows[e.RowIndex].Cells[5].Value.ToString();
+                String destination = dgvPartsManagement.Rows[e.RowIndex].Cells[6].Value.ToString();
+                decimal currentStockSource = source == null ? 0 : _orderItem.GetCurrentStock(source, partName);
+                decimal currentStockDestination = _orderItem.GetCurrentStock(destination, partName);
                 if(MessageBox.Show("Bạn có muốn xoá không?","Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
                 {
 
@@ -161,6 +172,39 @@ namespace GUI
 
 
                 }
+            }
+        }
+
+        private void dgvPartsManagement_ColumnHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            if(dgvPartsManagement.Columns[e.ColumnIndex].Name == "colPartName")
+            {
+                MessageBox.Show("HELLO");
+            }
+
+            if (dgvPartsManagement.Columns[e.ColumnIndex].Name == "colPartName")
+            {
+                MessageBox.Show("HELLO");
+            }
+
+            if (dgvPartsManagement.Columns[e.ColumnIndex].Name == "colPartName")
+            {
+                MessageBox.Show("HELLO");
+            }
+
+            if (dgvPartsManagement.Columns[e.ColumnIndex].Name == "colPartName")
+            {
+                MessageBox.Show("HELLO");
+            }
+
+            if (dgvPartsManagement.Columns[e.ColumnIndex].Name == "colPartName")
+            {
+                MessageBox.Show("HELLO");
+            }
+
+            if (dgvPartsManagement.Columns[e.ColumnIndex].Name == "colPartName")
+            {
+                MessageBox.Show("HELLO");
             }
         }
     }   

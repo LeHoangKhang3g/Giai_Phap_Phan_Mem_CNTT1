@@ -37,6 +37,11 @@ namespace GUI
             this.nrAmount = new System.Windows.Forms.NumericUpDown();
             this.txtBatchNumber = new System.Windows.Forms.TextBox();
             this.dgvPartsList = new System.Windows.Forms.DataGridView();
+            this.colPartName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colBatchNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colAmount = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colAction = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnAddToList = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
@@ -47,11 +52,6 @@ namespace GUI
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.colPartName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colBatchNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colAmount = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colAction = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nrAmount)).BeginInit();
@@ -171,6 +171,43 @@ namespace GUI
             this.dgvPartsList.TabIndex = 14;
             this.dgvPartsList.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPartsList_CellContentClick);
             // 
+            // colPartName
+            // 
+            this.colPartName.DataPropertyName = "Name";
+            this.colPartName.HeaderText = "Part Name";
+            this.colPartName.Name = "colPartName";
+            this.colPartName.ReadOnly = true;
+            // 
+            // colBatchNumber
+            // 
+            this.colBatchNumber.DataPropertyName = "BatchNumber";
+            this.colBatchNumber.HeaderText = "Batch Number";
+            this.colBatchNumber.Name = "colBatchNumber";
+            this.colBatchNumber.ReadOnly = true;
+            // 
+            // colAmount
+            // 
+            this.colAmount.DataPropertyName = "Amount";
+            this.colAmount.HeaderText = "Amount";
+            this.colAmount.Name = "colAmount";
+            this.colAmount.ReadOnly = true;
+            // 
+            // colAction
+            // 
+            this.colAction.HeaderText = "Action";
+            this.colAction.Name = "colAction";
+            this.colAction.ReadOnly = true;
+            this.colAction.Text = "Remove";
+            this.colAction.UseColumnTextForButtonValue = true;
+            // 
+            // ID
+            // 
+            this.ID.DataPropertyName = "ID";
+            this.ID.HeaderText = "ID";
+            this.ID.Name = "ID";
+            this.ID.ReadOnly = true;
+            this.ID.Visible = false;
+            // 
             // btnAddToList
             // 
             this.btnAddToList.Location = new System.Drawing.Point(710, 24);
@@ -265,43 +302,6 @@ namespace GUI
             this.label1.TabIndex = 0;
             this.label1.Text = "Supplier:";
             // 
-            // colPartName
-            // 
-            this.colPartName.DataPropertyName = "Name";
-            this.colPartName.HeaderText = "Part Name";
-            this.colPartName.Name = "colPartName";
-            this.colPartName.ReadOnly = true;
-            // 
-            // colBatchNumber
-            // 
-            this.colBatchNumber.DataPropertyName = "BatchNumber";
-            this.colBatchNumber.HeaderText = "Batch Number";
-            this.colBatchNumber.Name = "colBatchNumber";
-            this.colBatchNumber.ReadOnly = true;
-            // 
-            // colAmount
-            // 
-            this.colAmount.DataPropertyName = "Amount";
-            this.colAmount.HeaderText = "Amount";
-            this.colAmount.Name = "colAmount";
-            this.colAmount.ReadOnly = true;
-            // 
-            // colAction
-            // 
-            this.colAction.HeaderText = "Action";
-            this.colAction.Name = "colAction";
-            this.colAction.ReadOnly = true;
-            this.colAction.Text = "Remove";
-            this.colAction.UseColumnTextForButtonValue = true;
-            // 
-            // ID
-            // 
-            this.ID.DataPropertyName = "ID";
-            this.ID.HeaderText = "ID";
-            this.ID.Name = "ID";
-            this.ID.ReadOnly = true;
-            this.ID.Visible = false;
-            // 
             // frmPurchaseOrderManagement
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -309,7 +309,7 @@ namespace GUI
             this.ClientSize = new System.Drawing.Size(934, 471);
             this.Controls.Add(this.panel1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frmPurchaseOrderManagement";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

@@ -120,6 +120,7 @@ namespace GUI
                 else
                 {
                     txtBatchNumber.Enabled = false;
+                    txtBatchNumber.Text = string.Empty;
                 }
             }
         }

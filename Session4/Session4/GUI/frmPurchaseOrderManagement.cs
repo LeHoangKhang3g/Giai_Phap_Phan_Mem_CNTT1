@@ -42,13 +42,13 @@ namespace GUI
             cboPartName.DisplayMember = "Name";
             cboPartName.ValueMember = "ID";
 
-            if (cboPartName.SelectedValue.ToString().Equals("False"))
+            if (_part.CheckPart(Int64.Parse(cboPartName.SelectedValue.ToString())) == true)
             {
-                txtBatchNumber.Enabled = false;
+                txtBatchNumber.Enabled = true;
             }
             else
             {
-                txtBatchNumber.Enabled = true;
+                txtBatchNumber.Enabled = false;
             }
         }
 
@@ -63,6 +63,7 @@ namespace GUI
                 else
                 {
                     txtBatchNumber.Enabled = false;
+                    txtBatchNumber.Text = string.Empty;
                 }
             }
         }

@@ -106,6 +106,7 @@ namespace GUI
             this.dgvPartsManagement.TabIndex = 1;
             this.dgvPartsManagement.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPartsManagement_CellContentClick);
             this.dgvPartsManagement.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dgvPurchaseOrderManagement_CellFormatting);
+            this.dgvPartsManagement.ColumnHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvPartsManagement_ColumnHeaderMouseClick);
             // 
             // colID
             // 
