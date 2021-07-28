@@ -78,7 +78,7 @@ namespace GUI
         {
             if (flag == false)
             {
-                if (_order.AddOrder2(1, Int64.Parse(cbbSupplier.SelectedValue.ToString()), Int64.Parse(cboWarehouse.SelectedValue.ToString()), dtpDate.Value))
+                if (_order.AddOrder2(1, (long)cbbSupplier.SelectedValue, Int64.Parse(cboWarehouse.SelectedValue.ToString()), dtpDate.Value))
                 {
                     flag = true;
                 }
@@ -91,6 +91,12 @@ namespace GUI
             if (orderID == 0)
             {
                 orderID = _order.Max();
+            }
+
+            if(txtBatchNumber.Enabled == true && string.IsNullOrEmpty(txtBatchNumber.Text))
+            {
+                MessageBox.Show("Please enter batch number");
+                return;
             }
 
             if (_item.AddOrderItem(orderID, Int64.Parse(cboPartName.SelectedValue.ToString()), txtBatchNumber.Text, nrAmount.Value))
@@ -127,6 +133,10 @@ namespace GUI
 
         private void btnSubmit_Click(object sender, EventArgs e)
         {
+            if(dgvPartsList.Rows.Count==0)
+            {
+                _order.DeleteOrder(orderID);
+            }
             this.Close();
         }
 

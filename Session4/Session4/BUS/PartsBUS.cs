@@ -25,7 +25,10 @@ namespace BUS
             return _part.CheckPart(id);
         }
 
-
-
+          //Kiem tra hang ton kho
+        public decimal CheckAmount(long warehouse, long part)
+        {
+            return _part.CheckAmount(warehouse, part);
+        }
     }
 }

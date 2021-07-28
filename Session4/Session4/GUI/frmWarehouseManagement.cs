@@ -98,6 +98,24 @@ namespace GUI
                 orderID = _order.Max();
             }
 
+            if (txtBatchNumber.Enabled == true && string.IsNullOrEmpty(txtBatchNumber.Text))
+            {
+                MessageBox.Show("Please enter batch number");
+                return;
+            }
+
+            //kiem tra xem item da ton tai hay chua
+            if ((!_item.CheckOrder((long)cboPartName.SelectedValue, txtBatchNumber.Text) && txtBatchNumber.Text.Length>0) || (!_item.CheckOrder2((long)cboPartName.SelectedValue, orderID) && txtBatchNumber.Text.Length == 0))
+            {
+                MessageBox.Show("This item already exists");
+                return;
+            }
+            //kiem tra so luong ton
+            if(_part.CheckAmount((long)cboSourceWarehouse.SelectedValue, (long)cboPartName.SelectedValue) < (long)nrAmount.Value)
+            {
+                MessageBox.Show("The number of items is not enough");
+                return;
+            }
             if (_item.AddOrderItem(orderID, Int64.Parse(cboPartName.SelectedValue.ToString()), txtBatchNumber.Text, nrAmount.Value))
             {
                 dgvPartsList.DataSource = _item.ListItem(orderID);

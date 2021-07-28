@@ -49,6 +49,9 @@ namespace GUI
             // 
             // menuStrip1
             // 
+            this.menuStrip1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.menuStrip1.Dock = System.Windows.Forms.DockStyle.None;
             this.menuStrip1.Font = new System.Drawing.Font("Segoe UI", 12.25F);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.purchaseOrderManagementToolStripMenuItem,
@@ -56,7 +59,7 @@ namespace GUI
             this.inventoryReportToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(984, 31);
+            this.menuStrip1.Size = new System.Drawing.Size(619, 31);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -86,6 +89,9 @@ namespace GUI
             // 
             // dgvPartsManagement
             // 
+            this.dgvPartsManagement.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvPartsManagement.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvPartsManagement.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvPartsManagement.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -98,7 +104,6 @@ namespace GUI
             this.colDestination,
             this.colEdit,
             this.colRemove});
-            this.dgvPartsManagement.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvPartsManagement.Location = new System.Drawing.Point(0, 31);
             this.dgvPartsManagement.Name = "dgvPartsManagement";
             this.dgvPartsManagement.ReadOnly = true;

@@ -32,5 +32,6 @@ namespace DAO
         {
             _ss4.DeleteOrder(id);
         }
+
     }
 }

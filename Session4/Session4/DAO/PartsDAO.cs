@@ -26,5 +26,11 @@ namespace DAO
 
             return part.BatchNumberHasRequired.Value;
         }
+
+        //Kiem tra hang ton kho
+        public decimal CheckAmount(long warehouse, long part)
+        {
+            return (decimal)_ss4.RECEIVED_STOCK_2(warehouse, part).FirstOrDefault().GetValueOrDefault() - (decimal)_ss4.OUT_OF_STOCK_2(warehouse, part).FirstOrDefault().GetValueOrDefault();
+        }
     }
 }

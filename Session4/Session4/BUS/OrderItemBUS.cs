@@ -38,5 +38,15 @@ namespace BUS
         {
             return _orderItem.DeleteItem(id);
         }
+
+        public bool CheckOrder(long part, string batchNumber)
+        {
+            return _orderItem.CheckOrder(part, batchNumber);
+        }
+
+        public bool CheckOrder2(long part, long order)
+        {
+            return _orderItem.CheckOrder2(part, order);
+        }
     }
 }

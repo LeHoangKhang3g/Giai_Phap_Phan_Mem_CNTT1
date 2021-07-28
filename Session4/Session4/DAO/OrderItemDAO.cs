@@ -47,5 +47,30 @@ namespace DAO
                 return false;
             }
         }
+
+        //Kiem tra don hang co bi trung lap ko
+        public bool CheckOrder(long part, string batchNumber)
+        {
+            if (batchNumber.Length > 0)
+            {
+                OrderItem item = _ss4.OrderItems.SingleOrDefault(u => u.BatchNumber == batchNumber && u.PartID == part);
+                if (item == null)
+                {
+                    return true;
+                }
+            }
+            return false;
+        }
+
+        public bool CheckOrder2(long part, long order)
+        {
+            OrderItem item = _ss4.OrderItems.SingleOrDefault(u => u.OrderID == order && u.PartID == part);
+            if (item == null)
+            {
+                return true;
+            }
+
+            return false;
+        }
     }
 }
