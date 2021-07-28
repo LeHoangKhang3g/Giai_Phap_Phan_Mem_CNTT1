@@ -52,6 +52,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="frmEditAmount.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmEditAmount.Designer.cs">
+      <DependentUpon>frmEditAmount.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmInventoryManagement.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -78,6 +84,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="frmEditAmount.resx">
+      <DependentUpon>frmEditAmount.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmInventoryManagement.resx">
       <DependentUpon>frmInventoryManagement.cs</DependentUpon>
     </EmbeddedResource>

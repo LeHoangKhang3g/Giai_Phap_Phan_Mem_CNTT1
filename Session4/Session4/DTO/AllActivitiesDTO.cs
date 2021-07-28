@@ -8,7 +8,7 @@ namespace DTO
 {
    public class AllActivitiesDTO
     {
-       public long OrderID { get; set; }
+        public long OrderID { get; set; }
         public long ID { get; set; }
         public string Part_Name { get; set; }
         public string Transaction_Type { get; set; }

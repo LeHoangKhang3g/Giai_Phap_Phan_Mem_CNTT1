@@ -24,5 +24,19 @@ namespace BUS
         {
             return _orderItem.DeleteItem(id);
         }
+
+        ////////////////////////////
+        public decimal GetCurrentStock(String wareHouse, String partName)
+        {
+            return _orderItem.GetCurrentStock(wareHouse, partName);
+        }
+        public bool EditOrderItem(long id, decimal amount)
+        {
+            return _orderItem.EditOrderItem(id,amount);
+        }
+        public bool RemoveOrderItem(long id)
+        {
+            return _orderItem.DeleteItem(id);
+        }
     }
 }

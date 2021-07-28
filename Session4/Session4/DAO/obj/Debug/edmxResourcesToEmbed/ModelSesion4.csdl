@@ -239,6 +239,10 @@
     <FunctionImport Name="DeleteOrder">
       <Parameter Name="id" Mode="In" Type="Int64" />
     </FunctionImport>
+    <FunctionImport Name="EditOrderItem">
+      <Parameter Name="id" Mode="In" Type="Int64" />
+      <Parameter Name="amount" Mode="In" Type="Decimal" />
+    </FunctionImport>
   </EntityContainer>
   <ComplexType Name="AllActivities_Result">
     <Property Type="Int64" Name="ID" Nullable="false" />

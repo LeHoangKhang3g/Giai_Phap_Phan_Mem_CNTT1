@@ -107,15 +107,6 @@
     </FunctionImportMapping>
     <FunctionImportMapping FunctionImportName="DeleteOrderItem" FunctionName="Session4Model.Store.DeleteOrderItem" />
     <FunctionImportMapping FunctionImportName="AddOrder2" FunctionName="Session4Model.Store.AddOrder2" />
-    <FunctionImportMapping FunctionImportName="ItemsOrder" FunctionName="Session4Model.Store.ItemsOrder">
-      <ResultMapping>
-        <ComplexTypeMapping TypeName="Session4Model.ItemsOrder_Result">
-          <ScalarProperty Name="Name" ColumnName="Name" />
-          <ScalarProperty Name="BatchNumber" ColumnName="BatchNumber" />
-          <ScalarProperty Name="Amount" ColumnName="Amount" />
-        </ComplexTypeMapping>
-      </ResultMapping>
-    </FunctionImportMapping>
     <FunctionImportMapping FunctionImportName="Items_Order" FunctionName="Session4Model.Store.Items_Order">
       <ResultMapping>
         <ComplexTypeMapping TypeName="Session4Model.Items_Order_Result">
@@ -127,5 +118,6 @@
       </ResultMapping>
     </FunctionImportMapping>
     <FunctionImportMapping FunctionImportName="DeleteOrder" FunctionName="Session4Model.Store.DeleteOrder" />
+    <FunctionImportMapping FunctionImportName="EditOrderItem" FunctionName="Session4Model.Store.EditOrderItem" />
   </EntityContainerMapping>
 </Mapping>

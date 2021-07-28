@@ -33,8 +33,8 @@ namespace GUI
             this.purchaseOrderManagementToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.warehouseManagementToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.inventoryReportToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.dgvPurchaseOrderManagement = new System.Windows.Forms.DataGridView();
-            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgvPartsManagement = new System.Windows.Forms.DataGridView();
+            this.colID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colPartName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colTransactionType = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -43,9 +43,8 @@ namespace GUI
             this.colDestination = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colEdit = new System.Windows.Forms.DataGridViewButtonColumn();
             this.colRemove = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.OrderID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.menuStrip1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvPurchaseOrderManagement)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvPartsManagement)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -85,12 +84,12 @@ namespace GUI
             this.inventoryReportToolStripMenuItem.Text = "Inventory Report";
             this.inventoryReportToolStripMenuItem.Click += new System.EventHandler(this.inventoryReportToolStripMenuItem_Click);
             // 
-            // dgvPurchaseOrderManagement
+            // dgvPartsManagement
             // 
-            this.dgvPurchaseOrderManagement.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvPurchaseOrderManagement.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvPurchaseOrderManagement.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.ID,
+            this.dgvPartsManagement.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvPartsManagement.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvPartsManagement.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.colID,
             this.colPartName,
             this.colTransactionType,
             this.colDate,
@@ -98,23 +97,23 @@ namespace GUI
             this.colSource,
             this.colDestination,
             this.colEdit,
-            this.colRemove,
-            this.OrderID});
-            this.dgvPurchaseOrderManagement.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvPurchaseOrderManagement.Location = new System.Drawing.Point(0, 31);
-            this.dgvPurchaseOrderManagement.Name = "dgvPurchaseOrderManagement";
-            this.dgvPurchaseOrderManagement.ReadOnly = true;
-            this.dgvPurchaseOrderManagement.Size = new System.Drawing.Size(984, 530);
-            this.dgvPurchaseOrderManagement.TabIndex = 1;
-            this.dgvPurchaseOrderManagement.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dgvPurchaseOrderManagement_CellFormatting);
+            this.colRemove});
+            this.dgvPartsManagement.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvPartsManagement.Location = new System.Drawing.Point(0, 31);
+            this.dgvPartsManagement.Name = "dgvPartsManagement";
+            this.dgvPartsManagement.ReadOnly = true;
+            this.dgvPartsManagement.Size = new System.Drawing.Size(984, 530);
+            this.dgvPartsManagement.TabIndex = 1;
+            this.dgvPartsManagement.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPartsManagement_CellContentClick);
+            this.dgvPartsManagement.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dgvPurchaseOrderManagement_CellFormatting);
             // 
-            // ID
+            // colID
             // 
-            this.ID.DataPropertyName = "ID";
-            this.ID.HeaderText = "ID";
-            this.ID.Name = "ID";
-            this.ID.ReadOnly = true;
-            this.ID.Visible = false;
+            this.colID.DataPropertyName = "ID";
+            this.colID.HeaderText = "ID";
+            this.colID.Name = "colID";
+            this.colID.ReadOnly = true;
+            this.colID.Visible = false;
             // 
             // colPartName
             // 
@@ -182,20 +181,12 @@ namespace GUI
             this.colRemove.Text = "Remove";
             this.colRemove.UseColumnTextForButtonValue = true;
             // 
-            // OrderID
-            // 
-            this.OrderID.DataPropertyName = "OrderID";
-            this.OrderID.HeaderText = "OrderID";
-            this.OrderID.Name = "OrderID";
-            this.OrderID.ReadOnly = true;
-            this.OrderID.Visible = false;
-            // 
             // frmInventoryManagement
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(984, 561);
-            this.Controls.Add(this.dgvPurchaseOrderManagement);
+            this.Controls.Add(this.dgvPartsManagement);
             this.Controls.Add(this.menuStrip1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
@@ -208,7 +199,7 @@ namespace GUI
             this.Load += new System.EventHandler(this.frmInventoryManagement_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvPurchaseOrderManagement)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvPartsManagement)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -220,8 +211,8 @@ namespace GUI
         private System.Windows.Forms.ToolStripMenuItem purchaseOrderManagementToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem warehouseManagementToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem inventoryReportToolStripMenuItem;
-        private System.Windows.Forms.DataGridView dgvPurchaseOrderManagement;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ID;
+        private System.Windows.Forms.DataGridView dgvPartsManagement;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colID;
         private System.Windows.Forms.DataGridViewTextBoxColumn colPartName;
         private System.Windows.Forms.DataGridViewTextBoxColumn colTransactionType;
         private System.Windows.Forms.DataGridViewTextBoxColumn colDate;
@@ -230,7 +221,6 @@ namespace GUI
         private System.Windows.Forms.DataGridViewTextBoxColumn colDestination;
         private System.Windows.Forms.DataGridViewButtonColumn colEdit;
         private System.Windows.Forms.DataGridViewButtonColumn colRemove;
-        private System.Windows.Forms.DataGridViewTextBoxColumn OrderID;
     }
 }
 

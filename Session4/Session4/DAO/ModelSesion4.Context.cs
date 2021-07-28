@@ -243,5 +243,18 @@ namespace DAO
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("DeleteOrder", idParameter);
         }
+    
+        public virtual int EditOrderItem(Nullable<long> id, Nullable<decimal> amount)
+        {
+            var idParameter = id.HasValue ?
+                new ObjectParameter("id", id) :
+                new ObjectParameter("id", typeof(long));
+    
+            var amountParameter = amount.HasValue ?
+                new ObjectParameter("amount", amount) :
+                new ObjectParameter("amount", typeof(decimal));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("EditOrderItem", idParameter, amountParameter);
+        }
     }
 }

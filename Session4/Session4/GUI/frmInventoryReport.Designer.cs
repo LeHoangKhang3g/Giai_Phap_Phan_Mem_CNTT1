@@ -31,19 +31,19 @@ namespace GUI
         {
             this.panel1 = new System.Windows.Forms.Panel();
             this.dgvInventoryReport = new System.Windows.Forms.DataGridView();
-            this.colPartName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colCurrentStock = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colReceivedStock = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colOutOfStock = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colAction = new System.Windows.Forms.DataGridViewButtonColumn();
             this.label2 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.radAll = new System.Windows.Forms.RadioButton();
             this.radOutOfStock = new System.Windows.Forms.RadioButton();
             this.radReceivedStock = new System.Windows.Forms.RadioButton();
             this.radCurrentStock = new System.Windows.Forms.RadioButton();
             this.cboWarehouse = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.radAll = new System.Windows.Forms.RadioButton();
+            this.colPartName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colCurrentStock = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colReceivedStock = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colOutOfStock = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colAction = new System.Windows.Forms.DataGridViewButtonColumn();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvInventoryReport)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -79,40 +79,6 @@ namespace GUI
             this.dgvInventoryReport.Size = new System.Drawing.Size(878, 380);
             this.dgvInventoryReport.TabIndex = 10;
             // 
-            // colPartName
-            // 
-            this.colPartName.DataPropertyName = "PartName";
-            this.colPartName.HeaderText = "Part Name";
-            this.colPartName.Name = "colPartName";
-            this.colPartName.ReadOnly = true;
-            // 
-            // colCurrentStock
-            // 
-            this.colCurrentStock.DataPropertyName = "CurrentStock";
-            this.colCurrentStock.HeaderText = "Current Stock";
-            this.colCurrentStock.Name = "colCurrentStock";
-            this.colCurrentStock.ReadOnly = true;
-            // 
-            // colReceivedStock
-            // 
-            this.colReceivedStock.DataPropertyName = "ReceivedStock";
-            this.colReceivedStock.HeaderText = "Received Stock";
-            this.colReceivedStock.Name = "colReceivedStock";
-            this.colReceivedStock.ReadOnly = true;
-            // 
-            // colOutOfStock
-            // 
-            this.colOutOfStock.DataPropertyName = "OutOfStock";
-            this.colOutOfStock.HeaderText = "Out of Stock";
-            this.colOutOfStock.Name = "colOutOfStock";
-            this.colOutOfStock.ReadOnly = true;
-            // 
-            // colAction
-            // 
-            this.colAction.HeaderText = "Action";
-            this.colAction.Name = "colAction";
-            this.colAction.ReadOnly = true;
-            // 
             // label2
             // 
             this.label2.AutoSize = true;
@@ -137,6 +103,19 @@ namespace GUI
             this.groupBox1.TabIndex = 8;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Inventory Type";
+            // 
+            // radAll
+            // 
+            this.radAll.AutoSize = true;
+            this.radAll.Location = new System.Drawing.Point(452, 25);
+            this.radAll.Margin = new System.Windows.Forms.Padding(2);
+            this.radAll.Name = "radAll";
+            this.radAll.Size = new System.Drawing.Size(41, 20);
+            this.radAll.TabIndex = 3;
+            this.radAll.TabStop = true;
+            this.radAll.Text = "All";
+            this.radAll.UseVisualStyleBackColor = true;
+            this.radAll.CheckedChanged += new System.EventHandler(this.radAll_CheckedChanged);
             // 
             // radOutOfStock
             // 
@@ -198,18 +177,41 @@ namespace GUI
             this.label1.TabIndex = 6;
             this.label1.Text = "Warehouse:";
             // 
-            // radAll
+            // colPartName
             // 
-            this.radAll.AutoSize = true;
-            this.radAll.Location = new System.Drawing.Point(452, 25);
-            this.radAll.Margin = new System.Windows.Forms.Padding(2);
-            this.radAll.Name = "radAll";
-            this.radAll.Size = new System.Drawing.Size(41, 20);
-            this.radAll.TabIndex = 3;
-            this.radAll.TabStop = true;
-            this.radAll.Text = "All";
-            this.radAll.UseVisualStyleBackColor = true;
-            this.radAll.CheckedChanged += new System.EventHandler(this.radAll_CheckedChanged);
+            this.colPartName.DataPropertyName = "PartName";
+            this.colPartName.HeaderText = "Part Name";
+            this.colPartName.Name = "colPartName";
+            this.colPartName.ReadOnly = true;
+            // 
+            // colCurrentStock
+            // 
+            this.colCurrentStock.DataPropertyName = "CurrentStock";
+            this.colCurrentStock.HeaderText = "Current Stock";
+            this.colCurrentStock.Name = "colCurrentStock";
+            this.colCurrentStock.ReadOnly = true;
+            // 
+            // colReceivedStock
+            // 
+            this.colReceivedStock.DataPropertyName = "ReceivedStock";
+            this.colReceivedStock.HeaderText = "Received Stock";
+            this.colReceivedStock.Name = "colReceivedStock";
+            this.colReceivedStock.ReadOnly = true;
+            // 
+            // colOutOfStock
+            // 
+            this.colOutOfStock.DataPropertyName = "OutOfStock";
+            this.colOutOfStock.HeaderText = "Out of Stock";
+            this.colOutOfStock.Name = "colOutOfStock";
+            this.colOutOfStock.ReadOnly = true;
+            // 
+            // colAction
+            // 
+            this.colAction.HeaderText = "Action";
+            this.colAction.Name = "colAction";
+            this.colAction.ReadOnly = true;
+            this.colAction.Text = "View Batch Numbers";
+            this.colAction.UseColumnTextForButtonValue = true;
             // 
             // frmInventoryReport
             // 
@@ -244,11 +246,11 @@ namespace GUI
         private System.Windows.Forms.RadioButton radCurrentStock;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.DataGridView dgvInventoryReport;
+        private System.Windows.Forms.RadioButton radAll;
         private System.Windows.Forms.DataGridViewTextBoxColumn colPartName;
         private System.Windows.Forms.DataGridViewTextBoxColumn colCurrentStock;
         private System.Windows.Forms.DataGridViewTextBoxColumn colReceivedStock;
         private System.Windows.Forms.DataGridViewTextBoxColumn colOutOfStock;
         private System.Windows.Forms.DataGridViewButtonColumn colAction;
-        private System.Windows.Forms.RadioButton radAll;
     }
 }

@@ -26,5 +26,26 @@ namespace DAO
             int kq = _ss4.DeleteOrderItem(id);
             return kq > 0;
         }
+
+        public decimal GetCurrentStock(String wareHouse, String partName)
+        {
+            long wareHouseID = _ss4.Warehouses.SingleOrDefault(u => u.Name.Equals(wareHouse)).ID;
+            long partID=_ss4.Parts.SingleOrDefault(u=>u.Name.Equals(partName)).ID;
+            decimal receivedStock = (decimal)_ss4.RECEIVED_STOCK_2(wareHouseID, partID).FirstOrDefault().GetValueOrDefault();
+            decimal outOfStock = (decimal)_ss4.OUT_OF_STOCK_2(wareHouseID, partID).FirstOrDefault().GetValueOrDefault();
+            return receivedStock - outOfStock;
+        }
+        public bool EditOrderItem(long id, decimal amount)
+        {
+            try
+            {
+                _ss4.EditOrderItem(id, amount);
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+        }
     }
 }

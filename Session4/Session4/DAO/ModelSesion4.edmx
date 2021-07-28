@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-    <Schema Namespace="Session4Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="Session4Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="OrderItems">
           <Key>
             <PropertyRef Name="ID" />
@@ -174,10 +174,11 @@
         <Function Name="DeleteOrderItem" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="id" Type="bigint" Mode="In" />
         </Function>
-        <Function Name="Items_Order" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="orderID" Type="bigint" Mode="In" />
+        <Function Name="EditOrderItem" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="id" Type="bigint" Mode="In" />
+          <Parameter Name="amount" Type="decimal" Mode="In" />
         </Function>
-        <Function Name="ItemsOrder" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+        <Function Name="Items_Order" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="orderID" Type="bigint" Mode="In" />
         </Function>
         <Function Name="OUT_OF_STOCK" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
@@ -472,7 +473,11 @@
           <Parameter Name="orderID" Mode="In" Type="Int64" />
           </FunctionImport>
           <FunctionImport Name="DeleteOrder">
+          <Parameter Name="id" Mode="In" Type="Int64" />
+          </FunctionImport>
+          <FunctionImport Name="EditOrderItem">
             <Parameter Name="id" Mode="In" Type="Int64" />
+            <Parameter Name="amount" Mode="In" Type="Decimal" />
           </FunctionImport>
         </EntityContainer>
         <ComplexType Name="AllActivities_Result">
@@ -635,15 +640,6 @@
           </FunctionImportMapping>
           <FunctionImportMapping FunctionImportName="DeleteOrderItem" FunctionName="Session4Model.Store.DeleteOrderItem" />
           <FunctionImportMapping FunctionImportName="AddOrder2" FunctionName="Session4Model.Store.AddOrder2" />
-          <FunctionImportMapping FunctionImportName="ItemsOrder" FunctionName="Session4Model.Store.ItemsOrder">
-            <ResultMapping>
-              <ComplexTypeMapping TypeName="Session4Model.ItemsOrder_Result">
-                <ScalarProperty Name="Name" ColumnName="Name" />
-                <ScalarProperty Name="BatchNumber" ColumnName="BatchNumber" />
-                <ScalarProperty Name="Amount" ColumnName="Amount" />
-              </ComplexTypeMapping>
-            </ResultMapping>
-          </FunctionImportMapping>
           <FunctionImportMapping FunctionImportName="Items_Order" FunctionName="Session4Model.Store.Items_Order">
             <ResultMapping>
               <ComplexTypeMapping TypeName="Session4Model.Items_Order_Result">
@@ -655,6 +651,7 @@
             </ResultMapping>
           </FunctionImportMapping>
           <FunctionImportMapping FunctionImportName="DeleteOrder" FunctionName="Session4Model.Store.DeleteOrder" />
+          <FunctionImportMapping FunctionImportName="EditOrderItem" FunctionName="Session4Model.Store.EditOrderItem" />
           </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>
