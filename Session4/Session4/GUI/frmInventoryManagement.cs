@@ -35,7 +35,7 @@ namespace GUI
             {
                 if(row.Cells[5].Value == null)
                 {
-                    row.DefaultCellStyle.BackColor = Color.Green;
+                    row.Cells[4].Style.BackColor = Color.Lime;
                 }
             }
         }

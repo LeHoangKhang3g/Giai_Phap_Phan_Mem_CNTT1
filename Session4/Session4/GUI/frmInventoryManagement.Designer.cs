@@ -29,6 +29,8 @@ namespace GUI
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.purchaseOrderManagementToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.warehouseManagementToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -171,7 +173,11 @@ namespace GUI
             // 
             // colEdit
             // 
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.colEdit.DefaultCellStyle = dataGridViewCellStyle1;
             this.colEdit.FillWeight = 45.44515F;
+            this.colEdit.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.colEdit.HeaderText = "Edit";
             this.colEdit.Name = "colEdit";
             this.colEdit.ReadOnly = true;
@@ -180,7 +186,11 @@ namespace GUI
             // 
             // colRemove
             // 
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.Red;
+            this.colRemove.DefaultCellStyle = dataGridViewCellStyle2;
             this.colRemove.FillWeight = 70.21638F;
+            this.colRemove.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.colRemove.HeaderText = "Remove";
             this.colRemove.Name = "colRemove";
             this.colRemove.ReadOnly = true;
