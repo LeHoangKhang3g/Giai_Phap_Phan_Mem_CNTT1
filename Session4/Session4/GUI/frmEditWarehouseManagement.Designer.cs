@@ -1,7 +1,7 @@
 ﻿
 namespace GUI
 {
-    partial class frmPurchaseOrderManagement
+    partial class frmEditWarehouseManagement
     {
         /// <summary>
         /// Required designer variable.
@@ -30,12 +30,11 @@ namespace GUI
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.cbbSupplier = new System.Windows.Forms.ComboBox();
-            this.btnSubmit = new System.Windows.Forms.Button();
+            this.btnEdit = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.nrAmount = new System.Windows.Forms.NumericUpDown();
             this.txtBatchNumber = new System.Windows.Forms.TextBox();
+            this.nrAmount = new System.Windows.Forms.NumericUpDown();
             this.dgvPartsList = new System.Windows.Forms.DataGridView();
             this.colPartName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colBatchNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -48,7 +47,8 @@ namespace GUI
             this.cboPartName = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
             this.dtpDate = new System.Windows.Forms.DateTimePicker();
-            this.cboWarehouse = new System.Windows.Forms.ComboBox();
+            this.cboDestinationWarehouse = new System.Windows.Forms.ComboBox();
+            this.cboSourceWarehouse = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -60,12 +60,12 @@ namespace GUI
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.cbbSupplier);
-            this.panel1.Controls.Add(this.btnSubmit);
+            this.panel1.Controls.Add(this.btnEdit);
             this.panel1.Controls.Add(this.btnCancel);
             this.panel1.Controls.Add(this.groupBox1);
             this.panel1.Controls.Add(this.dtpDate);
-            this.panel1.Controls.Add(this.cboWarehouse);
+            this.panel1.Controls.Add(this.cboDestinationWarehouse);
+            this.panel1.Controls.Add(this.cboSourceWarehouse);
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.label1);
@@ -75,45 +75,34 @@ namespace GUI
             this.panel1.Size = new System.Drawing.Size(914, 452);
             this.panel1.TabIndex = 1;
             // 
-            // cbbSupplier
+            // btnEdit
             // 
-            this.cbbSupplier.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbbSupplier.FormattingEnabled = true;
-            this.cbbSupplier.Location = new System.Drawing.Point(21, 49);
-            this.cbbSupplier.Name = "cbbSupplier";
-            this.cbbSupplier.Size = new System.Drawing.Size(307, 23);
-            this.cbbSupplier.TabIndex = 17;
-            // 
-            // btnSubmit
-            // 
-            this.btnSubmit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.btnSubmit.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSubmit.Location = new System.Drawing.Point(317, 392);
-            this.btnSubmit.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnSubmit.Name = "btnSubmit";
-            this.btnSubmit.Size = new System.Drawing.Size(136, 42);
-            this.btnSubmit.TabIndex = 15;
-            this.btnSubmit.Text = "Submit";
-            this.btnSubmit.UseVisualStyleBackColor = false;
-            this.btnSubmit.Click += new System.EventHandler(this.btnSubmit_Click);
+            this.btnEdit.BackColor = System.Drawing.Color.Aqua;
+            this.btnEdit.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEdit.Location = new System.Drawing.Point(318, 392);
+            this.btnEdit.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnEdit.Name = "btnEdit";
+            this.btnEdit.Size = new System.Drawing.Size(136, 37);
+            this.btnEdit.TabIndex = 15;
+            this.btnEdit.Text = "Edit";
+            this.btnEdit.UseVisualStyleBackColor = false;
             // 
             // btnCancel
             // 
             this.btnCancel.BackColor = System.Drawing.Color.Red;
             this.btnCancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCancel.Location = new System.Drawing.Point(478, 392);
+            this.btnCancel.Location = new System.Drawing.Point(476, 392);
             this.btnCancel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(136, 42);
+            this.btnCancel.Size = new System.Drawing.Size(136, 37);
             this.btnCancel.TabIndex = 16;
             this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = false;
-            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.nrAmount);
             this.groupBox1.Controls.Add(this.txtBatchNumber);
+            this.groupBox1.Controls.Add(this.nrAmount);
             this.groupBox1.Controls.Add(this.dgvPartsList);
             this.groupBox1.Controls.Add(this.btnAddToList);
             this.groupBox1.Controls.Add(this.label6);
@@ -129,11 +118,18 @@ namespace GUI
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Parts List";
             // 
+            // txtBatchNumber
+            // 
+            this.txtBatchNumber.Location = new System.Drawing.Point(333, 29);
+            this.txtBatchNumber.Name = "txtBatchNumber";
+            this.txtBatchNumber.Size = new System.Drawing.Size(160, 21);
+            this.txtBatchNumber.TabIndex = 16;
+            // 
             // nrAmount
             // 
-            this.nrAmount.Location = new System.Drawing.Point(561, 24);
+            this.nrAmount.Location = new System.Drawing.Point(561, 29);
             this.nrAmount.Maximum = new decimal(new int[] {
-            10000,
+            1000,
             0,
             0,
             0});
@@ -143,20 +139,13 @@ namespace GUI
             0,
             0});
             this.nrAmount.Name = "nrAmount";
-            this.nrAmount.Size = new System.Drawing.Size(109, 21);
-            this.nrAmount.TabIndex = 16;
+            this.nrAmount.Size = new System.Drawing.Size(120, 21);
+            this.nrAmount.TabIndex = 15;
             this.nrAmount.Value = new decimal(new int[] {
             1,
             0,
             0,
             0});
-            // 
-            // txtBatchNumber
-            // 
-            this.txtBatchNumber.Location = new System.Drawing.Point(340, 24);
-            this.txtBatchNumber.Name = "txtBatchNumber";
-            this.txtBatchNumber.Size = new System.Drawing.Size(153, 21);
-            this.txtBatchNumber.TabIndex = 15;
             // 
             // dgvPartsList
             // 
@@ -174,7 +163,6 @@ namespace GUI
             this.dgvPartsList.ReadOnly = true;
             this.dgvPartsList.Size = new System.Drawing.Size(839, 186);
             this.dgvPartsList.TabIndex = 14;
-            this.dgvPartsList.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPartsList_CellContentClick);
             // 
             // colPartName
             // 
@@ -215,14 +203,13 @@ namespace GUI
             // 
             // btnAddToList
             // 
-            this.btnAddToList.Location = new System.Drawing.Point(710, 24);
+            this.btnAddToList.Location = new System.Drawing.Point(710, 26);
             this.btnAddToList.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnAddToList.Name = "btnAddToList";
             this.btnAddToList.Size = new System.Drawing.Size(136, 21);
             this.btnAddToList.TabIndex = 13;
             this.btnAddToList.Text = "+  Add to list";
             this.btnAddToList.UseVisualStyleBackColor = true;
-            this.btnAddToList.Click += new System.EventHandler(this.btnAddToList_Click);
             // 
             // label6
             // 
@@ -244,14 +231,12 @@ namespace GUI
             // 
             // cboPartName
             // 
-            this.cboPartName.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboPartName.FormattingEnabled = true;
-            this.cboPartName.Location = new System.Drawing.Point(98, 24);
+            this.cboPartName.Location = new System.Drawing.Point(94, 27);
             this.cboPartName.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cboPartName.Name = "cboPartName";
             this.cboPartName.Size = new System.Drawing.Size(131, 23);
             this.cboPartName.TabIndex = 8;
-            this.cboPartName.SelectedIndexChanged += new System.EventHandler(this.cboPartName_SelectedIndexChanged);
             // 
             // label4
             // 
@@ -270,15 +255,25 @@ namespace GUI
             this.dtpDate.Size = new System.Drawing.Size(257, 21);
             this.dtpDate.TabIndex = 5;
             // 
-            // cboWarehouse
+            // cboDestinationWarehouse
             // 
-            this.cboWarehouse.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cboWarehouse.FormattingEnabled = true;
-            this.cboWarehouse.Location = new System.Drawing.Point(397, 49);
-            this.cboWarehouse.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.cboWarehouse.Name = "cboWarehouse";
-            this.cboWarehouse.Size = new System.Drawing.Size(307, 23);
-            this.cboWarehouse.TabIndex = 4;
+            this.cboDestinationWarehouse.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboDestinationWarehouse.FormattingEnabled = true;
+            this.cboDestinationWarehouse.Location = new System.Drawing.Point(397, 49);
+            this.cboDestinationWarehouse.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.cboDestinationWarehouse.Name = "cboDestinationWarehouse";
+            this.cboDestinationWarehouse.Size = new System.Drawing.Size(307, 23);
+            this.cboDestinationWarehouse.TabIndex = 4;
+            // 
+            // cboSourceWarehouse
+            // 
+            this.cboSourceWarehouse.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboSourceWarehouse.FormattingEnabled = true;
+            this.cboSourceWarehouse.Location = new System.Drawing.Point(21, 49);
+            this.cboSourceWarehouse.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.cboSourceWarehouse.Name = "cboSourceWarehouse";
+            this.cboSourceWarehouse.Size = new System.Drawing.Size(307, 23);
+            this.cboSourceWarehouse.TabIndex = 3;
             // 
             // label3
             // 
@@ -294,20 +289,20 @@ namespace GUI
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(395, 24);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(81, 16);
+            this.label2.Size = new System.Drawing.Size(151, 16);
             this.label2.TabIndex = 1;
-            this.label2.Text = "Warehouse:";
+            this.label2.Text = "Destination Warehouse:";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(18, 24);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(61, 16);
+            this.label1.Size = new System.Drawing.Size(127, 16);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Supplier:";
+            this.label1.Text = "Source Warehouse:";
             // 
-            // frmPurchaseOrderManagement
+            // frmEditWarehouseManagement
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -315,11 +310,10 @@ namespace GUI
             this.Controls.Add(this.panel1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4);
-            this.Name = "frmPurchaseOrderManagement";
+            this.Name = "frmEditWarehouseManagement";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Purchase Order Management";
-            this.Load += new System.EventHandler(this.frmPurchaseOrderManagement_Load);
+            this.Text = "frmEditWarehouseManagement";
+            this.Load += new System.EventHandler(this.frmEditWarehouseManagement_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.groupBox1.ResumeLayout(false);
@@ -333,27 +327,27 @@ namespace GUI
         #endregion
 
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Button btnSubmit;
+        private System.Windows.Forms.Button btnEdit;
         private System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.TextBox txtBatchNumber;
+        private System.Windows.Forms.NumericUpDown nrAmount;
         private System.Windows.Forms.DataGridView dgvPartsList;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colPartName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colBatchNumber;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colAmount;
+        private System.Windows.Forms.DataGridViewButtonColumn colAction;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ID;
         private System.Windows.Forms.Button btnAddToList;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.ComboBox cboPartName;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.DateTimePicker dtpDate;
-        private System.Windows.Forms.ComboBox cboWarehouse;
+        private System.Windows.Forms.ComboBox cboDestinationWarehouse;
+        private System.Windows.Forms.ComboBox cboSourceWarehouse;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ComboBox cbbSupplier;
-        private System.Windows.Forms.TextBox txtBatchNumber;
-        private System.Windows.Forms.NumericUpDown nrAmount;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colPartName;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colBatchNumber;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colAmount;
-        private System.Windows.Forms.DataGridViewButtonColumn colAction;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ID;
     }
 }

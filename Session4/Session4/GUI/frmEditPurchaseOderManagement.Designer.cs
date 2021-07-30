@@ -1,7 +1,7 @@
 ﻿
 namespace GUI
 {
-    partial class frmPurchaseOrderManagement
+    partial class frmEditPurchaseOderManagement
     {
         /// <summary>
         /// Required designer variable.
@@ -31,7 +31,7 @@ namespace GUI
         {
             this.panel1 = new System.Windows.Forms.Panel();
             this.cbbSupplier = new System.Windows.Forms.ComboBox();
-            this.btnSubmit = new System.Windows.Forms.Button();
+            this.btnEdit = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.nrAmount = new System.Windows.Forms.NumericUpDown();
@@ -61,7 +61,7 @@ namespace GUI
             // panel1
             // 
             this.panel1.Controls.Add(this.cbbSupplier);
-            this.panel1.Controls.Add(this.btnSubmit);
+            this.panel1.Controls.Add(this.btnEdit);
             this.panel1.Controls.Add(this.btnCancel);
             this.panel1.Controls.Add(this.groupBox1);
             this.panel1.Controls.Add(this.dtpDate);
@@ -73,7 +73,7 @@ namespace GUI
             this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(914, 452);
-            this.panel1.TabIndex = 1;
+            this.panel1.TabIndex = 2;
             // 
             // cbbSupplier
             // 
@@ -84,18 +84,17 @@ namespace GUI
             this.cbbSupplier.Size = new System.Drawing.Size(307, 23);
             this.cbbSupplier.TabIndex = 17;
             // 
-            // btnSubmit
+            // btnEdit
             // 
-            this.btnSubmit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.btnSubmit.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSubmit.Location = new System.Drawing.Point(317, 392);
-            this.btnSubmit.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnSubmit.Name = "btnSubmit";
-            this.btnSubmit.Size = new System.Drawing.Size(136, 42);
-            this.btnSubmit.TabIndex = 15;
-            this.btnSubmit.Text = "Submit";
-            this.btnSubmit.UseVisualStyleBackColor = false;
-            this.btnSubmit.Click += new System.EventHandler(this.btnSubmit_Click);
+            this.btnEdit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.btnEdit.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEdit.Location = new System.Drawing.Point(317, 392);
+            this.btnEdit.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnEdit.Name = "btnEdit";
+            this.btnEdit.Size = new System.Drawing.Size(136, 42);
+            this.btnEdit.TabIndex = 15;
+            this.btnEdit.Text = "Edit";
+            this.btnEdit.UseVisualStyleBackColor = false;
             // 
             // btnCancel
             // 
@@ -108,7 +107,6 @@ namespace GUI
             this.btnCancel.TabIndex = 16;
             this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = false;
-            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // groupBox1
             // 
@@ -174,7 +172,6 @@ namespace GUI
             this.dgvPartsList.ReadOnly = true;
             this.dgvPartsList.Size = new System.Drawing.Size(839, 186);
             this.dgvPartsList.TabIndex = 14;
-            this.dgvPartsList.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPartsList_CellContentClick);
             // 
             // colPartName
             // 
@@ -222,7 +219,6 @@ namespace GUI
             this.btnAddToList.TabIndex = 13;
             this.btnAddToList.Text = "+  Add to list";
             this.btnAddToList.UseVisualStyleBackColor = true;
-            this.btnAddToList.Click += new System.EventHandler(this.btnAddToList_Click);
             // 
             // label6
             // 
@@ -251,7 +247,6 @@ namespace GUI
             this.cboPartName.Name = "cboPartName";
             this.cboPartName.Size = new System.Drawing.Size(131, 23);
             this.cboPartName.TabIndex = 8;
-            this.cboPartName.SelectedIndexChanged += new System.EventHandler(this.cboPartName_SelectedIndexChanged);
             // 
             // label4
             // 
@@ -307,7 +302,7 @@ namespace GUI
             this.label1.TabIndex = 0;
             this.label1.Text = "Supplier:";
             // 
-            // frmPurchaseOrderManagement
+            // frmEditPurchaseOderManagement
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -315,11 +310,9 @@ namespace GUI
             this.Controls.Add(this.panel1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4);
-            this.Name = "frmPurchaseOrderManagement";
+            this.Name = "frmEditPurchaseOderManagement";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Purchase Order Management";
-            this.Load += new System.EventHandler(this.frmPurchaseOrderManagement_Load);
+            this.Text = "frmEditPurchaseOderManagement";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.groupBox1.ResumeLayout(false);
@@ -333,10 +326,18 @@ namespace GUI
         #endregion
 
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Button btnSubmit;
+        private System.Windows.Forms.ComboBox cbbSupplier;
+        private System.Windows.Forms.Button btnEdit;
         private System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.NumericUpDown nrAmount;
+        private System.Windows.Forms.TextBox txtBatchNumber;
         private System.Windows.Forms.DataGridView dgvPartsList;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colPartName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colBatchNumber;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colAmount;
+        private System.Windows.Forms.DataGridViewButtonColumn colAction;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ID;
         private System.Windows.Forms.Button btnAddToList;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
@@ -347,13 +348,5 @@ namespace GUI
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ComboBox cbbSupplier;
-        private System.Windows.Forms.TextBox txtBatchNumber;
-        private System.Windows.Forms.NumericUpDown nrAmount;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colPartName;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colBatchNumber;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colAmount;
-        private System.Windows.Forms.DataGridViewButtonColumn colAction;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ID;
     }
 }

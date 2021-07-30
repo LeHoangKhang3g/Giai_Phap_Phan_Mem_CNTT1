@@ -58,6 +58,18 @@
     <Compile Include="frmEditAmount.Designer.cs">
       <DependentUpon>frmEditAmount.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmEditPurchaseOderManagement.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmEditPurchaseOderManagement.Designer.cs">
+      <DependentUpon>frmEditPurchaseOderManagement.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmEditWarehouseManagement.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmEditWarehouseManagement.Designer.cs">
+      <DependentUpon>frmEditWarehouseManagement.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmInventoryManagement.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -86,6 +98,12 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="frmEditAmount.resx">
       <DependentUpon>frmEditAmount.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmEditPurchaseOderManagement.resx">
+      <DependentUpon>frmEditPurchaseOderManagement.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmEditWarehouseManagement.resx">
+      <DependentUpon>frmEditWarehouseManagement.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmInventoryManagement.resx">
       <DependentUpon>frmInventoryManagement.cs</DependentUpon>
