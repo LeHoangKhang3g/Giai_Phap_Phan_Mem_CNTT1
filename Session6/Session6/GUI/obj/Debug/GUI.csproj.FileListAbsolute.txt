@@ -9,3 +9,6 @@ D:\GITHUB\Giai_Phap_Phan_Mem_CNTT1\Session6\Session6\GUI\obj\Debug\GUI.csproj.Ge
 D:\GITHUB\Giai_Phap_Phan_Mem_CNTT1\Session6\Session6\GUI\obj\Debug\GUI.csproj.CoreCompileInputs.cache
 D:\GITHUB\Giai_Phap_Phan_Mem_CNTT1\Session6\Session6\GUI\obj\Debug\GUI.exe
 D:\GITHUB\Giai_Phap_Phan_Mem_CNTT1\Session6\Session6\GUI\obj\Debug\GUI.pdb
+E:\GITHUB\Giai_Phap_Phan_Mem_CNTT1\Session6\Session6\GUI\bin\Debug\GUI.exe.config
+E:\GITHUB\Giai_Phap_Phan_Mem_CNTT1\Session6\Session6\GUI\obj\Debug\GUI.exe
+E:\GITHUB\Giai_Phap_Phan_Mem_CNTT1\Session6\Session6\GUI\obj\Debug\GUI.pdb

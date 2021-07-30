@@ -29,12 +29,12 @@ namespace GUI
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea21 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend21 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series21 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea22 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend22 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series22 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.grbEMSpendingByDepartment = new System.Windows.Forms.GroupBox();
             this.dgvEMSpendingByDepartment = new System.Windows.Forms.DataGridView();
             this.grbMonthlyReportForMostUsedParts = new System.Windows.Forms.GroupBox();
@@ -70,9 +70,9 @@ namespace GUI
             // grbEMSpendingByDepartment
             // 
             this.grbEMSpendingByDepartment.Controls.Add(this.dgvEMSpendingByDepartment);
-            this.grbEMSpendingByDepartment.Location = new System.Drawing.Point(13, 13);
+            this.grbEMSpendingByDepartment.Location = new System.Drawing.Point(11, 11);
             this.grbEMSpendingByDepartment.Name = "grbEMSpendingByDepartment";
-            this.grbEMSpendingByDepartment.Size = new System.Drawing.Size(709, 177);
+            this.grbEMSpendingByDepartment.Size = new System.Drawing.Size(608, 153);
             this.grbEMSpendingByDepartment.TabIndex = 0;
             this.grbEMSpendingByDepartment.TabStop = false;
             this.grbEMSpendingByDepartment.Text = "groupBox1";
@@ -80,17 +80,17 @@ namespace GUI
             // dgvEMSpendingByDepartment
             // 
             this.dgvEMSpendingByDepartment.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvEMSpendingByDepartment.Location = new System.Drawing.Point(15, 23);
+            this.dgvEMSpendingByDepartment.Location = new System.Drawing.Point(13, 20);
             this.dgvEMSpendingByDepartment.Name = "dgvEMSpendingByDepartment";
-            this.dgvEMSpendingByDepartment.Size = new System.Drawing.Size(680, 142);
+            this.dgvEMSpendingByDepartment.Size = new System.Drawing.Size(583, 123);
             this.dgvEMSpendingByDepartment.TabIndex = 0;
             // 
             // grbMonthlyReportForMostUsedParts
             // 
             this.grbMonthlyReportForMostUsedParts.Controls.Add(this.dgvMonthlyReportForMostUsedParts);
-            this.grbMonthlyReportForMostUsedParts.Location = new System.Drawing.Point(13, 196);
+            this.grbMonthlyReportForMostUsedParts.Location = new System.Drawing.Point(11, 170);
             this.grbMonthlyReportForMostUsedParts.Name = "grbMonthlyReportForMostUsedParts";
-            this.grbMonthlyReportForMostUsedParts.Size = new System.Drawing.Size(709, 179);
+            this.grbMonthlyReportForMostUsedParts.Size = new System.Drawing.Size(608, 155);
             this.grbMonthlyReportForMostUsedParts.TabIndex = 1;
             this.grbMonthlyReportForMostUsedParts.TabStop = false;
             this.grbMonthlyReportForMostUsedParts.Text = "groupBox2";
@@ -98,17 +98,17 @@ namespace GUI
             // dgvMonthlyReportForMostUsedParts
             // 
             this.dgvMonthlyReportForMostUsedParts.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvMonthlyReportForMostUsedParts.Location = new System.Drawing.Point(15, 23);
+            this.dgvMonthlyReportForMostUsedParts.Location = new System.Drawing.Point(13, 20);
             this.dgvMonthlyReportForMostUsedParts.Name = "dgvMonthlyReportForMostUsedParts";
-            this.dgvMonthlyReportForMostUsedParts.Size = new System.Drawing.Size(680, 145);
+            this.dgvMonthlyReportForMostUsedParts.Size = new System.Drawing.Size(583, 126);
             this.dgvMonthlyReportForMostUsedParts.TabIndex = 0;
             // 
             // grbMonthlyReportOfCostlyAssets
             // 
             this.grbMonthlyReportOfCostlyAssets.Controls.Add(this.dgvMonthlyReportOfCostlyAssets);
-            this.grbMonthlyReportOfCostlyAssets.Location = new System.Drawing.Point(13, 379);
+            this.grbMonthlyReportOfCostlyAssets.Location = new System.Drawing.Point(11, 328);
             this.grbMonthlyReportOfCostlyAssets.Name = "grbMonthlyReportOfCostlyAssets";
-            this.grbMonthlyReportOfCostlyAssets.Size = new System.Drawing.Size(709, 175);
+            this.grbMonthlyReportOfCostlyAssets.Size = new System.Drawing.Size(608, 152);
             this.grbMonthlyReportOfCostlyAssets.TabIndex = 1;
             this.grbMonthlyReportOfCostlyAssets.TabStop = false;
             this.grbMonthlyReportOfCostlyAssets.Text = "groupBox3";
@@ -116,50 +116,50 @@ namespace GUI
             // dgvMonthlyReportOfCostlyAssets
             // 
             this.dgvMonthlyReportOfCostlyAssets.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvMonthlyReportOfCostlyAssets.Location = new System.Drawing.Point(15, 23);
+            this.dgvMonthlyReportOfCostlyAssets.Location = new System.Drawing.Point(13, 20);
             this.dgvMonthlyReportOfCostlyAssets.Name = "dgvMonthlyReportOfCostlyAssets";
-            this.dgvMonthlyReportOfCostlyAssets.Size = new System.Drawing.Size(680, 145);
+            this.dgvMonthlyReportOfCostlyAssets.Size = new System.Drawing.Size(583, 126);
             this.dgvMonthlyReportOfCostlyAssets.TabIndex = 0;
             // 
             // chartDepartmentSpendingRatio
             // 
-            chartArea21.Name = "ChartArea1";
-            this.chartDepartmentSpendingRatio.ChartAreas.Add(chartArea21);
-            legend21.Name = "Legend1";
-            this.chartDepartmentSpendingRatio.Legends.Add(legend21);
-            this.chartDepartmentSpendingRatio.Location = new System.Drawing.Point(10, 20);
+            chartArea1.Name = "ChartArea1";
+            this.chartDepartmentSpendingRatio.ChartAreas.Add(chartArea1);
+            legend1.Name = "Legend1";
+            this.chartDepartmentSpendingRatio.Legends.Add(legend1);
+            this.chartDepartmentSpendingRatio.Location = new System.Drawing.Point(9, 17);
             this.chartDepartmentSpendingRatio.Name = "chartDepartmentSpendingRatio";
-            series21.ChartArea = "ChartArea1";
-            series21.Legend = "Legend1";
-            series21.Name = "Series1";
-            this.chartDepartmentSpendingRatio.Series.Add(series21);
-            this.chartDepartmentSpendingRatio.Size = new System.Drawing.Size(272, 253);
+            series1.ChartArea = "ChartArea1";
+            series1.Legend = "Legend1";
+            series1.Name = "Series1";
+            this.chartDepartmentSpendingRatio.Series.Add(series1);
+            this.chartDepartmentSpendingRatio.Size = new System.Drawing.Size(233, 219);
             this.chartDepartmentSpendingRatio.TabIndex = 2;
             this.chartDepartmentSpendingRatio.Text = "chart1";
             // 
             // chartMonthlyDepartmentSpending
             // 
-            chartArea22.Name = "ChartArea1";
-            this.chartMonthlyDepartmentSpending.ChartAreas.Add(chartArea22);
-            legend22.Name = "Legend1";
-            this.chartMonthlyDepartmentSpending.Legends.Add(legend22);
-            this.chartMonthlyDepartmentSpending.Location = new System.Drawing.Point(10, 20);
+            chartArea2.Name = "ChartArea1";
+            this.chartMonthlyDepartmentSpending.ChartAreas.Add(chartArea2);
+            legend2.Name = "Legend1";
+            this.chartMonthlyDepartmentSpending.Legends.Add(legend2);
+            this.chartMonthlyDepartmentSpending.Location = new System.Drawing.Point(9, 17);
             this.chartMonthlyDepartmentSpending.Name = "chartMonthlyDepartmentSpending";
-            series22.ChartArea = "ChartArea1";
-            series22.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
-            series22.Legend = "Legend1";
-            series22.Name = "Series1";
-            this.chartMonthlyDepartmentSpending.Series.Add(series22);
-            this.chartMonthlyDepartmentSpending.Size = new System.Drawing.Size(272, 253);
+            series2.ChartArea = "ChartArea1";
+            series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
+            series2.Legend = "Legend1";
+            series2.Name = "Series1";
+            this.chartMonthlyDepartmentSpending.Series.Add(series2);
+            this.chartMonthlyDepartmentSpending.Size = new System.Drawing.Size(233, 219);
             this.chartMonthlyDepartmentSpending.TabIndex = 3;
             this.chartMonthlyDepartmentSpending.Text = "chart2";
             // 
             // grbDepartmentSpendingRatio
             // 
             this.grbDepartmentSpendingRatio.Controls.Add(this.chartDepartmentSpendingRatio);
-            this.grbDepartmentSpendingRatio.Location = new System.Drawing.Point(745, 13);
+            this.grbDepartmentSpendingRatio.Location = new System.Drawing.Point(639, 11);
             this.grbDepartmentSpendingRatio.Name = "grbDepartmentSpendingRatio";
-            this.grbDepartmentSpendingRatio.Size = new System.Drawing.Size(292, 283);
+            this.grbDepartmentSpendingRatio.Size = new System.Drawing.Size(250, 245);
             this.grbDepartmentSpendingRatio.TabIndex = 4;
             this.grbDepartmentSpendingRatio.TabStop = false;
             this.grbDepartmentSpendingRatio.Text = "groupBox4";
@@ -167,9 +167,9 @@ namespace GUI
             // grbMonthlyDepartmentSpending
             // 
             this.grbMonthlyDepartmentSpending.Controls.Add(this.chartMonthlyDepartmentSpending);
-            this.grbMonthlyDepartmentSpending.Location = new System.Drawing.Point(745, 302);
+            this.grbMonthlyDepartmentSpending.Location = new System.Drawing.Point(639, 262);
             this.grbMonthlyDepartmentSpending.Name = "grbMonthlyDepartmentSpending";
-            this.grbMonthlyDepartmentSpending.Size = new System.Drawing.Size(292, 283);
+            this.grbMonthlyDepartmentSpending.Size = new System.Drawing.Size(250, 245);
             this.grbMonthlyDepartmentSpending.TabIndex = 5;
             this.grbMonthlyDepartmentSpending.TabStop = false;
             this.grbMonthlyDepartmentSpending.Text = "groupBox5";
@@ -178,9 +178,9 @@ namespace GUI
             // 
             this.btnInventoryControl.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(92)))), ((int)(((byte)(185)))));
             this.btnInventoryControl.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnInventoryControl.Location = new System.Drawing.Point(28, 560);
+            this.btnInventoryControl.Location = new System.Drawing.Point(24, 485);
             this.btnInventoryControl.Name = "btnInventoryControl";
-            this.btnInventoryControl.Size = new System.Drawing.Size(185, 36);
+            this.btnInventoryControl.Size = new System.Drawing.Size(159, 31);
             this.btnInventoryControl.TabIndex = 6;
             this.btnInventoryControl.Text = "button1";
             this.btnInventoryControl.UseVisualStyleBackColor = false;
@@ -190,9 +190,9 @@ namespace GUI
             // 
             this.btnClose.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(35)))), ((int)(((byte)(26)))));
             this.btnClose.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnClose.Location = new System.Drawing.Point(236, 560);
+            this.btnClose.Location = new System.Drawing.Point(202, 485);
             this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(145, 36);
+            this.btnClose.Size = new System.Drawing.Size(124, 31);
             this.btnClose.TabIndex = 7;
             this.btnClose.Text = "button2";
             this.btnClose.UseVisualStyleBackColor = false;
@@ -202,7 +202,7 @@ namespace GUI
             // 
             this.lblLanguage.AutoSize = true;
             this.lblLanguage.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblLanguage.Location = new System.Drawing.Point(414, 571);
+            this.lblLanguage.Location = new System.Drawing.Point(355, 495);
             this.lblLanguage.Name = "lblLanguage";
             this.lblLanguage.Size = new System.Drawing.Size(53, 20);
             this.lblLanguage.TabIndex = 8;
@@ -211,9 +211,9 @@ namespace GUI
             // cboLaguage
             // 
             this.cboLaguage.FormattingEnabled = true;
-            this.cboLaguage.Location = new System.Drawing.Point(526, 571);
+            this.cboLaguage.Location = new System.Drawing.Point(451, 495);
             this.cboLaguage.Name = "cboLaguage";
-            this.cboLaguage.Size = new System.Drawing.Size(196, 23);
+            this.cboLaguage.Size = new System.Drawing.Size(169, 21);
             this.cboLaguage.TabIndex = 9;
             // 
             // panel1
@@ -228,18 +228,18 @@ namespace GUI
             this.panel1.Controls.Add(this.grbDepartmentSpendingRatio);
             this.panel1.Controls.Add(this.btnInventoryControl);
             this.panel1.Controls.Add(this.grbMonthlyDepartmentSpending);
-            this.panel1.Location = new System.Drawing.Point(13, 45);
+            this.panel1.Location = new System.Drawing.Point(11, 39);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1050, 611);
+            this.panel1.Size = new System.Drawing.Size(900, 530);
             this.panel1.TabIndex = 10;
             // 
             // btnExit
             // 
             this.btnExit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(35)))), ((int)(((byte)(26)))));
             this.btnExit.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnExit.Location = new System.Drawing.Point(1032, 3);
+            this.btnExit.Location = new System.Drawing.Point(885, 3);
             this.btnExit.Name = "btnExit";
-            this.btnExit.Size = new System.Drawing.Size(31, 27);
+            this.btnExit.Size = new System.Drawing.Size(27, 23);
             this.btnExit.TabIndex = 11;
             this.btnExit.Text = "X";
             this.btnExit.UseVisualStyleBackColor = false;
@@ -252,7 +252,7 @@ namespace GUI
             this.panel2.Controls.Add(this.btnExit);
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1075, 33);
+            this.panel2.Size = new System.Drawing.Size(921, 29);
             this.panel2.TabIndex = 13;
             // 
             // lblHeaderInventoryDashbroad
@@ -260,7 +260,7 @@ namespace GUI
             this.lblHeaderInventoryDashbroad.AutoSize = true;
             this.lblHeaderInventoryDashbroad.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblHeaderInventoryDashbroad.ForeColor = System.Drawing.Color.White;
-            this.lblHeaderInventoryDashbroad.Location = new System.Drawing.Point(12, 9);
+            this.lblHeaderInventoryDashbroad.Location = new System.Drawing.Point(10, 8);
             this.lblHeaderInventoryDashbroad.Name = "lblHeaderInventoryDashbroad";
             this.lblHeaderInventoryDashbroad.Size = new System.Drawing.Size(51, 16);
             this.lblHeaderInventoryDashbroad.TabIndex = 12;
@@ -268,13 +268,13 @@ namespace GUI
             // 
             // frmInventoryDashbroad
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(128)))), ((int)(((byte)(116)))));
-            this.ClientSize = new System.Drawing.Size(1075, 668);
+            this.ClientSize = new System.Drawing.Size(921, 579);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
-            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmInventoryDashbroad";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
