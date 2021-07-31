@@ -40,7 +40,7 @@ namespace GUI
             this.txtAmount = new System.Windows.Forms.TextBox();
             this.lblAmount = new System.Windows.Forms.Label();
             this.cboPartName = new System.Windows.Forms.ComboBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.cboWarehouse = new System.Windows.Forms.ComboBox();
             this.lblPartName = new System.Windows.Forms.Label();
             this.lblWarehouse = new System.Windows.Forms.Label();
             this.grbAllocatedParts = new System.Windows.Forms.GroupBox();
@@ -107,7 +107,7 @@ namespace GUI
             this.grbSearchForParts.Controls.Add(this.txtAmount);
             this.grbSearchForParts.Controls.Add(this.lblAmount);
             this.grbSearchForParts.Controls.Add(this.cboPartName);
-            this.grbSearchForParts.Controls.Add(this.comboBox2);
+            this.grbSearchForParts.Controls.Add(this.cboWarehouse);
             this.grbSearchForParts.Controls.Add(this.lblPartName);
             this.grbSearchForParts.Controls.Add(this.lblWarehouse);
             this.grbSearchForParts.Location = new System.Drawing.Point(16, 48);
@@ -176,14 +176,14 @@ namespace GUI
             this.cboPartName.Size = new System.Drawing.Size(147, 21);
             this.cboPartName.TabIndex = 7;
             // 
-            // comboBox2
+            // cboWarehouse
             // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(132, 23);
-            this.comboBox2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(284, 21);
-            this.comboBox2.TabIndex = 5;
+            this.cboWarehouse.FormattingEnabled = true;
+            this.cboWarehouse.Location = new System.Drawing.Point(132, 23);
+            this.cboWarehouse.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.cboWarehouse.Name = "cboWarehouse";
+            this.cboWarehouse.Size = new System.Drawing.Size(284, 21);
+            this.cboWarehouse.TabIndex = 5;
             // 
             // lblPartName
             // 
@@ -389,7 +389,7 @@ namespace GUI
         private System.Windows.Forms.GroupBox grbSearchForParts;
         private System.Windows.Forms.Label lblWarehouse;
         private System.Windows.Forms.Label lblPartName;
-        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.ComboBox cboWarehouse;
         private System.Windows.Forms.ComboBox cboPartName;
         private System.Windows.Forms.Label lblAmount;
         private System.Windows.Forms.TextBox txtAmount;

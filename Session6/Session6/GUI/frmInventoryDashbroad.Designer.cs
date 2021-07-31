@@ -29,12 +29,12 @@ namespace GUI
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea5 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend5 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series5 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea6 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend6 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series6 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.grbEMSpendingByDepartment = new System.Windows.Forms.GroupBox();
             this.dgvEMSpendingByDepartment = new System.Windows.Forms.DataGridView();
             this.grbMonthlyReportForMostUsedParts = new System.Windows.Forms.GroupBox();
@@ -123,33 +123,33 @@ namespace GUI
             // 
             // chartDepartmentSpendingRatio
             // 
-            chartArea1.Name = "ChartArea1";
-            this.chartDepartmentSpendingRatio.ChartAreas.Add(chartArea1);
-            legend1.Name = "Legend1";
-            this.chartDepartmentSpendingRatio.Legends.Add(legend1);
+            chartArea5.Name = "ChartArea1";
+            this.chartDepartmentSpendingRatio.ChartAreas.Add(chartArea5);
+            legend5.Name = "Legend1";
+            this.chartDepartmentSpendingRatio.Legends.Add(legend5);
             this.chartDepartmentSpendingRatio.Location = new System.Drawing.Point(9, 17);
             this.chartDepartmentSpendingRatio.Name = "chartDepartmentSpendingRatio";
-            series1.ChartArea = "ChartArea1";
-            series1.Legend = "Legend1";
-            series1.Name = "Series1";
-            this.chartDepartmentSpendingRatio.Series.Add(series1);
+            series5.ChartArea = "ChartArea1";
+            series5.Legend = "Legend1";
+            series5.Name = "Series1";
+            this.chartDepartmentSpendingRatio.Series.Add(series5);
             this.chartDepartmentSpendingRatio.Size = new System.Drawing.Size(233, 219);
             this.chartDepartmentSpendingRatio.TabIndex = 2;
             this.chartDepartmentSpendingRatio.Text = "chart1";
             // 
             // chartMonthlyDepartmentSpending
             // 
-            chartArea2.Name = "ChartArea1";
-            this.chartMonthlyDepartmentSpending.ChartAreas.Add(chartArea2);
-            legend2.Name = "Legend1";
-            this.chartMonthlyDepartmentSpending.Legends.Add(legend2);
+            chartArea6.Name = "ChartArea1";
+            this.chartMonthlyDepartmentSpending.ChartAreas.Add(chartArea6);
+            legend6.Name = "Legend1";
+            this.chartMonthlyDepartmentSpending.Legends.Add(legend6);
             this.chartMonthlyDepartmentSpending.Location = new System.Drawing.Point(9, 17);
             this.chartMonthlyDepartmentSpending.Name = "chartMonthlyDepartmentSpending";
-            series2.ChartArea = "ChartArea1";
-            series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
-            series2.Legend = "Legend1";
-            series2.Name = "Series1";
-            this.chartMonthlyDepartmentSpending.Series.Add(series2);
+            series6.ChartArea = "ChartArea1";
+            series6.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
+            series6.Legend = "Legend1";
+            series6.Name = "Series1";
+            this.chartMonthlyDepartmentSpending.Series.Add(series6);
             this.chartMonthlyDepartmentSpending.Size = new System.Drawing.Size(233, 219);
             this.chartMonthlyDepartmentSpending.TabIndex = 3;
             this.chartMonthlyDepartmentSpending.Text = "chart2";
@@ -180,7 +180,7 @@ namespace GUI
             this.btnInventoryControl.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnInventoryControl.Location = new System.Drawing.Point(24, 485);
             this.btnInventoryControl.Name = "btnInventoryControl";
-            this.btnInventoryControl.Size = new System.Drawing.Size(159, 31);
+            this.btnInventoryControl.Size = new System.Drawing.Size(215, 31);
             this.btnInventoryControl.TabIndex = 6;
             this.btnInventoryControl.Text = "button1";
             this.btnInventoryControl.UseVisualStyleBackColor = false;
@@ -190,9 +190,9 @@ namespace GUI
             // 
             this.btnClose.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(35)))), ((int)(((byte)(26)))));
             this.btnClose.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnClose.Location = new System.Drawing.Point(202, 485);
+            this.btnClose.Location = new System.Drawing.Point(245, 485);
             this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(124, 31);
+            this.btnClose.Size = new System.Drawing.Size(106, 31);
             this.btnClose.TabIndex = 7;
             this.btnClose.Text = "button2";
             this.btnClose.UseVisualStyleBackColor = false;
@@ -202,7 +202,7 @@ namespace GUI
             // 
             this.lblLanguage.AutoSize = true;
             this.lblLanguage.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblLanguage.Location = new System.Drawing.Point(355, 495);
+            this.lblLanguage.Location = new System.Drawing.Point(374, 495);
             this.lblLanguage.Name = "lblLanguage";
             this.lblLanguage.Size = new System.Drawing.Size(53, 20);
             this.lblLanguage.TabIndex = 8;
@@ -211,10 +211,11 @@ namespace GUI
             // cboLaguage
             // 
             this.cboLaguage.FormattingEnabled = true;
-            this.cboLaguage.Location = new System.Drawing.Point(451, 495);
+            this.cboLaguage.Location = new System.Drawing.Point(480, 495);
             this.cboLaguage.Name = "cboLaguage";
-            this.cboLaguage.Size = new System.Drawing.Size(169, 21);
+            this.cboLaguage.Size = new System.Drawing.Size(140, 21);
             this.cboLaguage.TabIndex = 9;
+            this.cboLaguage.SelectedIndexChanged += new System.EventHandler(this.cboLaguage_SelectedIndexChanged);
             // 
             // panel1
             // 
@@ -279,7 +280,7 @@ namespace GUI
             this.Name = "frmInventoryDashbroad";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Inventory Dashbroad";
-            this.Load += new System.EventHandler(this.Form1_Load);
+            this.Load += new System.EventHandler(this.frmInventoryDashbroad_Load);
             this.grbEMSpendingByDepartment.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvEMSpendingByDepartment)).EndInit();
             this.grbMonthlyReportForMostUsedParts.ResumeLayout(false);
