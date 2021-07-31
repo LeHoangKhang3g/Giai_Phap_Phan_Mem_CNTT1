@@ -17,6 +17,7 @@ namespace DAO
             foreach(PartDTO p in partDTOs)
             {
                 ReportDTO reportDTO = new ReportDTO();
+                reportDTO.id = p.ID;
                 reportDTO.PartName = p.Name;
                 reportDTO.ReceivedStock = (decimal)_ss4.RECEIVED_STOCK_2(wareHouse, p.ID).FirstOrDefault().GetValueOrDefault();
                 reportDTO.OutOfStock = (decimal)_ss4.OUT_OF_STOCK_2(wareHouse, p.ID).FirstOrDefault().GetValueOrDefault();

@@ -14,6 +14,7 @@ namespace GUI
     public partial class frmPurchaseOrderManagement : Form
     {
         private bool flag;
+        private bool flag2;
         private long orderID;
         private SuppliersBUS _supp = new SuppliersBUS();
         private WarehouseBUS _ware = new WarehouseBUS();
@@ -28,8 +29,8 @@ namespace GUI
         private void frmPurchaseOrderManagement_Load(object sender, EventArgs e)
         {
             flag = false;
-            frmInventoryManagement frm = new frmInventoryManagement();
-            orderID = frm.orderID;
+            orderID = frmInventoryManagement.orderID;
+            flag2 = orderID > 0;
             cbbSupplier.DataSource = _supp.GetAllSuppliers();
             cbbSupplier.DisplayMember = "Name";
             cbbSupplier.ValueMember = "ID";
@@ -49,6 +50,21 @@ namespace GUI
             else
             {
                 txtBatchNumber.Enabled = false;
+            }
+
+            if (flag2 == true)
+            {
+                dgvPartsList.DataSource = _item.ListItem(orderID);
+
+                OrderDTO order = _order.SelectOrder(orderID);
+
+                cboWarehouse.SelectedValue = order.DestinationWarehouseID;
+                cbbSupplier.SelectedValue = order.SupplierID;
+                dtpDate.Value = order.Date;
+
+                cboWarehouse.Enabled = false;
+                cbbSupplier.Enabled = false;
+                dtpDate.Enabled = false;
             }
         }
 
@@ -70,13 +86,16 @@ namespace GUI
 
         private void btnCancel_Click(object sender, EventArgs e)
         {
-            _order.DeleteOrder(orderID);
+            if (flag2 == false)
+            {
+                _order.DeleteOrder(orderID);
+            }
             this.Close();
         }
 
         private void btnAddToList_Click(object sender, EventArgs e)
         {
-            if (flag == false)
+            if (flag == false && flag2 == false)
             {
                 if (_order.AddOrder2(1, (long)cbbSupplier.SelectedValue, Int64.Parse(cboWarehouse.SelectedValue.ToString()), dtpDate.Value))
                 {

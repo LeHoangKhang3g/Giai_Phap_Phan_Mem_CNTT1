@@ -33,5 +33,21 @@ namespace DAO
             _ss4.DeleteOrder(id);
         }
 
+        public OrderDTO SelectOrder(long id)
+        {
+            Order order = _ss4.Orders.SingleOrDefault(u => u.ID == id);
+
+            OrderDTO orderDTO = new OrderDTO()
+            {
+                ID= order.ID,
+                TransactionTypeID= order.TransactionTypeID,
+                SupplierID= order.SupplierID,
+                SourceWarehouseID= order.SourceWarehouseID,
+                DestinationWarehouseID= order.DestinationWarehouseID,
+                Date= order.Date
+            };
+
+            return orderDTO;
+        }
     }
 }

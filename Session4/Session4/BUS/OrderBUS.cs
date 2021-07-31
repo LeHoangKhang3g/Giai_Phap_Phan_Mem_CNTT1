@@ -29,5 +29,10 @@ namespace BUS
         {
             _order.DeleteOrder(id);
         }
+
+        public OrderDTO SelectOrder(long id)
+        {
+            return _order.SelectOrder(id);
+        }
     }
 }

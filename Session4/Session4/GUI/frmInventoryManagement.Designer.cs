@@ -45,6 +45,7 @@ namespace GUI
             this.colDestination = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colEdit = new System.Windows.Forms.DataGridViewButtonColumn();
             this.colRemove = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.Order = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPartsManagement)).BeginInit();
             this.SuspendLayout();
@@ -105,7 +106,8 @@ namespace GUI
             this.colSource,
             this.colDestination,
             this.colEdit,
-            this.colRemove});
+            this.colRemove,
+            this.Order});
             this.dgvPartsManagement.Location = new System.Drawing.Point(0, 31);
             this.dgvPartsManagement.Name = "dgvPartsManagement";
             this.dgvPartsManagement.ReadOnly = true;
@@ -197,6 +199,14 @@ namespace GUI
             this.colRemove.Text = "Remove";
             this.colRemove.UseColumnTextForButtonValue = true;
             // 
+            // Order
+            // 
+            this.Order.DataPropertyName = "OrderID";
+            this.Order.HeaderText = "Order";
+            this.Order.Name = "Order";
+            this.Order.ReadOnly = true;
+            this.Order.Visible = false;
+            // 
             // frmInventoryManagement
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -237,6 +247,7 @@ namespace GUI
         private System.Windows.Forms.DataGridViewTextBoxColumn colDestination;
         private System.Windows.Forms.DataGridViewButtonColumn colEdit;
         private System.Windows.Forms.DataGridViewButtonColumn colRemove;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Order;
     }
 }
 

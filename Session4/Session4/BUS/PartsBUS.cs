@@ -15,6 +15,11 @@ namespace BUS
             return _part.GetAllActivities();
         }
 
+        public List<AllActivitiesDTO> GetAllActivities(int value)
+        {
+            return _part.GetAllActivities(value);
+        }
+
         public List<PartDTO> GetAllPart()
         {
             return _part.GetAllPart();
@@ -29,6 +34,11 @@ namespace BUS
         public decimal CheckAmount(long warehouse, long part)
         {
             return _part.CheckAmount(warehouse, part);
+        }
+
+        public List<BatchNumberDTO> SelectAllBatchNumber(long id)
+        {
+            return _part.SelectAllBatchNumber(id);
         }
     }
 }

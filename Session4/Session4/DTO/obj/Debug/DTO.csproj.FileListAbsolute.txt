@@ -3,9 +3,9 @@ D:\GITHUB\Giai_Phap_Phan_Mem_CNTT1\Session4\Session4\DTO\bin\Debug\DTO.pdb
 D:\GITHUB\Giai_Phap_Phan_Mem_CNTT1\Session4\Session4\DTO\obj\Debug\DTO.csproj.CoreCompileInputs.cache
 D:\GITHUB\Giai_Phap_Phan_Mem_CNTT1\Session4\Session4\DTO\obj\Debug\DTO.dll
 D:\GITHUB\Giai_Phap_Phan_Mem_CNTT1\Session4\Session4\DTO\obj\Debug\DTO.pdb
+D:\GITHUB\Giai_Phap_Phan_Mem_CNTT1\Session4\Session4\DTO\obj\Debug\DTO.csproj.AssemblyReference.cache
 E:\GITHUB\Giai_Phap_Phan_Mem_CNTT1\Session4\Session4\DTO\bin\Debug\DTO.dll
 E:\GITHUB\Giai_Phap_Phan_Mem_CNTT1\Session4\Session4\DTO\bin\Debug\DTO.pdb
 E:\GITHUB\Giai_Phap_Phan_Mem_CNTT1\Session4\Session4\DTO\obj\Debug\DTO.csprojResolveAssemblyReference.cache
 E:\GITHUB\Giai_Phap_Phan_Mem_CNTT1\Session4\Session4\DTO\obj\Debug\DTO.dll
 E:\GITHUB\Giai_Phap_Phan_Mem_CNTT1\Session4\Session4\DTO\obj\Debug\DTO.pdb
-D:\GITHUB\Giai_Phap_Phan_Mem_CNTT1\Session4\Session4\DTO\obj\Debug\DTO.csproj.AssemblyReference.cache

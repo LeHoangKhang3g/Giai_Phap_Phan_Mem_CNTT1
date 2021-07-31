@@ -118,6 +118,98 @@
       </ResultMapping>
     </FunctionImportMapping>
     <FunctionImportMapping FunctionImportName="DeleteOrder" FunctionName="Session4Model.Store.DeleteOrder" />
-    <FunctionImportMapping FunctionImportName="EditOrderItem" FunctionName="Session4Model.Store.EditOrderItem" />
+    <FunctionImportMapping FunctionImportName="SelectBatchNumber" FunctionName="Session4Model.Store.SelectBatchNumber">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Session4Model.SelectBatchNumber_Result">
+          <ScalarProperty Name="PartID" ColumnName="PartID" />
+          <ScalarProperty Name="NAME" ColumnName="NAME" />
+          <ScalarProperty Name="BatchNumber" ColumnName="BatchNumber" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="All_Activities_OrderByAmount" FunctionName="Session4Model.Store.All_Activities_OrderByAmount">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Session4Model.All_Activities_OrderByAmount_Result">
+          <ScalarProperty Name="OrderID" ColumnName="OrderID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Part_Name" ColumnName="Part Name" />
+          <ScalarProperty Name="Transaction_Type" ColumnName="Transaction Type" />
+          <ScalarProperty Name="Transaction_Date" ColumnName="Transaction Date" />
+          <ScalarProperty Name="Amount" ColumnName="Amount" />
+          <ScalarProperty Name="Source_Warehouse" ColumnName="Source Warehouse" />
+          <ScalarProperty Name="Destination_Warehouse" ColumnName="Destination Warehouse" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="All_Activities_OrderByDate" FunctionName="Session4Model.Store.All_Activities_OrderByDate">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Session4Model.All_Activities_OrderByDate_Result">
+          <ScalarProperty Name="OrderID" ColumnName="OrderID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Part_Name" ColumnName="Part Name" />
+          <ScalarProperty Name="Transaction_Type" ColumnName="Transaction Type" />
+          <ScalarProperty Name="Transaction_Date" ColumnName="Transaction Date" />
+          <ScalarProperty Name="Amount" ColumnName="Amount" />
+          <ScalarProperty Name="Source_Warehouse" ColumnName="Source Warehouse" />
+          <ScalarProperty Name="Destination_Warehouse" ColumnName="Destination Warehouse" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="All_Activities_OrderByDestination" FunctionName="Session4Model.Store.All_Activities_OrderByDestination">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Session4Model.All_Activities_OrderByDestination_Result">
+          <ScalarProperty Name="OrderID" ColumnName="OrderID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Part_Name" ColumnName="Part Name" />
+          <ScalarProperty Name="Transaction_Type" ColumnName="Transaction Type" />
+          <ScalarProperty Name="Transaction_Date" ColumnName="Transaction Date" />
+          <ScalarProperty Name="Amount" ColumnName="Amount" />
+          <ScalarProperty Name="Source_Warehouse" ColumnName="Source Warehouse" />
+          <ScalarProperty Name="Destination_Warehouse" ColumnName="Destination Warehouse" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="All_Activities_OrderByPartName" FunctionName="Session4Model.Store.All_Activities_OrderByPartName">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Session4Model.All_Activities_OrderByPartName_Result">
+          <ScalarProperty Name="OrderID" ColumnName="OrderID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Part_Name" ColumnName="Part Name" />
+          <ScalarProperty Name="Transaction_Type" ColumnName="Transaction Type" />
+          <ScalarProperty Name="Transaction_Date" ColumnName="Transaction Date" />
+          <ScalarProperty Name="Amount" ColumnName="Amount" />
+          <ScalarProperty Name="Source_Warehouse" ColumnName="Source Warehouse" />
+          <ScalarProperty Name="Destination_Warehouse" ColumnName="Destination Warehouse" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="All_Activities_OrderBySource" FunctionName="Session4Model.Store.All_Activities_OrderBySource">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Session4Model.All_Activities_OrderBySource_Result">
+          <ScalarProperty Name="OrderID" ColumnName="OrderID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Part_Name" ColumnName="Part Name" />
+          <ScalarProperty Name="Transaction_Type" ColumnName="Transaction Type" />
+          <ScalarProperty Name="Transaction_Date" ColumnName="Transaction Date" />
+          <ScalarProperty Name="Amount" ColumnName="Amount" />
+          <ScalarProperty Name="Source_Warehouse" ColumnName="Source Warehouse" />
+          <ScalarProperty Name="Destination_Warehouse" ColumnName="Destination Warehouse" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="All_Activities_OrderByTransactionType" FunctionName="Session4Model.Store.All_Activities_OrderByTransactionType">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Session4Model.All_Activities_OrderByTransactionType_Result">
+          <ScalarProperty Name="OrderID" ColumnName="OrderID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Part_Name" ColumnName="Part Name" />
+          <ScalarProperty Name="Transaction_Type" ColumnName="Transaction Type" />
+          <ScalarProperty Name="Transaction_Date" ColumnName="Transaction Date" />
+          <ScalarProperty Name="Amount" ColumnName="Amount" />
+          <ScalarProperty Name="Source_Warehouse" ColumnName="Source Warehouse" />
+          <ScalarProperty Name="Destination_Warehouse" ColumnName="Destination Warehouse" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
   </EntityContainerMapping>
 </Mapping>

@@ -15,7 +15,7 @@ namespace GUI
     {
         private PartsBUS _part = new PartsBUS();
         private OrderItemBUS _orderItem = new OrderItemBUS();
-        public long orderID;
+        public static long orderID;
         public static decimal amountBeforeEdit;
         public static decimal amountAfterEdit;
         public frmInventoryManagement()
@@ -71,71 +71,22 @@ namespace GUI
         {
             if (dgvPartsManagement.Columns[e.ColumnIndex].Name == "colEdit")
             {
-                long id = Convert.ToInt64(dgvPartsManagement.Rows[e.RowIndex].Cells[0].Value.ToString());
-                String partName = dgvPartsManagement.Rows[e.RowIndex].Cells[1].Value.ToString();
-                decimal amount = Convert.ToDecimal(dgvPartsManagement.Rows[e.RowIndex].Cells[4].Value.ToString());
-                String source;
-                if (dgvPartsManagement.Rows[e.RowIndex].Cells[5].Value == null)
-                    source = null;
-                else
-                    source = dgvPartsManagement.Rows[e.RowIndex].Cells[5].Value.ToString();
-                String destination = dgvPartsManagement.Rows[e.RowIndex].Cells[6].Value.ToString();
-                decimal currentStockSource = source == null ? 0 : _orderItem.GetCurrentStock(source, partName);
-                decimal currentStockDestination = _orderItem.GetCurrentStock(destination, partName);
+                orderID = (long)dgvPartsManagement.Rows[e.RowIndex].Cells[9].Value;
 
-                amountBeforeEdit = amount;
-                amountAfterEdit = -1;
-                frmEditAmount fEditAmount = new frmEditAmount();
-                fEditAmount.ShowDialog();
-                if (amountAfterEdit >= 0)
+                string transaction= dgvPartsManagement.Rows[e.RowIndex].Cells[2].Value.ToString();
+                if(transaction.Equals("Purchase Order"))
                 {
-                    if (amountBeforeEdit < amountAfterEdit)
-                    {
-                        if(source==null)
-                        {
-                            bool result = _orderItem.EditOrderItem(id, amountAfterEdit);
-                            if (result)
-                            {
-                                MessageBox.Show("Sửa thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                                dgvPartsManagement.DataSource = _part.GetAllActivities();
-                            }
-                            else
-                                MessageBox.Show("Sửa không thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        }
-                        else if (currentStockSource >= amountAfterEdit-amountBeforeEdit)
-                        {
-                            bool result = _orderItem.EditOrderItem(id, amountAfterEdit);
-                            if (result)
-                            {
-                                MessageBox.Show("Sửa thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                                dgvPartsManagement.DataSource = _part.GetAllActivities();
-                            }
-                            else
-                                MessageBox.Show("Sửa không thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        }
-                        else
-                        {
-                            MessageBox.Show("Không thể sửa, vì tác vụ này khiến số lượng thành phần trong kho nguồn bị âm", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                        }
-                    }
-                    else
-                    {
-                        if (currentStockDestination >= amountBeforeEdit - amountAfterEdit)
-                        {
-                            bool result = _orderItem.EditOrderItem(id, amountAfterEdit);
-                            if (result)
-                            {
-                                MessageBox.Show("Sửa thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                                dgvPartsManagement.DataSource = _part.GetAllActivities();
-                            }
-                            else
-                                MessageBox.Show("Sửa không thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        }
-                        else
-                        {
-                            MessageBox.Show("Không thể sửa, vì tác vụ này khiến số lượng thành phần trong kho đích bị âm", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                        }
-                    }
+                    frmPurchaseOrderManagement frm = new frmPurchaseOrderManagement();
+                    this.Hide();
+                    frm.ShowDialog();
+                    this.Show();
+                }
+                else
+                {
+                    frmWarehouseManagement frm = new frmWarehouseManagement();
+                    this.Hide();
+                    frm.ShowDialog();
+                    this.Show();
                 }
             }
             if (dgvPartsManagement.Columns[e.ColumnIndex].Name == "colRemove")
@@ -170,7 +121,6 @@ namespace GUI
                         MessageBox.Show("Không thể xoá, vì tác vụ này khiến số lượng thành phần trong kho đích bị âm","Thông báo",MessageBoxButtons.OK,MessageBoxIcon.Warning);
                     }
 
-
                 }
             }
         }
@@ -179,32 +129,38 @@ namespace GUI
         {
             if(dgvPartsManagement.Columns[e.ColumnIndex].Name == "colPartName")
             {
-                MessageBox.Show("HELLO");
+                dgvPartsManagement.DataSource = _part.GetAllActivities(1);
+                return;
             }
 
-            if (dgvPartsManagement.Columns[e.ColumnIndex].Name == "colPartName")
+            if (dgvPartsManagement.Columns[e.ColumnIndex].Name == "colTransactionType")
             {
-                MessageBox.Show("HELLO");
+                dgvPartsManagement.DataSource = _part.GetAllActivities(2);
+                return;
             }
 
-            if (dgvPartsManagement.Columns[e.ColumnIndex].Name == "colPartName")
+            if (dgvPartsManagement.Columns[e.ColumnIndex].Name == "colDate")
             {
-                MessageBox.Show("HELLO");
+                dgvPartsManagement.DataSource = _part.GetAllActivities(3);
+                return;
             }
 
-            if (dgvPartsManagement.Columns[e.ColumnIndex].Name == "colPartName")
+            if (dgvPartsManagement.Columns[e.ColumnIndex].Name == "colAmount")
             {
-                MessageBox.Show("HELLO");
+                dgvPartsManagement.DataSource = _part.GetAllActivities(4);
+                return;
             }
 
-            if (dgvPartsManagement.Columns[e.ColumnIndex].Name == "colPartName")
+            if (dgvPartsManagement.Columns[e.ColumnIndex].Name == "colSource")
             {
-                MessageBox.Show("HELLO");
+                dgvPartsManagement.DataSource = _part.GetAllActivities(5);
+                return;
             }
 
-            if (dgvPartsManagement.Columns[e.ColumnIndex].Name == "colPartName")
+            if (dgvPartsManagement.Columns[e.ColumnIndex].Name == "colDestionation")
             {
-                MessageBox.Show("HELLO");
+                dgvPartsManagement.DataSource = _part.GetAllActivities(6);
+                return;
             }
         }
     }   

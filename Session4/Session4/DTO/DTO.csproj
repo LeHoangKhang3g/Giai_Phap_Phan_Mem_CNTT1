@@ -40,6 +40,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AllActivitiesDTO.cs" />
+    <Compile Include="BatchNumberDTO.cs" />
+    <Compile Include="OrderDTO.cs" />
     <Compile Include="OrderItemDTO.cs" />
     <Compile Include="PartDTO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

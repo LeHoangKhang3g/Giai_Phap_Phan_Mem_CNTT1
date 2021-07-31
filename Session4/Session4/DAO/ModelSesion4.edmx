@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-    <Schema Namespace="Session4Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="Session4Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="OrderItems">
           <Key>
             <PropertyRef Name="ID" />
@@ -158,6 +158,12 @@
           <Parameter Name="amout" Type="decimal" Mode="In" />
         </Function>
         <Function Name="All_Activities" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="All_Activities_OrderByAmount" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="All_Activities_OrderByDate" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="All_Activities_OrderByDestination" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="All_Activities_OrderByPartName" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="All_Activities_OrderBySource" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="All_Activities_OrderByTransactionType" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
         <Function Name="All_Activities2" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
         <Function Name="CURRENT_STOCK" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="wareHouseID" Type="bigint" Mode="In" />
@@ -173,10 +179,6 @@
         </Function>
         <Function Name="DeleteOrderItem" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="id" Type="bigint" Mode="In" />
-        </Function>
-        <Function Name="EditOrderItem" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="id" Type="bigint" Mode="In" />
-          <Parameter Name="amount" Type="decimal" Mode="In" />
         </Function>
         <Function Name="Items_Order" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="orderID" Type="bigint" Mode="In" />
@@ -198,6 +200,9 @@
         <Function Name="RECEIVED_STOCK_2" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="wareHouseID" Type="bigint" Mode="In" />
           <Parameter Name="partID" Type="bigint" Mode="In" />
+        </Function>
+        <Function Name="SelectBatchNumber" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="id" Type="bigint" Mode="In" />
         </Function>
         <EntityContainer Name="Session4ModelStoreContainer">
           <EntitySet Name="OrderItems" EntityType="Self.OrderItems" Schema="dbo" store:Type="Tables" />
@@ -479,6 +484,15 @@
             <Parameter Name="id" Mode="In" Type="Int64" />
             <Parameter Name="amount" Mode="In" Type="Decimal" />
           </FunctionImport>
+          <FunctionImport Name="SelectBatchNumber" ReturnType="Collection(Session4Model.SelectBatchNumber_Result)">
+          <Parameter Name="id" Mode="In" Type="Int64" />
+          </FunctionImport>
+          <FunctionImport Name="All_Activities_OrderByAmount" ReturnType="Collection(Session4Model.All_Activities_OrderByAmount_Result)" />
+          <FunctionImport Name="All_Activities_OrderByDate" ReturnType="Collection(Session4Model.All_Activities_OrderByDate_Result)" />
+          <FunctionImport Name="All_Activities_OrderByDestination" ReturnType="Collection(Session4Model.All_Activities_OrderByDestination_Result)" />
+          <FunctionImport Name="All_Activities_OrderByPartName" ReturnType="Collection(Session4Model.All_Activities_OrderByPartName_Result)" />
+          <FunctionImport Name="All_Activities_OrderBySource" ReturnType="Collection(Session4Model.All_Activities_OrderBySource_Result)" />
+          <FunctionImport Name="All_Activities_OrderByTransactionType" ReturnType="Collection(Session4Model.All_Activities_OrderByTransactionType_Result)" />
         </EntityContainer>
         <ComplexType Name="AllActivities_Result">
           <Property Type="Int64" Name="ID" Nullable="false" />
@@ -527,6 +541,71 @@
           <Property Type="String" Name="Name" Nullable="false" MaxLength="50" />
           <Property Type="String" Name="BatchNumber" Nullable="true" MaxLength="50" />
           <Property Type="Decimal" Name="Amount" Nullable="false" Precision="18" Scale="2" />
+        </ComplexType>
+        <ComplexType Name="SelectBatchNumber_Result">
+          <Property Type="Int64" Name="PartID" Nullable="false" />
+          <Property Type="String" Name="NAME" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="BatchNumber" Nullable="true" MaxLength="50" />
+        </ComplexType>
+        <ComplexType Name="All_Activities_OrderByAmount_Result">
+          <Property Type="Int64" Name="OrderID" Nullable="false" />
+          <Property Type="Int64" Name="ID" Nullable="false" />
+          <Property Type="String" Name="Part_Name" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="Transaction_Type" Nullable="false" MaxLength="50" />
+          <Property Type="DateTime" Name="Transaction_Date" Nullable="false" />
+          <Property Type="Decimal" Name="Amount" Nullable="false" Precision="18" Scale="2" />
+          <Property Type="String" Name="Source_Warehouse" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="Destination_Warehouse" Nullable="true" MaxLength="50" />
+        </ComplexType>
+        <ComplexType Name="All_Activities_OrderByDate_Result">
+          <Property Type="Int64" Name="OrderID" Nullable="false" />
+          <Property Type="Int64" Name="ID" Nullable="false" />
+          <Property Type="String" Name="Part_Name" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="Transaction_Type" Nullable="false" MaxLength="50" />
+          <Property Type="DateTime" Name="Transaction_Date" Nullable="false" />
+          <Property Type="Decimal" Name="Amount" Nullable="false" Precision="18" Scale="2" />
+          <Property Type="String" Name="Source_Warehouse" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="Destination_Warehouse" Nullable="true" MaxLength="50" />
+        </ComplexType>
+        <ComplexType Name="All_Activities_OrderByDestination_Result">
+          <Property Type="Int64" Name="OrderID" Nullable="false" />
+          <Property Type="Int64" Name="ID" Nullable="false" />
+          <Property Type="String" Name="Part_Name" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="Transaction_Type" Nullable="false" MaxLength="50" />
+          <Property Type="DateTime" Name="Transaction_Date" Nullable="false" />
+          <Property Type="Decimal" Name="Amount" Nullable="false" Precision="18" Scale="2" />
+          <Property Type="String" Name="Source_Warehouse" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="Destination_Warehouse" Nullable="true" MaxLength="50" />
+        </ComplexType>
+        <ComplexType Name="All_Activities_OrderByPartName_Result">
+          <Property Type="Int64" Name="OrderID" Nullable="false" />
+          <Property Type="Int64" Name="ID" Nullable="false" />
+          <Property Type="String" Name="Part_Name" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="Transaction_Type" Nullable="false" MaxLength="50" />
+          <Property Type="DateTime" Name="Transaction_Date" Nullable="false" />
+          <Property Type="Decimal" Name="Amount" Nullable="false" Precision="18" Scale="2" />
+          <Property Type="String" Name="Source_Warehouse" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="Destination_Warehouse" Nullable="true" MaxLength="50" />
+        </ComplexType>
+        <ComplexType Name="All_Activities_OrderBySource_Result">
+          <Property Type="Int64" Name="OrderID" Nullable="false" />
+          <Property Type="Int64" Name="ID" Nullable="false" />
+          <Property Type="String" Name="Part_Name" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="Transaction_Type" Nullable="false" MaxLength="50" />
+          <Property Type="DateTime" Name="Transaction_Date" Nullable="false" />
+          <Property Type="Decimal" Name="Amount" Nullable="false" Precision="18" Scale="2" />
+          <Property Type="String" Name="Source_Warehouse" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="Destination_Warehouse" Nullable="true" MaxLength="50" />
+        </ComplexType>
+        <ComplexType Name="All_Activities_OrderByTransactionType_Result">
+          <Property Type="Int64" Name="OrderID" Nullable="false" />
+          <Property Type="Int64" Name="ID" Nullable="false" />
+          <Property Type="String" Name="Part_Name" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="Transaction_Type" Nullable="false" MaxLength="50" />
+          <Property Type="DateTime" Name="Transaction_Date" Nullable="false" />
+          <Property Type="Decimal" Name="Amount" Nullable="false" Precision="18" Scale="2" />
+          <Property Type="String" Name="Source_Warehouse" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="Destination_Warehouse" Nullable="true" MaxLength="50" />
         </ComplexType>
       </Schema>
     </edmx:ConceptualModels>
@@ -651,7 +730,99 @@
             </ResultMapping>
           </FunctionImportMapping>
           <FunctionImportMapping FunctionImportName="DeleteOrder" FunctionName="Session4Model.Store.DeleteOrder" />
-          <FunctionImportMapping FunctionImportName="EditOrderItem" FunctionName="Session4Model.Store.EditOrderItem" />
+          <FunctionImportMapping FunctionImportName="SelectBatchNumber" FunctionName="Session4Model.Store.SelectBatchNumber">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="Session4Model.SelectBatchNumber_Result">
+                <ScalarProperty Name="PartID" ColumnName="PartID" />
+                <ScalarProperty Name="NAME" ColumnName="NAME" />
+                <ScalarProperty Name="BatchNumber" ColumnName="BatchNumber" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="All_Activities_OrderByAmount" FunctionName="Session4Model.Store.All_Activities_OrderByAmount">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="Session4Model.All_Activities_OrderByAmount_Result">
+                <ScalarProperty Name="OrderID" ColumnName="OrderID" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Part_Name" ColumnName="Part Name" />
+                <ScalarProperty Name="Transaction_Type" ColumnName="Transaction Type" />
+                <ScalarProperty Name="Transaction_Date" ColumnName="Transaction Date" />
+                <ScalarProperty Name="Amount" ColumnName="Amount" />
+                <ScalarProperty Name="Source_Warehouse" ColumnName="Source Warehouse" />
+                <ScalarProperty Name="Destination_Warehouse" ColumnName="Destination Warehouse" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="All_Activities_OrderByDate" FunctionName="Session4Model.Store.All_Activities_OrderByDate">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="Session4Model.All_Activities_OrderByDate_Result">
+                <ScalarProperty Name="OrderID" ColumnName="OrderID" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Part_Name" ColumnName="Part Name" />
+                <ScalarProperty Name="Transaction_Type" ColumnName="Transaction Type" />
+                <ScalarProperty Name="Transaction_Date" ColumnName="Transaction Date" />
+                <ScalarProperty Name="Amount" ColumnName="Amount" />
+                <ScalarProperty Name="Source_Warehouse" ColumnName="Source Warehouse" />
+                <ScalarProperty Name="Destination_Warehouse" ColumnName="Destination Warehouse" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="All_Activities_OrderByDestination" FunctionName="Session4Model.Store.All_Activities_OrderByDestination">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="Session4Model.All_Activities_OrderByDestination_Result">
+                <ScalarProperty Name="OrderID" ColumnName="OrderID" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Part_Name" ColumnName="Part Name" />
+                <ScalarProperty Name="Transaction_Type" ColumnName="Transaction Type" />
+                <ScalarProperty Name="Transaction_Date" ColumnName="Transaction Date" />
+                <ScalarProperty Name="Amount" ColumnName="Amount" />
+                <ScalarProperty Name="Source_Warehouse" ColumnName="Source Warehouse" />
+                <ScalarProperty Name="Destination_Warehouse" ColumnName="Destination Warehouse" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="All_Activities_OrderByPartName" FunctionName="Session4Model.Store.All_Activities_OrderByPartName">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="Session4Model.All_Activities_OrderByPartName_Result">
+                <ScalarProperty Name="OrderID" ColumnName="OrderID" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Part_Name" ColumnName="Part Name" />
+                <ScalarProperty Name="Transaction_Type" ColumnName="Transaction Type" />
+                <ScalarProperty Name="Transaction_Date" ColumnName="Transaction Date" />
+                <ScalarProperty Name="Amount" ColumnName="Amount" />
+                <ScalarProperty Name="Source_Warehouse" ColumnName="Source Warehouse" />
+                <ScalarProperty Name="Destination_Warehouse" ColumnName="Destination Warehouse" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="All_Activities_OrderBySource" FunctionName="Session4Model.Store.All_Activities_OrderBySource">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="Session4Model.All_Activities_OrderBySource_Result">
+                <ScalarProperty Name="OrderID" ColumnName="OrderID" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Part_Name" ColumnName="Part Name" />
+                <ScalarProperty Name="Transaction_Type" ColumnName="Transaction Type" />
+                <ScalarProperty Name="Transaction_Date" ColumnName="Transaction Date" />
+                <ScalarProperty Name="Amount" ColumnName="Amount" />
+                <ScalarProperty Name="Source_Warehouse" ColumnName="Source Warehouse" />
+                <ScalarProperty Name="Destination_Warehouse" ColumnName="Destination Warehouse" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="All_Activities_OrderByTransactionType" FunctionName="Session4Model.Store.All_Activities_OrderByTransactionType">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="Session4Model.All_Activities_OrderByTransactionType_Result">
+                <ScalarProperty Name="OrderID" ColumnName="OrderID" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Part_Name" ColumnName="Part Name" />
+                <ScalarProperty Name="Transaction_Type" ColumnName="Transaction Type" />
+                <ScalarProperty Name="Transaction_Date" ColumnName="Transaction Date" />
+                <ScalarProperty Name="Amount" ColumnName="Amount" />
+                <ScalarProperty Name="Source_Warehouse" ColumnName="Source Warehouse" />
+                <ScalarProperty Name="Destination_Warehouse" ColumnName="Destination Warehouse" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
           </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>

@@ -52,6 +52,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="frmBarthNumber.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmBarthNumber.Designer.cs">
+      <DependentUpon>frmBarthNumber.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmEditAmount.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -96,6 +102,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="frmBarthNumber.resx">
+      <DependentUpon>frmBarthNumber.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmEditAmount.resx">
       <DependentUpon>frmEditAmount.cs</DependentUpon>
     </EmbeddedResource>

@@ -14,6 +14,7 @@ namespace GUI
     public partial class frmWarehouseManagement : Form
     {
         private bool flag;
+        private bool flag2;
         private long orderID;
         private WarehouseBUS _ware = new WarehouseBUS();
         private PartsBUS _part = new PartsBUS();
@@ -31,9 +32,8 @@ namespace GUI
         private void frmWarehouseManagement_Load(object sender, EventArgs e)
         {
             flag = false;
-            frmInventoryManagement frm = new frmInventoryManagement();
-            orderID = frm.orderID;
-
+            orderID = frmInventoryManagement.orderID;
+            flag2 = orderID > 0;
             cboSourceWarehouse.DataSource = _ware.GetAllWarehouse();
             cboSourceWarehouse.DisplayMember = "Name";
             cboSourceWarehouse.ValueMember = "ID";
@@ -45,13 +45,28 @@ namespace GUI
             cboSourceWarehouse.SelectedIndex = 0;
             cboDestinationWarehouse.SelectedIndex = 1;
 
-            if (_part.CheckPart(Int64.Parse(cboPartName.SelectedValue.ToString())) == true)
+            if (_part.CheckPart((long)cboPartName.SelectedValue) == true)
             {
                 txtBatchNumber.Enabled = true;
             }
             else
             {
                 txtBatchNumber.Enabled = false;
+            }
+
+            if (flag2 == true)
+            {
+                dgvPartsList.DataSource = _item.ListItem(orderID);
+
+                OrderDTO order = _order.SelectOrder(orderID);
+
+                cboSourceWarehouse.SelectedValue = order.SourceWarehouseID;
+                cboDestinationWarehouse.SelectedValue = order.DestinationWarehouseID;
+                dtpDate.Value = order.Date;
+
+                cboSourceWarehouse.Enabled = false;
+                cboDestinationWarehouse.Enabled = false;
+                dtpDate.Enabled = false;
             }
         }
 
@@ -81,7 +96,7 @@ namespace GUI
 
         private void btnAddToList_Click(object sender, EventArgs e)
         {
-            if (flag == false)
+            if (flag == false && flag2 == false)
             {
                 if (_order.AddOrder(2, Int64.Parse(cboSourceWarehouse.SelectedValue.ToString()), Int64.Parse(cboDestinationWarehouse.SelectedValue.ToString()), dtpDate.Value))
                 {
@@ -145,7 +160,10 @@ namespace GUI
 
         private void btnCancel_Click(object sender, EventArgs e)
         {
-            _order.DeleteOrder(orderID);
+            if (flag2 == false)
+            {
+                _order.DeleteOrder(orderID);
+            }
             this.Close();
         }
 

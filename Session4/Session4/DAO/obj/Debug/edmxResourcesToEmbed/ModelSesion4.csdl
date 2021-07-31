@@ -243,6 +243,15 @@
       <Parameter Name="id" Mode="In" Type="Int64" />
       <Parameter Name="amount" Mode="In" Type="Decimal" />
     </FunctionImport>
+    <FunctionImport Name="SelectBatchNumber" ReturnType="Collection(Session4Model.SelectBatchNumber_Result)">
+      <Parameter Name="id" Mode="In" Type="Int64" />
+    </FunctionImport>
+    <FunctionImport Name="All_Activities_OrderByAmount" ReturnType="Collection(Session4Model.All_Activities_OrderByAmount_Result)" />
+    <FunctionImport Name="All_Activities_OrderByDate" ReturnType="Collection(Session4Model.All_Activities_OrderByDate_Result)" />
+    <FunctionImport Name="All_Activities_OrderByDestination" ReturnType="Collection(Session4Model.All_Activities_OrderByDestination_Result)" />
+    <FunctionImport Name="All_Activities_OrderByPartName" ReturnType="Collection(Session4Model.All_Activities_OrderByPartName_Result)" />
+    <FunctionImport Name="All_Activities_OrderBySource" ReturnType="Collection(Session4Model.All_Activities_OrderBySource_Result)" />
+    <FunctionImport Name="All_Activities_OrderByTransactionType" ReturnType="Collection(Session4Model.All_Activities_OrderByTransactionType_Result)" />
   </EntityContainer>
   <ComplexType Name="AllActivities_Result">
     <Property Type="Int64" Name="ID" Nullable="false" />
@@ -291,5 +300,70 @@
     <Property Type="String" Name="Name" Nullable="false" MaxLength="50" />
     <Property Type="String" Name="BatchNumber" Nullable="true" MaxLength="50" />
     <Property Type="Decimal" Name="Amount" Nullable="false" Precision="18" Scale="2" />
+  </ComplexType>
+  <ComplexType Name="SelectBatchNumber_Result">
+    <Property Type="Int64" Name="PartID" Nullable="false" />
+    <Property Type="String" Name="NAME" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="BatchNumber" Nullable="true" MaxLength="50" />
+  </ComplexType>
+  <ComplexType Name="All_Activities_OrderByAmount_Result">
+    <Property Type="Int64" Name="OrderID" Nullable="false" />
+    <Property Type="Int64" Name="ID" Nullable="false" />
+    <Property Type="String" Name="Part_Name" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="Transaction_Type" Nullable="false" MaxLength="50" />
+    <Property Type="DateTime" Name="Transaction_Date" Nullable="false" />
+    <Property Type="Decimal" Name="Amount" Nullable="false" Precision="18" Scale="2" />
+    <Property Type="String" Name="Source_Warehouse" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Destination_Warehouse" Nullable="true" MaxLength="50" />
+  </ComplexType>
+  <ComplexType Name="All_Activities_OrderByDate_Result">
+    <Property Type="Int64" Name="OrderID" Nullable="false" />
+    <Property Type="Int64" Name="ID" Nullable="false" />
+    <Property Type="String" Name="Part_Name" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="Transaction_Type" Nullable="false" MaxLength="50" />
+    <Property Type="DateTime" Name="Transaction_Date" Nullable="false" />
+    <Property Type="Decimal" Name="Amount" Nullable="false" Precision="18" Scale="2" />
+    <Property Type="String" Name="Source_Warehouse" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Destination_Warehouse" Nullable="true" MaxLength="50" />
+  </ComplexType>
+  <ComplexType Name="All_Activities_OrderByDestination_Result">
+    <Property Type="Int64" Name="OrderID" Nullable="false" />
+    <Property Type="Int64" Name="ID" Nullable="false" />
+    <Property Type="String" Name="Part_Name" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="Transaction_Type" Nullable="false" MaxLength="50" />
+    <Property Type="DateTime" Name="Transaction_Date" Nullable="false" />
+    <Property Type="Decimal" Name="Amount" Nullable="false" Precision="18" Scale="2" />
+    <Property Type="String" Name="Source_Warehouse" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Destination_Warehouse" Nullable="true" MaxLength="50" />
+  </ComplexType>
+  <ComplexType Name="All_Activities_OrderByPartName_Result">
+    <Property Type="Int64" Name="OrderID" Nullable="false" />
+    <Property Type="Int64" Name="ID" Nullable="false" />
+    <Property Type="String" Name="Part_Name" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="Transaction_Type" Nullable="false" MaxLength="50" />
+    <Property Type="DateTime" Name="Transaction_Date" Nullable="false" />
+    <Property Type="Decimal" Name="Amount" Nullable="false" Precision="18" Scale="2" />
+    <Property Type="String" Name="Source_Warehouse" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Destination_Warehouse" Nullable="true" MaxLength="50" />
+  </ComplexType>
+  <ComplexType Name="All_Activities_OrderBySource_Result">
+    <Property Type="Int64" Name="OrderID" Nullable="false" />
+    <Property Type="Int64" Name="ID" Nullable="false" />
+    <Property Type="String" Name="Part_Name" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="Transaction_Type" Nullable="false" MaxLength="50" />
+    <Property Type="DateTime" Name="Transaction_Date" Nullable="false" />
+    <Property Type="Decimal" Name="Amount" Nullable="false" Precision="18" Scale="2" />
+    <Property Type="String" Name="Source_Warehouse" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Destination_Warehouse" Nullable="true" MaxLength="50" />
+  </ComplexType>
+  <ComplexType Name="All_Activities_OrderByTransactionType_Result">
+    <Property Type="Int64" Name="OrderID" Nullable="false" />
+    <Property Type="Int64" Name="ID" Nullable="false" />
+    <Property Type="String" Name="Part_Name" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="Transaction_Type" Nullable="false" MaxLength="50" />
+    <Property Type="DateTime" Name="Transaction_Date" Nullable="false" />
+    <Property Type="Decimal" Name="Amount" Nullable="false" Precision="18" Scale="2" />
+    <Property Type="String" Name="Source_Warehouse" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Destination_Warehouse" Nullable="true" MaxLength="50" />
   </ComplexType>
 </Schema>

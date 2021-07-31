@@ -256,5 +256,44 @@ namespace DAO
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("EditOrderItem", idParameter, amountParameter);
         }
+    
+        public virtual ObjectResult<SelectBatchNumber_Result> SelectBatchNumber(Nullable<long> id)
+        {
+            var idParameter = id.HasValue ?
+                new ObjectParameter("id", id) :
+                new ObjectParameter("id", typeof(long));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<SelectBatchNumber_Result>("SelectBatchNumber", idParameter);
+        }
+    
+        public virtual ObjectResult<All_Activities_OrderByAmount_Result> All_Activities_OrderByAmount()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<All_Activities_OrderByAmount_Result>("All_Activities_OrderByAmount");
+        }
+    
+        public virtual ObjectResult<All_Activities_OrderByDate_Result> All_Activities_OrderByDate()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<All_Activities_OrderByDate_Result>("All_Activities_OrderByDate");
+        }
+    
+        public virtual ObjectResult<All_Activities_OrderByDestination_Result> All_Activities_OrderByDestination()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<All_Activities_OrderByDestination_Result>("All_Activities_OrderByDestination");
+        }
+    
+        public virtual ObjectResult<All_Activities_OrderByPartName_Result> All_Activities_OrderByPartName()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<All_Activities_OrderByPartName_Result>("All_Activities_OrderByPartName");
+        }
+    
+        public virtual ObjectResult<All_Activities_OrderBySource_Result> All_Activities_OrderBySource()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<All_Activities_OrderBySource_Result>("All_Activities_OrderBySource");
+        }
+    
+        public virtual ObjectResult<All_Activities_OrderByTransactionType_Result> All_Activities_OrderByTransactionType()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<All_Activities_OrderByTransactionType_Result>("All_Activities_OrderByTransactionType");
+        }
     }
 }

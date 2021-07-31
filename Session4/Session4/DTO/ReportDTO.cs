@@ -13,6 +13,7 @@ namespace DTO
         private Nullable<decimal> _receivedStock;
         private Nullable<decimal> _outOfStock;
 
+        public long id { get; set; }
         public String PartName { get { return _partName; } set { _partName = value; } }
         public Nullable<decimal> CurrentStock { get { return _currentStock; } set { _currentStock = value; } }
         public Nullable<decimal> ReceivedStock { get { return _receivedStock; } set { _receivedStock = value; } }

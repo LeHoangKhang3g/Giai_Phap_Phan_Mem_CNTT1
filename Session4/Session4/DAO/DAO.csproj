@@ -54,6 +54,24 @@
     <Compile Include="All_Activities2_Result.cs">
       <DependentUpon>ModelSesion4.tt</DependentUpon>
     </Compile>
+    <Compile Include="All_Activities_OrderByAmount_Result.cs">
+      <DependentUpon>ModelSesion4.tt</DependentUpon>
+    </Compile>
+    <Compile Include="All_Activities_OrderByDate_Result.cs">
+      <DependentUpon>ModelSesion4.tt</DependentUpon>
+    </Compile>
+    <Compile Include="All_Activities_OrderByDestination_Result.cs">
+      <DependentUpon>ModelSesion4.tt</DependentUpon>
+    </Compile>
+    <Compile Include="All_Activities_OrderByPartName_Result.cs">
+      <DependentUpon>ModelSesion4.tt</DependentUpon>
+    </Compile>
+    <Compile Include="All_Activities_OrderBySource_Result.cs">
+      <DependentUpon>ModelSesion4.tt</DependentUpon>
+    </Compile>
+    <Compile Include="All_Activities_OrderByTransactionType_Result.cs">
+      <DependentUpon>ModelSesion4.tt</DependentUpon>
+    </Compile>
     <Compile Include="All_Activities_Result.cs">
       <DependentUpon>ModelSesion4.tt</DependentUpon>
     </Compile>
@@ -93,6 +111,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ReportDAO.cs" />
     <Compile Include="SelectAllActivities_Result.cs">
+      <DependentUpon>ModelSesion4.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SelectBatchNumber_Result.cs">
       <DependentUpon>ModelSesion4.tt</DependentUpon>
     </Compile>
     <Compile Include="Supplier.cs">

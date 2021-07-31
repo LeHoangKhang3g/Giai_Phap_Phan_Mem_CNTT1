@@ -16,6 +16,7 @@ namespace GUI
     {
         WarehouseBUS _wareHouseBUS = new WarehouseBUS();
         ReportBUS _reportBUS = new ReportBUS();
+        public static long partID;
 
         public frmInventoryReport()
         {
@@ -92,6 +93,21 @@ namespace GUI
                 colCurrentStock.Visible = true;
                 colReceivedStock.Visible = true;
             }
+        }
+
+        private void dgvInventoryReport_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if(dgvInventoryReport.Columns[e.ColumnIndex].Name == "colAction")
+            {
+                partID = (long)dgvInventoryReport.Rows[e.RowIndex].Cells[5].Value;
+                frmBarthNumber frm = new frmBarthNumber();
+                frm.ShowDialog();
+            }
+        }
+
+        private void dgvInventoryReport_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            colAction.DefaultCellStyle.BackColor = Color.LightBlue;
         }
     }
 }

@@ -44,6 +44,7 @@ namespace GUI
             this.colReceivedStock = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colOutOfStock = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colAction = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvInventoryReport)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -71,13 +72,16 @@ namespace GUI
             this.colCurrentStock,
             this.colReceivedStock,
             this.colOutOfStock,
-            this.colAction});
+            this.colAction,
+            this.ID});
             this.dgvInventoryReport.Location = new System.Drawing.Point(18, 100);
             this.dgvInventoryReport.Margin = new System.Windows.Forms.Padding(2);
             this.dgvInventoryReport.Name = "dgvInventoryReport";
             this.dgvInventoryReport.ReadOnly = true;
             this.dgvInventoryReport.Size = new System.Drawing.Size(878, 380);
             this.dgvInventoryReport.TabIndex = 10;
+            this.dgvInventoryReport.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvInventoryReport_CellContentClick);
+            this.dgvInventoryReport.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dgvInventoryReport_CellFormatting);
             // 
             // label2
             // 
@@ -213,6 +217,14 @@ namespace GUI
             this.colAction.Text = "View Batch Numbers";
             this.colAction.UseColumnTextForButtonValue = true;
             // 
+            // ID
+            // 
+            this.ID.DataPropertyName = "id";
+            this.ID.HeaderText = "ID";
+            this.ID.Name = "ID";
+            this.ID.ReadOnly = true;
+            this.ID.Visible = false;
+            // 
             // frmInventoryReport
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -252,5 +264,6 @@ namespace GUI
         private System.Windows.Forms.DataGridViewTextBoxColumn colReceivedStock;
         private System.Windows.Forms.DataGridViewTextBoxColumn colOutOfStock;
         private System.Windows.Forms.DataGridViewButtonColumn colAction;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ID;
     }
 }
