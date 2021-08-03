@@ -183,4 +183,7 @@
   <data name="Warehouse:" xml:space="preserve">
     <value>Kho:</value>
   </data>
+  <data name="Year to Report:" xml:space="preserve">
+    <value>Năm tạo báo cáo:</value>
+  </data>
 </root>

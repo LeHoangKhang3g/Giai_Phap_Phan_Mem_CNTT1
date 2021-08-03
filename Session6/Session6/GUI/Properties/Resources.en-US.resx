@@ -183,4 +183,7 @@
   <data name="Warehouse:" xml:space="preserve">
     <value>Warehouse:</value>
   </data>
+  <data name="Year to Report:" xml:space="preserve">
+    <value>Year to Report:</value>
+  </data>
 </root>

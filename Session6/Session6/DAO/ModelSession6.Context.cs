@@ -12,6 +12,8 @@ namespace DAO
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
+    using System.Data.Entity.Core.Objects;
+    using System.Linq;
     
     public partial class Session6Entities : DbContext
     {
@@ -37,5 +39,63 @@ namespace DAO
         public virtual DbSet<sysdiagram> sysdiagrams { get; set; }
         public virtual DbSet<TransactionType> TransactionTypes { get; set; }
         public virtual DbSet<Warehouse> Warehouses { get; set; }
+    
+        public virtual ObjectResult<GetDepartment_Result> GetDepartment()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<GetDepartment_Result>("GetDepartment");
+        }
+    
+        public virtual ObjectResult<Nullable<decimal>> GetMaxSpendInTime(Nullable<int> month, Nullable<int> year)
+        {
+            var monthParameter = month.HasValue ?
+                new ObjectParameter("month", month) :
+                new ObjectParameter("month", typeof(int));
+    
+            var yearParameter = year.HasValue ?
+                new ObjectParameter("year", year) :
+                new ObjectParameter("year", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Nullable<decimal>>("GetMaxSpendInTime", monthParameter, yearParameter);
+        }
+    
+        public virtual ObjectResult<Nullable<decimal>> GetMinSpendInTime(Nullable<int> month, Nullable<int> year)
+        {
+            var monthParameter = month.HasValue ?
+                new ObjectParameter("month", month) :
+                new ObjectParameter("month", typeof(int));
+    
+            var yearParameter = year.HasValue ?
+                new ObjectParameter("year", year) :
+                new ObjectParameter("year", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Nullable<decimal>>("GetMinSpendInTime", monthParameter, yearParameter);
+        }
+    
+        public virtual ObjectResult<Nullable<int>> GetMonthWithCompleteEMInYear(Nullable<int> year)
+        {
+            var yearParameter = year.HasValue ?
+                new ObjectParameter("year", year) :
+                new ObjectParameter("year", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Nullable<int>>("GetMonthWithCompleteEMInYear", yearParameter);
+        }
+    
+        public virtual ObjectResult<GetSpendingByDepartmentInTime_Result> GetSpendingByDepartmentInTime(Nullable<int> month, Nullable<int> year)
+        {
+            var monthParameter = month.HasValue ?
+                new ObjectParameter("month", month) :
+                new ObjectParameter("month", typeof(int));
+    
+            var yearParameter = year.HasValue ?
+                new ObjectParameter("year", year) :
+                new ObjectParameter("year", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<GetSpendingByDepartmentInTime_Result>("GetSpendingByDepartmentInTime", monthParameter, yearParameter);
+        }
+    
+        public virtual ObjectResult<Nullable<int>> GetYearWithCompleteEM()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Nullable<int>>("GetYearWithCompleteEM");
+        }
     }
 }

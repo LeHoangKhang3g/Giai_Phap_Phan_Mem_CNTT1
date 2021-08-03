@@ -24,6 +24,7 @@ namespace GUI
         private void frmInventoryControl_Load(object sender, EventArgs e)
         {
             SetLanguage(frmInventoryDashbroad.languageSelect);
+           
         }
         private void SetLanguage(String cultureName)
         {
