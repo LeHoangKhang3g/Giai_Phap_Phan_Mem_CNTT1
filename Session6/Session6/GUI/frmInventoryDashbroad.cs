@@ -208,6 +208,7 @@ namespace GUI
                                 cell.Value += most.Name + ", ";
                             }
                         }
+                        cell.Value = cell.Value.ToString().Remove(cell.Value.ToString().Length - 2);//Bỏ dấu phẩy thừa
                         dgvMonthlyReportForMostUsedParts.Rows[j].Cells[months.IndexOf(i) + 1] = cell;
                     }
 

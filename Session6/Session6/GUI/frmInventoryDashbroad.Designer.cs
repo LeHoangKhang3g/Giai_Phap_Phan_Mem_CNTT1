@@ -29,12 +29,12 @@ namespace GUI
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend3 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea4 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend4 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series4 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea15 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend15 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series15 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea16 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend16 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series16 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.grbEMSpendingByDepartment = new System.Windows.Forms.GroupBox();
             this.dgvEMSpendingByDepartment = new System.Windows.Forms.DataGridView();
             this.grbMonthlyReportForMostUsedParts = new System.Windows.Forms.GroupBox();
@@ -71,6 +71,9 @@ namespace GUI
             // 
             // grbEMSpendingByDepartment
             // 
+            this.grbEMSpendingByDepartment.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.grbEMSpendingByDepartment.Controls.Add(this.dgvEMSpendingByDepartment);
             this.grbEMSpendingByDepartment.Location = new System.Drawing.Point(11, 45);
             this.grbEMSpendingByDepartment.Name = "grbEMSpendingByDepartment";
@@ -81,6 +84,10 @@ namespace GUI
             // 
             // dgvEMSpendingByDepartment
             // 
+            this.dgvEMSpendingByDepartment.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dgvEMSpendingByDepartment.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells;
             this.dgvEMSpendingByDepartment.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvEMSpendingByDepartment.Location = new System.Drawing.Point(13, 20);
             this.dgvEMSpendingByDepartment.Name = "dgvEMSpendingByDepartment";
@@ -90,6 +97,8 @@ namespace GUI
             // 
             // grbMonthlyReportForMostUsedParts
             // 
+            this.grbMonthlyReportForMostUsedParts.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.grbMonthlyReportForMostUsedParts.Controls.Add(this.dgvMonthlyReportForMostUsedParts);
             this.grbMonthlyReportForMostUsedParts.Location = new System.Drawing.Point(11, 204);
             this.grbMonthlyReportForMostUsedParts.Name = "grbMonthlyReportForMostUsedParts";
@@ -100,6 +109,9 @@ namespace GUI
             // 
             // dgvMonthlyReportForMostUsedParts
             // 
+            this.dgvMonthlyReportForMostUsedParts.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dgvMonthlyReportForMostUsedParts.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells;
             this.dgvMonthlyReportForMostUsedParts.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvMonthlyReportForMostUsedParts.Location = new System.Drawing.Point(13, 20);
             this.dgvMonthlyReportForMostUsedParts.Name = "dgvMonthlyReportForMostUsedParts";
@@ -109,6 +121,9 @@ namespace GUI
             // 
             // grbMonthlyReportOfCostlyAssets
             // 
+            this.grbMonthlyReportOfCostlyAssets.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.grbMonthlyReportOfCostlyAssets.Controls.Add(this.dgvMonthlyReportOfCostlyAssets);
             this.grbMonthlyReportOfCostlyAssets.Location = new System.Drawing.Point(11, 362);
             this.grbMonthlyReportOfCostlyAssets.Name = "grbMonthlyReportOfCostlyAssets";
@@ -119,6 +134,8 @@ namespace GUI
             // 
             // dgvMonthlyReportOfCostlyAssets
             // 
+            this.dgvMonthlyReportOfCostlyAssets.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvMonthlyReportOfCostlyAssets.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvMonthlyReportOfCostlyAssets.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvMonthlyReportOfCostlyAssets.Location = new System.Drawing.Point(13, 20);
@@ -129,39 +146,46 @@ namespace GUI
             // 
             // chartDepartmentSpendingRatio
             // 
-            chartArea3.Name = "ChartArea1";
-            this.chartDepartmentSpendingRatio.ChartAreas.Add(chartArea3);
-            legend3.Name = "Legend1";
-            this.chartDepartmentSpendingRatio.Legends.Add(legend3);
+            this.chartDepartmentSpendingRatio.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            chartArea15.Name = "ChartArea1";
+            this.chartDepartmentSpendingRatio.ChartAreas.Add(chartArea15);
+            legend15.Name = "Legend1";
+            this.chartDepartmentSpendingRatio.Legends.Add(legend15);
             this.chartDepartmentSpendingRatio.Location = new System.Drawing.Point(9, 17);
             this.chartDepartmentSpendingRatio.Name = "chartDepartmentSpendingRatio";
-            series3.ChartArea = "ChartArea1";
-            series3.Legend = "Legend1";
-            series3.Name = "Series1";
-            this.chartDepartmentSpendingRatio.Series.Add(series3);
+            series15.ChartArea = "ChartArea1";
+            series15.Legend = "Legend1";
+            series15.Name = "Series1";
+            this.chartDepartmentSpendingRatio.Series.Add(series15);
             this.chartDepartmentSpendingRatio.Size = new System.Drawing.Size(233, 219);
             this.chartDepartmentSpendingRatio.TabIndex = 2;
             this.chartDepartmentSpendingRatio.Text = "chart1";
             // 
             // chartMonthlyDepartmentSpending
             // 
-            chartArea4.Name = "ChartArea1";
-            this.chartMonthlyDepartmentSpending.ChartAreas.Add(chartArea4);
-            legend4.Name = "Legend1";
-            this.chartMonthlyDepartmentSpending.Legends.Add(legend4);
+            this.chartMonthlyDepartmentSpending.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            chartArea16.Name = "ChartArea1";
+            this.chartMonthlyDepartmentSpending.ChartAreas.Add(chartArea16);
+            legend16.Name = "Legend1";
+            this.chartMonthlyDepartmentSpending.Legends.Add(legend16);
             this.chartMonthlyDepartmentSpending.Location = new System.Drawing.Point(9, 17);
             this.chartMonthlyDepartmentSpending.Name = "chartMonthlyDepartmentSpending";
-            series4.ChartArea = "ChartArea1";
-            series4.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
-            series4.Legend = "Legend1";
-            series4.Name = "Series1";
-            this.chartMonthlyDepartmentSpending.Series.Add(series4);
+            series16.ChartArea = "ChartArea1";
+            series16.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
+            series16.Legend = "Legend1";
+            series16.Name = "Series1";
+            this.chartMonthlyDepartmentSpending.Series.Add(series16);
             this.chartMonthlyDepartmentSpending.Size = new System.Drawing.Size(233, 219);
             this.chartMonthlyDepartmentSpending.TabIndex = 3;
             this.chartMonthlyDepartmentSpending.Text = "chart2";
             // 
             // grbDepartmentSpendingRatio
             // 
+            this.grbDepartmentSpendingRatio.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.grbDepartmentSpendingRatio.Controls.Add(this.chartDepartmentSpendingRatio);
             this.grbDepartmentSpendingRatio.Location = new System.Drawing.Point(639, 45);
             this.grbDepartmentSpendingRatio.Name = "grbDepartmentSpendingRatio";
@@ -172,6 +196,8 @@ namespace GUI
             // 
             // grbMonthlyDepartmentSpending
             // 
+            this.grbMonthlyDepartmentSpending.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.grbMonthlyDepartmentSpending.Controls.Add(this.chartMonthlyDepartmentSpending);
             this.grbMonthlyDepartmentSpending.Location = new System.Drawing.Point(639, 296);
             this.grbMonthlyDepartmentSpending.Name = "grbMonthlyDepartmentSpending";
@@ -182,6 +208,7 @@ namespace GUI
             // 
             // btnInventoryControl
             // 
+            this.btnInventoryControl.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.btnInventoryControl.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(92)))), ((int)(((byte)(185)))));
             this.btnInventoryControl.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnInventoryControl.Location = new System.Drawing.Point(24, 519);
@@ -194,6 +221,7 @@ namespace GUI
             // 
             // btnClose
             // 
+            this.btnClose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.btnClose.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(35)))), ((int)(((byte)(26)))));
             this.btnClose.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnClose.Location = new System.Drawing.Point(245, 519);
@@ -225,6 +253,9 @@ namespace GUI
             // 
             // panel1
             // 
+            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.panel1.BackColor = System.Drawing.SystemColors.Control;
             this.panel1.Controls.Add(this.cbbYearToReport);
             this.panel1.Controls.Add(this.lblYearToReport);
@@ -303,7 +334,7 @@ namespace GUI
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Name = "frmInventoryDashbroad";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Inventory Dashbroad";
