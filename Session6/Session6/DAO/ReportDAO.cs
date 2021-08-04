@@ -15,7 +15,7 @@ namespace DAO
         {
             return _ss6.GetYearWithCompleteEM().ToList();
         }
-        public List<DepartmentDTO> GetDepartmentDAO(int year)
+        public List<DepartmentDTO> GetDepartmentDAO()
         {
             return _ss6.GetDepartment().Select(u => new DepartmentDTO { ID = u.ID, Name = u.Name }).ToList();
 
@@ -30,6 +30,16 @@ namespace DAO
         {
             return _ss6.GetSpendingByDepartmentInTime(month, year).Select(u=>new SpendingByDepartmentDTO 
             {ID=u.ID,Name=u.Name,SumSpendingByDepartment=u.SumSpendingByDepartment }).ToList();
+        }
+
+        public List<HighestCost> GetHighestCost(int month, int year)
+        {
+            return _ss6.HighestCosts(month, year).Select(u=> new HighestCost{Name= u.Name, Column1= u.Money.Value}).ToList();
+        }
+
+        public List<MostNumber> GetMostNumber(int month, int year)
+        {
+            return _ss6.MostNumbers(month, year).Select(u => new MostNumber { ID = u.ID, Column1 = u.Count.Value, Name = u.Name }).ToList();
         }
     }
 }

@@ -67,6 +67,12 @@
     <Compile Include="GetSpendingByDepartmentInTime_Result.cs">
       <DependentUpon>ModelSession6.tt</DependentUpon>
     </Compile>
+    <Compile Include="HighestCosts_Result.cs">
+      <DependentUpon>ModelSession6.tt</DependentUpon>
+    </Compile>
+    <Compile Include="HighestCost_Result.cs">
+      <DependentUpon>ModelSession6.tt</DependentUpon>
+    </Compile>
     <Compile Include="Location.cs">
       <DependentUpon>ModelSession6.tt</DependentUpon>
     </Compile>
@@ -84,6 +90,12 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>ModelSession6.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="MostNumbers_Result.cs">
+      <DependentUpon>ModelSession6.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MostNumber_Result.cs">
+      <DependentUpon>ModelSession6.tt</DependentUpon>
     </Compile>
     <Compile Include="Order.cs">
       <DependentUpon>ModelSession6.tt</DependentUpon>

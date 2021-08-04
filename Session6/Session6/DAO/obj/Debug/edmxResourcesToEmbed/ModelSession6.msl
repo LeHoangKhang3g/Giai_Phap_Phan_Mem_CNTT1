@@ -151,5 +151,39 @@
       </ResultMapping>
     </FunctionImportMapping>
     <FunctionImportMapping FunctionImportName="GetYearWithCompleteEM" FunctionName="Session6Model.Store.GetYearWithCompleteEM" />
+    <FunctionImportMapping FunctionImportName="HighestCost" FunctionName="Session6Model.Store.HighestCost">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Session6Model.HighestCost_Result">
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Column1" ColumnName="Column1" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="MostNumber" FunctionName="Session6Model.Store.MostNumber">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Session6Model.MostNumber_Result">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Column1" ColumnName="Column1" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="HighestCosts" FunctionName="Session6Model.Store.HighestCosts">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Session6Model.HighestCosts_Result">
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Money" ColumnName="Money" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="MostNumbers" FunctionName="Session6Model.Store.MostNumbers">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Session6Model.MostNumbers_Result">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Count" ColumnName="Count" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
   </EntityContainerMapping>
 </Mapping>

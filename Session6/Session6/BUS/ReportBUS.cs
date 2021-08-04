@@ -15,9 +15,9 @@ namespace BUS
         {
             return _reportDAO.GetYearWithCompleteEMDAO();
         }
-        public List<DepartmentDTO> GetDepartmentBUS(int year)
+        public List<DepartmentDTO> GetDepartmentBUS()
         {
-            return _reportDAO.GetDepartmentDAO(year);
+            return _reportDAO.GetDepartmentDAO();
         }
 
         public List<int?> GetMonthWithCompleteEMInYearBUS(int year)
@@ -28,6 +28,16 @@ namespace BUS
         public List<SpendingByDepartmentDTO> GetSpendingByDepartmentInTimeBUS(int month, int year)
         {
             return _reportDAO.GetSpendingByDepartmentInTimeDAO(month, year);
+        }
+
+        public List<HighestCost> GetHighestCost(int month, int year)
+        {
+            return _reportDAO.GetHighestCost(month, year);
+        }
+
+        public List<MostNumber> GetMostNumber(int month, int year)
+        {
+            return _reportDAO.GetMostNumber(month, year);
         }
     }
 }

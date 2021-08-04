@@ -345,6 +345,22 @@
       <Parameter Name="year" Mode="In" Type="Int32" />
     </FunctionImport>
     <FunctionImport Name="GetYearWithCompleteEM" ReturnType="Collection(Int32)" />
+    <FunctionImport Name="HighestCost" ReturnType="Collection(Session6Model.HighestCost_Result)">
+      <Parameter Name="month" Mode="In" Type="Int32" />
+      <Parameter Name="year" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="MostNumber" ReturnType="Collection(Session6Model.MostNumber_Result)">
+      <Parameter Name="month" Mode="In" Type="Int32" />
+      <Parameter Name="year" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="HighestCosts" ReturnType="Collection(Session6Model.HighestCosts_Result)">
+      <Parameter Name="month" Mode="In" Type="Int32" />
+      <Parameter Name="year" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="MostNumbers" ReturnType="Collection(Session6Model.MostNumbers_Result)">
+      <Parameter Name="month" Mode="In" Type="Int32" />
+      <Parameter Name="year" Mode="In" Type="Int32" />
+    </FunctionImport>
   </EntityContainer>
   <ComplexType Name="GetDepartment_Result">
     <Property Type="Int64" Name="ID" Nullable="false" />
@@ -354,5 +370,23 @@
     <Property Type="Int64" Name="ID" Nullable="false" />
     <Property Type="String" Name="Name" Nullable="false" MaxLength="100" />
     <Property Type="Decimal" Name="SumSpendingByDepartment" Nullable="true" Precision="38" Scale="6" />
+  </ComplexType>
+  <ComplexType Name="HighestCost_Result">
+    <Property Type="String" Name="Name" Nullable="false" MaxLength="50" />
+    <Property Type="Decimal" Name="Column1" Nullable="true" Precision="38" Scale="6" />
+  </ComplexType>
+  <ComplexType Name="MostNumber_Result">
+    <Property Type="Int64" Name="ID" Nullable="false" />
+    <Property Type="String" Name="Name" Nullable="false" MaxLength="50" />
+    <Property Type="Int32" Name="Column1" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="HighestCosts_Result">
+    <Property Type="String" Name="Name" Nullable="false" MaxLength="50" />
+    <Property Type="Decimal" Name="Money" Nullable="true" Precision="38" Scale="6" />
+  </ComplexType>
+  <ComplexType Name="MostNumbers_Result">
+    <Property Type="Int64" Name="ID" Nullable="false" />
+    <Property Type="String" Name="Name" Nullable="false" MaxLength="50" />
+    <Property Type="Int32" Name="Count" Nullable="true" />
   </ComplexType>
 </Schema>

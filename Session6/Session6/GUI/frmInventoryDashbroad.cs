@@ -92,9 +92,10 @@ namespace GUI
             try
             {
                 yearSelect = (int)cbbYearToReport.SelectedItem;
-                departmentDTOs = reportBUS.GetDepartmentBUS(yearSelect);
+                departmentDTOs = reportBUS.GetDepartmentBUS();
                 months = reportBUS.GetMonthWithCompleteEMInYearBUS(yearSelect);
 
+                //dgvEMSpendingByDepartment 
                 dgvEMSpendingByDepartment.Columns.Clear();
                 dgvEMSpendingByDepartment.Rows.Clear();
 
@@ -104,13 +105,36 @@ namespace GUI
                 dgvEMSpendingByDepartment.Columns.Add(column);
 
                 dgvEMSpendingByDepartment.DataSource = null;
+
+                //dgvMonthlyReportForMostUsedParts
+
+                dgvMonthlyReportForMostUsedParts.Columns.Clear();
+                dgvMonthlyReportForMostUsedParts.Rows.Clear();
+
+                DataGridViewColumn col_ = new DataGridViewTextBoxColumn();
+                col_.Name = "Notes";
+                col_.HeaderText = "Notes / Month";
+                dgvMonthlyReportForMostUsedParts.Columns.Add(col_);
+
+                dgvMonthlyReportForMostUsedParts.DataSource = null;
+
+                //Add columns
                 foreach(var month in months)
                 {
+                    //dgvEMSpendingByDepartment
                     DataGridViewColumn col = new DataGridViewTextBoxColumn();
                     col.Name = "col"+yearSelect.ToString() + "-" + month.ToString();
                     col.HeaderText= yearSelect.ToString() + "-" + month.ToString();
                     dgvEMSpendingByDepartment.Columns.Add(col);
+
+                    //dgvMonthlyReportForMostUsedParts
+                    DataGridViewColumn col2 = new DataGridViewTextBoxColumn();
+                    col2.Name = "col" + yearSelect.ToString() + "-" + month.ToString();
+                    col2.HeaderText = yearSelect.ToString() + "-" + month.ToString();
+                    dgvMonthlyReportForMostUsedParts.Columns.Add(col2);
                 }
+
+                //Add rows and cells dgvEMSpendingByDepartment
                 foreach(DepartmentDTO department in departmentDTOs)
                 {
                     DataGridViewRow row = new DataGridViewRow();
@@ -130,16 +154,63 @@ namespace GUI
                         decimal spending = spendingInTimeDTOs[departmentDTOs.IndexOf(j)].SumSpendingByDepartment.GetValueOrDefault();
                         if(spending==minSpending)
                         {
-                            //Đổi màu đỏ
+                            c.Style.ForeColor = Color.Red;
                         }
                         if (spending == maxSpending)
                         {
-                            //Đổi màu xanh
+                            c.Style.ForeColor = Color.Green;
                         }
                         c.Value = spending;
                         dgvEMSpendingByDepartment.Rows[departmentDTOs.IndexOf(j)].Cells[months.IndexOf(i) + 1] = c;
-                        
                     }
+                }
+                //Add rows and cells dgvMonthlyReportForMostUsedParts
+                DataGridViewRow row1 = new DataGridViewRow();
+                DataGridViewCell cell1 = new DataGridViewTextBoxCell();
+
+                cell1.Value = "Highest Cost";
+                row1.Cells.Insert(0, cell1);
+                dgvMonthlyReportForMostUsedParts.Rows.Add(row1);
+
+                DataGridViewRow row2 = new DataGridViewRow();
+                DataGridViewCell cell2 = new DataGridViewTextBoxCell();
+
+                cell2.Value = "Most Number";
+                row2.Cells.Insert(0, cell2);
+                dgvMonthlyReportForMostUsedParts.Rows.Add(row2);
+
+                foreach (int i in months)
+                {
+                    for (int j = 0; j < 2; j++)
+                    {
+                        DataGridViewCell cell = new DataGridViewTextBoxCell();
+
+                        cell.Value = "";
+                        if (j == 0)
+                        {
+                            List<HighestCost> highestCost = new List<HighestCost>();
+
+                            highestCost = reportBUS.GetHighestCost(i, yearSelect);
+
+                            foreach (HighestCost highest in highestCost)
+                            {
+                                cell.Value += highest.Name + ", ";
+                            }
+                        }
+                        else
+                        {
+                            List<MostNumber> mostNumber = new List<MostNumber>();
+
+                            mostNumber = reportBUS.GetMostNumber(i, yearSelect);
+
+                            foreach (MostNumber most in mostNumber)
+                            {
+                                cell.Value += most.Name + ", ";
+                            }
+                        }
+                        dgvMonthlyReportForMostUsedParts.Rows[j].Cells[months.IndexOf(i) + 1] = cell;
+                    }
+
                 }
             }
             catch

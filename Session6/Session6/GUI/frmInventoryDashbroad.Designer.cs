@@ -29,12 +29,12 @@ namespace GUI
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea11 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend11 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series11 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea12 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend12 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series12 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend3 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea4 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend4 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series4 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.grbEMSpendingByDepartment = new System.Windows.Forms.GroupBox();
             this.dgvEMSpendingByDepartment = new System.Windows.Forms.DataGridView();
             this.grbMonthlyReportForMostUsedParts = new System.Windows.Forms.GroupBox();
@@ -50,11 +50,11 @@ namespace GUI
             this.lblLanguage = new System.Windows.Forms.Label();
             this.cbbLaguage = new System.Windows.Forms.ComboBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.cbbYearToReport = new System.Windows.Forms.ComboBox();
+            this.lblYearToReport = new System.Windows.Forms.Label();
             this.btnExit = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.lblHeaderInventoryDashbroad = new System.Windows.Forms.Label();
-            this.cbbYearToReport = new System.Windows.Forms.ComboBox();
-            this.lblYearToReport = new System.Windows.Forms.Label();
             this.grbEMSpendingByDepartment.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEMSpendingByDepartment)).BeginInit();
             this.grbMonthlyReportForMostUsedParts.SuspendLayout();
@@ -119,6 +119,7 @@ namespace GUI
             // 
             // dgvMonthlyReportOfCostlyAssets
             // 
+            this.dgvMonthlyReportOfCostlyAssets.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvMonthlyReportOfCostlyAssets.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvMonthlyReportOfCostlyAssets.Location = new System.Drawing.Point(13, 20);
             this.dgvMonthlyReportOfCostlyAssets.Name = "dgvMonthlyReportOfCostlyAssets";
@@ -128,33 +129,33 @@ namespace GUI
             // 
             // chartDepartmentSpendingRatio
             // 
-            chartArea11.Name = "ChartArea1";
-            this.chartDepartmentSpendingRatio.ChartAreas.Add(chartArea11);
-            legend11.Name = "Legend1";
-            this.chartDepartmentSpendingRatio.Legends.Add(legend11);
+            chartArea3.Name = "ChartArea1";
+            this.chartDepartmentSpendingRatio.ChartAreas.Add(chartArea3);
+            legend3.Name = "Legend1";
+            this.chartDepartmentSpendingRatio.Legends.Add(legend3);
             this.chartDepartmentSpendingRatio.Location = new System.Drawing.Point(9, 17);
             this.chartDepartmentSpendingRatio.Name = "chartDepartmentSpendingRatio";
-            series11.ChartArea = "ChartArea1";
-            series11.Legend = "Legend1";
-            series11.Name = "Series1";
-            this.chartDepartmentSpendingRatio.Series.Add(series11);
+            series3.ChartArea = "ChartArea1";
+            series3.Legend = "Legend1";
+            series3.Name = "Series1";
+            this.chartDepartmentSpendingRatio.Series.Add(series3);
             this.chartDepartmentSpendingRatio.Size = new System.Drawing.Size(233, 219);
             this.chartDepartmentSpendingRatio.TabIndex = 2;
             this.chartDepartmentSpendingRatio.Text = "chart1";
             // 
             // chartMonthlyDepartmentSpending
             // 
-            chartArea12.Name = "ChartArea1";
-            this.chartMonthlyDepartmentSpending.ChartAreas.Add(chartArea12);
-            legend12.Name = "Legend1";
-            this.chartMonthlyDepartmentSpending.Legends.Add(legend12);
+            chartArea4.Name = "ChartArea1";
+            this.chartMonthlyDepartmentSpending.ChartAreas.Add(chartArea4);
+            legend4.Name = "Legend1";
+            this.chartMonthlyDepartmentSpending.Legends.Add(legend4);
             this.chartMonthlyDepartmentSpending.Location = new System.Drawing.Point(9, 17);
             this.chartMonthlyDepartmentSpending.Name = "chartMonthlyDepartmentSpending";
-            series12.ChartArea = "ChartArea1";
-            series12.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
-            series12.Legend = "Legend1";
-            series12.Name = "Series1";
-            this.chartMonthlyDepartmentSpending.Series.Add(series12);
+            series4.ChartArea = "ChartArea1";
+            series4.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
+            series4.Legend = "Legend1";
+            series4.Name = "Series1";
+            this.chartMonthlyDepartmentSpending.Series.Add(series4);
             this.chartMonthlyDepartmentSpending.Size = new System.Drawing.Size(233, 219);
             this.chartMonthlyDepartmentSpending.TabIndex = 3;
             this.chartMonthlyDepartmentSpending.Text = "chart2";
@@ -241,6 +242,25 @@ namespace GUI
             this.panel1.Size = new System.Drawing.Size(900, 562);
             this.panel1.TabIndex = 10;
             // 
+            // cbbYearToReport
+            // 
+            this.cbbYearToReport.FormattingEnabled = true;
+            this.cbbYearToReport.Location = new System.Drawing.Point(166, 18);
+            this.cbbYearToReport.Name = "cbbYearToReport";
+            this.cbbYearToReport.Size = new System.Drawing.Size(140, 21);
+            this.cbbYearToReport.TabIndex = 11;
+            this.cbbYearToReport.SelectedIndexChanged += new System.EventHandler(this.cbbYearToReport_SelectedIndexChanged);
+            // 
+            // lblYearToReport
+            // 
+            this.lblYearToReport.AutoSize = true;
+            this.lblYearToReport.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblYearToReport.Location = new System.Drawing.Point(20, 16);
+            this.lblYearToReport.Name = "lblYearToReport";
+            this.lblYearToReport.Size = new System.Drawing.Size(53, 20);
+            this.lblYearToReport.TabIndex = 10;
+            this.lblYearToReport.Text = "label1";
+            // 
             // btnExit
             // 
             this.btnExit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(35)))), ((int)(((byte)(26)))));
@@ -273,25 +293,6 @@ namespace GUI
             this.lblHeaderInventoryDashbroad.Size = new System.Drawing.Size(51, 16);
             this.lblHeaderInventoryDashbroad.TabIndex = 12;
             this.lblHeaderInventoryDashbroad.Text = "label1";
-            // 
-            // cbbYearToReport
-            // 
-            this.cbbYearToReport.FormattingEnabled = true;
-            this.cbbYearToReport.Location = new System.Drawing.Point(166, 18);
-            this.cbbYearToReport.Name = "cbbYearToReport";
-            this.cbbYearToReport.Size = new System.Drawing.Size(140, 21);
-            this.cbbYearToReport.TabIndex = 11;
-            this.cbbYearToReport.SelectedIndexChanged += new System.EventHandler(this.cbbYearToReport_SelectedIndexChanged);
-            // 
-            // lblYearToReport
-            // 
-            this.lblYearToReport.AutoSize = true;
-            this.lblYearToReport.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblYearToReport.Location = new System.Drawing.Point(20, 16);
-            this.lblYearToReport.Name = "lblYearToReport";
-            this.lblYearToReport.Size = new System.Drawing.Size(53, 20);
-            this.lblYearToReport.TabIndex = 10;
-            this.lblYearToReport.Text = "label1";
             // 
             // frmInventoryDashbroad
             // 
