@@ -39,5 +39,10 @@ namespace BUS
         {
             return _reportDAO.GetMostNumber(month, year);
         }
+
+        public List<CostlyAsset> GetCostlyAsset(int month, int year)
+        {
+            return _reportDAO.GetCostlyAsset(month, year);
+        }
     }
 }

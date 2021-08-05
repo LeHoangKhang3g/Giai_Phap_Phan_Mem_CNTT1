@@ -52,6 +52,9 @@
       <DependentUpon>ModelSession6.tt</DependentUpon>
     </Compile>
     <Compile Include="AssetDAO.cs" />
+    <Compile Include="CostlyAssets_Result.cs">
+      <DependentUpon>ModelSession6.tt</DependentUpon>
+    </Compile>
     <Compile Include="Department.cs">
       <DependentUpon>ModelSession6.tt</DependentUpon>
     </Compile>
@@ -91,6 +94,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>ModelSession6.edmx</DependentUpon>
     </Compile>
+    <Compile Include="MonthlySpending_Result.cs">
+      <DependentUpon>ModelSession6.tt</DependentUpon>
+    </Compile>
     <Compile Include="MostNumbers_Result.cs">
       <DependentUpon>ModelSession6.tt</DependentUpon>
     </Compile>
@@ -109,6 +115,10 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ReportDAO.cs" />
     <Compile Include="SpendingInTimeDAO.cs" />
+    <Compile Include="SpendingRatioDAO.cs" />
+    <Compile Include="SpendingRatio_Result.cs">
+      <DependentUpon>ModelSession6.tt</DependentUpon>
+    </Compile>
     <Compile Include="Supplier.cs">
       <DependentUpon>ModelSession6.tt</DependentUpon>
     </Compile>

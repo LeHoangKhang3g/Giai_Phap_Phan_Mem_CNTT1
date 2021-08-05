@@ -6,7 +6,9 @@ using System.Threading.Tasks;
 
 namespace DTO
 {
-    class Class1
+    public class SpendingRatioDTO
     {
+        public string Name { get; set; }
+        public Nullable<decimal> Money { get; set; }
     }
 }

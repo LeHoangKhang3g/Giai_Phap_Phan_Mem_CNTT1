@@ -41,5 +41,10 @@ namespace DAO
         {
             return _ss6.MostNumbers(month, year).Select(u => new MostNumber { ID = u.ID, Column1 = u.Count.Value, Name = u.Name }).ToList();
         }
+
+        public List<CostlyAsset> GetCostlyAsset(int month, int year)
+        {
+            return _ss6.CostlyAssets(month, year).Select(u=> new CostlyAsset{Department= u.Department, AssetName= u.AssetName, Money= u.Money}).ToList();
+        }
     }
 }

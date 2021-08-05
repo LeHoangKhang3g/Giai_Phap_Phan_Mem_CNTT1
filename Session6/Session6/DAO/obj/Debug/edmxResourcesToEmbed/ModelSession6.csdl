@@ -361,6 +361,16 @@
       <Parameter Name="month" Mode="In" Type="Int32" />
       <Parameter Name="year" Mode="In" Type="Int32" />
     </FunctionImport>
+    <FunctionImport Name="CostlyAssets" ReturnType="Collection(Session6Model.CostlyAssets_Result)">
+      <Parameter Name="month" Mode="In" Type="Int32" />
+      <Parameter Name="year" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="SpendingRatio" ReturnType="Collection(Session6Model.SpendingRatio_Result)">
+      <Parameter Name="year" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="MonthlySpending" ReturnType="Collection(Session6Model.MonthlySpending_Result)">
+      <Parameter Name="year" Mode="In" Type="Int32" />
+    </FunctionImport>
   </EntityContainer>
   <ComplexType Name="GetDepartment_Result">
     <Property Type="Int64" Name="ID" Nullable="false" />
@@ -388,5 +398,19 @@
     <Property Type="Int64" Name="ID" Nullable="false" />
     <Property Type="String" Name="Name" Nullable="false" MaxLength="50" />
     <Property Type="Int32" Name="Count" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="CostlyAssets_Result">
+    <Property Type="String" Name="Department" Nullable="false" MaxLength="100" />
+    <Property Type="String" Name="AssetName" Nullable="false" MaxLength="150" />
+    <Property Type="Decimal" Name="Money" Nullable="true" Precision="38" Scale="6" />
+  </ComplexType>
+  <ComplexType Name="SpendingRatio_Result">
+    <Property Type="String" Name="Name" Nullable="false" MaxLength="100" />
+    <Property Type="Decimal" Name="Money" Nullable="true" Precision="38" Scale="6" />
+  </ComplexType>
+  <ComplexType Name="MonthlySpending_Result">
+    <Property Type="Int32" Name="Moth" Nullable="true" />
+    <Property Type="String" Name="Name" Nullable="false" MaxLength="100" />
+    <Property Type="Decimal" Name="Money" Nullable="true" Precision="38" Scale="6" />
   </ComplexType>
 </Schema>

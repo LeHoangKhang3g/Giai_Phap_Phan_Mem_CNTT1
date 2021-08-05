@@ -29,20 +29,21 @@ namespace GUI
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea15 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend15 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series15 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea16 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend16 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series16 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.grbEMSpendingByDepartment = new System.Windows.Forms.GroupBox();
             this.dgvEMSpendingByDepartment = new System.Windows.Forms.DataGridView();
             this.grbMonthlyReportForMostUsedParts = new System.Windows.Forms.GroupBox();
             this.dgvMonthlyReportForMostUsedParts = new System.Windows.Forms.DataGridView();
             this.grbMonthlyReportOfCostlyAssets = new System.Windows.Forms.GroupBox();
             this.dgvMonthlyReportOfCostlyAssets = new System.Windows.Forms.DataGridView();
-            this.chartDepartmentSpendingRatio = new System.Windows.Forms.DataVisualization.Charting.Chart();
-            this.chartMonthlyDepartmentSpending = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.chartSpendingRatio = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.chartMonthlySpending = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.grbDepartmentSpendingRatio = new System.Windows.Forms.GroupBox();
             this.grbMonthlyDepartmentSpending = new System.Windows.Forms.GroupBox();
             this.btnInventoryControl = new System.Windows.Forms.Button();
@@ -61,8 +62,8 @@ namespace GUI
             ((System.ComponentModel.ISupportInitialize)(this.dgvMonthlyReportForMostUsedParts)).BeginInit();
             this.grbMonthlyReportOfCostlyAssets.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMonthlyReportOfCostlyAssets)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.chartDepartmentSpendingRatio)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.chartMonthlyDepartmentSpending)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chartSpendingRatio)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chartMonthlySpending)).BeginInit();
             this.grbDepartmentSpendingRatio.SuspendLayout();
             this.grbMonthlyDepartmentSpending.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -77,7 +78,7 @@ namespace GUI
             this.grbEMSpendingByDepartment.Controls.Add(this.dgvEMSpendingByDepartment);
             this.grbEMSpendingByDepartment.Location = new System.Drawing.Point(11, 45);
             this.grbEMSpendingByDepartment.Name = "grbEMSpendingByDepartment";
-            this.grbEMSpendingByDepartment.Size = new System.Drawing.Size(608, 153);
+            this.grbEMSpendingByDepartment.Size = new System.Drawing.Size(537, 153);
             this.grbEMSpendingByDepartment.TabIndex = 0;
             this.grbEMSpendingByDepartment.TabStop = false;
             this.grbEMSpendingByDepartment.Text = "groupBox1";
@@ -89,10 +90,10 @@ namespace GUI
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvEMSpendingByDepartment.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells;
             this.dgvEMSpendingByDepartment.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvEMSpendingByDepartment.Location = new System.Drawing.Point(13, 20);
+            this.dgvEMSpendingByDepartment.Location = new System.Drawing.Point(19, 19);
             this.dgvEMSpendingByDepartment.Name = "dgvEMSpendingByDepartment";
             this.dgvEMSpendingByDepartment.ReadOnly = true;
-            this.dgvEMSpendingByDepartment.Size = new System.Drawing.Size(583, 123);
+            this.dgvEMSpendingByDepartment.Size = new System.Drawing.Size(512, 123);
             this.dgvEMSpendingByDepartment.TabIndex = 0;
             // 
             // grbMonthlyReportForMostUsedParts
@@ -102,7 +103,7 @@ namespace GUI
             this.grbMonthlyReportForMostUsedParts.Controls.Add(this.dgvMonthlyReportForMostUsedParts);
             this.grbMonthlyReportForMostUsedParts.Location = new System.Drawing.Point(11, 204);
             this.grbMonthlyReportForMostUsedParts.Name = "grbMonthlyReportForMostUsedParts";
-            this.grbMonthlyReportForMostUsedParts.Size = new System.Drawing.Size(608, 155);
+            this.grbMonthlyReportForMostUsedParts.Size = new System.Drawing.Size(537, 155);
             this.grbMonthlyReportForMostUsedParts.TabIndex = 1;
             this.grbMonthlyReportForMostUsedParts.TabStop = false;
             this.grbMonthlyReportForMostUsedParts.Text = "groupBox2";
@@ -116,7 +117,7 @@ namespace GUI
             this.dgvMonthlyReportForMostUsedParts.Location = new System.Drawing.Point(13, 20);
             this.dgvMonthlyReportForMostUsedParts.Name = "dgvMonthlyReportForMostUsedParts";
             this.dgvMonthlyReportForMostUsedParts.ReadOnly = true;
-            this.dgvMonthlyReportForMostUsedParts.Size = new System.Drawing.Size(583, 126);
+            this.dgvMonthlyReportForMostUsedParts.Size = new System.Drawing.Size(512, 126);
             this.dgvMonthlyReportForMostUsedParts.TabIndex = 0;
             // 
             // grbMonthlyReportOfCostlyAssets
@@ -127,7 +128,7 @@ namespace GUI
             this.grbMonthlyReportOfCostlyAssets.Controls.Add(this.dgvMonthlyReportOfCostlyAssets);
             this.grbMonthlyReportOfCostlyAssets.Location = new System.Drawing.Point(11, 362);
             this.grbMonthlyReportOfCostlyAssets.Name = "grbMonthlyReportOfCostlyAssets";
-            this.grbMonthlyReportOfCostlyAssets.Size = new System.Drawing.Size(608, 152);
+            this.grbMonthlyReportOfCostlyAssets.Size = new System.Drawing.Size(537, 152);
             this.grbMonthlyReportOfCostlyAssets.TabIndex = 1;
             this.grbMonthlyReportOfCostlyAssets.TabStop = false;
             this.grbMonthlyReportOfCostlyAssets.Text = "groupBox3";
@@ -136,60 +137,64 @@ namespace GUI
             // 
             this.dgvMonthlyReportOfCostlyAssets.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.dgvMonthlyReportOfCostlyAssets.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvMonthlyReportOfCostlyAssets.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells;
             this.dgvMonthlyReportOfCostlyAssets.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvMonthlyReportOfCostlyAssets.Location = new System.Drawing.Point(13, 20);
             this.dgvMonthlyReportOfCostlyAssets.Name = "dgvMonthlyReportOfCostlyAssets";
             this.dgvMonthlyReportOfCostlyAssets.ReadOnly = true;
-            this.dgvMonthlyReportOfCostlyAssets.Size = new System.Drawing.Size(583, 126);
+            this.dgvMonthlyReportOfCostlyAssets.Size = new System.Drawing.Size(512, 126);
             this.dgvMonthlyReportOfCostlyAssets.TabIndex = 0;
             // 
-            // chartDepartmentSpendingRatio
+            // chartSpendingRatio
             // 
-            this.chartDepartmentSpendingRatio.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.chartSpendingRatio.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            chartArea15.Name = "ChartArea1";
-            this.chartDepartmentSpendingRatio.ChartAreas.Add(chartArea15);
-            legend15.Name = "Legend1";
-            this.chartDepartmentSpendingRatio.Legends.Add(legend15);
-            this.chartDepartmentSpendingRatio.Location = new System.Drawing.Point(9, 17);
-            this.chartDepartmentSpendingRatio.Name = "chartDepartmentSpendingRatio";
-            series15.ChartArea = "ChartArea1";
-            series15.Legend = "Legend1";
-            series15.Name = "Series1";
-            this.chartDepartmentSpendingRatio.Series.Add(series15);
-            this.chartDepartmentSpendingRatio.Size = new System.Drawing.Size(233, 219);
-            this.chartDepartmentSpendingRatio.TabIndex = 2;
-            this.chartDepartmentSpendingRatio.Text = "chart1";
+            chartArea1.Name = "ChartArea1";
+            this.chartSpendingRatio.ChartAreas.Add(chartArea1);
+            legend1.Name = "Legend1";
+            this.chartSpendingRatio.Legends.Add(legend1);
+            this.chartSpendingRatio.Location = new System.Drawing.Point(6, 17);
+            this.chartSpendingRatio.Name = "chartSpendingRatio";
+            series1.ChartArea = "ChartArea1";
+            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
+            series1.Legend = "Legend1";
+            series1.Name = "SpendingRatio";
+            this.chartSpendingRatio.Series.Add(series1);
+            this.chartSpendingRatio.Size = new System.Drawing.Size(321, 219);
+            this.chartSpendingRatio.TabIndex = 2;
+            this.chartSpendingRatio.Text = "chart1";
             // 
-            // chartMonthlyDepartmentSpending
+            // chartMonthlySpending
             // 
-            this.chartMonthlyDepartmentSpending.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.chartMonthlySpending.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            chartArea16.Name = "ChartArea1";
-            this.chartMonthlyDepartmentSpending.ChartAreas.Add(chartArea16);
-            legend16.Name = "Legend1";
-            this.chartMonthlyDepartmentSpending.Legends.Add(legend16);
-            this.chartMonthlyDepartmentSpending.Location = new System.Drawing.Point(9, 17);
-            this.chartMonthlyDepartmentSpending.Name = "chartMonthlyDepartmentSpending";
-            series16.ChartArea = "ChartArea1";
-            series16.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
-            series16.Legend = "Legend1";
-            series16.Name = "Series1";
-            this.chartMonthlyDepartmentSpending.Series.Add(series16);
-            this.chartMonthlyDepartmentSpending.Size = new System.Drawing.Size(233, 219);
-            this.chartMonthlyDepartmentSpending.TabIndex = 3;
-            this.chartMonthlyDepartmentSpending.Text = "chart2";
+            chartArea2.Name = "ChartArea1";
+            this.chartMonthlySpending.ChartAreas.Add(chartArea2);
+            legend2.Name = "Legend1";
+            this.chartMonthlySpending.Legends.Add(legend2);
+            this.chartMonthlySpending.Location = new System.Drawing.Point(6, 17);
+            this.chartMonthlySpending.Name = "chartMonthlySpending";
+            series2.ChartArea = "ChartArea1";
+            series2.Legend = "Legend1";
+            series2.Name = "MonthlySpending";
+            series3.ChartArea = "ChartArea1";
+            series3.Legend = "Legend1";
+            series3.Name = "Month";
+            this.chartMonthlySpending.Series.Add(series2);
+            this.chartMonthlySpending.Series.Add(series3);
+            this.chartMonthlySpending.Size = new System.Drawing.Size(321, 219);
+            this.chartMonthlySpending.TabIndex = 3;
+            this.chartMonthlySpending.Text = "chart2";
             // 
             // grbDepartmentSpendingRatio
             // 
             this.grbDepartmentSpendingRatio.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.grbDepartmentSpendingRatio.Controls.Add(this.chartDepartmentSpendingRatio);
-            this.grbDepartmentSpendingRatio.Location = new System.Drawing.Point(639, 45);
+            this.grbDepartmentSpendingRatio.Controls.Add(this.chartSpendingRatio);
+            this.grbDepartmentSpendingRatio.Location = new System.Drawing.Point(554, 45);
             this.grbDepartmentSpendingRatio.Name = "grbDepartmentSpendingRatio";
-            this.grbDepartmentSpendingRatio.Size = new System.Drawing.Size(250, 245);
+            this.grbDepartmentSpendingRatio.Size = new System.Drawing.Size(335, 245);
             this.grbDepartmentSpendingRatio.TabIndex = 4;
             this.grbDepartmentSpendingRatio.TabStop = false;
             this.grbDepartmentSpendingRatio.Text = "groupBox4";
@@ -198,10 +203,10 @@ namespace GUI
             // 
             this.grbMonthlyDepartmentSpending.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.grbMonthlyDepartmentSpending.Controls.Add(this.chartMonthlyDepartmentSpending);
-            this.grbMonthlyDepartmentSpending.Location = new System.Drawing.Point(639, 296);
+            this.grbMonthlyDepartmentSpending.Controls.Add(this.chartMonthlySpending);
+            this.grbMonthlyDepartmentSpending.Location = new System.Drawing.Point(554, 296);
             this.grbMonthlyDepartmentSpending.Name = "grbMonthlyDepartmentSpending";
-            this.grbMonthlyDepartmentSpending.Size = new System.Drawing.Size(250, 245);
+            this.grbMonthlyDepartmentSpending.Size = new System.Drawing.Size(335, 245);
             this.grbMonthlyDepartmentSpending.TabIndex = 5;
             this.grbMonthlyDepartmentSpending.TabStop = false;
             this.grbMonthlyDepartmentSpending.Text = "groupBox5";
@@ -345,8 +350,8 @@ namespace GUI
             ((System.ComponentModel.ISupportInitialize)(this.dgvMonthlyReportForMostUsedParts)).EndInit();
             this.grbMonthlyReportOfCostlyAssets.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvMonthlyReportOfCostlyAssets)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.chartDepartmentSpendingRatio)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.chartMonthlyDepartmentSpending)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chartSpendingRatio)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chartMonthlySpending)).EndInit();
             this.grbDepartmentSpendingRatio.ResumeLayout(false);
             this.grbMonthlyDepartmentSpending.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
@@ -365,8 +370,8 @@ namespace GUI
         private System.Windows.Forms.DataGridView dgvMonthlyReportForMostUsedParts;
         private System.Windows.Forms.GroupBox grbMonthlyReportOfCostlyAssets;
         private System.Windows.Forms.DataGridView dgvMonthlyReportOfCostlyAssets;
-        private System.Windows.Forms.DataVisualization.Charting.Chart chartDepartmentSpendingRatio;
-        private System.Windows.Forms.DataVisualization.Charting.Chart chartMonthlyDepartmentSpending;
+        private System.Windows.Forms.DataVisualization.Charting.Chart chartSpendingRatio;
+        private System.Windows.Forms.DataVisualization.Charting.Chart chartMonthlySpending;
         private System.Windows.Forms.GroupBox grbDepartmentSpendingRatio;
         private System.Windows.Forms.GroupBox grbMonthlyDepartmentSpending;
         private System.Windows.Forms.Button btnInventoryControl;

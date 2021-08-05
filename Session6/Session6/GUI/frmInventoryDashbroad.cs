@@ -22,6 +22,7 @@ namespace GUI
         private CultureInfo culture;
         private List<DepartmentDTO> departmentDTOs;
         private List<int?> months;
+        private SpendingRatioBUS spendingRatio = new SpendingRatioBUS();
 
         public static String languageSelect;
         public static int yearSelect;
@@ -107,7 +108,6 @@ namespace GUI
                 dgvEMSpendingByDepartment.DataSource = null;
 
                 //dgvMonthlyReportForMostUsedParts
-
                 dgvMonthlyReportForMostUsedParts.Columns.Clear();
                 dgvMonthlyReportForMostUsedParts.Rows.Clear();
 
@@ -117,6 +117,17 @@ namespace GUI
                 dgvMonthlyReportForMostUsedParts.Columns.Add(col_);
 
                 dgvMonthlyReportForMostUsedParts.DataSource = null;
+
+                //dgvMonthlyReportOfCostlyAssets
+                dgvMonthlyReportOfCostlyAssets.Columns.Clear();
+                dgvMonthlyReportOfCostlyAssets  .Rows.Clear();
+
+                DataGridViewColumn col_2 = new DataGridViewTextBoxColumn();
+                col_2.Name = "AssetName";
+                col_2.HeaderText = "Asset Name / Month";
+                dgvMonthlyReportOfCostlyAssets.Columns.Add(col_2);
+
+                dgvMonthlyReportOfCostlyAssets.DataSource = null;
 
                 //Add columns
                 foreach(var month in months)
@@ -132,6 +143,12 @@ namespace GUI
                     col2.Name = "col" + yearSelect.ToString() + "-" + month.ToString();
                     col2.HeaderText = yearSelect.ToString() + "-" + month.ToString();
                     dgvMonthlyReportForMostUsedParts.Columns.Add(col2);
+
+                    //dgvMonthlyReportOfCostlyAssets
+                    DataGridViewColumn col3 = new DataGridViewTextBoxColumn();
+                    col3.Name = "col" + yearSelect.ToString() + "-" + month.ToString();
+                    col3.HeaderText = yearSelect.ToString() + "-" + month.ToString();
+                    dgvMonthlyReportOfCostlyAssets.Columns.Add(col3);
                 }
 
                 //Add rows and cells dgvEMSpendingByDepartment
@@ -213,6 +230,71 @@ namespace GUI
                     }
 
                 }
+
+                //Add rows and cells dgvMonthlyReportOfCostlyAssets
+                DataGridViewRow row1_ = new DataGridViewRow();
+                DataGridViewCell cell1_ = new DataGridViewTextBoxCell();
+
+                cell1_.Value = "Asset";
+                row1_.Cells.Insert(0, cell1_);
+                dgvMonthlyReportOfCostlyAssets.Rows.Add(row1_);
+
+                DataGridViewRow row2_ = new DataGridViewRow();
+                DataGridViewCell cell2_ = new DataGridViewTextBoxCell();
+
+                cell2_.Value = "Department";
+                row2_.Cells.Insert(0, cell2_);
+                dgvMonthlyReportOfCostlyAssets.Rows.Add(row2_);
+
+                foreach (int i in months)
+                {
+                    for (int j = 0; j < 2; j++)
+                    {
+                        DataGridViewCell cell = new DataGridViewTextBoxCell();
+
+                        cell.Value = "";
+                        if (j == 0)
+                        {
+                            List<CostlyAsset> costlyAsset = new List<CostlyAsset>();
+
+                            costlyAsset = reportBUS.GetCostlyAsset(i, yearSelect);
+
+                            foreach (CostlyAsset cost in costlyAsset)
+                            {
+                                cell.Value += cost.AssetName + ", ";
+                            }
+                        }
+                        else
+                        {
+                            List<CostlyAsset> costlyAsset = new List<CostlyAsset>();
+
+                            costlyAsset = reportBUS.GetCostlyAsset(i, yearSelect);
+
+                            foreach (CostlyAsset cost in costlyAsset)
+                            {
+                                cell.Value += cost.Department + ", ";
+                            }
+                        }
+                        cell.Value = cell.Value.ToString().Remove(cell.Value.ToString().Length - 2);//Bỏ dấu phẩy thừa
+                       dgvMonthlyReportOfCostlyAssets.Rows[j].Cells[months.IndexOf(i) + 1] = cell;
+                    }
+
+                }
+                //Bieu do
+                chartSpendingRatio.DataSource = spendingRatio.GetSpendingRatio(yearSelect);
+
+                chartSpendingRatio.Series["SpendingRatio"].XValueMember = "Name";
+                chartSpendingRatio.Series["SpendingRatio"].XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.String;
+                chartSpendingRatio.Series["SpendingRatio"].YValueMembers = "Money";
+                chartSpendingRatio.Series["SpendingRatio"].YValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Double;
+
+                chartMonthlySpending.DataSource = spendingRatio.GetSpendingRatio(yearSelect);
+                chartMonthlySpending.Series["MonthlySpending"].XValueMember = "Name";
+                chartMonthlySpending.Series["MonthlySpending"].XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.String;
+                chartMonthlySpending.Series["MonthlySpending"].YValueMembers = "Money";
+                chartMonthlySpending.Series["MonthlySpending"].YValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Double;
+                chartMonthlySpending.Series["Month"].YValueMembers = "Month";
+                chartMonthlySpending.Series["Month"].YValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.String;
             }
             catch
             {

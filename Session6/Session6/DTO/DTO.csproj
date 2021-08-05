@@ -39,7 +39,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
+    <Compile Include="MonthlySpendingDTO.cs" />
+    <Compile Include="SpendingRatioDTO.cs" />
+    <Compile Include="CostlyAsset.cs" />
     <Compile Include="HighestCost.cs" />
     <Compile Include="MostNumber.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

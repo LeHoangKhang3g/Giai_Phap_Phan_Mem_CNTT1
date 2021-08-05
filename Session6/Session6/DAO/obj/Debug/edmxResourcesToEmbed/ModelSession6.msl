@@ -185,5 +185,31 @@
         </ComplexTypeMapping>
       </ResultMapping>
     </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="CostlyAssets" FunctionName="Session6Model.Store.CostlyAssets">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Session6Model.CostlyAssets_Result">
+          <ScalarProperty Name="Department" ColumnName="Department" />
+          <ScalarProperty Name="AssetName" ColumnName="AssetName" />
+          <ScalarProperty Name="Money" ColumnName="Money" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SpendingRatio" FunctionName="Session6Model.Store.SpendingRatio">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Session6Model.SpendingRatio_Result">
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Money" ColumnName="Money" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="MonthlySpending" FunctionName="Session6Model.Store.MonthlySpending">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Session6Model.MonthlySpending_Result">
+          <ScalarProperty Name="Moth" ColumnName="Moth" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Money" ColumnName="Money" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
   </EntityContainerMapping>
 </Mapping>

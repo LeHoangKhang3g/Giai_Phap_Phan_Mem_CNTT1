@@ -149,5 +149,36 @@ namespace DAO
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<MostNumbers_Result>("MostNumbers", monthParameter, yearParameter);
         }
+    
+        public virtual ObjectResult<CostlyAssets_Result> CostlyAssets(Nullable<int> month, Nullable<int> year)
+        {
+            var monthParameter = month.HasValue ?
+                new ObjectParameter("month", month) :
+                new ObjectParameter("month", typeof(int));
+    
+            var yearParameter = year.HasValue ?
+                new ObjectParameter("year", year) :
+                new ObjectParameter("year", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<CostlyAssets_Result>("CostlyAssets", monthParameter, yearParameter);
+        }
+    
+        public virtual ObjectResult<SpendingRatio_Result> SpendingRatio(Nullable<int> year)
+        {
+            var yearParameter = year.HasValue ?
+                new ObjectParameter("year", year) :
+                new ObjectParameter("year", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<SpendingRatio_Result>("SpendingRatio", yearParameter);
+        }
+    
+        public virtual ObjectResult<MonthlySpending_Result> MonthlySpending(Nullable<int> year)
+        {
+            var yearParameter = year.HasValue ?
+                new ObjectParameter("year", year) :
+                new ObjectParameter("year", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<MonthlySpending_Result>("MonthlySpending", yearParameter);
+        }
     }
 }
