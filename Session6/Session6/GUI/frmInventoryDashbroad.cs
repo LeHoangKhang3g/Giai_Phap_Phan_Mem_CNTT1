@@ -288,13 +288,36 @@ namespace GUI
                 chartSpendingRatio.Series["SpendingRatio"].YValueMembers = "Money";
                 chartSpendingRatio.Series["SpendingRatio"].YValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Double;
 
-                chartMonthlySpending.DataSource = spendingRatio.GetSpendingRatio(yearSelect);
-                chartMonthlySpending.Series["MonthlySpending"].XValueMember = "Name";
-                chartMonthlySpending.Series["MonthlySpending"].XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.String;
-                chartMonthlySpending.Series["MonthlySpending"].YValueMembers = "Money";
-                chartMonthlySpending.Series["MonthlySpending"].YValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Double;
-                chartMonthlySpending.Series["Month"].YValueMembers = "Month";
-                chartMonthlySpending.Series["Month"].YValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.String;
+                List<MonthlySpendingDTO> monthlySpending = new List<MonthlySpendingDTO>();
+
+                monthlySpending = spendingRatio.GetMonthlySpending(yearSelect);
+
+                DataTable table = new DataTable();
+                DataColumn columns;
+                DataRow rows;
+
+                columns = new DataColumn();
+                columns.ColumnName = "Name";
+                table.Columns.Add(columns);
+                columns = new DataColumn();
+                columns.ColumnName = "Month";
+                table.Columns.Add(columns);
+
+                columns = new DataColumn();
+                columns.ColumnName = "Money";
+                table.Columns.Add(columns);
+
+                foreach (MonthlySpendingDTO monthly in monthlySpending)
+                {
+                    rows = table.NewRow();
+                    rows["Name"] = monthly.Name;
+                    rows["Month"] = monthly.Month;
+                    rows["Money"] = monthly.Money;
+                    table.Rows.Add(rows);
+                }
+
+                chartMonthlySpending.DataBindCrossTable(table.DefaultView, "Name", "Month", "Money", "");
+                
             }
             catch
             {
