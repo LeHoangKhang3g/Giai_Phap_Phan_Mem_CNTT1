@@ -289,6 +289,7 @@ namespace GUI
                 chartSpendingRatio.Series["SpendingRatio"].YValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Double;
 
                 List<MonthlySpendingDTO> monthlySpending = new List<MonthlySpendingDTO>();
+                
 
                 monthlySpending = spendingRatio.GetMonthlySpending(yearSelect);
 
@@ -313,11 +314,11 @@ namespace GUI
                     rows["Name"] = monthly.Name;
                     rows["Month"] = monthly.Month;
                     rows["Money"] = monthly.Money;
+                    MessageBox.Show(monthly.Name + " " + monthly.Month + " " + monthly.Money);
                     table.Rows.Add(rows);
                 }
 
                 chartMonthlySpending.DataBindCrossTable(table.DefaultView, "Name", "Month", "Money", "");
-                
             }
             catch
             {
