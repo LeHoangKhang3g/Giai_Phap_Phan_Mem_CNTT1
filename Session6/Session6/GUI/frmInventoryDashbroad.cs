@@ -290,35 +290,20 @@ namespace GUI
 
                 List<MonthlySpendingDTO> monthlySpending = new List<MonthlySpendingDTO>();
                 
-
                 monthlySpending = spendingRatio.GetMonthlySpending(yearSelect);
-
-                DataTable table = new DataTable();
-                DataColumn columns;
-                DataRow rows;
-
-                columns = new DataColumn();
-                columns.ColumnName = "Name";
-                table.Columns.Add(columns);
-                columns = new DataColumn();
-                columns.ColumnName = "Month";
-                table.Columns.Add(columns);
-
-                columns = new DataColumn();
-                columns.ColumnName = "Money";
-                table.Columns.Add(columns);
 
                 foreach (MonthlySpendingDTO monthly in monthlySpending)
                 {
-                    rows = table.NewRow();
-                    rows["Name"] = monthly.Name;
-                    rows["Month"] = monthly.Month;
-                    rows["Money"] = monthly.Money;
-                    MessageBox.Show(monthly.Name + " " + monthly.Month + " " + monthly.Money);
-                    table.Rows.Add(rows);
-                }
+                    for (int i = 0; i < 6; i++)
+                    {
+                        string series = chartMonthlySpending.Series[i].Name;
 
-                chartMonthlySpending.DataBindCrossTable(table.DefaultView, "Name", "Month", "Money", "");
+                        if(monthly.Name.Equals(series))
+                        {
+                            chartMonthlySpending.Series[i].Points.AddXY(monthly.Month, monthly.Money);
+                        }
+                    }
+                }
             }
             catch
             {

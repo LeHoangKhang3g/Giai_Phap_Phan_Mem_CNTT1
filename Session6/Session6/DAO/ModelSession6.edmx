@@ -286,6 +286,9 @@
         <Function Name="MonthlySpending" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="year" Type="int" Mode="In" />
         </Function>
+        <Function Name="MonthlySpendings" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="year" Type="int" Mode="In" />
+        </Function>
         <Function Name="MostNumber" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="month" Type="int" Mode="In" />
           <Parameter Name="year" Type="int" Mode="In" />
@@ -728,6 +731,9 @@
           <Parameter Name="year" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="MonthlySpending" ReturnType="Collection(Session6Model.MonthlySpending_Result)">
+          <Parameter Name="year" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="MonthlySpendings" ReturnType="Collection(Session6Model.MonthlySpendings_Result)">
             <Parameter Name="year" Mode="In" Type="Int32" />
           </FunctionImport>
         </EntityContainer>
@@ -768,6 +774,11 @@
           <Property Type="Decimal" Name="Money" Nullable="true" Precision="38" Scale="6" />
         </ComplexType>
         <ComplexType Name="MonthlySpending_Result">
+          <Property Type="Int32" Name="Moth" Nullable="true" />
+          <Property Type="String" Name="Name" Nullable="false" MaxLength="100" />
+          <Property Type="Decimal" Name="Money" Nullable="true" Precision="38" Scale="6" />
+        </ComplexType>
+        <ComplexType Name="MonthlySpendings_Result">
           <Property Type="Int32" Name="Moth" Nullable="true" />
           <Property Type="String" Name="Name" Nullable="false" MaxLength="100" />
           <Property Type="Decimal" Name="Money" Nullable="true" Precision="38" Scale="6" />
@@ -982,6 +993,15 @@
           <FunctionImportMapping FunctionImportName="MonthlySpending" FunctionName="Session6Model.Store.MonthlySpending">
             <ResultMapping>
               <ComplexTypeMapping TypeName="Session6Model.MonthlySpending_Result">
+                <ScalarProperty Name="Moth" ColumnName="Moth" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Money" ColumnName="Money" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="MonthlySpendings" FunctionName="Session6Model.Store.MonthlySpendings">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="Session6Model.MonthlySpendings_Result">
                 <ScalarProperty Name="Moth" ColumnName="Moth" />
                 <ScalarProperty Name="Name" ColumnName="Name" />
                 <ScalarProperty Name="Money" ColumnName="Money" />

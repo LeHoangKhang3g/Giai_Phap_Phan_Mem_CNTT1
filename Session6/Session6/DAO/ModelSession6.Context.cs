@@ -180,5 +180,14 @@ namespace DAO
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<MonthlySpending_Result>("MonthlySpending", yearParameter);
         }
+    
+        public virtual ObjectResult<MonthlySpendings_Result> MonthlySpendings(Nullable<int> year)
+        {
+            var yearParameter = year.HasValue ?
+                new ObjectParameter("year", year) :
+                new ObjectParameter("year", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<MonthlySpendings_Result>("MonthlySpendings", yearParameter);
+        }
     }
 }

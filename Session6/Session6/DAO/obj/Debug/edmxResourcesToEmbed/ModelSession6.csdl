@@ -371,6 +371,9 @@
     <FunctionImport Name="MonthlySpending" ReturnType="Collection(Session6Model.MonthlySpending_Result)">
       <Parameter Name="year" Mode="In" Type="Int32" />
     </FunctionImport>
+    <FunctionImport Name="MonthlySpendings" ReturnType="Collection(Session6Model.MonthlySpendings_Result)">
+      <Parameter Name="year" Mode="In" Type="Int32" />
+    </FunctionImport>
   </EntityContainer>
   <ComplexType Name="GetDepartment_Result">
     <Property Type="Int64" Name="ID" Nullable="false" />
@@ -409,6 +412,11 @@
     <Property Type="Decimal" Name="Money" Nullable="true" Precision="38" Scale="6" />
   </ComplexType>
   <ComplexType Name="MonthlySpending_Result">
+    <Property Type="Int32" Name="Moth" Nullable="true" />
+    <Property Type="String" Name="Name" Nullable="false" MaxLength="100" />
+    <Property Type="Decimal" Name="Money" Nullable="true" Precision="38" Scale="6" />
+  </ComplexType>
+  <ComplexType Name="MonthlySpendings_Result">
     <Property Type="Int32" Name="Moth" Nullable="true" />
     <Property Type="String" Name="Name" Nullable="false" MaxLength="100" />
     <Property Type="Decimal" Name="Money" Nullable="true" Precision="38" Scale="6" />

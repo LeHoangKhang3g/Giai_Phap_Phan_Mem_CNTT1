@@ -211,5 +211,14 @@
         </ComplexTypeMapping>
       </ResultMapping>
     </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="MonthlySpendings" FunctionName="Session6Model.Store.MonthlySpendings">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Session6Model.MonthlySpendings_Result">
+          <ScalarProperty Name="Moth" ColumnName="Moth" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Money" ColumnName="Money" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
   </EntityContainerMapping>
 </Mapping>

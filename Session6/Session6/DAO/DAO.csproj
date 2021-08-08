@@ -94,6 +94,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>ModelSession6.edmx</DependentUpon>
     </Compile>
+    <Compile Include="MonthlySpendings_Result.cs">
+      <DependentUpon>ModelSession6.tt</DependentUpon>
+    </Compile>
     <Compile Include="MonthlySpending_Result.cs">
       <DependentUpon>ModelSession6.tt</DependentUpon>
     </Compile>
