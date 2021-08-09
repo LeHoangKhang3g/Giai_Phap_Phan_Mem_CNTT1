@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using BUS;
 using DTO;
-
+using System.Windows.Forms.DataVisualization.Charting;
 namespace GUI
 {
     public partial class frmInventoryDashbroad : Form
@@ -290,8 +290,8 @@ namespace GUI
 
                 List<MonthlySpendingDTO> monthlySpending = new List<MonthlySpendingDTO>();
                 
-                monthlySpending = spendingRatio.GetMonthlySpending(yearSelect);
-
+                monthlySpending = spendingRatio.GetMonthlySpending(2018);
+                chartMonthlySpending.Refresh();
                 foreach (MonthlySpendingDTO monthly in monthlySpending)
                 {
                     for (int i = 0; i < 6; i++)
