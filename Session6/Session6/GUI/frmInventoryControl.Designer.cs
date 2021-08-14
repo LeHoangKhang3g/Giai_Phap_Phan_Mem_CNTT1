@@ -34,10 +34,10 @@ namespace GUI
             this.lblDate = new System.Windows.Forms.Label();
             this.dtpDate = new System.Windows.Forms.DateTimePicker();
             this.grbSearchForParts = new System.Windows.Forms.GroupBox();
+            this.nrAmount = new System.Windows.Forms.NumericUpDown();
             this.btnAllocate = new System.Windows.Forms.Button();
             this.cboAllocationMethod = new System.Windows.Forms.ComboBox();
             this.lblAllocationMethod = new System.Windows.Forms.Label();
-            this.txtAmount = new System.Windows.Forms.TextBox();
             this.lblAmount = new System.Windows.Forms.Label();
             this.cboPartName = new System.Windows.Forms.ComboBox();
             this.cboWarehouse = new System.Windows.Forms.ComboBox();
@@ -47,7 +47,7 @@ namespace GUI
             this.btnAssignToEM = new System.Windows.Forms.Button();
             this.dgvAllocatedParts = new System.Windows.Forms.DataGridView();
             this.grbAssignedParts = new System.Windows.Forms.GroupBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dgvAssignedPart = new System.Windows.Forms.DataGridView();
             this.btnSubmit = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -55,11 +55,23 @@ namespace GUI
             this.btnExit = new System.Windows.Forms.Button();
             this.lblHeaderInventoryControl = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
+            this.colID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colBatchNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colUnitPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colAmount = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colAction = new System.Windows.Forms.DataGridViewButtonColumn();
             this.grbSearchForParts.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nrAmount)).BeginInit();
             this.grbAllocatedParts.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAllocatedParts)).BeginInit();
             this.grbAssignedParts.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvAssignedPart)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
@@ -85,7 +97,7 @@ namespace GUI
             // lblDate
             // 
             this.lblDate.AutoSize = true;
-            this.lblDate.Location = new System.Drawing.Point(505, 10);
+            this.lblDate.Location = new System.Drawing.Point(487, 10);
             this.lblDate.Name = "lblDate";
             this.lblDate.Size = new System.Drawing.Size(35, 13);
             this.lblDate.TabIndex = 2;
@@ -101,10 +113,10 @@ namespace GUI
             // 
             // grbSearchForParts
             // 
+            this.grbSearchForParts.Controls.Add(this.nrAmount);
             this.grbSearchForParts.Controls.Add(this.btnAllocate);
             this.grbSearchForParts.Controls.Add(this.cboAllocationMethod);
             this.grbSearchForParts.Controls.Add(this.lblAllocationMethod);
-            this.grbSearchForParts.Controls.Add(this.txtAmount);
             this.grbSearchForParts.Controls.Add(this.lblAmount);
             this.grbSearchForParts.Controls.Add(this.cboPartName);
             this.grbSearchForParts.Controls.Add(this.cboWarehouse);
@@ -119,6 +131,28 @@ namespace GUI
             this.grbSearchForParts.TabStop = false;
             this.grbSearchForParts.Text = "groupBox1";
             // 
+            // nrAmount
+            // 
+            this.nrAmount.Location = new System.Drawing.Point(364, 57);
+            this.nrAmount.Maximum = new decimal(new int[] {
+            1000,
+            0,
+            0,
+            0});
+            this.nrAmount.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.nrAmount.Name = "nrAmount";
+            this.nrAmount.Size = new System.Drawing.Size(68, 20);
+            this.nrAmount.TabIndex = 13;
+            this.nrAmount.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            // 
             // btnAllocate
             // 
             this.btnAllocate.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(92)))), ((int)(((byte)(185)))));
@@ -131,10 +165,15 @@ namespace GUI
             this.btnAllocate.TabIndex = 12;
             this.btnAllocate.Text = "button1";
             this.btnAllocate.UseVisualStyleBackColor = false;
+            this.btnAllocate.Click += new System.EventHandler(this.btnAllocate_Click);
             // 
             // cboAllocationMethod
             // 
             this.cboAllocationMethod.FormattingEnabled = true;
+            this.cboAllocationMethod.Items.AddRange(new object[] {
+            "FIFO",
+            "LIFO",
+            "Minimum First"});
             this.cboAllocationMethod.Location = new System.Drawing.Point(555, 56);
             this.cboAllocationMethod.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cboAllocationMethod.Name = "cboAllocationMethod";
@@ -144,19 +183,11 @@ namespace GUI
             // lblAllocationMethod
             // 
             this.lblAllocationMethod.AutoSize = true;
-            this.lblAllocationMethod.Location = new System.Drawing.Point(438, 59);
+            this.lblAllocationMethod.Location = new System.Drawing.Point(471, 64);
             this.lblAllocationMethod.Name = "lblAllocationMethod";
             this.lblAllocationMethod.Size = new System.Drawing.Size(35, 13);
             this.lblAllocationMethod.TabIndex = 10;
             this.lblAllocationMethod.Text = "label1";
-            // 
-            // txtAmount
-            // 
-            this.txtAmount.Location = new System.Drawing.Point(353, 56);
-            this.txtAmount.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.txtAmount.Name = "txtAmount";
-            this.txtAmount.Size = new System.Drawing.Size(63, 20);
-            this.txtAmount.TabIndex = 9;
             // 
             // lblAmount
             // 
@@ -184,6 +215,7 @@ namespace GUI
             this.cboWarehouse.Name = "cboWarehouse";
             this.cboWarehouse.Size = new System.Drawing.Size(284, 21);
             this.cboWarehouse.TabIndex = 5;
+            this.cboWarehouse.SelectedIndexChanged += new System.EventHandler(this.cboWarehouse_SelectedIndexChanged);
             // 
             // lblPartName
             // 
@@ -228,10 +260,18 @@ namespace GUI
             this.btnAssignToEM.TabIndex = 1;
             this.btnAssignToEM.Text = "button1";
             this.btnAssignToEM.UseVisualStyleBackColor = false;
+            this.btnAssignToEM.Click += new System.EventHandler(this.btnAssignToEM_Click);
             // 
             // dgvAllocatedParts
             // 
-            this.dgvAllocatedParts.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvAllocatedParts.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvAllocatedParts.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            this.dgvAllocatedParts.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.colID,
+            this.colName,
+            this.colBatchNumber,
+            this.colUnitPrice,
+            this.colAmount});
             this.dgvAllocatedParts.Location = new System.Drawing.Point(11, 17);
             this.dgvAllocatedParts.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dgvAllocatedParts.Name = "dgvAllocatedParts";
@@ -240,7 +280,7 @@ namespace GUI
             // 
             // grbAssignedParts
             // 
-            this.grbAssignedParts.Controls.Add(this.dataGridView1);
+            this.grbAssignedParts.Controls.Add(this.dgvAssignedPart);
             this.grbAssignedParts.Location = new System.Drawing.Point(16, 316);
             this.grbAssignedParts.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.grbAssignedParts.Name = "grbAssignedParts";
@@ -250,14 +290,22 @@ namespace GUI
             this.grbAssignedParts.TabStop = false;
             this.grbAssignedParts.Text = "groupBox1";
             // 
-            // dataGridView1
+            // dgvAssignedPart
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(11, 17);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(733, 169);
-            this.dataGridView1.TabIndex = 0;
+            this.dgvAssignedPart.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvAssignedPart.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            this.dgvAssignedPart.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn1,
+            this.dataGridViewTextBoxColumn2,
+            this.dataGridViewTextBoxColumn3,
+            this.dataGridViewTextBoxColumn4,
+            this.dataGridViewTextBoxColumn5,
+            this.colAction});
+            this.dgvAssignedPart.Location = new System.Drawing.Point(11, 17);
+            this.dgvAssignedPart.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.dgvAssignedPart.Name = "dgvAssignedPart";
+            this.dgvAssignedPart.Size = new System.Drawing.Size(737, 167);
+            this.dgvAssignedPart.TabIndex = 1;
             // 
             // btnSubmit
             // 
@@ -351,6 +399,75 @@ namespace GUI
             this.button1.Text = "X";
             this.button1.UseVisualStyleBackColor = true;
             // 
+            // colID
+            // 
+            this.colID.DataPropertyName = "ID";
+            this.colID.HeaderText = "ID";
+            this.colID.Name = "colID";
+            this.colID.Visible = false;
+            // 
+            // colName
+            // 
+            this.colName.DataPropertyName = "NAME";
+            this.colName.HeaderText = "Part Name";
+            this.colName.Name = "colName";
+            // 
+            // colBatchNumber
+            // 
+            this.colBatchNumber.DataPropertyName = "BatchNumber";
+            this.colBatchNumber.HeaderText = "Batch Number";
+            this.colBatchNumber.Name = "colBatchNumber";
+            // 
+            // colUnitPrice
+            // 
+            this.colUnitPrice.DataPropertyName = "UnitPrice";
+            this.colUnitPrice.HeaderText = "Unit Price";
+            this.colUnitPrice.Name = "colUnitPrice";
+            // 
+            // colAmount
+            // 
+            this.colAmount.DataPropertyName = "Amount";
+            this.colAmount.HeaderText = "Amount";
+            this.colAmount.Name = "colAmount";
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.DataPropertyName = "ID";
+            this.dataGridViewTextBoxColumn1.HeaderText = "ID";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.Visible = false;
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.DataPropertyName = "NAME";
+            this.dataGridViewTextBoxColumn2.HeaderText = "Part Name";
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            // 
+            // dataGridViewTextBoxColumn3
+            // 
+            this.dataGridViewTextBoxColumn3.DataPropertyName = "BatchNumber";
+            this.dataGridViewTextBoxColumn3.HeaderText = "Batch Number";
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            // 
+            // dataGridViewTextBoxColumn4
+            // 
+            this.dataGridViewTextBoxColumn4.DataPropertyName = "UnitPrice";
+            this.dataGridViewTextBoxColumn4.HeaderText = "Unit Price";
+            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            // 
+            // dataGridViewTextBoxColumn5
+            // 
+            this.dataGridViewTextBoxColumn5.DataPropertyName = "Amount";
+            this.dataGridViewTextBoxColumn5.HeaderText = "Amount";
+            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
+            // 
+            // colAction
+            // 
+            this.colAction.HeaderText = "Action";
+            this.colAction.Name = "colAction";
+            this.colAction.Text = "Remove";
+            this.colAction.UseColumnTextForButtonValue = true;
+            // 
             // frmInventoryControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -368,10 +485,11 @@ namespace GUI
             this.Load += new System.EventHandler(this.frmInventoryControl_Load);
             this.grbSearchForParts.ResumeLayout(false);
             this.grbSearchForParts.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nrAmount)).EndInit();
             this.grbAllocatedParts.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvAllocatedParts)).EndInit();
             this.grbAssignedParts.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvAssignedPart)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
@@ -392,7 +510,6 @@ namespace GUI
         private System.Windows.Forms.ComboBox cboWarehouse;
         private System.Windows.Forms.ComboBox cboPartName;
         private System.Windows.Forms.Label lblAmount;
-        private System.Windows.Forms.TextBox txtAmount;
         private System.Windows.Forms.Label lblAllocationMethod;
         private System.Windows.Forms.ComboBox cboAllocationMethod;
         private System.Windows.Forms.Button btnAllocate;
@@ -400,7 +517,6 @@ namespace GUI
         private System.Windows.Forms.DataGridView dgvAllocatedParts;
         private System.Windows.Forms.Button btnAssignToEM;
         private System.Windows.Forms.GroupBox grbAssignedParts;
-        private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Button btnSubmit;
         private System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.Panel panel1;
@@ -408,5 +524,18 @@ namespace GUI
         private System.Windows.Forms.Label lblHeaderInventoryControl;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button btnExit;
+        private System.Windows.Forms.NumericUpDown nrAmount;
+        private System.Windows.Forms.DataGridView dgvAssignedPart;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colBatchNumber;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colUnitPrice;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colAmount;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
+        private System.Windows.Forms.DataGridViewButtonColumn colAction;
     }
 }

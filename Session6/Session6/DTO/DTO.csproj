@@ -39,7 +39,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AllocatedPartDTO.cs" />
+    <Compile Include="AssetDTO.cs" />
     <Compile Include="MonthlySpendingDTO.cs" />
+    <Compile Include="PartDTO.cs" />
     <Compile Include="SpendingRatioDTO.cs" />
     <Compile Include="CostlyAsset.cs" />
     <Compile Include="HighestCost.cs" />
@@ -48,6 +51,7 @@
     <Compile Include="SpendingByDepartmentDTO.cs" />
     <Compile Include="DepartmentDTO.cs" />
     <Compile Include="SpendingInTimeDTO.cs" />
+    <Compile Include="WarehouseDTO.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

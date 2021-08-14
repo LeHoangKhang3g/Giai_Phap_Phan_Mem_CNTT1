@@ -24,3 +24,15 @@ E:\GITHUB\Giai_Phap_Phan_Mem_CNTT1\Session6\Session6\DAO\bin\Debug\EntityFramewo
 E:\GITHUB\Giai_Phap_Phan_Mem_CNTT1\Session6\Session6\DAO\obj\Debug\DAO.csprojResolveAssemblyReference.cache
 E:\GITHUB\Giai_Phap_Phan_Mem_CNTT1\Session6\Session6\DAO\obj\Debug\DAO.dll
 E:\GITHUB\Giai_Phap_Phan_Mem_CNTT1\Session6\Session6\DAO\obj\Debug\DAO.pdb
+E:\GITHUB\Session6\Session6\DAO\obj\Debug\DAO.csprojResolveAssemblyReference.cache
+E:\GITHUB\Session6\Session6\DAO\bin\Debug\DAO.dll.config
+E:\GITHUB\Session6\Session6\DAO\bin\Debug\DAO.dll
+E:\GITHUB\Session6\Session6\DAO\bin\Debug\DAO.pdb
+E:\GITHUB\Session6\Session6\DAO\bin\Debug\DTO.dll
+E:\GITHUB\Session6\Session6\DAO\bin\Debug\EntityFramework.dll
+E:\GITHUB\Session6\Session6\DAO\bin\Debug\EntityFramework.SqlServer.dll
+E:\GITHUB\Session6\Session6\DAO\bin\Debug\DTO.pdb
+E:\GITHUB\Session6\Session6\DAO\bin\Debug\EntityFramework.xml
+E:\GITHUB\Session6\Session6\DAO\bin\Debug\EntityFramework.SqlServer.xml
+E:\GITHUB\Session6\Session6\DAO\obj\Debug\DAO.dll
+E:\GITHUB\Session6\Session6\DAO\obj\Debug\DAO.pdb

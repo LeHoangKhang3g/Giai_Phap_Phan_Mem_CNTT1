@@ -374,6 +374,23 @@
     <FunctionImport Name="MonthlySpendings" ReturnType="Collection(Session6Model.MonthlySpendings_Result)">
       <Parameter Name="year" Mode="In" Type="Int32" />
     </FunctionImport>
+    <FunctionImport Name="AssetNames" ReturnType="Collection(Session6Model.AssetNames_Result)" />
+    <FunctionImport Name="FIFO" ReturnType="Collection(Session6Model.FIFO_Result)">
+      <Parameter Name="warehouse" Mode="In" Type="Int64" />
+    </FunctionImport>
+    <FunctionImport Name="LIFO" ReturnType="Collection(Session6Model.LIFO_Result)">
+      <Parameter Name="warehouse" Mode="In" Type="Int64" />
+    </FunctionImport>
+    <FunctionImport Name="MinimumFirst" ReturnType="Collection(Session6Model.MinimumFirst_Result)">
+      <Parameter Name="warehouse" Mode="In" Type="Int64" />
+    </FunctionImport>
+    <FunctionImport Name="PartNames" ReturnType="Collection(String)">
+      <Parameter Name="warehouse" Mode="In" Type="Int64" />
+    </FunctionImport>
+    <FunctionImport Name="GetPartNames" ReturnType="Collection(Session6Model.GetPartNames_Result)">
+      <Parameter Name="warehouse" Mode="In" Type="Int64" />
+    </FunctionImport>
+    <FunctionImport Name="Warehouse" ReturnType="Collection(Session6Model.Warehouse_Result)" />
   </EntityContainer>
   <ComplexType Name="GetDepartment_Result">
     <Property Type="Int64" Name="ID" Nullable="false" />
@@ -420,5 +437,41 @@
     <Property Type="Int32" Name="Moth" Nullable="true" />
     <Property Type="String" Name="Name" Nullable="false" MaxLength="100" />
     <Property Type="Decimal" Name="Money" Nullable="true" Precision="38" Scale="6" />
+  </ComplexType>
+  <ComplexType Name="AssetNames_Result">
+    <Property Type="String" Name="AssetName" Nullable="false" MaxLength="150" />
+    <Property Type="Int64" Name="ID" Nullable="false" />
+  </ComplexType>
+  <ComplexType Name="FIFO_Result">
+    <Property Type="String" Name="NAME" Nullable="false" MaxLength="50" />
+    <Property Type="Int64" Name="ID" Nullable="false" />
+    <Property Type="String" Name="BatchNumber" Nullable="true" MaxLength="50" />
+    <Property Type="Decimal" Name="Amount" Nullable="true" Precision="18" Scale="0" />
+    <Property Type="Decimal" Name="UnitPrice" Nullable="true" Precision="19" />
+    <Property Type="DateTime" Name="Date" Nullable="false" />
+  </ComplexType>
+  <ComplexType Name="LIFO_Result">
+    <Property Type="String" Name="NAME" Nullable="false" MaxLength="50" />
+    <Property Type="Int64" Name="ID" Nullable="false" />
+    <Property Type="String" Name="BatchNumber" Nullable="true" MaxLength="50" />
+    <Property Type="Decimal" Name="Amount" Nullable="true" Precision="18" Scale="0" />
+    <Property Type="Decimal" Name="UnitPrice" Nullable="true" Precision="19" />
+    <Property Type="DateTime" Name="Date" Nullable="false" />
+  </ComplexType>
+  <ComplexType Name="MinimumFirst_Result">
+    <Property Type="String" Name="NAME" Nullable="false" MaxLength="50" />
+    <Property Type="Int64" Name="ID" Nullable="false" />
+    <Property Type="String" Name="BatchNumber" Nullable="true" MaxLength="50" />
+    <Property Type="Decimal" Name="Amount" Nullable="true" Precision="18" Scale="0" />
+    <Property Type="Decimal" Name="UnitPrice" Nullable="true" Precision="19" />
+    <Property Type="DateTime" Name="Date" Nullable="false" />
+  </ComplexType>
+  <ComplexType Name="GetPartNames_Result">
+    <Property Type="String" Name="NAME" Nullable="false" MaxLength="50" />
+    <Property Type="Int64" Name="ID" Nullable="false" />
+  </ComplexType>
+  <ComplexType Name="Warehouse_Result">
+    <Property Type="Int64" Name="ID" Nullable="false" />
+    <Property Type="String" Name="Name" Nullable="false" MaxLength="50" />
   </ComplexType>
 </Schema>

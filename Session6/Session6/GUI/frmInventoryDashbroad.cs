@@ -289,9 +289,16 @@ namespace GUI
                 chartSpendingRatio.Series["SpendingRatio"].YValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Double;
 
                 List<MonthlySpendingDTO> monthlySpending = new List<MonthlySpendingDTO>();
-                
-                monthlySpending = spendingRatio.GetMonthlySpending(2018);
-                chartMonthlySpending.Refresh();
+
+                monthlySpending = spendingRatio.GetMonthlySpending(yearSelect);
+
+                for (int i = 0; i < 6; i++)
+                {
+                    string series = chartMonthlySpending.Series[i].Name;
+
+                    chartMonthlySpending.Series[i].Points.Clear();
+                }
+
                 foreach (MonthlySpendingDTO monthly in monthlySpending)
                 {
                     for (int i = 0; i < 6; i++)

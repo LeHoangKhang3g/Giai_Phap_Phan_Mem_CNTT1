@@ -23,3 +23,14 @@ E:\GITHUB\Giai_Phap_Phan_Mem_CNTT1\Session6\Session6\BUS\bin\Debug\EntityFramewo
 E:\GITHUB\Giai_Phap_Phan_Mem_CNTT1\Session6\Session6\BUS\obj\Debug\BUS.csprojResolveAssemblyReference.cache
 E:\GITHUB\Giai_Phap_Phan_Mem_CNTT1\Session6\Session6\BUS\obj\Debug\BUS.dll
 E:\GITHUB\Giai_Phap_Phan_Mem_CNTT1\Session6\Session6\BUS\obj\Debug\BUS.pdb
+E:\GITHUB\Session6\Session6\BUS\bin\Debug\BUS.dll
+E:\GITHUB\Session6\Session6\BUS\bin\Debug\BUS.pdb
+E:\GITHUB\Session6\Session6\BUS\bin\Debug\DAO.dll
+E:\GITHUB\Session6\Session6\BUS\bin\Debug\DTO.dll
+E:\GITHUB\Session6\Session6\BUS\bin\Debug\EntityFramework.dll
+E:\GITHUB\Session6\Session6\BUS\bin\Debug\DAO.pdb
+E:\GITHUB\Session6\Session6\BUS\bin\Debug\DTO.pdb
+E:\GITHUB\Session6\Session6\BUS\bin\Debug\EntityFramework.xml
+E:\GITHUB\Session6\Session6\BUS\obj\Debug\BUS.csprojResolveAssemblyReference.cache
+E:\GITHUB\Session6\Session6\BUS\obj\Debug\BUS.dll
+E:\GITHUB\Session6\Session6\BUS\obj\Debug\BUS.pdb

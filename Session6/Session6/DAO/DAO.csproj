@@ -48,10 +48,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AllocatedPartDAO.cs" />
     <Compile Include="Asset.cs">
       <DependentUpon>ModelSession6.tt</DependentUpon>
     </Compile>
     <Compile Include="AssetDAO.cs" />
+    <Compile Include="AssetNames_Result.cs">
+      <DependentUpon>ModelSession6.tt</DependentUpon>
+    </Compile>
     <Compile Include="CostlyAssets_Result.cs">
       <DependentUpon>ModelSession6.tt</DependentUpon>
     </Compile>
@@ -64,7 +68,13 @@
     <Compile Include="EmergencyMaintenance.cs">
       <DependentUpon>ModelSession6.tt</DependentUpon>
     </Compile>
+    <Compile Include="FIFO_Result.cs">
+      <DependentUpon>ModelSession6.tt</DependentUpon>
+    </Compile>
     <Compile Include="GetDepartment_Result.cs">
+      <DependentUpon>ModelSession6.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GetPartNames_Result.cs">
       <DependentUpon>ModelSession6.tt</DependentUpon>
     </Compile>
     <Compile Include="GetSpendingByDepartmentInTime_Result.cs">
@@ -76,7 +86,13 @@
     <Compile Include="HighestCost_Result.cs">
       <DependentUpon>ModelSession6.tt</DependentUpon>
     </Compile>
+    <Compile Include="LIFO_Result.cs">
+      <DependentUpon>ModelSession6.tt</DependentUpon>
+    </Compile>
     <Compile Include="Location.cs">
+      <DependentUpon>ModelSession6.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MinimumFirst_Result.cs">
       <DependentUpon>ModelSession6.tt</DependentUpon>
     </Compile>
     <Compile Include="ModelSession6.Context.cs">
@@ -132,6 +148,9 @@
       <DependentUpon>ModelSession6.tt</DependentUpon>
     </Compile>
     <Compile Include="Warehouse.cs">
+      <DependentUpon>ModelSession6.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Warehouse_Result.cs">
       <DependentUpon>ModelSession6.tt</DependentUpon>
     </Compile>
   </ItemGroup>

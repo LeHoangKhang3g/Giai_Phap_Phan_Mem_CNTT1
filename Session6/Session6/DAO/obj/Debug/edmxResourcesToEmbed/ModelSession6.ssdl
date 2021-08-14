@@ -249,9 +249,18 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Function Name="AssetNames" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
   <Function Name="CostlyAssets" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="month" Type="int" Mode="In" />
     <Parameter Name="year" Type="int" Mode="In" />
+  </Function>
+  <Function Name="CurrentStock" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="decimal">
+    <Parameter Name="wareHouse" Type="bigint" Mode="In" />
+    <Parameter Name="id" Type="bigint" Mode="In" />
+    <Parameter Name="batchNumber" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="FIFO" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="warehouse" Type="bigint" Mode="In" />
   </Function>
   <Function Name="GetDepartment" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
   <Function Name="GetMaxSpendInTime" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
@@ -265,6 +274,9 @@
   <Function Name="GetMonthWithCompleteEMInYear" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="year" Type="int" Mode="In" />
   </Function>
+  <Function Name="GetPartNames" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="warehouse" Type="bigint" Mode="In" />
+  </Function>
   <Function Name="GetSpendingByDepartmentInTime" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="month" Type="int" Mode="In" />
     <Parameter Name="year" Type="int" Mode="In" />
@@ -277,6 +289,12 @@
   <Function Name="HighestCosts" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="month" Type="int" Mode="In" />
     <Parameter Name="year" Type="int" Mode="In" />
+  </Function>
+  <Function Name="LIFO" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="warehouse" Type="bigint" Mode="In" />
+  </Function>
+  <Function Name="MinimumFirst" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="warehouse" Type="bigint" Mode="In" />
   </Function>
   <Function Name="MonthlySpending" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="year" Type="int" Mode="In" />
@@ -292,9 +310,13 @@
     <Parameter Name="month" Type="int" Mode="In" />
     <Parameter Name="year" Type="int" Mode="In" />
   </Function>
+  <Function Name="PartNames" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="warehouse" Type="bigint" Mode="In" />
+  </Function>
   <Function Name="SpendingRatio" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="year" Type="int" Mode="In" />
   </Function>
+  <Function Name="Warehouse" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
   <EntityContainer Name="Session6ModelStoreContainer">
     <EntitySet Name="Assets" EntityType="Self.Assets" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="DepartmentLocations" EntityType="Self.DepartmentLocations" Schema="dbo" store:Type="Tables" />

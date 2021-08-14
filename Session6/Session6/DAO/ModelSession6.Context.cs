@@ -189,5 +189,60 @@ namespace DAO
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<MonthlySpendings_Result>("MonthlySpendings", yearParameter);
         }
+    
+        public virtual ObjectResult<AssetNames_Result> AssetNames()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<AssetNames_Result>("AssetNames");
+        }
+    
+        public virtual ObjectResult<FIFO_Result> FIFO(Nullable<long> warehouse)
+        {
+            var warehouseParameter = warehouse.HasValue ?
+                new ObjectParameter("warehouse", warehouse) :
+                new ObjectParameter("warehouse", typeof(long));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<FIFO_Result>("FIFO", warehouseParameter);
+        }
+    
+        public virtual ObjectResult<LIFO_Result> LIFO(Nullable<long> warehouse)
+        {
+            var warehouseParameter = warehouse.HasValue ?
+                new ObjectParameter("warehouse", warehouse) :
+                new ObjectParameter("warehouse", typeof(long));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<LIFO_Result>("LIFO", warehouseParameter);
+        }
+    
+        public virtual ObjectResult<MinimumFirst_Result> MinimumFirst(Nullable<long> warehouse)
+        {
+            var warehouseParameter = warehouse.HasValue ?
+                new ObjectParameter("warehouse", warehouse) :
+                new ObjectParameter("warehouse", typeof(long));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<MinimumFirst_Result>("MinimumFirst", warehouseParameter);
+        }
+    
+        public virtual ObjectResult<string> PartNames(Nullable<long> warehouse)
+        {
+            var warehouseParameter = warehouse.HasValue ?
+                new ObjectParameter("warehouse", warehouse) :
+                new ObjectParameter("warehouse", typeof(long));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<string>("PartNames", warehouseParameter);
+        }
+    
+        public virtual ObjectResult<GetPartNames_Result> GetPartNames(Nullable<long> warehouse)
+        {
+            var warehouseParameter = warehouse.HasValue ?
+                new ObjectParameter("warehouse", warehouse) :
+                new ObjectParameter("warehouse", typeof(long));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<GetPartNames_Result>("GetPartNames", warehouseParameter);
+        }
+    
+        public virtual ObjectResult<Warehouse_Result> Warehouse()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Warehouse_Result>("Warehouse");
+        }
     }
 }
