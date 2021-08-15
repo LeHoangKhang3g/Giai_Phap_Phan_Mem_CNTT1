@@ -12,7 +12,7 @@ namespace DAO
 
         public List<PartDTO> GetParts(long warehouse)
         {
-            return _ss6.GetPartNames(warehouse).Select(u => new PartDTO { ID = u.ID, NAME = u.NAME }).ToList();
+            return _ss6.Get_PartName(warehouse).Select(u => new PartDTO { ID = u.PARTID, NAME = u.Name }).ToList();
         }
         public List<WarehouseDTO> GetWarehouse()
         {
@@ -30,19 +30,19 @@ namespace DAO
 
             if(method == 0)
             {
-                allocatedParts = _ss6.FIFO(warehouse).Where(v => v.ID == part).
-                    Select(u => new AllocatedPartDTO {ID= u.ID, Amount= u.Amount, BatchNumber= u.BatchNumber, NAME=u.NAME, UnitPrice= u.UnitPrice}).ToList();
+                allocatedParts = _ss6.FI_FO(warehouse).Where(v => v.PARTID == part).
+                    Select(u => new AllocatedPartDTO { ID = u.PARTID, Amount = u.Amount, BatchNumber = u.BatchNumber, NAME = u.Name, UnitPrice = u.UnitPrice }).ToList();
             }
             else
                 if (method == 1)
             {
-                allocatedParts = _ss6.LIFO(warehouse).Where(v => v.ID == part).
-                    Select(u => new AllocatedPartDTO { ID = u.ID, Amount = u.Amount, BatchNumber = u.BatchNumber, NAME = u.NAME, UnitPrice = u.UnitPrice }).ToList();
+                allocatedParts = _ss6.LI_FO(warehouse).Where(v => v.PARTID == part).
+                    Select(u => new AllocatedPartDTO { ID = u.PARTID, Amount = u.Amount, BatchNumber = u.BatchNumber, NAME = u.Name, UnitPrice = u.UnitPrice }).ToList();
             }
             else
             {
-                allocatedParts = _ss6.MinimumFirst(warehouse).Where(v => v.ID == part).
-                    Select(u => new AllocatedPartDTO { ID = u.ID, Amount = u.Amount, BatchNumber = u.BatchNumber, NAME = u.NAME, UnitPrice = u.UnitPrice }).ToList();
+                allocatedParts = _ss6.Minimum_First(warehouse).Where(v => v.PARTID == part).
+                    Select(u => new AllocatedPartDTO { ID = u.PARTID, Amount = u.Amount, BatchNumber = u.BatchNumber, NAME = u.Name, UnitPrice = u.UnitPrice }).ToList();
             }
 
             return allocatedParts;

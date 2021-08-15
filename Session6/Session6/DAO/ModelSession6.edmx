@@ -263,8 +263,18 @@
           <Parameter Name="wareHouse" Type="bigint" Mode="In" />
           <Parameter Name="id" Type="bigint" Mode="In" />
           <Parameter Name="batchNumber" Type="nvarchar" Mode="In" />
+          <Parameter Name="unitPrice" Type="money" Mode="In" />
+        </Function>
+        <Function Name="FI_FO" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="warehouse" Type="bigint" Mode="In" />
         </Function>
         <Function Name="FIFO" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="warehouse" Type="bigint" Mode="In" />
+        </Function>
+        <Function Name="Get_PartName" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="warehouse" Type="bigint" Mode="In" />
+        </Function>
+        <Function Name="Get_PartNames" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="warehouse" Type="bigint" Mode="In" />
         </Function>
         <Function Name="GetDepartment" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
@@ -295,7 +305,13 @@
           <Parameter Name="month" Type="int" Mode="In" />
           <Parameter Name="year" Type="int" Mode="In" />
         </Function>
+        <Function Name="LI_FO" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="warehouse" Type="bigint" Mode="In" />
+        </Function>
         <Function Name="LIFO" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="warehouse" Type="bigint" Mode="In" />
+        </Function>
+        <Function Name="Minimum_First" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="warehouse" Type="bigint" Mode="In" />
         </Function>
         <Function Name="MinimumFirst" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
@@ -775,6 +791,18 @@
           <Parameter Name="warehouse" Mode="In" Type="Int64" />
           </FunctionImport>
           <FunctionImport Name="Warehouse" ReturnType="Collection(Session6Model.Warehouse_Result)" />
+          <FunctionImport Name="FI_FO" ReturnType="Collection(Session6Model.FI_FO_Result)">
+          <Parameter Name="warehouse" Mode="In" Type="Int64" />
+          </FunctionImport>
+          <FunctionImport Name="LI_FO" ReturnType="Collection(Session6Model.LI_FO_Result)">
+          <Parameter Name="warehouse" Mode="In" Type="Int64" />
+          </FunctionImport>
+          <FunctionImport Name="Minimum_First" ReturnType="Collection(Session6Model.Minimum_First_Result)">
+          <Parameter Name="warehouse" Mode="In" Type="Int64" />
+          </FunctionImport>
+          <FunctionImport Name="Get_PartName" ReturnType="Collection(Session6Model.Get_PartName_Result)">
+            <Parameter Name="warehouse" Mode="In" Type="Int64" />
+          </FunctionImport>
         </EntityContainer>
         <ComplexType Name="GetDepartment_Result">
           <Property Type="Int64" Name="ID" Nullable="false" />
@@ -857,6 +885,37 @@
         <ComplexType Name="Warehouse_Result">
           <Property Type="Int64" Name="ID" Nullable="false" />
           <Property Type="String" Name="Name" Nullable="false" MaxLength="50" />
+        </ComplexType>
+        <ComplexType Name="FI_FO_Result">
+          <Property Type="DateTime" Name="DATE" Nullable="false" />
+          <Property Type="String" Name="Name" Nullable="false" MaxLength="50" />
+          <Property Type="Int64" Name="PARTID" Nullable="false" />
+          <Property Type="String" Name="BatchNumber" Nullable="true" MaxLength="50" />
+          <Property Type="Decimal" Name="UnitPrice" Nullable="true" Precision="19" />
+          <Property Type="Decimal" Name="Amount" Nullable="true" Precision="18" Scale="0" />
+          <Property Type="Int64" Name="orderid" Nullable="false" />
+        </ComplexType>
+        <ComplexType Name="LI_FO_Result">
+          <Property Type="DateTime" Name="DATE" Nullable="false" />
+          <Property Type="String" Name="Name" Nullable="false" MaxLength="50" />
+          <Property Type="Int64" Name="PARTID" Nullable="false" />
+          <Property Type="String" Name="BatchNumber" Nullable="true" MaxLength="50" />
+          <Property Type="Decimal" Name="UnitPrice" Nullable="true" Precision="19" />
+          <Property Type="Decimal" Name="Amount" Nullable="true" Precision="18" Scale="0" />
+          <Property Type="Int64" Name="orderid" Nullable="false" />
+        </ComplexType>
+        <ComplexType Name="Minimum_First_Result">
+          <Property Type="DateTime" Name="DATE" Nullable="false" />
+          <Property Type="String" Name="Name" Nullable="false" MaxLength="50" />
+          <Property Type="Int64" Name="PARTID" Nullable="false" />
+          <Property Type="String" Name="BatchNumber" Nullable="true" MaxLength="50" />
+          <Property Type="Decimal" Name="UnitPrice" Nullable="true" Precision="19" />
+          <Property Type="Decimal" Name="Amount" Nullable="true" Precision="18" Scale="0" />
+          <Property Type="Int64" Name="orderid" Nullable="false" />
+        </ComplexType>
+        <ComplexType Name="Get_PartName_Result">
+          <Property Type="String" Name="Name" Nullable="false" MaxLength="50" />
+          <Property Type="Int64" Name="PARTID" Nullable="false" />
         </ComplexType>
       </Schema>
     </edmx:ConceptualModels>
@@ -1141,6 +1200,53 @@
               <ComplexTypeMapping TypeName="Session6Model.Warehouse_Result">
                 <ScalarProperty Name="ID" ColumnName="ID" />
                 <ScalarProperty Name="Name" ColumnName="Name" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="FI_FO" FunctionName="Session6Model.Store.FI_FO">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="Session6Model.FI_FO_Result">
+                <ScalarProperty Name="DATE" ColumnName="DATE" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="PARTID" ColumnName="PARTID" />
+                <ScalarProperty Name="BatchNumber" ColumnName="BatchNumber" />
+                <ScalarProperty Name="UnitPrice" ColumnName="UnitPrice" />
+                <ScalarProperty Name="Amount" ColumnName="Amount" />
+                <ScalarProperty Name="orderid" ColumnName="orderid" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="LI_FO" FunctionName="Session6Model.Store.LI_FO">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="Session6Model.LI_FO_Result">
+                <ScalarProperty Name="DATE" ColumnName="DATE" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="PARTID" ColumnName="PARTID" />
+                <ScalarProperty Name="BatchNumber" ColumnName="BatchNumber" />
+                <ScalarProperty Name="UnitPrice" ColumnName="UnitPrice" />
+                <ScalarProperty Name="Amount" ColumnName="Amount" />
+                <ScalarProperty Name="orderid" ColumnName="orderid" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="Minimum_First" FunctionName="Session6Model.Store.Minimum_First">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="Session6Model.Minimum_First_Result">
+                <ScalarProperty Name="DATE" ColumnName="DATE" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="PARTID" ColumnName="PARTID" />
+                <ScalarProperty Name="BatchNumber" ColumnName="BatchNumber" />
+                <ScalarProperty Name="UnitPrice" ColumnName="UnitPrice" />
+                <ScalarProperty Name="Amount" ColumnName="Amount" />
+                <ScalarProperty Name="orderid" ColumnName="orderid" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="Get_PartName" FunctionName="Session6Model.Store.Get_PartName">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="Session6Model.Get_PartName_Result">
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="PARTID" ColumnName="PARTID" />
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>

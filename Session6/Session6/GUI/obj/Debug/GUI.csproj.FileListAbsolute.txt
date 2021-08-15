@@ -51,12 +51,6 @@ E:\GITHUB\Giai_Phap_Phan_Mem_CNTT1\Session6\Session6\GUI\obj\Debug\en-US\GUI.res
 E:\GITHUB\Giai_Phap_Phan_Mem_CNTT1\Session6\Session6\GUI\obj\Debug\vi-VN\GUI.resources.dll
 E:\GITHUB\Giai_Phap_Phan_Mem_CNTT1\Session6\Session6\GUI\obj\Debug\GUI.exe
 E:\GITHUB\Giai_Phap_Phan_Mem_CNTT1\Session6\Session6\GUI\obj\Debug\GUI.pdb
-E:\GITHUB\Session6\Session6\GUI\obj\Debug\GUI.csprojResolveAssemblyReference.cache
-E:\GITHUB\Session6\Session6\GUI\obj\Debug\GUI.frmInventoryControl.resources
-E:\GITHUB\Session6\Session6\GUI\obj\Debug\GUI.frmInventoryDashbroad.resources
-E:\GITHUB\Session6\Session6\GUI\obj\Debug\GUI.Properties.Resources.en-US.resources
-E:\GITHUB\Session6\Session6\GUI\obj\Debug\GUI.Properties.Resources.vi-VN.resources
-E:\GITHUB\Session6\Session6\GUI\obj\Debug\GUI.csproj.GenerateResource.Cache
 E:\GITHUB\Session6\Session6\GUI\bin\Debug\GUI.exe.config
 E:\GITHUB\Session6\Session6\GUI\bin\Debug\GUI.exe
 E:\GITHUB\Session6\Session6\GUI\bin\Debug\GUI.pdb
@@ -72,6 +66,12 @@ E:\GITHUB\Session6\Session6\GUI\bin\Debug\DTO.pdb
 E:\GITHUB\Session6\Session6\GUI\bin\Debug\EntityFramework.xml
 E:\GITHUB\Session6\Session6\GUI\bin\Debug\EntityFramework.SqlServer.xml
 E:\GITHUB\Session6\Session6\GUI\bin\Debug\DAO.pdb
+E:\GITHUB\Session6\Session6\GUI\obj\Debug\GUI.csprojResolveAssemblyReference.cache
+E:\GITHUB\Session6\Session6\GUI\obj\Debug\GUI.frmInventoryControl.resources
+E:\GITHUB\Session6\Session6\GUI\obj\Debug\GUI.frmInventoryDashbroad.resources
+E:\GITHUB\Session6\Session6\GUI\obj\Debug\GUI.Properties.Resources.en-US.resources
+E:\GITHUB\Session6\Session6\GUI\obj\Debug\GUI.Properties.Resources.vi-VN.resources
+E:\GITHUB\Session6\Session6\GUI\obj\Debug\GUI.csproj.GenerateResource.Cache
 E:\GITHUB\Session6\Session6\GUI\obj\Debug\en-US\GUI.resources.dll
 E:\GITHUB\Session6\Session6\GUI\obj\Debug\vi-VN\GUI.resources.dll
 E:\GITHUB\Session6\Session6\GUI\obj\Debug\GUI.exe

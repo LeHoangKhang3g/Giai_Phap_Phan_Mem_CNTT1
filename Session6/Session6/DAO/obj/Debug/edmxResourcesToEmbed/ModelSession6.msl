@@ -281,5 +281,52 @@
         </ComplexTypeMapping>
       </ResultMapping>
     </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="FI_FO" FunctionName="Session6Model.Store.FI_FO">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Session6Model.FI_FO_Result">
+          <ScalarProperty Name="DATE" ColumnName="DATE" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="PARTID" ColumnName="PARTID" />
+          <ScalarProperty Name="BatchNumber" ColumnName="BatchNumber" />
+          <ScalarProperty Name="UnitPrice" ColumnName="UnitPrice" />
+          <ScalarProperty Name="Amount" ColumnName="Amount" />
+          <ScalarProperty Name="orderid" ColumnName="orderid" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="LI_FO" FunctionName="Session6Model.Store.LI_FO">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Session6Model.LI_FO_Result">
+          <ScalarProperty Name="DATE" ColumnName="DATE" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="PARTID" ColumnName="PARTID" />
+          <ScalarProperty Name="BatchNumber" ColumnName="BatchNumber" />
+          <ScalarProperty Name="UnitPrice" ColumnName="UnitPrice" />
+          <ScalarProperty Name="Amount" ColumnName="Amount" />
+          <ScalarProperty Name="orderid" ColumnName="orderid" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="Minimum_First" FunctionName="Session6Model.Store.Minimum_First">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Session6Model.Minimum_First_Result">
+          <ScalarProperty Name="DATE" ColumnName="DATE" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="PARTID" ColumnName="PARTID" />
+          <ScalarProperty Name="BatchNumber" ColumnName="BatchNumber" />
+          <ScalarProperty Name="UnitPrice" ColumnName="UnitPrice" />
+          <ScalarProperty Name="Amount" ColumnName="Amount" />
+          <ScalarProperty Name="orderid" ColumnName="orderid" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="Get_PartName" FunctionName="Session6Model.Store.Get_PartName">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Session6Model.Get_PartName_Result">
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="PARTID" ColumnName="PARTID" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
   </EntityContainerMapping>
 </Mapping>

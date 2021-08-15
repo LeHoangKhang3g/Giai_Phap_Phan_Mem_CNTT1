@@ -391,6 +391,18 @@
       <Parameter Name="warehouse" Mode="In" Type="Int64" />
     </FunctionImport>
     <FunctionImport Name="Warehouse" ReturnType="Collection(Session6Model.Warehouse_Result)" />
+    <FunctionImport Name="FI_FO" ReturnType="Collection(Session6Model.FI_FO_Result)">
+      <Parameter Name="warehouse" Mode="In" Type="Int64" />
+    </FunctionImport>
+    <FunctionImport Name="LI_FO" ReturnType="Collection(Session6Model.LI_FO_Result)">
+      <Parameter Name="warehouse" Mode="In" Type="Int64" />
+    </FunctionImport>
+    <FunctionImport Name="Minimum_First" ReturnType="Collection(Session6Model.Minimum_First_Result)">
+      <Parameter Name="warehouse" Mode="In" Type="Int64" />
+    </FunctionImport>
+    <FunctionImport Name="Get_PartName" ReturnType="Collection(Session6Model.Get_PartName_Result)">
+      <Parameter Name="warehouse" Mode="In" Type="Int64" />
+    </FunctionImport>
   </EntityContainer>
   <ComplexType Name="GetDepartment_Result">
     <Property Type="Int64" Name="ID" Nullable="false" />
@@ -473,5 +485,36 @@
   <ComplexType Name="Warehouse_Result">
     <Property Type="Int64" Name="ID" Nullable="false" />
     <Property Type="String" Name="Name" Nullable="false" MaxLength="50" />
+  </ComplexType>
+  <ComplexType Name="FI_FO_Result">
+    <Property Type="DateTime" Name="DATE" Nullable="false" />
+    <Property Type="String" Name="Name" Nullable="false" MaxLength="50" />
+    <Property Type="Int64" Name="PARTID" Nullable="false" />
+    <Property Type="String" Name="BatchNumber" Nullable="true" MaxLength="50" />
+    <Property Type="Decimal" Name="UnitPrice" Nullable="true" Precision="19" />
+    <Property Type="Decimal" Name="Amount" Nullable="true" Precision="18" Scale="0" />
+    <Property Type="Int64" Name="orderid" Nullable="false" />
+  </ComplexType>
+  <ComplexType Name="LI_FO_Result">
+    <Property Type="DateTime" Name="DATE" Nullable="false" />
+    <Property Type="String" Name="Name" Nullable="false" MaxLength="50" />
+    <Property Type="Int64" Name="PARTID" Nullable="false" />
+    <Property Type="String" Name="BatchNumber" Nullable="true" MaxLength="50" />
+    <Property Type="Decimal" Name="UnitPrice" Nullable="true" Precision="19" />
+    <Property Type="Decimal" Name="Amount" Nullable="true" Precision="18" Scale="0" />
+    <Property Type="Int64" Name="orderid" Nullable="false" />
+  </ComplexType>
+  <ComplexType Name="Minimum_First_Result">
+    <Property Type="DateTime" Name="DATE" Nullable="false" />
+    <Property Type="String" Name="Name" Nullable="false" MaxLength="50" />
+    <Property Type="Int64" Name="PARTID" Nullable="false" />
+    <Property Type="String" Name="BatchNumber" Nullable="true" MaxLength="50" />
+    <Property Type="Decimal" Name="UnitPrice" Nullable="true" Precision="19" />
+    <Property Type="Decimal" Name="Amount" Nullable="true" Precision="18" Scale="0" />
+    <Property Type="Int64" Name="orderid" Nullable="false" />
+  </ComplexType>
+  <ComplexType Name="Get_PartName_Result">
+    <Property Type="String" Name="Name" Nullable="false" MaxLength="50" />
+    <Property Type="Int64" Name="PARTID" Nullable="false" />
   </ComplexType>
 </Schema>

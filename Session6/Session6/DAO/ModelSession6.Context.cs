@@ -244,5 +244,41 @@ namespace DAO
         {
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Warehouse_Result>("Warehouse");
         }
+    
+        public virtual ObjectResult<FI_FO_Result> FI_FO(Nullable<long> warehouse)
+        {
+            var warehouseParameter = warehouse.HasValue ?
+                new ObjectParameter("warehouse", warehouse) :
+                new ObjectParameter("warehouse", typeof(long));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<FI_FO_Result>("FI_FO", warehouseParameter);
+        }
+    
+        public virtual ObjectResult<LI_FO_Result> LI_FO(Nullable<long> warehouse)
+        {
+            var warehouseParameter = warehouse.HasValue ?
+                new ObjectParameter("warehouse", warehouse) :
+                new ObjectParameter("warehouse", typeof(long));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<LI_FO_Result>("LI_FO", warehouseParameter);
+        }
+    
+        public virtual ObjectResult<Minimum_First_Result> Minimum_First(Nullable<long> warehouse)
+        {
+            var warehouseParameter = warehouse.HasValue ?
+                new ObjectParameter("warehouse", warehouse) :
+                new ObjectParameter("warehouse", typeof(long));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Minimum_First_Result>("Minimum_First", warehouseParameter);
+        }
+    
+        public virtual ObjectResult<Get_PartName_Result> Get_PartName(Nullable<long> warehouse)
+        {
+            var warehouseParameter = warehouse.HasValue ?
+                new ObjectParameter("warehouse", warehouse) :
+                new ObjectParameter("warehouse", typeof(long));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Get_PartName_Result>("Get_PartName", warehouseParameter);
+        }
     }
 }

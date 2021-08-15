@@ -71,6 +71,9 @@
     <Compile Include="FIFO_Result.cs">
       <DependentUpon>ModelSession6.tt</DependentUpon>
     </Compile>
+    <Compile Include="FI_FO_Result.cs">
+      <DependentUpon>ModelSession6.tt</DependentUpon>
+    </Compile>
     <Compile Include="GetDepartment_Result.cs">
       <DependentUpon>ModelSession6.tt</DependentUpon>
     </Compile>
@@ -78,6 +81,9 @@
       <DependentUpon>ModelSession6.tt</DependentUpon>
     </Compile>
     <Compile Include="GetSpendingByDepartmentInTime_Result.cs">
+      <DependentUpon>ModelSession6.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Get_PartName_Result.cs">
       <DependentUpon>ModelSession6.tt</DependentUpon>
     </Compile>
     <Compile Include="HighestCosts_Result.cs">
@@ -89,10 +95,16 @@
     <Compile Include="LIFO_Result.cs">
       <DependentUpon>ModelSession6.tt</DependentUpon>
     </Compile>
+    <Compile Include="LI_FO_Result.cs">
+      <DependentUpon>ModelSession6.tt</DependentUpon>
+    </Compile>
     <Compile Include="Location.cs">
       <DependentUpon>ModelSession6.tt</DependentUpon>
     </Compile>
     <Compile Include="MinimumFirst_Result.cs">
+      <DependentUpon>ModelSession6.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Minimum_First_Result.cs">
       <DependentUpon>ModelSession6.tt</DependentUpon>
     </Compile>
     <Compile Include="ModelSession6.Context.cs">

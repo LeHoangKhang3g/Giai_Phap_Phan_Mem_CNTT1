@@ -43,7 +43,7 @@ namespace GUI
             dgvAllocatedParts.AutoGenerateColumns = false;
             dgvAssignedPart.AutoGenerateColumns = false;
 
-            dgvAllocatedParts.DataSource = _allocatedPart.ListAllocatedPart(0, 1, 1);
+            dgvAllocatedParts.DataSource = GetAllocated();
         }
         private void SetLanguage(String cultureName)
         {
@@ -88,6 +88,7 @@ namespace GUI
             int method = cboAllocationMethod.SelectedIndex;
             long part = (long)cboPartName.SelectedValue;
             long warehouse= (long)cboWarehouse.SelectedValue;
+            int amount = (int)nrAmount.Value;
 
             List<AllocatedPartDTO> listPart = _allocatedPart.ListAllocatedPart(method, warehouse, part);
             List<AllocatedPartDTO> listPart_ = new List<AllocatedPartDTO>();
@@ -103,8 +104,18 @@ namespace GUI
                 }
                 if(flag == 0)
                 {
-                    listPart_.Add(item);
+                    if (item.Amount < amount)
+                    {
+                        listPart_.Add(item);
+                    }
+                    else
+                    {
+                        item.Amount = amount;
+                        listPart_.Add(item);
+                        flag = -1;
+                    }
                 }
+                if (flag == -1) break;
             }
 
             return listPart_;
@@ -112,25 +123,59 @@ namespace GUI
 
         private void btnAssignToEM_Click(object sender, EventArgs e)
         {
-            foreach (DataGridViewRow row in dgvAllocatedParts.Rows)
+            long idPart= (long)dgvAllocatedParts.Rows[0].Cells[0].Value;
+            
+            foreach (AllocatedPartDTO part in listPart_Result)
             {
-                AllocatedPartDTO part = new AllocatedPartDTO()
+                if(part.ID == idPart)
                 {
-                    ID = (long)row.Cells[0].Value,
-                    NAME = row.Cells[1].Value.ToString(),
-                    BatchNumber = row.Cells[2].Value.ToString(),
-                    UnitPrice = (decimal)row.Cells[3].Value,
-                    Amount = (decimal)row.Cells[4].Value
-                };
-                listPart_Result.Add(part);
+                    MessageBox.Show("Part name already exist! ", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
             }
 
-            dgvAssignedPart.DataSource = listPart_Result;
+            {
+                foreach (DataGridViewRow row in dgvAllocatedParts.Rows)
+                {
+                    AllocatedPartDTO part = new AllocatedPartDTO();
+
+                    part.ID = (long)row.Cells[0].Value;
+                    part.NAME = row.Cells[1].Value.ToString();
+                    part.BatchNumber = row.Cells[2].Value.ToString();
+                    part.UnitPrice = (decimal)row.Cells[3].Value;
+                    part.Amount = (decimal)row.Cells[4].Value;
+
+                    listPart_Result.Add(part);
+                }
+
+                dgvAssignedPart.DataSource = null;
+                dgvAssignedPart.DataSource = listPart_Result;
+            }
         }
 
         private void btnAllocate_Click(object sender, EventArgs e)
         {
             dgvAllocatedParts.DataSource = GetAllocated();
+        }
+
+        private void dgvAssignedPart_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if(dgvAssignedPart.Columns[e.ColumnIndex].Name.Equals("colAction"))
+            {
+                long id= (long)dgvAssignedPart.Rows[e.RowIndex].Cells[0].Value;
+                string batchNumber= dgvAssignedPart.Rows[e.RowIndex].Cells[2].Value.ToString();
+                decimal price= (decimal)dgvAssignedPart.Rows[e.RowIndex].Cells[3].Value;
+                foreach (AllocatedPartDTO part in listPart_Result)
+                {
+                    if(part.ID == id && part.BatchNumber.Equals(batchNumber) && part.UnitPrice== price)
+                    {
+                        listPart_Result.Remove(part);
+                        dgvAssignedPart.DataSource = null;
+                        dgvAssignedPart.DataSource = listPart_Result;
+                        return;
+                    }
+                }
+            }
         }
     }
 }
