@@ -174,7 +174,7 @@ namespace GUI
             "FIFO",
             "LIFO",
             "Minimum First"});
-            this.cboAllocationMethod.Location = new System.Drawing.Point(555, 56);
+            this.cboAllocationMethod.Location = new System.Drawing.Point(582, 56);
             this.cboAllocationMethod.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cboAllocationMethod.Name = "cboAllocationMethod";
             this.cboAllocationMethod.Size = new System.Drawing.Size(155, 21);
@@ -183,7 +183,7 @@ namespace GUI
             // lblAllocationMethod
             // 
             this.lblAllocationMethod.AutoSize = true;
-            this.lblAllocationMethod.Location = new System.Drawing.Point(471, 64);
+            this.lblAllocationMethod.Location = new System.Drawing.Point(471, 59);
             this.lblAllocationMethod.Name = "lblAllocationMethod";
             this.lblAllocationMethod.Size = new System.Drawing.Size(35, 13);
             this.lblAllocationMethod.TabIndex = 10;

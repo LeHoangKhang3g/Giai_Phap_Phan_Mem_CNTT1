@@ -17,7 +17,7 @@ namespace DAO
 
         public List<MonthlySpendingDTO> GetMonthlySpending(int year)
         {
-            return _ss6.MonthlySpendings(year).Select(u => new MonthlySpendingDTO { Money = u.Money, Month = u.Moth, Name = u.Name }).ToList();
+            return _ss6.MonthlySpending(year).Select(u => new MonthlySpendingDTO { Money = u.Money, Month = u.Moth, Name = u.Name }).ToList();
         }
     }
 }

@@ -94,19 +94,21 @@ namespace GUI
             List<AllocatedPartDTO> listPart_ = new List<AllocatedPartDTO>();
             foreach(AllocatedPartDTO item in listPart)
             {
-                int flag = 0; 
-                foreach(AllocatedPartDTO item2 in listPart_)
+                int flag = 0;
+                foreach (AllocatedPartDTO item2 in listPart_)
                 {
-                    if(item.ID == item2.ID && item.BatchNumber.Equals(item2.BatchNumber))
+                    if (item.ID == item2.ID && item.BatchNumber.Equals(item2.BatchNumber) && item.UnitPrice == item2.UnitPrice)
                     {
                         flag++;
+                        break;
                     }
                 }
-                if(flag == 0)
+                if (flag == 0)
                 {
                     if (item.Amount < amount)
                     {
                         listPart_.Add(item);
+                        amount -= (int)item.Amount;
                     }
                     else
                     {
