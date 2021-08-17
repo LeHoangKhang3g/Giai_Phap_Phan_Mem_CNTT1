@@ -248,7 +248,6 @@
     </FunctionImportMapping>
     <FunctionImportMapping FunctionImportName="InsertOrder" FunctionName="Session6Model.Store.InsertOrder" />
     <FunctionImportMapping FunctionImportName="InsertOrderItem" FunctionName="Session6Model.Store.InsertOrderItem" />
-    <FunctionImportMapping FunctionImportName="GetEM_ID_FromAssetID" FunctionName="Session6Model.Store.GetEM_ID_FromAssetID" />
     <FunctionImportMapping FunctionImportName="GetMaxOrderID" FunctionName="Session6Model.Store.GetMaxOrderID" />
   </EntityContainerMapping>
 </Mapping>

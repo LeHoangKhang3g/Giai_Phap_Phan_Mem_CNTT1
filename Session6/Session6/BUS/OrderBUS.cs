@@ -20,10 +20,6 @@ namespace BUS
 
             return orderDAO.InsertOrderItem(orderID, partID, batchNumber, amount, stock, unitPrice);
         }
-        public long GetEM_ID_FromAssetID(long assetID)
-        {
-            return orderDAO.GetEM_ID_FromAssetID(assetID);
-        }
         public long GetMaxOrderID()
         {
             return orderDAO.GetMaxOrderID();

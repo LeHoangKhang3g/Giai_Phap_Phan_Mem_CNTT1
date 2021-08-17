@@ -262,9 +262,6 @@
           <Parameter Name="warehouse" Type="bigint" Mode="In" />
         </Function>
         <Function Name="GetDepartment" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
-        <Function Name="GetEM_ID_FromAssetID" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="assetID" Type="bigint" Mode="In" />
-        </Function>
         <Function Name="GetMaxOrderID" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
         <Function Name="GetMaxSpendInTime" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="month" Type="int" Mode="In" />
@@ -1168,7 +1165,6 @@
           </FunctionImportMapping>
           <FunctionImportMapping FunctionImportName="InsertOrder" FunctionName="Session6Model.Store.InsertOrder" />
           <FunctionImportMapping FunctionImportName="InsertOrderItem" FunctionName="Session6Model.Store.InsertOrderItem" />
-          <FunctionImportMapping FunctionImportName="GetEM_ID_FromAssetID" FunctionName="Session6Model.Store.GetEM_ID_FromAssetID" />
           <FunctionImportMapping FunctionImportName="GetMaxOrderID" FunctionName="Session6Model.Store.GetMaxOrderID" />
         </EntityContainerMapping>
       </Mapping>

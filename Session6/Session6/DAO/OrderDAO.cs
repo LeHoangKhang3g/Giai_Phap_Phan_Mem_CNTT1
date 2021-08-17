@@ -34,10 +34,7 @@ namespace DAO
                 return false;
             }
         }
-        public long GetEM_ID_FromAssetID(long assetID)
-        {
-            return _ss6.GetEM_ID_FromAssetID(assetID).FirstOrDefault().GetValueOrDefault();
-        }
+
         public long GetMaxOrderID()
         {
             return _ss6.GetMaxOrderID().FirstOrDefault().GetValueOrDefault();

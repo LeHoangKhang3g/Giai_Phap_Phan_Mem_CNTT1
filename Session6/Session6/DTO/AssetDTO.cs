@@ -9,6 +9,6 @@ namespace DTO
     public class AssetDTO
     {
         public string NAME { get; set; }
-        public long ID { get; set; }
+        public long EM_ID { get; set; }
     }
 }

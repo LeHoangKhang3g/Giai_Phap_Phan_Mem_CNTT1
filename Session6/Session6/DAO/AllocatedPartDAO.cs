@@ -21,7 +21,7 @@ namespace DAO
 
         public List<AssetDTO> GetAsset()
         {
-            return _ss6.AssetNames().Select(u => new AssetDTO { ID = u.ID, NAME = u.AssetName }).ToList();
+            return _ss6.AssetNames().Select(u => new AssetDTO { EM_ID = u.ID, NAME = u.AssetName }).ToList();
         }
 
         public List<AllocatedPartDTO> ListAllocatedPart(int method, long warehouse, long part)

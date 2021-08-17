@@ -42,7 +42,7 @@ namespace GUI
 
             cboAssetName.DataSource = _allocatedPart.GetAsset();
             cboAssetName.DisplayMember = "NAME";
-            cboAssetName.ValueMember = "ID";
+            cboAssetName.ValueMember = "EM_ID";
 
             dgvAllocatedParts.AutoGenerateColumns = false;
             dgvAssignedPart.AutoGenerateColumns = false;
@@ -197,8 +197,7 @@ namespace GUI
                 MessageBox.Show("Không còn Asset nào có EM chưa hoàn thành!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
-            EM_ID = orderBUS.GetEM_ID_FromAssetID((long)cboAssetName.SelectedValue);
-            orderBUS.InsertOrderDAO(3, EM_ID, (long)cboWarehouse.SelectedValue, DateTime.Now, DateTime.Now.TimeOfDay);
+            orderBUS.InsertOrderDAO(3, (long)cboAssetName.SelectedValue, (long)cboWarehouse.SelectedValue, DateTime.Now, DateTime.Now.TimeOfDay);
             OrderID = orderBUS.GetMaxOrderID();
             foreach(DataGridViewRow row in dgvAssignedPart.Rows)
             {
@@ -209,7 +208,17 @@ namespace GUI
                     return;
                 }
             }
-            this.Close();
+            cboAssetName.DataSource = _allocatedPart.GetAsset();
+            cboAssetName.DisplayMember = "NAME";
+            cboAssetName.ValueMember = "EM_ID";
+
+
+            listPart_Result.Clear();
+            dgvAllocatedParts.DataSource = GetAllocated();
+            dgvAssignedPart.DataSource = null;
+
+            if (cboAssetName.Items.Count == 0)
+                btnSubmit.Enabled = false;
         }
     }
 }
