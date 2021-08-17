@@ -19,6 +19,10 @@ namespace GUI
         private List<AllocatedPartDTO> listPart_Result = new List<AllocatedPartDTO>();
         CultureInfo culture;
 
+        private long EM_ID;
+        private long OrderID;
+        private OrderBUS orderBUS = new OrderBUS();
+
         public frmInventoryControl()
         {
             InitializeComponent();
@@ -178,6 +182,34 @@ namespace GUI
                     }
                 }
             }
+        }
+
+        private void btnSubmit_Click(object sender, EventArgs e)
+        {
+            bool flag;
+            if (dgvAssignedPart.Rows.Count == 0)
+            {
+                MessageBox.Show("Hoá đơn hiện không có chi tiết nào!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+            if (cboAssetName.Items.Count == 0)
+            {
+                MessageBox.Show("Không còn Asset nào có EM chưa hoàn thành!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+            EM_ID = orderBUS.GetEM_ID_FromAssetID((long)cboAssetName.SelectedValue);
+            orderBUS.InsertOrderDAO(3, EM_ID, (long)cboWarehouse.SelectedValue, DateTime.Now, DateTime.Now.TimeOfDay);
+            OrderID = orderBUS.GetMaxOrderID();
+            foreach(DataGridViewRow row in dgvAssignedPart.Rows)
+            {
+                flag = orderBUS.InsertOrderItemDAO(OrderID, (long)row.Cells[0].Value, (string)row.Cells[2].Value, (decimal)row.Cells[4].Value, 0, (decimal)row.Cells[3].Value);
+                if (!flag)
+                {
+                    MessageBox.Show("Thên Order Item thất bại", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+            }
+            this.Close();
         }
     }
 }

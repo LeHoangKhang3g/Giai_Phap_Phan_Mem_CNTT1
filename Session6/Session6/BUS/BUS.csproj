@@ -41,6 +41,7 @@
   <ItemGroup>
     <Compile Include="AllocatedPartBUS.cs" />
     <Compile Include="AssetBUS.cs" />
+    <Compile Include="OrderBUS.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ReportBUS.cs" />
     <Compile Include="SpendingInTimeBUS.cs" />

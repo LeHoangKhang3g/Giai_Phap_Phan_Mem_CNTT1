@@ -403,6 +403,25 @@
     <FunctionImport Name="Get_PartName" ReturnType="Collection(Session6Model.Get_PartName_Result)">
       <Parameter Name="warehouse" Mode="In" Type="Int64" />
     </FunctionImport>
+    <FunctionImport Name="InsertOrder">
+      <Parameter Name="transactionTypeID" Mode="In" Type="Int64" />
+      <Parameter Name="emergencyMantenancesID" Mode="In" Type="Int64" />
+      <Parameter Name="sourceWarehouseID" Mode="In" Type="Int64" />
+      <Parameter Name="date" Mode="In" Type="DateTime" />
+      <Parameter Name="time" Mode="In" Type="Time" />
+    </FunctionImport>
+    <FunctionImport Name="InsertOrderItem">
+      <Parameter Name="orderID" Mode="In" Type="Int64" />
+      <Parameter Name="partID" Mode="In" Type="Int64" />
+      <Parameter Name="batchNumber" Mode="In" Type="String" />
+      <Parameter Name="amount" Mode="In" Type="Decimal" />
+      <Parameter Name="stock" Mode="In" Type="Decimal" />
+      <Parameter Name="unitPrice" Mode="In" Type="Decimal" />
+    </FunctionImport>
+    <FunctionImport Name="GetEM_ID_FromAssetID" ReturnType="Collection(Int64)">
+      <Parameter Name="assetID" Mode="In" Type="Int64" />
+    </FunctionImport>
+    <FunctionImport Name="GetMaxOrderID" ReturnType="Collection(Int64)" />
   </EntityContainer>
   <ComplexType Name="GetDepartment_Result">
     <Property Type="Int64" Name="ID" Nullable="false" />

@@ -92,6 +92,7 @@
     <Compile Include="HighestCost_Result.cs">
       <DependentUpon>ModelSession6.tt</DependentUpon>
     </Compile>
+    <Compile Include="OrderDAO.cs" />
     <Compile Include="LIFO_Result.cs">
       <DependentUpon>ModelSession6.tt</DependentUpon>
     </Compile>

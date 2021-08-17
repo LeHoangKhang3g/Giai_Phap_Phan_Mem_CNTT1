@@ -280,5 +280,73 @@ namespace DAO
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Get_PartName_Result>("Get_PartName", warehouseParameter);
         }
+    
+        public virtual int InsertOrder(Nullable<long> transactionTypeID, Nullable<long> emergencyMantenancesID, Nullable<long> sourceWarehouseID, Nullable<System.DateTime> date, Nullable<System.TimeSpan> time)
+        {
+            var transactionTypeIDParameter = transactionTypeID.HasValue ?
+                new ObjectParameter("transactionTypeID", transactionTypeID) :
+                new ObjectParameter("transactionTypeID", typeof(long));
+    
+            var emergencyMantenancesIDParameter = emergencyMantenancesID.HasValue ?
+                new ObjectParameter("emergencyMantenancesID", emergencyMantenancesID) :
+                new ObjectParameter("emergencyMantenancesID", typeof(long));
+    
+            var sourceWarehouseIDParameter = sourceWarehouseID.HasValue ?
+                new ObjectParameter("sourceWarehouseID", sourceWarehouseID) :
+                new ObjectParameter("sourceWarehouseID", typeof(long));
+    
+            var dateParameter = date.HasValue ?
+                new ObjectParameter("date", date) :
+                new ObjectParameter("date", typeof(System.DateTime));
+    
+            var timeParameter = time.HasValue ?
+                new ObjectParameter("time", time) :
+                new ObjectParameter("time", typeof(System.TimeSpan));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("InsertOrder", transactionTypeIDParameter, emergencyMantenancesIDParameter, sourceWarehouseIDParameter, dateParameter, timeParameter);
+        }
+    
+        public virtual int InsertOrderItem(Nullable<long> orderID, Nullable<long> partID, string batchNumber, Nullable<decimal> amount, Nullable<decimal> stock, Nullable<decimal> unitPrice)
+        {
+            var orderIDParameter = orderID.HasValue ?
+                new ObjectParameter("orderID", orderID) :
+                new ObjectParameter("orderID", typeof(long));
+    
+            var partIDParameter = partID.HasValue ?
+                new ObjectParameter("partID", partID) :
+                new ObjectParameter("partID", typeof(long));
+    
+            var batchNumberParameter = batchNumber != null ?
+                new ObjectParameter("batchNumber", batchNumber) :
+                new ObjectParameter("batchNumber", typeof(string));
+    
+            var amountParameter = amount.HasValue ?
+                new ObjectParameter("amount", amount) :
+                new ObjectParameter("amount", typeof(decimal));
+    
+            var stockParameter = stock.HasValue ?
+                new ObjectParameter("stock", stock) :
+                new ObjectParameter("stock", typeof(decimal));
+    
+            var unitPriceParameter = unitPrice.HasValue ?
+                new ObjectParameter("unitPrice", unitPrice) :
+                new ObjectParameter("unitPrice", typeof(decimal));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("InsertOrderItem", orderIDParameter, partIDParameter, batchNumberParameter, amountParameter, stockParameter, unitPriceParameter);
+        }
+    
+        public virtual ObjectResult<Nullable<long>> GetEM_ID_FromAssetID(Nullable<long> assetID)
+        {
+            var assetIDParameter = assetID.HasValue ?
+                new ObjectParameter("assetID", assetID) :
+                new ObjectParameter("assetID", typeof(long));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Nullable<long>>("GetEM_ID_FromAssetID", assetIDParameter);
+        }
+    
+        public virtual ObjectResult<Nullable<long>> GetMaxOrderID()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Nullable<long>>("GetMaxOrderID");
+        }
     }
 }

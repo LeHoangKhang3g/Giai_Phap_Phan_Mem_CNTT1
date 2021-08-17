@@ -389,6 +389,7 @@ namespace GUI
             this.btnSubmit.TabIndex = 2;
             this.btnSubmit.Text = "button1";
             this.btnSubmit.UseVisualStyleBackColor = false;
+            this.btnSubmit.Click += new System.EventHandler(this.btnSubmit_Click);
             // 
             // btnCancel
             // 

@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-    <Schema Namespace="Session6Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="Session6Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Assets">
           <Key>
             <PropertyRef Name="ID" />
@@ -97,16 +97,6 @@
           </Key>
           <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
-        </EntityType>
-        <EntityType Name="sysdiagrams">
-          <Key>
-            <PropertyRef Name="diagram_id" />
-          </Key>
-          <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
-          <Property Name="principal_id" Type="int" Nullable="false" />
-          <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="version" Type="int" />
-          <Property Name="definition" Type="varbinary(max)" />
         </EntityType>
         <EntityType Name="TransactionTypes">
           <Key>
@@ -268,16 +258,14 @@
         <Function Name="FI_FO" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="warehouse" Type="bigint" Mode="In" />
         </Function>
-        <Function Name="FIFO" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="warehouse" Type="bigint" Mode="In" />
-        </Function>
         <Function Name="Get_PartName" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="warehouse" Type="bigint" Mode="In" />
         </Function>
-        <Function Name="Get_PartNames" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="warehouse" Type="bigint" Mode="In" />
-        </Function>
         <Function Name="GetDepartment" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="GetEM_ID_FromAssetID" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="assetID" Type="bigint" Mode="In" />
+        </Function>
+        <Function Name="GetMaxOrderID" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
         <Function Name="GetMaxSpendInTime" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="month" Type="int" Mode="In" />
           <Parameter Name="year" Type="int" Mode="In" />
@@ -289,50 +277,42 @@
         <Function Name="GetMonthWithCompleteEMInYear" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="year" Type="int" Mode="In" />
         </Function>
-        <Function Name="GetPartNames" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="warehouse" Type="bigint" Mode="In" />
-        </Function>
         <Function Name="GetSpendingByDepartmentInTime" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="month" Type="int" Mode="In" />
           <Parameter Name="year" Type="int" Mode="In" />
         </Function>
         <Function Name="GetYearWithCompleteEM" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
-        <Function Name="HighestCost" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="month" Type="int" Mode="In" />
-          <Parameter Name="year" Type="int" Mode="In" />
-        </Function>
         <Function Name="HighestCosts" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="month" Type="int" Mode="In" />
           <Parameter Name="year" Type="int" Mode="In" />
         </Function>
-        <Function Name="LI_FO" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="warehouse" Type="bigint" Mode="In" />
+        <Function Name="InsertOrder" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="transactionTypeID" Type="bigint" Mode="In" />
+          <Parameter Name="emergencyMantenancesID" Type="bigint" Mode="In" />
+          <Parameter Name="sourceWarehouseID" Type="bigint" Mode="In" />
+          <Parameter Name="date" Type="date" Mode="In" />
+          <Parameter Name="time" Type="time" Mode="In" />
         </Function>
-        <Function Name="LIFO" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+        <Function Name="InsertOrderItem" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="orderID" Type="bigint" Mode="In" />
+          <Parameter Name="partID" Type="bigint" Mode="In" />
+          <Parameter Name="batchNumber" Type="nvarchar" Mode="In" />
+          <Parameter Name="amount" Type="decimal" Mode="In" />
+          <Parameter Name="stock" Type="decimal" Mode="In" />
+          <Parameter Name="unitPrice" Type="money" Mode="In" />
+        </Function>
+        <Function Name="LI_FO" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="warehouse" Type="bigint" Mode="In" />
         </Function>
         <Function Name="Minimum_First" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="warehouse" Type="bigint" Mode="In" />
         </Function>
-        <Function Name="MinimumFirst" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="warehouse" Type="bigint" Mode="In" />
-        </Function>
         <Function Name="MonthlySpending" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="year" Type="int" Mode="In" />
-        </Function>
-        <Function Name="MonthlySpendings" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="year" Type="int" Mode="In" />
-        </Function>
-        <Function Name="MostNumber" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="month" Type="int" Mode="In" />
           <Parameter Name="year" Type="int" Mode="In" />
         </Function>
         <Function Name="MostNumbers" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="month" Type="int" Mode="In" />
           <Parameter Name="year" Type="int" Mode="In" />
-        </Function>
-        <Function Name="PartNames" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="warehouse" Type="bigint" Mode="In" />
         </Function>
         <Function Name="SpendingRatio" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="year" Type="int" Mode="In" />
@@ -348,7 +328,6 @@
           <EntitySet Name="Orders" EntityType="Self.Orders" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Parts" EntityType="Self.Parts" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Suppliers" EntityType="Self.Suppliers" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TransactionTypes" EntityType="Self.TransactionTypes" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Warehouses" EntityType="Self.Warehouses" Schema="dbo" store:Type="Tables" />
           <AssociationSet Name="FK_Assets_DepartmentLocations" Association="Self.FK_Assets_DepartmentLocations">
@@ -801,8 +780,27 @@
           <Parameter Name="warehouse" Mode="In" Type="Int64" />
           </FunctionImport>
           <FunctionImport Name="Get_PartName" ReturnType="Collection(Session6Model.Get_PartName_Result)">
-            <Parameter Name="warehouse" Mode="In" Type="Int64" />
+          <Parameter Name="warehouse" Mode="In" Type="Int64" />
           </FunctionImport>
+          <FunctionImport Name="InsertOrder">
+            <Parameter Name="transactionTypeID" Mode="In" Type="Int64" />
+            <Parameter Name="emergencyMantenancesID" Mode="In" Type="Int64" />
+            <Parameter Name="sourceWarehouseID" Mode="In" Type="Int64" />
+            <Parameter Name="date" Mode="In" Type="DateTime" />
+            <Parameter Name="time" Mode="In" Type="Time" />
+          </FunctionImport>
+          <FunctionImport Name="InsertOrderItem">
+            <Parameter Name="orderID" Mode="In" Type="Int64" />
+            <Parameter Name="partID" Mode="In" Type="Int64" />
+            <Parameter Name="batchNumber" Mode="In" Type="String" />
+            <Parameter Name="amount" Mode="In" Type="Decimal" />
+            <Parameter Name="stock" Mode="In" Type="Decimal" />
+            <Parameter Name="unitPrice" Mode="In" Type="Decimal" />
+          </FunctionImport>
+          <FunctionImport Name="GetEM_ID_FromAssetID" ReturnType="Collection(Int64)">
+          <Parameter Name="assetID" Mode="In" Type="Int64" />
+          </FunctionImport>
+          <FunctionImport Name="GetMaxOrderID" ReturnType="Collection(Int64)" />
         </EntityContainer>
         <ComplexType Name="GetDepartment_Result">
           <Property Type="Int64" Name="ID" Nullable="false" />
@@ -1025,17 +1023,6 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="sysdiagrams">
-            <EntityTypeMapping TypeName="Session6Model.sysdiagram">
-              <MappingFragment StoreEntitySet="sysdiagrams">
-                <ScalarProperty Name="name" ColumnName="name" />
-                <ScalarProperty Name="principal_id" ColumnName="principal_id" />
-                <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
-                <ScalarProperty Name="version" ColumnName="version" />
-                <ScalarProperty Name="definition" ColumnName="definition" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="TransactionTypes">
             <EntityTypeMapping TypeName="Session6Model.TransactionType">
               <MappingFragment StoreEntitySet="TransactionTypes">
@@ -1073,23 +1060,6 @@
             </ResultMapping>
           </FunctionImportMapping>
           <FunctionImportMapping FunctionImportName="GetYearWithCompleteEM" FunctionName="Session6Model.Store.GetYearWithCompleteEM" />
-          <FunctionImportMapping FunctionImportName="HighestCost" FunctionName="Session6Model.Store.HighestCost">
-            <ResultMapping>
-              <ComplexTypeMapping TypeName="Session6Model.HighestCost_Result">
-                <ScalarProperty Name="Name" ColumnName="Name" />
-                <ScalarProperty Name="Column1" ColumnName="Column1" />
-              </ComplexTypeMapping>
-            </ResultMapping>
-          </FunctionImportMapping>
-          <FunctionImportMapping FunctionImportName="MostNumber" FunctionName="Session6Model.Store.MostNumber">
-            <ResultMapping>
-              <ComplexTypeMapping TypeName="Session6Model.MostNumber_Result">
-                <ScalarProperty Name="ID" ColumnName="ID" />
-                <ScalarProperty Name="Name" ColumnName="Name" />
-                <ScalarProperty Name="Column1" ColumnName="Column1" />
-              </ComplexTypeMapping>
-            </ResultMapping>
-          </FunctionImportMapping>
           <FunctionImportMapping FunctionImportName="HighestCosts" FunctionName="Session6Model.Store.HighestCosts">
             <ResultMapping>
               <ComplexTypeMapping TypeName="Session6Model.HighestCosts_Result">
@@ -1133,64 +1103,10 @@
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>
-          <FunctionImportMapping FunctionImportName="MonthlySpendings" FunctionName="Session6Model.Store.MonthlySpendings">
-            <ResultMapping>
-              <ComplexTypeMapping TypeName="Session6Model.MonthlySpendings_Result">
-                <ScalarProperty Name="Moth" ColumnName="Moth" />
-                <ScalarProperty Name="Name" ColumnName="Name" />
-                <ScalarProperty Name="Money" ColumnName="Money" />
-              </ComplexTypeMapping>
-            </ResultMapping>
-          </FunctionImportMapping>
           <FunctionImportMapping FunctionImportName="AssetNames" FunctionName="Session6Model.Store.AssetNames">
             <ResultMapping>
               <ComplexTypeMapping TypeName="Session6Model.AssetNames_Result">
                 <ScalarProperty Name="AssetName" ColumnName="AssetName" />
-                <ScalarProperty Name="ID" ColumnName="ID" />
-              </ComplexTypeMapping>
-            </ResultMapping>
-          </FunctionImportMapping>
-          <FunctionImportMapping FunctionImportName="FIFO" FunctionName="Session6Model.Store.FIFO">
-            <ResultMapping>
-              <ComplexTypeMapping TypeName="Session6Model.FIFO_Result">
-                <ScalarProperty Name="NAME" ColumnName="NAME" />
-                <ScalarProperty Name="ID" ColumnName="ID" />
-                <ScalarProperty Name="BatchNumber" ColumnName="BatchNumber" />
-                <ScalarProperty Name="Amount" ColumnName="Amount" />
-                <ScalarProperty Name="UnitPrice" ColumnName="UnitPrice" />
-                <ScalarProperty Name="Date" ColumnName="Date" />
-              </ComplexTypeMapping>
-            </ResultMapping>
-          </FunctionImportMapping>
-          <FunctionImportMapping FunctionImportName="LIFO" FunctionName="Session6Model.Store.LIFO">
-            <ResultMapping>
-              <ComplexTypeMapping TypeName="Session6Model.LIFO_Result">
-                <ScalarProperty Name="NAME" ColumnName="NAME" />
-                <ScalarProperty Name="ID" ColumnName="ID" />
-                <ScalarProperty Name="BatchNumber" ColumnName="BatchNumber" />
-                <ScalarProperty Name="Amount" ColumnName="Amount" />
-                <ScalarProperty Name="UnitPrice" ColumnName="UnitPrice" />
-                <ScalarProperty Name="Date" ColumnName="Date" />
-              </ComplexTypeMapping>
-            </ResultMapping>
-          </FunctionImportMapping>
-          <FunctionImportMapping FunctionImportName="MinimumFirst" FunctionName="Session6Model.Store.MinimumFirst">
-            <ResultMapping>
-              <ComplexTypeMapping TypeName="Session6Model.MinimumFirst_Result">
-                <ScalarProperty Name="NAME" ColumnName="NAME" />
-                <ScalarProperty Name="ID" ColumnName="ID" />
-                <ScalarProperty Name="BatchNumber" ColumnName="BatchNumber" />
-                <ScalarProperty Name="Amount" ColumnName="Amount" />
-                <ScalarProperty Name="UnitPrice" ColumnName="UnitPrice" />
-                <ScalarProperty Name="Date" ColumnName="Date" />
-              </ComplexTypeMapping>
-            </ResultMapping>
-          </FunctionImportMapping>
-          <FunctionImportMapping FunctionImportName="PartNames" FunctionName="Session6Model.Store.PartNames" />
-          <FunctionImportMapping FunctionImportName="GetPartNames" FunctionName="Session6Model.Store.GetPartNames">
-            <ResultMapping>
-              <ComplexTypeMapping TypeName="Session6Model.GetPartNames_Result">
-                <ScalarProperty Name="NAME" ColumnName="NAME" />
                 <ScalarProperty Name="ID" ColumnName="ID" />
               </ComplexTypeMapping>
             </ResultMapping>
@@ -1250,6 +1166,10 @@
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="InsertOrder" FunctionName="Session6Model.Store.InsertOrder" />
+          <FunctionImportMapping FunctionImportName="InsertOrderItem" FunctionName="Session6Model.Store.InsertOrderItem" />
+          <FunctionImportMapping FunctionImportName="GetEM_ID_FromAssetID" FunctionName="Session6Model.Store.GetEM_ID_FromAssetID" />
+          <FunctionImportMapping FunctionImportName="GetMaxOrderID" FunctionName="Session6Model.Store.GetMaxOrderID" />
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>
